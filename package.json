@@ -4,6 +4,7 @@
   "devDependencies": {
     "grunt": "~0.4.4",
     "grunt-contrib-sass": "^0.7.3",
-    "grunt-premailer": "^0.2.5"
+    "grunt-premailer": "^0.2.5",
+    "assemble": "^0.4.37"
   }
 }

@@ -25,15 +25,26 @@ module.exports = function(grunt) {
               'email-inline.html': ['email-src.html']
             }
           }
-        }
+        },
+
+        assemble: {
+          options: {
+            layout: ['layout.html']
+          },
+          pages: {
+            src: ['docs/*.hbs'],
+            dest: './'
+          }
+        },
 
     });
 
     // 3. Where we tell Grunt we plan to use this plug-in.
     grunt.loadNpmTasks('grunt-contrib-sass');
     grunt.loadNpmTasks('grunt-premailer');
+    grunt.loadNpmTasks('assemble');
 
     // 4. Where we tell Grunt what to do when we type "grunt" into the terminal.
-    grunt.registerTask('default', ['sass','premailer']);
+    grunt.registerTask('default', ['sass','premailer','assemble']);
 
 };
