@@ -4,14 +4,25 @@ module.exports = function(grunt) {
     grunt.initConfig({
         pkg: grunt.file.readJSON('package.json'),
 
-        sass: {                              // Task
-          dist: {                            // Target
-            options: {                       // Target options
+        sass: {
+          dist: {
+            options: {
               style: 'expanded'
             },
-            files: {                         // Dictionary of files
-              'main.css': 'css/main.scss'       // 'destination': 'source'
+            files: {
+              'css/main.css': 'css/main.scss'
             }
+          }
+        },
+
+        assemble: {
+          options: {
+            layout: ['_layouts/default.hbs'],
+            flatten: true
+          },
+          pages: {
+            src: ['_src/*.hbs'],
+            dest: 'build/'
           }
         },
 
@@ -22,29 +33,19 @@ module.exports = function(grunt) {
               removeComments: true
             },
             files: {
-              'email-inline.html': ['email-src.html']
+              'build/transaction.html': ['build/*.html']
             }
           }
-        },
-
-        assemble: {
-          options: {
-            layout: ['layout.html']
-          },
-          pages: {
-            src: ['docs/*.hbs'],
-            dest: './'
-          }
-        },
+        }
 
     });
 
     // 3. Where we tell Grunt we plan to use this plug-in.
     grunt.loadNpmTasks('grunt-contrib-sass');
-    grunt.loadNpmTasks('grunt-premailer');
     grunt.loadNpmTasks('assemble');
+    grunt.loadNpmTasks('grunt-premailer');
 
     // 4. Where we tell Grunt what to do when we type "grunt" into the terminal.
-    grunt.registerTask('default', ['sass','premailer','assemble']);
+    grunt.registerTask('default', ['sass','assemble','premailer']);
 
 };
