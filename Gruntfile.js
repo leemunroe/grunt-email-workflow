@@ -10,7 +10,7 @@ module.exports = function(grunt) {
               style: 'expanded'
             },
             files: {
-              'css/main.css': 'css/main.scss'
+              '_scss/main.css': '_scss/main.scss'
             }
           }
         },
@@ -33,9 +33,11 @@ module.exports = function(grunt) {
               removeClasses: true,
               removeComments: true
             },
-            files: {
-              'build/transaction.html': ['build/*.html']
-            }
+            files: [{
+                expand: true,
+                src: ['build/*.html'],
+                dest: ''
+            }]
           }
         },
 
