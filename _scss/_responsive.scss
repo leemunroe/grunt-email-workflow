@@ -9,11 +9,6 @@
   clear: both!important;
 }
 
-/* Set the padding on the td rather than the div for Outlook compatibility */
-.body-wrap .container {
-  padding: 20px;
-}
-
 /* This should also be a block element, so that it will fill 100% of the .container */
 .content {
   max-width: 600px;

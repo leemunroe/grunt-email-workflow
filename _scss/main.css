@@ -34,15 +34,15 @@ h1, h2, h3 {
 }
 
 h1 {
-  font-size: 36px;
+  font-size: 32px;
 }
 
 h2 {
-  font-size: 28px;
+  font-size: 24px;
 }
 
 h3 {
-  font-size: 22px;
+  font-size: 18px;
 }
 
 p, ul, ol {
@@ -96,27 +96,33 @@ a {
 /* -------------------------------------
     BODY
 ------------------------------------- */
-table.body-wrap {
+.body-wrap {
+  background: #f6f6f6;
   width: 100%;
   padding: 20px;
 }
-table.body-wrap .container {
+
+.body-container {
+  background: #fff;
   border: 1px solid #f0f0f0;
+  padding: 20px;
 }
 
 /* -------------------------------------
     FOOTER
 ------------------------------------- */
-table.footer-wrap {
+.footer-container {
   width: 100%;
   clear: both !important;
-}
-table.footer-wrap .container p {
   font-size: 12px;
   color: #666;
+  text-align: center;
 }
-table.footer-wrap a {
+.footer-container a {
   color: #999;
+}
+.footer-container .content > table td {
+  padding: 20px;
 }
 
 /* -------------------------------------
@@ -144,11 +150,6 @@ table.footer-wrap a {
   margin: 0 auto !important;
   /* makes it centered */
   clear: both !important;
-}
-
-/* Set the padding on the td rather than the div for Outlook compatibility */
-.body-wrap .container {
-  padding: 20px;
 }
 
 /* This should also be a block element, so that it will fill 100% of the .container */

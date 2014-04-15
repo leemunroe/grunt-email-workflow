@@ -1,25 +1,30 @@
 /* -------------------------------------
     BODY
 ------------------------------------- */
-table.body-wrap {
+.body-wrap {
+  background: #f6f6f6;
   width: 100%;
   padding: 20px;
-  .container {
-    border: 1px solid #f0f0f0;
-  }
+}
+.body-container{
+  background:#fff;
+  border: 1px solid #f0f0f0;
+  padding:20px;
 }
 
 /* -------------------------------------
     FOOTER
 ------------------------------------- */
-table.footer-wrap {
-  width: 100%;  
+.footer-container {
+  width: 100%;
   clear: both!important;
-  .container p {
-    font-size: 12px;
-    color: #666;
-  }
+  font-size: 12px;
+  color: #666;
+  text-align:center;
   a {
     color: #999;
+  }
+  .content > table td{
+    padding:20px;
   }
 }
