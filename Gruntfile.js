@@ -1,6 +1,6 @@
 module.exports = function(grunt) {
 
-    // 1. All configuration goes here
+    // All configuration goes here
     grunt.initConfig({
         pkg: grunt.file.readJSON('package.json'),
 
@@ -17,7 +17,8 @@ module.exports = function(grunt) {
 
         assemble: {
           options: {
-            layout: ['_layouts/default.hbs'],
+            layoutdir: '_layouts',
+            layout: ['default.hbs'],
             flatten: true
           },
           pages: {
@@ -52,13 +53,14 @@ module.exports = function(grunt) {
 
     });
 
-    // 3. Where we tell Grunt we plan to use this plug-in.
+    // Where we tell Grunt we plan to use this plug-in.
     grunt.loadNpmTasks('grunt-contrib-sass');
     grunt.loadNpmTasks('assemble');
     grunt.loadNpmTasks('grunt-premailer');
     grunt.loadNpmTasks('grunt-mailgun');
 
-    // 4. Where we tell Grunt what to do when we type "grunt" into the terminal.
-    grunt.registerTask('default', ['sass','assemble','premailer','mailgun']);
+    // Where we tell Grunt what to do when we type "grunt" into the terminal.
+    grunt.registerTask('default', ['sass','assemble','premailer']);
+    grunt.registerTask('send', ['default','mailgun']);
 
 };
