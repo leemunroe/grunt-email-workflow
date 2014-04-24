@@ -30,7 +30,6 @@ module.exports = function(grunt) {
         premailer: {
           simple: {
             options: {
-              removeClasses: true,
               removeComments: true
             },
             files: [{
@@ -44,8 +43,8 @@ module.exports = function(grunt) {
         mailgun: {
           mailer: {
             options: {
-              key: grunt.option('mailgun-key'), // Pass your Mailgun key with Grunt like so: grunt send mailgun-key=KEY
-              sender: 'devs@mailgun.net',
+              key: grunt.option('mailgun-key'), // Pass your Mailgun key with Grunt like so: grunt send --mailgun-key=KEY
+              sender: 'lee@mailgun.com',
               recipient: 'lee@mailgun.com',
               subject: 'This is a test email'
             },
