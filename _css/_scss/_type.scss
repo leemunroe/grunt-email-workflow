@@ -4,15 +4,15 @@
 h1, h2, h3 {
   font-family: "Helvetica Neue", Helvetica, Arial, "Lucida Grande", sans-serif;
   line-height: 1.1;
-  margin-bottom: 15px;
   color: #000;
   margin: 40px 0 10px;
   line-height: 1.2;
-  font-weight: 200;
+  font-weight: 400;
 }
 
 h1 {
   font-size: 32px;
+  font-weight: 500;
 }
 h2 {
   font-size: 24px;
@@ -20,14 +20,20 @@ h2 {
 h3 {
   font-size: 18px;
 }
+h4{
+  font-size: 14px;
+  font-weight:600;
+}
 
 p, ul, ol {
   margin-bottom: 10px;
   font-weight: normal;
-  font-size: 14px;
+  li{
+    margin-left: 5px;
+    list-style-position: inside;
+  }
 }
 
-ul li, ol li {
-  margin-left: 5px;
-  list-style-position: inside;
+footer p{
+  font-size:12px;
 }

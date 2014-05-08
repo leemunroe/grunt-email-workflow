@@ -3,26 +3,26 @@
 <head>
 <meta name="viewport" content="width=device-width" />
 <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
-<title>Really Simple Responsive HTML Email Template</title>
-<link href="../_scss/main.css" media="all" rel="stylesheet" type="text/css" />
+<title>{{ subject }}</title>
+<link href="../_css/main.css" media="all" rel="stylesheet" type="text/css" />
+<link href="../_css/responsive.css" media="all" rel="stylesheet" type="text/css" data-premailer="ignore" />
 </head>
 
-<body bgcolor="#f6f6f6">
+<body>
 
-<table class="body-wrap">
-	<tr>
-		<td></td>
-		<td class="container body-container">
-			<!-- body -->
-			{{> body }}
-			<!-- /body -->
-		
-
-		</td>
-		<td></td>
-	</tr>
-	<!-- /footer -->
-</table>
-
+	<div class="body-wrap">
+	<table>
+		<tr>
+			<td></td>
+			<td class="container">
+				<!-- body -->
+				{{> body }}
+				<!-- /body -->
+			</td>
+			<td></td>
+		</tr>
+		<!-- /footer -->
+	</table>
+</div>
 </body>
 </html>

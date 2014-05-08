@@ -1,12 +1,16 @@
 /* -------------------------------------
+    CONFIGURE YOUR VARIABLES
+------------------------------------- */
+/* -------------------------------------
     GLOBAL
 ------------------------------------- */
 * {
   margin: 0;
   padding: 0;
   font-family: "Helvetica Neue", "Helvetica", Helvetica, Arial, sans-serif;
-  font-size: 100%;
+  font-size: 14px;
   line-height: 1.6;
+  box-sizing: border-box;
 }
 
 img {
@@ -20,21 +24,93 @@ body {
   height: 100%;
 }
 
+/* Let's make sure all tables are 100% wide */
+table {
+  width: 100%;
+  border-collapse: collapse;
+}
+table td {
+  vertical-align: top;
+}
+
+/* -------------------------------------
+    BODY & CONTAINER
+------------------------------------- */
+body {
+  background: #f6f6f6;
+}
+
+.body-wrap {
+  background: #f6f6f6;
+  width: 100%;
+  padding: 20px;
+}
+
+/* Set a max-width, and make it display as block so it will automatically stretch to that width, but will also shrink down on a phone or something */
+.container {
+  display: block !important;
+  max-width: 600px !important;
+  margin: 0 auto !important;
+  /* makes it centered */
+  clear: both !important;
+}
+
+/* This should also be a block element, so that it will fill 100% of the .container */
+/* -------------------------------------
+    HEADER, FOOTER, MAIN
+------------------------------------- */
+.main {
+  background: #fff;
+  border: 1px solid #e9e9e9;
+  margin-bottom: 20px;
+}
+
+.content-wrapper {
+  padding: 20px;
+}
+
+.header {
+  width: 100%;
+  margin-bottom: 20px;
+}
+
+.footer {
+  width: 100%;
+  clear: both;
+  color: #666;
+}
+.footer a {
+  color: #999;
+}
+
+/* -------------------------------------
+    GRID AND COLUMNS
+------------------------------------- */
+.content-column {
+  float: left;
+  width: 65%;
+}
+
+.sidebar-column {
+  float: left;
+  width: 35%;
+}
+
 /* -------------------------------------
     TYPOGRAPHY
 ------------------------------------- */
 h1, h2, h3 {
   font-family: "Helvetica Neue", Helvetica, Arial, "Lucida Grande", sans-serif;
   line-height: 1.1;
-  margin-bottom: 15px;
   color: #000;
   margin: 40px 0 10px;
   line-height: 1.2;
-  font-weight: 200;
+  font-weight: 400;
 }
 
 h1 {
   font-size: 32px;
+  font-weight: 500;
 }
 
 h2 {
@@ -45,15 +121,22 @@ h3 {
   font-size: 18px;
 }
 
+h4 {
+  font-size: 14px;
+  font-weight: 600;
+}
+
 p, ul, ol {
   margin-bottom: 10px;
   font-weight: normal;
-  font-size: 14px;
 }
-
-ul li, ol li {
+p li, ul li, ol li {
   margin-left: 5px;
   list-style-position: inside;
+}
+
+footer p {
+  font-size: 12px;
 }
 
 /* -------------------------------------
@@ -61,6 +144,7 @@ ul li, ol li {
 ------------------------------------- */
 a {
   color: #348eda;
+  text-decoration: underline;
 }
 
 .btn-primary {
@@ -94,38 +178,6 @@ a {
 }
 
 /* -------------------------------------
-    BODY
-------------------------------------- */
-.body-wrap {
-  background: #f6f6f6;
-  width: 100%;
-  padding: 20px;
-}
-
-.body-container {
-  background: #fff;
-  border: 1px solid #f0f0f0;
-  padding: 20px;
-}
-
-/* -------------------------------------
-    FOOTER
-------------------------------------- */
-.footer-container {
-  width: 100%;
-  clear: both !important;
-  font-size: 12px;
-  color: #666;
-  text-align: center;
-}
-.footer-container a {
-  color: #999;
-}
-.footer-container .content > table td {
-  padding: 20px;
-}
-
-/* -------------------------------------
     OTHER STYLES THAT MIGHT BE USEFUL
 ------------------------------------- */
 .last {
@@ -140,26 +192,14 @@ a {
   padding: 10px 0;
 }
 
-/* ---------------------------------------------------
-    RESPONSIVENESS
------------------------------------------------------- */
-/* Set a max-width, and make it display as block so it will automatically stretch to that width, but will also shrink down on a phone or something */
-.container {
-  display: block !important;
-  max-width: 600px !important;
-  margin: 0 auto !important;
-  /* makes it centered */
-  clear: both !important;
+.aligncenter {
+  text-align: center;
 }
 
-/* This should also be a block element, so that it will fill 100% of the .container */
-.content {
-  max-width: 600px;
-  margin: 0 auto;
-  display: block;
+.alignright {
+  text-align: right;
 }
 
-/* Let's make sure tables in the content area are 100% wide */
-.content table {
-  width: 100%;
+.clear {
+  clear: both;
 }

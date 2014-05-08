@@ -10,7 +10,8 @@ module.exports = function(grunt) {
               style: 'expanded'
             },
             files: {
-              '_scss/main.css': '_scss/main.scss'
+              '_css/main.css': '_css/_scss/main.scss',
+              '_css/responsive.css': '_css/_scss/responsive.scss'
             }
           }
         },
@@ -45,7 +46,7 @@ module.exports = function(grunt) {
             options: {
               key: grunt.option('mailgun-key'), // Pass your Mailgun key with Grunt like so: grunt send --mailgun-key=KEY
               sender: 'lee@mailgun.com',
-              recipient: 'lee@mailgun.com',
+              recipient: '273eef2@emailtests.com',
               subject: 'This is a test email'
             },
             src: ['build/*.html']

@@ -1,0 +1,70 @@
+/* -------------------------------------
+    BODY & CONTAINER
+------------------------------------- */
+body{
+  background: $grey;
+}
+
+.body-wrap {
+  background: $grey;
+  width: 100%;
+  padding: $padding;
+}
+
+/* Set a max-width, and make it display as block so it will automatically stretch to that width, but will also shrink down on a phone or something */
+.container {
+  display: block!important;
+  max-width: 600px!important;
+  margin: 0 auto!important; /* makes it centered */
+  clear: both!important;
+}
+
+/* This should also be a block element, so that it will fill 100% of the .container */
+// .content {
+//   max-width: 600px;
+//   margin: 0 auto;
+//   display: block;
+// }
+
+
+/* -------------------------------------
+    HEADER, FOOTER, MAIN
+------------------------------------- */
+
+.main{
+  background:#fff;
+  border: 1px solid darken($grey,5);
+  margin-bottom:$padding;
+}
+
+.content-wrapper{
+  padding:$padding;
+}
+
+.header{
+  width:100%;
+  margin-bottom:$padding;
+}
+
+.footer {
+  width: 100%;
+  clear: both;
+  color: #666;
+  a {
+    color: #999;
+  }
+}
+
+/* -------------------------------------
+    GRID AND COLUMNS
+------------------------------------- */
+
+.content-column{
+  float:left;
+  width:65%;
+}
+
+.sidebar-column{
+  float:left;
+  width:35%;
+}
