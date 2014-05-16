@@ -1,33 +1,34 @@
 module.exports = function(grunt) {
 
-    // All configuration goes here
     grunt.initConfig({
         pkg: grunt.file.readJSON('package.json'),
 
+        // Takes your scss files and compiles them to css
         sass: {
           dist: {
             options: {
               style: 'expanded'
             },
             files: {
-              '_css/main.css': '_css/_scss/main.scss',
-              '_css/responsive.css': '_css/_scss/responsive.scss'
+              'src/css/main.css': 'src/css/scss/main.scss',
+              'src/css/responsive.css': 'src/css/scss/responsive.scss'
             }
           }
         },
 
+        // Assembles your email content with html layout
         assemble: {
           options: {
-            layoutdir: '_layouts',
-            layout: ['default.hbs'],
+            layoutdir: 'src/layouts',
             flatten: true
           },
           pages: {
-            src: ['_src/*.hbs'],
-            dest: 'build/'
+            src: ['src/emails/*.hbs'],
+            dest: 'dist/'
           }
         },
 
+        // Inlines your css
         premailer: {
           simple: {
             options: {
@@ -35,34 +36,44 @@ module.exports = function(grunt) {
             },
             files: [{
                 expand: true,
-                src: ['build/*.html'],
+                src: ['dist/*.html'],
                 dest: ''
             }]
           }
         },
 
+        // Watches for changes to css or email templates then runs grunt tasks
+        watch: {
+          files: ['src/css/scss/*','src/emails/*','src/layouts/*'],
+          tasks: ['default']
+        },
+
+        // Use Mailgun option if you want to email the design to your inbox or something like Litmus
         mailgun: {
           mailer: {
             options: {
               key: grunt.option('mailgun-key'), // Pass your Mailgun key with Grunt like so: grunt send --mailgun-key=KEY
               sender: 'lee@mailgun.com',
-              recipient: '273eef2@emailtests.com',
+              recipient: '5910075@emailtests.com',
               subject: 'This is a test email'
             },
-            src: ['build/*.html']
+            src: ['dist/*.html']
           }
-        }
+        },
 
     });
 
     // Where we tell Grunt we plan to use this plug-in.
     grunt.loadNpmTasks('grunt-contrib-sass');
     grunt.loadNpmTasks('assemble');
-    grunt.loadNpmTasks('grunt-premailer');
     grunt.loadNpmTasks('grunt-mailgun');
+    grunt.loadNpmTasks('grunt-premailer');
+    grunt.loadNpmTasks('grunt-contrib-watch');
 
     // Where we tell Grunt what to do when we type "grunt" into the terminal.
     grunt.registerTask('default', ['sass','assemble','premailer']);
+
+    // Use grunt send if you want to actually send the email to your inbox
     grunt.registerTask('send', ['default','mailgun']);
 
 };

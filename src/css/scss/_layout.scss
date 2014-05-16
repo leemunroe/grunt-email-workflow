@@ -2,29 +2,29 @@
     BODY & CONTAINER
 ------------------------------------- */
 body{
-  background: $grey;
+  background-color: $grey;
 }
 
 .body-wrap {
-  background: $grey;
+  background-color: $grey;
   width: 100%;
-  padding: $padding;
 }
 
 /* Set a max-width, and make it display as block so it will automatically stretch to that width, but will also shrink down on a phone or something */
 .container {
   display: block!important;
-  max-width: 600px!important;
+  max-width: $width!important;
   margin: 0 auto!important; /* makes it centered */
   clear: both!important;
 }
 
 /* This should also be a block element, so that it will fill 100% of the .container */
-// .content {
-//   max-width: 600px;
-//   margin: 0 auto;
-//   display: block;
-// }
+.content {
+  max-width: $width;
+  margin: 0 auto;
+  display: block;
+  padding: $padding;
+}
 
 
 /* -------------------------------------
@@ -35,6 +35,7 @@ body{
   background:#fff;
   border: 1px solid darken($grey,5);
   margin-bottom:$padding;
+  border-radius:$br;
 }
 
 .content-wrapper{
@@ -52,6 +53,9 @@ body{
   color: #666;
   a {
     color: #999;
+  }
+  p,a,unsubscribe{
+    font-size:12px;
   }
 }
 

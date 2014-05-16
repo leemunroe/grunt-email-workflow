@@ -5,9 +5,8 @@
   margin: 0;
   padding: 0;
   font-family: "Helvetica Neue", "Helvetica", Helvetica, Arial, sans-serif;
-  font-size: 14px;
-  line-height: 1.6;
   box-sizing: border-box;
+  font-size: 14px;
 }
 
 img {
@@ -19,11 +18,11 @@ body {
   -webkit-text-size-adjust: none;
   width: 100% !important;
   height: 100%;
+  line-height: 1.6;
 }
 
-/* Let's make sure all tables are 100% wide */
+/* Let's make sure all tables have defaults */
 table {
-  width: 100%;
   border-collapse: collapse;
   td{
     vertical-align: top;
