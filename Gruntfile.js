@@ -54,7 +54,7 @@ module.exports = function(grunt) {
             options: {
               key: grunt.option('mailgun-key'), // Pass your Mailgun key with Grunt like so: grunt send --mailgun-key=KEY
               sender: 'lee@mailgun.com',
-              recipient: '5910075@emailtests.com',
+              recipient: 'lee.munroe@rackspace.com',
               subject: 'This is a test email'
             },
             src: ['dist/*.html']
