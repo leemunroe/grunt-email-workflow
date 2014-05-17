@@ -52,9 +52,9 @@ module.exports = function(grunt) {
         mailgun: {
           mailer: {
             options: {
-              key: grunt.option('mailgun-key'), // Pass your Mailgun key with Grunt like so: grunt send --mailgun-key=KEY
-              sender: 'lee@mailgun.com',
-              recipient: 'lee.munroe@rackspace.com',
+              key: MAILGUN_KEY, // Find your Mailgun API key in your Mailgun control panel
+              sender: 'lee@leemunroe.com',
+              recipient: 'lee@leemunroe.com',
               subject: 'This is a test email'
             },
             src: ['dist/*.html']
