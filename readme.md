@@ -28,8 +28,9 @@ Clone this repo, cd to the directory, run `npm install` to install the necessary
 
 ```
 git clone https://github.com/leemunroe/grunt-email-design
-cd grunt-email
+cd grunt-email-design
 npm install
+grunt
 ```
 
 ## How it works
