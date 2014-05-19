@@ -48,16 +48,16 @@ module.exports = function(grunt) {
           tasks: ['default']
         },
 
-        // Use Mailgun option if you want to email the design to your inbox or something like Litmus
+        // Use Mailgun option if you want to email the design to your inbox or to something like Litmus
         mailgun: {
           mailer: {
             options: {
-              key: MAILGUN_KEY, // Find your Mailgun API key in your Mailgun control panel
+              key: 'MAILGUN_KEY', // Enter your Mailgun API key here
               sender: 'lee@leemunroe.com',
               recipient: 'lee@leemunroe.com',
               subject: 'This is a test email'
             },
-            src: ['dist/*.html']
+            src: ['dist/'+grunt.option('template')]
           }
         },
 
