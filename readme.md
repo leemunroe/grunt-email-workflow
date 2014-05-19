@@ -35,6 +35,8 @@ grunt
 
 ## How it works
 
+<img src="http://i.imgur.com/yrHpTdr.jpg" width="500">
+
 ### CSS
 
 This project uses [SCSS](http://sass-lang.com/). You don't need to touch the .css files, these are compiled automatically.
