@@ -24,11 +24,13 @@ This grunt task helps simplify things at the design stage.
 
 If you haven't used [Grunt](http://gruntjs.com/) before check out Chris Coyier's post on [getting started with Grunt](http://24ways.org/2013/grunt-is-not-weird-and-hard/).
 
-Fork or clone this repo, cd to the directory, run `npm install` to install the necessary packages.
+Clone this repo, cd to the directory, run `npm install` to install the necessary packages.
 
-`git clone https://github.com/leemunroe/grunt-email
+```
+git clone https://github.com/leemunroe/grunt-email
 cd grunt-email
-npm install`
+npm install
+```
 
 ## How it works
 
