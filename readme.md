@@ -1,6 +1,6 @@
 # Grunt Email Design Workflow
 
-Designing and testing emails is a pain. HTML tables, inline CSS, various devices and clients to test, and minimal support for the latest web standards.
+Designing and testing emails is a pain. HTML tables, inline CSS, various devices and clients to test, and varying support for the latest web standards.
 
 This grunt task helps simplify things at the design stage.
 
@@ -10,9 +10,9 @@ This grunt task helps simplify things at the design stage.
 
 3. Inlines your CSS
 
-4. Sends you a test email to your inbox
+4. Uploads any images to a CDN (optional)
 
-5. Uploads any images to a CDN
+5. Sends you a test email to your inbox
 
 ## Requirements
 
@@ -22,7 +22,7 @@ This grunt task helps simplify things at the design stage.
 * Premailer (`gem install premailer hpricot nokogiri`) - Inlines the CSS
 * [Mailgun](http://www.mailgun.com) - Sends the email
 * [Litmus](https://litmus.com) (optional) - Tests the email across all clients/browsers/devices
-* [Rackspace Cloud(http://www.rackspace.com/cloud/files/pricing/) (optional) - Uses Cloud Files as a CDN
+* [Rackspace Cloud](http://www.rackspace.com/cloud/files/) (optional) - Uses Cloud Files as a CDN
 
 ## Getting started
 
@@ -89,11 +89,11 @@ If you have a [Litmus](http://www.litmus.com) account and want to test the email
 
 If your email contains images you'll want to serve them from a CDN. This Gruntfile has support for Rackspace Cloud Files ([pricing](http://www.rackspace.com/cloud/files/pricing/)).
 
-<img src="http://i.imgur.com/mRuepTE.jpg" width="500">
+<img src="http://i.imgur.com/GTNiSuI.jpg" width="500">
 
 * Sign up for a Rackspace Cloud account (use the [Developer Discount](http://developer.rackspace.com/devtrial/) for $300 credit)
 * Create a new Cloud Files container
-* Open up Gruntfile.js
+* Open up `Gruntfile.js`
 * Change 'cloudfiles' settings to your settings (you can find your Rackspace API key under your account settings)
 * Make any other config changes as per [grunt-cloudfiles](https://github.com/rtgibbons/grunt-cloudfiles) instructions
 
