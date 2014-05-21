@@ -89,7 +89,7 @@ If you have a [Litmus](http://www.litmus.com) account and want to test the email
 
 If your email contains images you'll want to serve them from a CDN. This Gruntfile has support for Rackspace Cloud Files ([pricing](http://www.rackspace.com/cloud/files/pricing/)).
 
-<img src="http://i.imgur.com/GTNiSuI.jpg" width="500">
+<img src="http://i.imgur.com/oO5gfkZ.jpg" width="500">
 
 * Sign up for a Rackspace Cloud account (use the [Developer Discount](http://developer.rackspace.com/devtrial/) for $300 credit)
 * Create a new Cloud Files container
