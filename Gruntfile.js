@@ -61,6 +61,33 @@ module.exports = function(grunt) {
           }
         },
 
+        // Use Rackspace Cloud Files if you're using images in your email
+        cloudfiles: {
+          prod: {
+            'user': 'Rackspace Cloud Username', // Change this
+            'key': 'Rackspace Cloud API Key', // Change this
+            'region': 'ORD', // Might need to change this
+            'upload': [{
+              'container': 'Files Container Name', // Change this
+              'src': 'src/img/*',
+              'dest': '/',
+              'stripcomponents': 0
+            }]
+          }
+        },
+
+        // CDN will replace local paths with your Cloud CDN path
+        cdn: {
+          options: {
+            cdn: 'Rackspace Cloud CDN URI', // Change this
+            flatten: true,
+            supportedTypes: 'html'
+          },
+          dist: {
+            src: ['./dist/*.html']
+          }
+        }
+
     });
 
     // Where we tell Grunt we plan to use this plug-in.
@@ -69,11 +96,16 @@ module.exports = function(grunt) {
     grunt.loadNpmTasks('grunt-mailgun');
     grunt.loadNpmTasks('grunt-premailer');
     grunt.loadNpmTasks('grunt-contrib-watch');
+    grunt.loadNpmTasks('grunt-cloudfiles');
+    grunt.loadNpmTasks('grunt-cdn');
 
     // Where we tell Grunt what to do when we type "grunt" into the terminal.
     grunt.registerTask('default', ['sass','assemble','premailer']);
 
     // Use grunt send if you want to actually send the email to your inbox
-    grunt.registerTask('send', ['default','mailgun']);
+    grunt.registerTask('send', ['mailgun']);
+
+    // Upload images to our CDN on Rackspace Cloud Files
+    grunt.registerTask('cdnify', ['default','cloudfiles','cdn']);
 
 };

@@ -1,6 +1,6 @@
 # Grunt Email Design Workflow
 
-Designing and testing emails is a pain. HTML tables, inline CSS, various devices, clients and support for the latest web standards.
+Designing and testing emails is a pain. HTML tables, inline CSS, various devices and clients to test, and minimal support for the latest web standards.
 
 This grunt task helps simplify things at the design stage.
 
@@ -12,6 +12,8 @@ This grunt task helps simplify things at the design stage.
 
 4. Sends you a test email to your inbox
 
+5. Uploads any images to a CDN
+
 ## Requirements
 
 * Node.js - [Install Node.js](https://github.com/joyent/node/wiki/Installing-Node.js-via-package-manager)
@@ -20,6 +22,7 @@ This grunt task helps simplify things at the design stage.
 * Premailer (`gem install premailer hpricot nokogiri`) - Inlines the CSS
 * [Mailgun](http://www.mailgun.com) - Sends the email
 * [Litmus](https://litmus.com) (optional) - Tests the email across all clients/browsers/devices
+* [Rackspace Cloud(http://www.rackspace.com/cloud/files/pricing/) (optional) - Uses Cloud Files as a CDN
 
 ## Getting started
 
@@ -44,13 +47,15 @@ This project uses [SCSS](http://sass-lang.com/). You don't need to touch the .cs
 
 For changes to CSS, modify the .scss files.
 
+Media queries and responsive styles are in a separate style sheet so that they don't get inlined. Note that only a few clients support media queries e.g. iOS Mail app.
+
 ### Email templates and content
 
 Handlebars is used for templating.
 
 `/layouts` contains the standard header/footer HTML markup. You most likely will only need one layout template, but you can have as many as you like.
 
-`/emails` is where your email content will go. To start you off I've included two simple transactional emails based on my [simple HTML email template](https://github.com/leemunroe/html-email-template).
+`/emails` is where your email content will go. To start you off I've included example transactional emails based on my [simple HTML email template](https://github.com/leemunroe/html-email-template).
 
 ### Generate your email templates
 
@@ -60,7 +65,7 @@ In terminal, run `grunt`. This will:
 * Generate your email layout and content
 * Inline your CSS
 
-See the output in the `dist` folder. Open it and preview it the browser.
+See the output HTML in the `dist` folder. Open them and preview it the browser.
 
 Alternatively run `grunt watch`. This will check for any changes you make to your .scss and .hbs templates, then automatically run the tasks. Saves you having to run grunt every time.
 
@@ -71,7 +76,7 @@ Alternatively run `grunt watch`. This will check for any changes you make to you
 * Replace 'MAILGUN_KEY' with your actual Mailgun API key
 * Change the sender and recipient to your own email address (or whoever you want to send it to)
 
-Run `grunt send --template=transaction.html`. This will run the tasks as above, but also email out the email template you specify.
+Run `grunt send --template=transaction.html`. This will email out the template you specify.
 
 Change 'transaction.html' to the name of the email template you want to send.
 
@@ -80,3 +85,18 @@ Change 'transaction.html' to the name of the email template you want to send.
 If you have a [Litmus](http://www.litmus.com) account and want to test the email in multiple clients/devices, create a new test in Litmus, copy the email address they tell you to send the email to, open up `Gruntfile.js` and paste it where the recipient goes. Then run `grunt send --template=TEMPLATE_NAME.html` to send the email to Litmus.
 
 
+### CDN and working with image assets
+
+If your email contains images you'll want to serve them from a CDN. This Gruntfile has support for Rackspace Cloud Files ([pricing](http://www.rackspace.com/cloud/files/pricing/)).
+
+<img src="http://i.imgur.com/mRuepTE.jpg" width="500">
+
+* Sign up for a Rackspace Cloud account (use the [Developer Discount](http://developer.rackspace.com/devtrial/) for $300 credit)
+* Create a new Cloud Files container
+* Open up Gruntfile.js
+* Change 'cloudfiles' settings to your settings (you can find your Rackspace API key under your account settings)
+* Make any other config changes as per [grunt-cloudfiles](https://github.com/rtgibbons/grunt-cloudfiles) instructions
+
+Run `grunt cdnify` to run the default tasks as well as upload any images to your CDN.
+
+Run `grunt cdnify send --template=branded.html` to send the email to yourself with the 'CDNified' images.
