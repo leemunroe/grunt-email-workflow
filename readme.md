@@ -17,20 +17,26 @@ This grunt task helps simplify things at the design stage.
 * Node.js - [Install Node.js](https://github.com/joyent/node/wiki/Installing-Node.js-via-package-manager)
 * Grunt-cli and Grunt (`npm install grunt-cli -g`)
 * Ruby - [Install ruby with RVM](https://rvm.io/rvm/install)
-* Premailer (`gem install premailer`)
-* [Mailgun](http://www.mailgun.com) - Used to send the email to yourself (free for 10,000 emails/mth)
+* Premailer (`gem install premailer hpricot nokogiri`) - Inlines the CSS
+* [Mailgun](http://www.mailgun.com) - Sends the email
+* [Litmus](https://litmus.com) (optional) - Tests the email across all clients/browsers/devices
 
 ## Getting started
 
 If you haven't used [Grunt](http://gruntjs.com/) before check out Chris Coyier's post on [getting started with Grunt](http://24ways.org/2013/grunt-is-not-weird-and-hard/).
 
-Fork or clone this repo, cd to the directory, run `npm install` to install the necessary packages.
+Clone this repo, cd to the directory, run `npm install` to install the necessary packages.
 
-`git clone https://github.com/leemunroe/grunt-email
-cd grunt-email
-npm install`
+```
+git clone https://github.com/leemunroe/grunt-email-design.git
+cd grunt-email-design
+npm install
+grunt
+```
 
 ## How it works
+
+<img src="http://i.imgur.com/yrHpTdr.jpg" width="500">
 
 ### CSS
 
