@@ -15,6 +15,21 @@ module.exports = function(grunt) {
             }
           }
         },
+        // Compile less files to css if present
+        less: {
+          development: {
+            options: {
+              compress: true,
+              yuicompress: true,
+              optimization: 2
+            },
+            files: {
+              // target.css file: source.less file
+              "src/css/main.css": "src/css/less/main.less",
+              'src/css/responsive.css': 'src/css/less/responsive.less'
+            }
+          }
+        },
 
         // Assembles your email content with html layout
         assemble: {
@@ -64,6 +79,7 @@ module.exports = function(grunt) {
     });
 
     // Where we tell Grunt we plan to use this plug-in.
+    grunt.loadNpmTasks('grunt-contrib-less');
     grunt.loadNpmTasks('grunt-contrib-sass');
     grunt.loadNpmTasks('assemble');
     grunt.loadNpmTasks('grunt-mailgun');
@@ -71,7 +87,13 @@ module.exports = function(grunt) {
     grunt.loadNpmTasks('grunt-contrib-watch');
 
     // Where we tell Grunt what to do when we type "grunt" into the terminal.
-    grunt.registerTask('default', ['sass','assemble','premailer']);
+    grunt.registerTask('default', ['sass', 'assemble','premailer']);
+
+    // Use grunt scss if you only wish to use scss
+    grunt.registerTask('scss', ['sass', 'assemble', 'premailer']);
+
+    // Use grunt less if you only wish to use less
+    grunt.registerTask('lessCss', ['less', 'assemble', 'premailer']);
 
     // Use grunt send if you want to actually send the email to your inbox
     grunt.registerTask('send', ['default','mailgun']);
