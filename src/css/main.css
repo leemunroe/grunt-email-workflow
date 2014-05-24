@@ -1,9 +1,11 @@
-/* -------------------------------------
-    CONFIGURE YOUR VARIABLES
-------------------------------------- */
-/* -------------------------------------
-    GLOBAL
-------------------------------------- */
+* -------------------------------------
+        CONFIGURE YOUR VARIABLES
+------------------------------------- *
+        /
+/ * -------------------------------------
+        GLOBAL
+------------------------------------- *
+        /
 * {
   margin: 0;
   padding: 0;
@@ -24,7 +26,8 @@ body {
   line-height: 1.6;
 }
 
-/* Let's make sure all tables have defaults */
+/ *
+        Let 's make sure all tables have defaults */
 table {
   border-collapse: collapse;
 }
@@ -33,7 +36,7 @@ table td {
 }
 
 /* -------------------------------------
-    BODY & CONTAINER
+BODY & CONTAINER
 ------------------------------------- */
 body {
   background-color: #f6f6f6;
@@ -62,7 +65,7 @@ body {
 }
 
 /* -------------------------------------
-    HEADER, FOOTER, MAIN
+HEADER, FOOTER, MAIN
 ------------------------------------- */
 .main {
   background: #fff;
@@ -93,7 +96,7 @@ body {
 }
 
 /* -------------------------------------
-    GRID AND COLUMNS
+GRID AND COLUMNS
 ------------------------------------- */
 .content-column {
   float: left;
@@ -106,7 +109,7 @@ body {
 }
 
 /* -------------------------------------
-    TYPOGRAPHY
+TYPOGRAPHY
 ------------------------------------- */
 h1, h2, h3 {
   font-family: "Helvetica Neue", Helvetica, Arial, "Lucida Grande", sans-serif;
@@ -145,7 +148,7 @@ p li, ul li, ol li {
 }
 
 /* -------------------------------------
-    LINKS & BUTTONS
+LINKS & BUTTONS
 ------------------------------------- */
 a {
   color: #348eda;
@@ -168,7 +171,7 @@ a {
 }
 
 /* -------------------------------------
-    OTHER STYLES THAT MIGHT BE USEFUL
+OTHER STYLES THAT MIGHT BE USEFUL
 ------------------------------------- */
 .last {
   margin-bottom: 0;
