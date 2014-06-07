@@ -21,4 +21,8 @@
   .content, .content-wrapper {
     padding: 10px !important;
   }
+
+  .invoice {
+    width: 100% !important;
+  }
 }
