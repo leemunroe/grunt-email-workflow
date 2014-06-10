@@ -84,6 +84,8 @@ Change 'transaction.html' to the name of the email template you want to send.
 
 If you have a [Litmus](http://www.litmus.com) account and want to test the email in multiple clients/devices, create a new test in Litmus, copy the email address they tell you to send the email to, open up `Gruntfile.js` and paste it where the recipient goes. Then run `grunt send --template=TEMPLATE_NAME.html` to send the email to Litmus.
 
+<img src="http://f.cl.ly/items/1T003x0t1m2k0a2O302c/Image%202014-06-10%20at%2010.11.01%20AM.png" width=-"500">
+
 
 ### CDN and working with image assets
 
@@ -100,3 +102,12 @@ If your email contains images you'll want to serve them from a CDN. This Gruntfi
 Run `grunt cdnify` to run the default tasks as well as upload any images to your CDN.
 
 Run `grunt cdnify send --template=branded.html` to send the email to yourself with the 'CDNified' images.
+
+### Sample email templates
+
+I've added a few templates to help you get started.
+
+* [Simple transactional email template](http://leemunroe.github.io/grunt-email-design/dist/transaction.html)
+* [Simple confirmation email](http://leemunroe.github.io/grunt-email-design/dist/confirm.html)
+* [Branded email via CDN](http://leemunroe.github.io/grunt-email-design/dist/branded.html)
+* [Simple receipt/invoice](http://leemunroe.github.io/grunt-email-design/dist/receipt.html)
