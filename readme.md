@@ -105,9 +105,9 @@ Run `grunt cdnify send --template=branded.html` to send the email to yourself wi
 
 ### Sample email templates
 
-I've added a few templates to help you get started.
+I've added two templates here to help you get started.
 
 * [Simple transactional email template](http://leemunroe.github.io/grunt-email-design/dist/transaction.html)
-* [Simple confirmation email](http://leemunroe.github.io/grunt-email-design/dist/confirm.html)
 * [Branded email via CDN](http://leemunroe.github.io/grunt-email-design/dist/branded.html)
-* [Simple receipt/invoice](http://leemunroe.github.io/grunt-email-design/dist/receipt.html)
+
+For more transactional email templates check out [Mailgun's collection of templates](http://github.com/mailgun/transactional-email-templates].
