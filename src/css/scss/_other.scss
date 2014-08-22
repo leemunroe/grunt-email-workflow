@@ -9,10 +9,6 @@
   margin-top: 0;
 }
 
-.padding {
-  padding: 10px 0;
-}
-
 .aligncenter{
   text-align:center;
 }
@@ -23,27 +19,4 @@
 
 .clear{
   clear:both;
-}
-
-/* -------------------------------------
-    INVOICE
-------------------------------------- */
-.invoice{
-  margin:$padding*2 auto;
-  text-align: left;
-  width:80%;
-  td{
-    padding:5px 0;
-  }
-  .invoice-items{
-    width:100%;
-    td{
-      border-top:#eee 1px solid;
-    }
-    .total td{
-      border-top:2px solid #333;
-      border-bottom:2px solid #333;
-      font-weight:700;
-    }
-  }
 }

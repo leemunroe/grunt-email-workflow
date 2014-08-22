@@ -34,12 +34,16 @@ body{
 .main{
   background:#fff;
   border: 1px solid darken($grey,5);
-  margin-bottom:$padding;
   border-radius:$br;
 }
 
 .content-wrapper{
   padding:$padding;
+}
+
+// Adds padding to content - use this instead of paragraphs for consistent padding/margin rendering
+.content-block{
+  padding:0 0 $padding;
 }
 
 .header{
@@ -54,21 +58,7 @@ body{
   a {
     color: #999;
   }
-  p,a,unsubscribe{
+  p,a,unsubscribe,td{
     font-size:12px;
   }
-}
-
-/* -------------------------------------
-    GRID AND COLUMNS
-------------------------------------- */
-
-.content-column{
-  float:left;
-  width:65%;
-}
-
-.sidebar-column{
-  float:left;
-  width:35%;
 }

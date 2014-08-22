@@ -1,7 +1,7 @@
 /* -------------------------------------
     RESPONSIVE AND MOBILE FRIENDLY STYLES
 ------------------------------------- */
-@media only screen and (max-width: 600px) {
+@media only screen and (max-width: $width+40) {
 
   // Type
   h1,h2,h3,h4{
@@ -22,8 +22,4 @@
     padding:10px !important;
   }
 
-  // Invoice table
-  .invoice{
-    width:100% !important;
-  }
 }
