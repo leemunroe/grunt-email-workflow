@@ -4,7 +4,7 @@
 h1, h2, h3 {
   font-family: "Helvetica Neue", Helvetica, Arial, "Lucida Grande", sans-serif;
   color: #000;
-  margin: 40px 0 10px;
+  margin: 0;
   line-height: 1.2;
   font-weight: 400;
 }
@@ -25,7 +25,7 @@ h4{
 }
 
 p, ul, ol {
-  margin-bottom: 10px;
+  margin: 0;
   font-weight: normal;
   li{
     margin-left: 5px;

@@ -37,7 +37,7 @@ body{
   border-radius:$br;
 }
 
-.content-wrapper{
+.content-wrap{
   padding:$padding;
 }
 
@@ -60,5 +60,8 @@ body{
   }
   p,a,unsubscribe,td{
     font-size:12px;
+  }
+  td{
+    padding:20px 0;
   }
 }
