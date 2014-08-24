@@ -20,7 +20,7 @@ This grunt task helps simplify things at the design stage.
 * Grunt-cli and Grunt (`npm install grunt-cli -g`)
 * Ruby - [Install ruby with RVM](https://rvm.io/rvm/install)
 * Premailer (`gem install premailer hpricot nokogiri`) - Inlines the CSS
-* [Mailgun](http://www.mailgun.com) - Sends the email
+* [Mailgun](http://www.mailgun.com) (optional) - Sends the email
 * [Litmus](https://litmus.com) (optional) - Tests the email across all clients/browsers/devices
 * [Rackspace Cloud](http://www.rackspace.com/cloud/files/) (optional) - Uses Cloud Files as a CDN
 
@@ -110,4 +110,4 @@ I've added two templates here to help you get started.
 * [Simple transactional email template](http://leemunroe.github.io/grunt-email-design/dist/transaction.html)
 * [Branded email via CDN](http://leemunroe.github.io/grunt-email-design/dist/branded.html)
 
-For more transactional email templates check out [Mailgun's collection of templates](http://github.com/mailgun/transactional-email-templates].
+For more transactional email templates check out [Mailgun's collection of templates](http://github.com/mailgun/transactional-email-templates).
