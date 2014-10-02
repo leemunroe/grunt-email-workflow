@@ -20,3 +20,8 @@
 .clear{
   clear:both;
 }
+
+// Preheader text is displayed in certain clients as a preview but not shown when the user opens the email
+.preheader{
+  display:none !important;
+}

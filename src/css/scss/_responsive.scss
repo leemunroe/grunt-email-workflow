@@ -18,8 +18,14 @@
   }
 
   // Spacing
-  .content,.content-wrapper{
-    padding:10px !important;
+  .content,.content-wrap{
+    padding:20px 10px !important;
+  }
+
+  // Buttons
+  .btn-primary{
+    display: block !important;
+    width: 100% !important;
   }
 
 }

@@ -55,7 +55,7 @@ body {
   max-width: 600px;
   margin: 0 auto;
   display: block;
-  padding: 20px;
+  padding: 10px;
 }
 
 /* -------------------------------------
@@ -68,16 +68,16 @@ body {
 }
 
 .content-wrap {
-  padding: 20px;
+  padding: 30px;
 }
 
 .content-block {
-  padding: 0 0 20px;
+  padding: 0 0 30px;
 }
 
 .header {
   width: 100%;
-  margin-bottom: 20px;
+  margin-bottom: 30px;
 }
 
 .footer {
@@ -102,13 +102,14 @@ h1, h2, h3 {
   font-family: "Helvetica Neue", Helvetica, Arial, "Lucida Grande", sans-serif;
   color: #000;
   margin: 0;
-  line-height: 1.2;
+  line-height: 1.4;
   font-weight: 400;
 }
 
 h1 {
-  font-size: 32px;
-  font-weight: 500;
+  font-size: 38px;
+  font-weight: 300;
+  text-transform: capitalize;
 }
 
 h2 {
@@ -121,7 +122,7 @@ h3 {
 
 h4 {
   font-size: 14px;
-  font-weight: 600;
+  font-weight: 500;
 }
 
 p, ul, ol {
@@ -180,6 +181,10 @@ a {
   clear: both;
 }
 
+.preheader {
+  display: none !important;
+}
+
 /* -------------------------------------
     RESPONSIVE AND MOBILE FRIENDLY STYLES
 ------------------------------------- */
@@ -200,7 +205,12 @@ a {
     font-size: 16px !important;
   }
 
-  .content, .content-wrapper {
-    padding: 10px !important;
+  .content, .content-wrap {
+    padding: 20px 10px !important;
+  }
+
+  .btn-primary {
+    display: block !important;
+    width: 100% !important;
   }
 }
