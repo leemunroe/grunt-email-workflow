@@ -65,6 +65,7 @@ body {
   background: #fff;
   border: 1px solid #e9e9e9;
   border-radius: 3px;
+  width: 100%;
 }
 
 .content-wrap {
@@ -183,6 +184,12 @@ a {
 
 .preheader {
   display: none !important;
+  width: 0 !important;
+  height: 0 !important;
+  max-width: 0 !important;
+  max-height: 0 !important;
+  overflow: hidden !important;
+  mso-hide: all;
 }
 
 /* -------------------------------------
