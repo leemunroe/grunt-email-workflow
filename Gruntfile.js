@@ -29,7 +29,7 @@ module.exports = function(grunt) {
 
         // Inlines your css
         premailer: {
-          simple: {
+          html: {
             options: {
               removeComments: true
             },
@@ -37,6 +37,17 @@ module.exports = function(grunt) {
                 expand: true,
                 src: ['dist/*.html'],
                 dest: ''
+            }]
+          },
+          txt: {
+            options: {
+              mode: 'txt'
+            },
+            files: [{
+                expand: true,
+                src: ['dist/*.html'],
+                dest: '',
+                ext: '.txt'
             }]
           }
         },
