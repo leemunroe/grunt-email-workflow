@@ -23,7 +23,9 @@ body {
 
 /* Let's make sure all tables have defaults */
 table {
-  border-collapse: collapse;
+  -premailer-cellspacing: 0; // This is a specific style for the premailer gem
+  -premailer-cellpadding: 0; // This is a specific style for the premailer gem
+  -premailer-width: 100%;
   td{
     vertical-align: top;
   }

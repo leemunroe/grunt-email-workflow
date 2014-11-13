@@ -2,23 +2,37 @@
 layout: default.hbs
 subject: Branded transaction email example
 ---
-<table class="main" width="100%">
+<span class="preheader">This is preheader text. Some clients will show this text as a preview. 🐸</span>
+<div class="header">
+	<table width="100%" cellpadding="0" cellspacing="0">
+		<tr>
+			<td class="aligncenter">
+				<a href="http://www.mailgun.com"><img src="../src/img/mailgun.png" height="50" alt="Mailgun"></a>
+			</td>
+		</tr>
+	</table>
+</div>
+<table class="main" width="100%" cellpadding="0" cellspacing="0">
 	<tr>
-		<td class="content-wrapper">
-			<p><a href="http://www.mailgun.com"><img src="../src/img/mailgun.png" height="60" alt="Mailgun"></a></p>
-			<p>Example of an email with image asset.</p>
-			<p>You should upload your email images to a CDN, or for smaller file sizes you can also inline them.</p>
+		<td class="content-wrap">
+			<table width="100%" cellpadding="0" cellspacing="0">
+				<tr>
+					<td>
+						Example of an email with image asset.
+						<br><br>
+						You should upload your email images to a CDN, or for smaller file sizes you can also inline them.
+						<br><br>
+						Should come in handy for branded transactional emails or promotional type emails.
+					</td>
+				</tr>
+			</table>
 		</td>
 	</tr>
 </table>
-
 <div class="footer">
 	<table width="100%">
 		<tr>
-			<td>
-				<p class="aligncenter">Follow <a href="http://twitter.com/leemunroe">@leemunroe</a> on Twitter.
-				</p>
-			</td>
+			<td class="aligncenter">Follow <a href="http://twitter.com/leemunroe">@leemunroe</a> on Twitter.</td>
 		</tr>
 	</table>
 </div>
