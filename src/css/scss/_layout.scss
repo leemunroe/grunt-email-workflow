@@ -49,17 +49,15 @@ body{
 
 .header{
   width:100%;
+  margin-top:($padding - 10);
   margin-bottom:$padding;
 }
 
 .footer {
   width: 100%;
   clear: both;
-  color: #666;
-  a {
+  *{
     color: #999;
-  }
-  p,a,unsubscribe,td{
     font-size:12px;
   }
   td{

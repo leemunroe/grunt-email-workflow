@@ -25,6 +25,11 @@ body {
 }
 
 /* Let's make sure all tables have defaults */
+table {
+  -premailer-cellspacing: 0;
+  -premailer-cellpadding: 0;
+  -premailer-width: 100%;
+}
 table td {
   vertical-align: top;
 }
@@ -78,18 +83,16 @@ body {
 
 .header {
   width: 100%;
+  margin-top: 20px;
   margin-bottom: 30px;
 }
 
 .footer {
   width: 100%;
   clear: both;
-  color: #666;
 }
-.footer a {
+.footer * {
   color: #999;
-}
-.footer p, .footer a, .footer unsubscribe, .footer td {
   font-size: 12px;
 }
 .footer td {
@@ -221,3 +224,5 @@ a {
     width: 100% !important;
   }
 }
+
+/*# sourceMappingURL=main.css.map */
