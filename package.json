@@ -1,6 +1,10 @@
 {
   "name": "email-template",
   "version": "0.1.0",
+  "repository": {
+	  "type": "git",
+	  "url": "https://github.com/leemunroe/grunt-email-design"
+  },
   "devDependencies": {
     "grunt": "~0.4.4",
     "grunt-contrib-sass": "^0.7.3",
