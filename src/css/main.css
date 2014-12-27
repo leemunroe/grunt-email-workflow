@@ -2,14 +2,14 @@
     CONFIGURE YOUR VARIABLES
 ------------------------------------- */
 /* -------------------------------------
-    GLOBAL
+    GLOBAL RESETS
 ------------------------------------- */
 * {
+  box-sizing: border-box;
+  font-family: "Helvetica Neue", "Helvetica", Helvetica, Arial, sans-serif;
+  font-size: 14px;
   margin: 0;
   padding: 0;
-  font-family: "Helvetica Neue", "Helvetica", Helvetica, Arial, sans-serif;
-  box-sizing: border-box;
-  font-size: 14px;
 }
 
 img {
@@ -18,10 +18,13 @@ img {
 
 body {
   -webkit-font-smoothing: antialiased;
-  -webkit-text-size-adjust: none;
-  width: 100% !important;
-  height: 100%;
+  height: 100% !important;
   line-height: 1.6;
+  margin: 0;
+  padding: 0;
+  -ms-text-size-adjust: 100%;
+  -webkit-text-size-adjust: 100%;
+  width: 100% !important;
 }
 
 /* Let's make sure all tables have defaults */
@@ -29,9 +32,14 @@ table {
   -premailer-cellspacing: 0;
   -premailer-cellpadding: 0;
   -premailer-width: 100%;
+  border-collapse: collapse !important;
+  mso-table-lspace: 0pt;
+  mso-table-rspace: 0pt;
 }
 table td {
   vertical-align: top;
+  mso-table-lspace: 0pt;
+  mso-table-rspace: 0pt;
 }
 
 /* -------------------------------------
@@ -41,26 +49,29 @@ body {
   background-color: #f6f6f6;
 }
 
-.body-wrap {
+.body {
   background-color: #f6f6f6;
   width: 100%;
 }
 
 /* Set a max-width, and make it display as block so it will automatically stretch to that width, but will also shrink down on a phone or something */
 .container {
-  display: block !important;
-  max-width: 600px !important;
   margin: 0 auto !important;
   /* makes it centered */
-  clear: both !important;
+  max-width: 600px;
+  padding: 10px;
+  text-align: center;
+  width: auto !important;
+  width: 600px;
 }
 
 /* This should also be a block element, so that it will fill 100% of the .container */
 .content {
-  max-width: 600px;
-  margin: 0 auto;
   display: block;
+  margin: 0 auto;
+  max-width: 600px;
   padding: 10px;
+  text-align: left;
 }
 
 /* -------------------------------------
@@ -82,14 +93,14 @@ body {
 }
 
 .header {
-  width: 100%;
-  margin-top: 20px;
   margin-bottom: 30px;
+  margin-top: 20px;
+  width: 100%;
 }
 
 .footer {
-  width: 100%;
   clear: both;
+  width: 100%;
 }
 .footer * {
   color: #999;
@@ -103,17 +114,17 @@ body {
     TYPOGRAPHY
 ------------------------------------- */
 h1, h2, h3 {
-  font-family: "Helvetica Neue", Helvetica, Arial, "Lucida Grande", sans-serif;
   color: #000;
-  margin: 0;
-  line-height: 1.4;
+  font-family: "Helvetica Neue", Helvetica, Arial, "Lucida Grande", sans-serif;
   font-weight: 400;
+  line-height: 1.4;
+  margin-bottom: 30px;
 }
 
 h1 {
   font-size: 38px;
-  font-weight: 300;
   text-transform: capitalize;
+  font-weight: 300;
 }
 
 h2 {
@@ -130,35 +141,35 @@ h4 {
 }
 
 p, ul, ol {
-  margin: 0;
   font-weight: normal;
+  margin-bottom: 15px;
 }
 p li, ul li, ol li {
-  margin-left: 5px;
   list-style-position: inside;
+  margin-left: 5px;
 }
 
-/* -------------------------------------
-    LINKS & BUTTONS
-------------------------------------- */
 a {
   color: #348eda;
   text-decoration: underline;
 }
 
+/* -------------------------------------
+    BUTTONS
+------------------------------------- */
 .btn-primary {
-  text-decoration: none;
-  color: #FFF;
   background-color: #348eda;
+  border-radius: 5px;
   border: solid #348eda;
-  border-width: 10px 20px;
-  line-height: 2;
-  font-weight: bold;
-  margin: 0;
-  text-align: center;
+  border-width: 0 20px;
+  color: #fff;
   cursor: pointer;
   display: inline-block;
-  border-radius: 5px;
+  font-weight: bold;
+  line-height: 44px;
+  margin: 0;
+  text-align: center;
+  text-decoration: none;
   text-transform: capitalize;
 }
 
@@ -173,12 +184,16 @@ a {
   margin-top: 0;
 }
 
-.aligncenter {
+.align-center {
   text-align: center;
 }
 
-.alignright {
+.align-right {
   text-align: right;
+}
+
+.align-left {
+  text-align: left;
 }
 
 .clear {
@@ -187,39 +202,41 @@ a {
 
 .preheader {
   display: none !important;
-  width: 0 !important;
   height: 0 !important;
-  max-width: 0 !important;
   max-height: 0 !important;
-  overflow: hidden !important;
+  max-width: 0 !important;
   mso-hide: all;
+  overflow: hidden !important;
+  width: 0 !important;
 }
 
 /* -------------------------------------
     RESPONSIVE AND MOBILE FRIENDLY STYLES
 ------------------------------------- */
 @media only screen and (max-width: 640px) {
-  h1, h2, h3, h4 {
+  table[class=body] h1,
+  table[class=body] h2,
+  table[class=body] h3,
+  table[class=body] h4 {
     font-weight: 600 !important;
   }
-
-  h1 {
+  table[class=body] h1 {
     font-size: 22px !important;
   }
-
-  h2 {
+  table[class=body] h2 {
     font-size: 18px !important;
   }
-
-  h3 {
+  table[class=body] h3 {
     font-size: 16px !important;
   }
-
-  .content, .content-wrap {
-    padding: 20px 10px !important;
+  table[class=body] .content,
+  table[class=body] .content-wrap {
+    padding: 10px !important;
   }
-
-  .btn-primary {
+  table[class=body] .container {
+    padding: 0 !important;
+  }
+  table[class=body] .btn-primary {
     display: block !important;
     width: 100% !important;
   }

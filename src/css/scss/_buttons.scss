@@ -1,23 +1,19 @@
 /* -------------------------------------
-    LINKS & BUTTONS
+    BUTTONS
 ------------------------------------- */
-a {
-  color: $primary-color;
-  text-decoration: underline;
-}
 
 .btn-primary {
-  text-decoration: none;
-  color: #FFF;
   background-color: $primary-color;
+  border-radius: $btn-br;
   border: solid $primary-color;
-  border-width: 10px 20px;
-  line-height: 2;
-  font-weight: bold;
-  margin: 0;
-  text-align: center;
+  border-width: 0 20px;
+  color: #fff;
   cursor: pointer;
   display: inline-block;
-  border-radius: 5px;
+  font-weight: bold;
+  line-height: 44px;
+  margin: 0;
+  text-align: center;
+  text-decoration: none;
   text-transform: capitalize;
 }
