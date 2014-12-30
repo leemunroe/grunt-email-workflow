@@ -16,6 +16,7 @@ img {
 }
 
 body {
+  font-family: "Helvetica Neue", "Helvetica", Helvetica, Arial, sans-serif;
   -webkit-font-smoothing: antialiased;
   font-size: 14px;
   height: 100% !important;
@@ -164,22 +165,37 @@ a {
 /* -------------------------------------
     BUTTONS
 ------------------------------------- */
-.btn-primary {
-  background-color: #348eda;
+.btn {
+  margin-bottom: 15px;
+  width: auto;
+  -premailer-width: auto;
+}
+.btn td {
+  background-color: #fff;
   border-radius: 5px;
-  border: solid #348eda;
-  border-width: 0 20px;
-  color: #fff;
+  text-align: center;
+}
+.btn a {
+  background-color: #fff;
+  border: solid 1px #348eda;
+  color: #348eda;
   cursor: pointer;
   display: inline-block;
-  font-family: "Helvetica Neue", Helvetica, Arial, "Lucida Grande", sans-serif;
   font-size: 14px;
   font-weight: bold;
-  line-height: 44px;
   margin: 0;
-  text-align: center;
+  padding: 12px 25px;
   text-decoration: none;
   text-transform: capitalize;
+}
+
+.btn-primary td {
+  background-color: #348eda;
+}
+.btn-primary a {
+  background-color: #348eda;
+  border-color: #348eda;
+  color: #fff;
 }
 
 /* -------------------------------------
@@ -257,8 +273,7 @@ a {
     padding: 0 !important;
     width: 100% !important;
   }
-  table[class=body] .btn-primary {
-    display: block !important;
+  table[class=body] .btn {
     width: 100% !important;
   }
 }

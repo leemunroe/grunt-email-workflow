@@ -7,7 +7,6 @@ td,
 div,
 a {
   box-sizing: border-box;
-  // font-family: "Helvetica Neue", "Helvetica", Helvetica, Arial, sans-serif;
 }
 
 img {
@@ -15,6 +14,7 @@ img {
 }
 
 body {
+  font-family: "Helvetica Neue", "Helvetica", Helvetica, Arial, sans-serif;
   -webkit-font-smoothing: antialiased;
   font-size: 14px;
   height: 100% !important;
