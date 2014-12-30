@@ -13,10 +13,11 @@ body{
 
 /* Set a max-width, and make it display as block so it will automatically stretch to that width, but will also shrink down on a phone or something */
 .container {
+  display: block;
   margin: 0 auto !important; /* makes it centered */
   max-width: $width;
   padding: 10px;
-  text-align: center;
+  // text-align: center;
   width: auto !important;
   width: $width;
 }
@@ -27,7 +28,7 @@ body{
   margin: 0 auto;
   max-width: $width;
   padding: 10px;
-  text-align: left;
+  // text-align: left;
 }
 
 
@@ -42,7 +43,7 @@ body{
   width: 100%;
 }
 
-.content-wrap {
+.wrapper {
   padding: $padding;
 }
 

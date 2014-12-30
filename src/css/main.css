@@ -4,12 +4,11 @@
 /* -------------------------------------
     GLOBAL RESETS
 ------------------------------------- */
-* {
+table,
+td,
+div,
+a {
   box-sizing: border-box;
-  font-family: "Helvetica Neue", "Helvetica", Helvetica, Arial, sans-serif;
-  font-size: 14px;
-  margin: 0;
-  padding: 0;
 }
 
 img {
@@ -18,6 +17,7 @@ img {
 
 body {
   -webkit-font-smoothing: antialiased;
+  font-size: 14px;
   height: 100% !important;
   line-height: 1.6;
   margin: 0;
@@ -29,10 +29,8 @@ body {
 
 /* Let's make sure all tables have defaults */
 table {
-  -premailer-cellspacing: 0;
-  -premailer-cellpadding: 0;
   -premailer-width: 100%;
-  border-collapse: collapse !important;
+  border-collapse: separate !important;
   mso-table-lspace: 0pt;
   mso-table-rspace: 0pt;
 }
@@ -56,22 +54,21 @@ body {
 
 /* Set a max-width, and make it display as block so it will automatically stretch to that width, but will also shrink down on a phone or something */
 .container {
+  display: block;
   margin: 0 auto !important;
   /* makes it centered */
-  max-width: 600px;
+  max-width: 580px;
   padding: 10px;
-  text-align: center;
   width: auto !important;
-  width: 600px;
+  width: 580px;
 }
 
 /* This should also be a block element, so that it will fill 100% of the .container */
 .content {
   display: block;
   margin: 0 auto;
-  max-width: 600px;
+  max-width: 580px;
   padding: 10px;
-  text-align: left;
 }
 
 /* -------------------------------------
@@ -84,7 +81,7 @@ body {
   width: 100%;
 }
 
-.content-wrap {
+.wrapper {
   padding: 30px;
 }
 
@@ -113,11 +110,14 @@ body {
 /* -------------------------------------
     TYPOGRAPHY
 ------------------------------------- */
-h1, h2, h3 {
+h1,
+h2,
+h3 {
   color: #000;
   font-family: "Helvetica Neue", Helvetica, Arial, "Lucida Grande", sans-serif;
   font-weight: 400;
   line-height: 1.4;
+  margin: 0;
   margin-bottom: 30px;
 }
 
@@ -140,11 +140,18 @@ h4 {
   font-weight: 500;
 }
 
-p, ul, ol {
+p,
+ul,
+ol {
+  font-family: "Helvetica Neue", Helvetica, Arial, "Lucida Grande", sans-serif;
+  font-size: 14px;
   font-weight: normal;
+  margin: 0;
   margin-bottom: 15px;
 }
-p li, ul li, ol li {
+p li,
+ul li,
+ol li {
   list-style-position: inside;
   margin-left: 5px;
 }
@@ -165,6 +172,8 @@ a {
   color: #fff;
   cursor: pointer;
   display: inline-block;
+  font-family: "Helvetica Neue", Helvetica, Arial, "Lucida Grande", sans-serif;
+  font-size: 14px;
   font-weight: bold;
   line-height: 44px;
   margin: 0;
@@ -200,20 +209,31 @@ a {
   clear: both;
 }
 
+.mt0 {
+  margin-top: 0;
+}
+
+.mb0 {
+  margin-bottom: 0;
+}
+
 .preheader {
-  display: none !important;
-  height: 0 !important;
-  max-height: 0 !important;
-  max-width: 0 !important;
+  color: transparent;
+  display: none;
+  height: 0;
+  max-height: 0;
+  max-width: 0;
+  opacity: 0;
+  overflow: hidden;
   mso-hide: all;
-  overflow: hidden !important;
-  width: 0 !important;
+  visibility: hidden;
+  width: 0;
 }
 
 /* -------------------------------------
     RESPONSIVE AND MOBILE FRIENDLY STYLES
 ------------------------------------- */
-@media only screen and (max-width: 640px) {
+@media only screen and (max-width: 620px) {
   table[class=body] h1,
   table[class=body] h2,
   table[class=body] h3,
@@ -230,11 +250,12 @@ a {
     font-size: 16px !important;
   }
   table[class=body] .content,
-  table[class=body] .content-wrap {
+  table[class=body] .wrapper {
     padding: 10px !important;
   }
   table[class=body] .container {
     padding: 0 !important;
+    width: 100% !important;
   }
   table[class=body] .btn-primary {
     display: block !important;

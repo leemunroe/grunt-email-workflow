@@ -27,12 +27,13 @@ table[class=body]{
 
     // Spacing
     .content,
-    .content-wrap {
+    .wrapper {
       padding: 10px !important;
     }
 
-    .container{
+    .container {
       padding: 0 !important;
+      width: 100% !important;
     }
 
     // Buttons

@@ -11,4 +11,5 @@ smaller file sizes you can also inline them.
 Should come in handy for branded transactional emails or
 promotional type emails.
 
-Follow @leemunroe ( http://twitter.com/leemunroe ) on Twitter.
+Follow @leemunroe ( http://twitter.com/leemunroe ) on
+Twitter.
