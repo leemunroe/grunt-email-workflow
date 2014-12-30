@@ -6,13 +6,13 @@ This grunt task helps simplify things at the design stage.
 
 1. Compiles your SCSS to CSS
 
-2. Builds your email templates
+2. Builds your HTML and TXT email templates
 
 3. Inlines your CSS
 
 4. Uploads any images to a CDN (optional)
 
-5. Sends you a test email to your inbox
+5. Sends you a test email to your inbox (optional)
 
 ## Requirements
 
@@ -45,13 +45,13 @@ grunt
 
 This project uses [SCSS](http://sass-lang.com/). You don't need to touch the .css files, these are compiled automatically.
 
-For changes to CSS, modify the .scss files.
+For changes to CSS, modify the `.scss` files.
 
 Media queries and responsive styles are in a separate style sheet so that they don't get inlined. Note that only a few clients support media queries e.g. iOS Mail app.
 
 ### Email templates and content
 
-Handlebars is used for templating.
+Handlebars and Assemble are used for templating.
 
 `/layouts` contains the standard header/footer HTML markup. You most likely will only need one layout template, but you can have as many as you like.
 
