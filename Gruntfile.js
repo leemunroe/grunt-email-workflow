@@ -71,6 +71,19 @@ module.exports = function(grunt) {
           }
         },
 
+        // Use Mailgun option if you want to email the design to your inbox or to something like Litmus
+        mandrill: {
+          mailer: {
+            options: {
+              key: 'MANDRILL_KEY', // Enter your Mandrill API key here
+              sender: 'me@me.com', // Change this
+              recipient: 'you@you.com', // Change this to ['you@yo.com','him@him.com'] to send to multiple recipients
+              subject: 'This is a test email'
+            },
+            src: ['dist/'+grunt.option('template')]
+          }
+        },
+
         // Use Rackspace Cloud Files if you're using images in your email
         cloudfiles: {
           prod: {
@@ -104,6 +117,7 @@ module.exports = function(grunt) {
     grunt.loadNpmTasks('grunt-contrib-sass');
     grunt.loadNpmTasks('assemble');
     grunt.loadNpmTasks('grunt-mailgun');
+    grunt.loadNpmTasks('grunt-mandrill');
     grunt.loadNpmTasks('grunt-premailer');
     grunt.loadNpmTasks('grunt-contrib-watch');
     grunt.loadNpmTasks('grunt-cloudfiles');
@@ -113,7 +127,8 @@ module.exports = function(grunt) {
     grunt.registerTask('default', ['sass','assemble','premailer']);
 
     // Use grunt send if you want to actually send the email to your inbox
-    grunt.registerTask('send', ['mailgun']);
+    grunt.registerTask('send:mailgun', ['mailgun']);
+    grunt.registerTask('send:mandrill', ['mandrill']);
 
     // Upload images to our CDN on Rackspace Cloud Files
     grunt.registerTask('cdnify', ['default','cloudfiles','cdn']);

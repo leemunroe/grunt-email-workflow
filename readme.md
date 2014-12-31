@@ -69,14 +69,25 @@ See the output HTML in the `dist` folder. Open them and preview it the browser.
 
 Alternatively run `grunt watch`. This will check for any changes you make to your .scss and .hbs templates, then automatically run the tasks. Saves you having to run grunt every time.
 
-### Send the email to yourself
+### Send the email to yourself with mailgun
 
 * Sign up for a [Mailgun](http://www.mailgun.com) account (it's free)
 * Open up `Gruntfile.js`
 * Replace 'MAILGUN_KEY' with your actual Mailgun API key
 * Change the sender and recipient to your own email address (or whoever you want to send it to)
 
-Run `grunt send --template=transaction.html`. This will email out the template you specify.
+Run `grunt send:mailgun --template=transaction.html`. This will email out the template you specify.
+
+Change 'transaction.html' to the name of the email template you want to send.
+
+### Send the email to yourself with mandrill
+
+* Sign up for a [Mandrill](http://www.mandrill.com) account (it's free)
+* Open up `Gruntfile.js`
+* Replace 'MANDRILL_KEY' with your actual Mandrill API key
+* Change the sender and recipient to your own email address (or whoever you want to send it to)
+
+Run `grunt send:mandrill --template=transaction.html`. This will email out the template you specify.
 
 Change 'transaction.html' to the name of the email template you want to send.
 
