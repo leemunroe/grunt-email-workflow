@@ -84,7 +84,9 @@ Change 'transaction.html' to the name of the email template you want to send.
 
 If you have a [Litmus](http://www.litmus.com) account and want to test the email in multiple clients/devices, create a new test in Litmus, copy the email address they tell you to send the email to, open up `Gruntfile.js` and paste it where the recipient goes. Then run `grunt send --template=TEMPLATE_NAME.html` to send the email to Litmus.
 
-<img src="http://f.cl.ly/items/1T003x0t1m2k0a2O302c/Image%202014-06-10%20at%2010.11.01%20AM.png" width=-"500">
+[See the Litmus results](https://litmus.com/pub/eb33459/screenshots) for the simple transactional email template that is included.
+
+<img src="https://s3.amazonaws.com/f.cl.ly/items/1a1H0B1o3v160147100S/Image%202014-12-31%20at%2010.10.01%20AM.png" width=-"500">
 
 
 ### CDN and working with image assets
