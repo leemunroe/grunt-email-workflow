@@ -133,9 +133,9 @@ module.exports = function(grunt) {
           test: {
             src: ['dist/'+grunt.option('template')],
             options: {
-              username: 'username', // Change this
-              password: 'password', // Change this
-              url: 'https://yourcompany.litmus.com', // Change this
+              username: 'lee@mailgun.com', // Change this
+              password: 'gunner66', // Change this
+              url: 'https://mailgunhq.litmus.com', // Change this
               clients: ['android4', 'aolonline', 'androidgmailapp', 'aolonline', 'ffaolonline',
               'chromeaolonline', 'appmail6', 'iphone6', 'ipadmini', 'ipad', 'chromegmailnew',
               'iphone6plus', 'notes85', 'ol2002', 'ol2003', 'ol2007', 'ol2010', 'ol2011',
