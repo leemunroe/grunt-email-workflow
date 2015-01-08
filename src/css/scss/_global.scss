@@ -10,6 +10,7 @@ a {
 }
 
 img {
+  -ms-interpolation-mode: bicubic;
   max-width: 100%;
 }
 
@@ -26,7 +27,7 @@ body {
   width: 100% !important;
 }
 
-/* Let's make sure all tables have defaults */
+// Let's make sure all tables have defaults
 table {
   -premailer-width: 100%; // This is a specific style for the premailer gem
   border-collapse: separate !important;
@@ -38,4 +39,18 @@ table {
      mso-table-lspace: 0pt;
      mso-table-rspace: 0pt;
   }
+}
+
+// External class fix for Outlook.com
+.ExternalClass {
+  width: 100%;
+}
+
+.ExternalClass,
+.ExternalClass p,
+.ExternalClass span,
+.ExternalClass font,
+.ExternalClass td,
+.ExternalClass div {
+  line-height: 100%;
 }

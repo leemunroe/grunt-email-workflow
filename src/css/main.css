@@ -12,6 +12,7 @@ a {
 }
 
 img {
+  -ms-interpolation-mode: bicubic;
   max-width: 100%;
 }
 
@@ -28,7 +29,6 @@ body {
   width: 100% !important;
 }
 
-/* Let's make sure all tables have defaults */
 table {
   -premailer-width: 100%;
   border-collapse: separate !important;
@@ -39,6 +39,19 @@ table td {
   vertical-align: top;
   mso-table-lspace: 0pt;
   mso-table-rspace: 0pt;
+}
+
+.ExternalClass {
+  width: 100%;
+}
+
+.ExternalClass,
+.ExternalClass p,
+.ExternalClass span,
+.ExternalClass font,
+.ExternalClass td,
+.ExternalClass div {
+  line-height: 100%;
 }
 
 /* -------------------------------------
@@ -113,8 +126,9 @@ body {
 ------------------------------------- */
 h1,
 h2,
-h3 {
-  color: #000;
+h3,
+h4 {
+  color: #000 !important;
   font-family: "Helvetica Neue", Helvetica, Arial, "Lucida Grande", sans-serif;
   font-weight: 400;
   line-height: 1.4;
