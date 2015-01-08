@@ -82,7 +82,12 @@ Change 'transaction.html' to the name of the email template you want to send.
 
 ### How to test with Litmus
 
-If you have a [Litmus](http://www.litmus.com) account and want to test the email in multiple clients/devices, create a new test in Litmus, copy the email address they tell you to send the email to, open up `Gruntfile.js` and paste it where the recipient goes. Then run `grunt send --template=TEMPLATE_NAME.html` to send the email to Litmus.
+If you have a [Litmus](http://www.litmus.com) account and want to test the email in multiple clients/devices:
+
+* Open up `Gruntfile.js` 
+* Replace `username`, `password` and `yourcompany` under the Litmus task with your credentials
+
+Run `grunt litmus --template=TEMPLATE_NAME.html` to send the email to Litmus. This will create a new test using the `<title>` value of your template.
 
 [See the Litmus results](https://litmus.com/pub/eb33459/screenshots) for the simple transactional email template that is included.
 
