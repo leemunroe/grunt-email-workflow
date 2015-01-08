@@ -1,5 +1,5 @@
 This is preheader text. Some clients will show this text as a
-preview. 🐸
+preview.
 
 Mailgun ( http://www.mailgun.com )
 
