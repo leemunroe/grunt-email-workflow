@@ -11,11 +11,8 @@
     "assemble": "0.4.37",
     "grunt-mailgun": "0.0.3",
     "grunt-contrib-watch": "^0.6.1",
-    "grunt-premailer": "^0.2.5",
+    "grunt-premailer": "0.2.5",
     "grunt-cloudfiles": "^0.3.0",
-    "grunt-cdn": "^0.5.2",
-    "grunt-s3": "^0.2.0-alpha.3",
-    "imagemin-mozjpeg": "^0.1.2",
     "grunt-cdn": "^0.6.1",
     "grunt-litmus": "^0.1.8"
   }
