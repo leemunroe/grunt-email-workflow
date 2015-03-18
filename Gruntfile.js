@@ -1,5 +1,7 @@
 module.exports = function(grunt) {
 
+
+
     grunt.initConfig({
         pkg: grunt.file.readJSON('package.json'),
 
@@ -65,37 +67,25 @@ module.exports = function(grunt) {
         },
 
 
-        // Optimize image sizes
+
+
+
+        // Optimize images
         imagemin: {
-          png: {
+          dynamic: {
             options: {
-              optimizationLevel: 7
+              optimizationLevel: 3,
+              svgoPlugins: [{ removeViewBox: false }]
             },
-            files: [
-              {
-                expand: true,
-                cwd: 'src/img',
-                src: ['**/*.png'],
-                dest: 'dist/img',
-                ext: '.png'
-              }
-            ]
-          },
-          jpg: {
-            options: {
-              progressive: true
-            },
-            files: [
-              {
-                expand: true,
-                cwd: 'src/img/',
-                src: ['**/*.jpg'],
-                dest: 'dist/img',
-                ext: '.jpg'
-              }
-            ]
+            files: [{
+              expand: true,
+              cwd: 'src/img',
+              src: ['**/*.{png,jpg,gif}'],
+              dest: 'dist/img'
+            }]
           }
         },
+
 
 
         // Watches for changes to css or email templates then runs grunt tasks
@@ -215,6 +205,7 @@ module.exports = function(grunt) {
     grunt.loadNpmTasks('grunt-cdn');
     grunt.loadNpmTasks('grunt-s3');
     grunt.loadNpmTasks('grunt-litmus');
+    grunt.loadNpmTasks('grunt-contrib-imagemin');
 
     // Where we tell Grunt what to do when we type "grunt" into the terminal.
     grunt.registerTask('default', ['sass','assemble','premailer','imagemin']);
