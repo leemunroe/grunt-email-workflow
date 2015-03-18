@@ -119,7 +119,9 @@ module.exports = function(grunt) {
             supportedTypes: 'html'
           },
           dist: {
-            src: ['./dist/*.html']
+            cwd: './dist/',
+            dest: './dist/',
+            src: ['*.html']
           }
         },
 
