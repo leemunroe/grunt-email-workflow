@@ -2,34 +2,56 @@
     CONFIGURE YOUR VARIABLES
 ------------------------------------- */
 /* -------------------------------------
-    GLOBAL
+    GLOBAL RESETS
 ------------------------------------- */
-* {
-  margin: 0;
-  padding: 0;
-  font-family: "Helvetica Neue", "Helvetica", Helvetica, Arial, sans-serif;
+table,
+td,
+div,
+a {
   box-sizing: border-box;
-  font-size: 14px;
 }
 
 img {
+  -ms-interpolation-mode: bicubic;
   max-width: 100%;
 }
 
 body {
+  font-family: "Helvetica Neue", "Helvetica", Helvetica, Arial, sans-serif;
   -webkit-font-smoothing: antialiased;
-  -webkit-text-size-adjust: none;
-  width: 100% !important;
-  height: 100%;
+  font-size: 14px;
+  height: 100% !important;
   line-height: 1.6;
+  margin: 0;
+  padding: 0;
+  -ms-text-size-adjust: 100%;
+  -webkit-text-size-adjust: 100%;
+  width: 100% !important;
 }
 
-/* Let's make sure all tables have defaults */
 table {
-  border-collapse: collapse;
+  -premailer-width: 100%;
+  border-collapse: separate !important;
+  mso-table-lspace: 0pt;
+  mso-table-rspace: 0pt;
 }
 table td {
   vertical-align: top;
+  mso-table-lspace: 0pt;
+  mso-table-rspace: 0pt;
+}
+
+.ExternalClass {
+  width: 100%;
+}
+
+.ExternalClass,
+.ExternalClass p,
+.ExternalClass span,
+.ExternalClass font,
+.ExternalClass td,
+.ExternalClass div {
+  line-height: 100%;
 }
 
 /* -------------------------------------
@@ -39,26 +61,28 @@ body {
   background-color: #f6f6f6;
 }
 
-.body-wrap {
+.body {
   background-color: #f6f6f6;
   width: 100%;
 }
 
 /* Set a max-width, and make it display as block so it will automatically stretch to that width, but will also shrink down on a phone or something */
 .container {
-  display: block !important;
-  max-width: 600px !important;
+  display: block;
   margin: 0 auto !important;
   /* makes it centered */
-  clear: both !important;
+  max-width: 580px;
+  padding: 10px;
+  width: auto !important;
+  width: 580px;
 }
 
 /* This should also be a block element, so that it will fill 100% of the .container */
 .content {
-  max-width: 600px;
-  margin: 0 auto;
   display: block;
-  padding: 20px;
+  margin: 0 auto;
+  max-width: 580px;
+  padding: 10px;
 }
 
 /* -------------------------------------
@@ -67,59 +91,55 @@ body {
 .main {
   background: #fff;
   border: 1px solid #e9e9e9;
-  margin-bottom: 20px;
   border-radius: 3px;
+  width: 100%;
 }
 
-.content-wrapper {
-  padding: 20px;
+.wrapper {
+  padding: 30px;
+}
+
+.content-block {
+  padding: 0 0 30px;
 }
 
 .header {
+  margin-bottom: 30px;
+  margin-top: 20px;
   width: 100%;
-  margin-bottom: 20px;
 }
 
 .footer {
-  width: 100%;
   clear: both;
-  color: #666;
+  width: 100%;
 }
-.footer a {
+.footer * {
   color: #999;
-}
-.footer p, .footer a, .footer unsubscribe {
   font-size: 12px;
 }
-
-/* -------------------------------------
-    GRID AND COLUMNS
-------------------------------------- */
-.content-column {
-  float: left;
-  width: 65%;
-}
-
-.sidebar-column {
-  float: left;
-  width: 35%;
+.footer td {
+  padding: 20px 0;
 }
 
 /* -------------------------------------
     TYPOGRAPHY
 ------------------------------------- */
-h1, h2, h3 {
+h1,
+h2,
+h3,
+h4 {
+  color: #000 !important;
   font-family: "Helvetica Neue", Helvetica, Arial, "Lucida Grande", sans-serif;
-  line-height: 1.1;
-  color: #000;
-  margin: 40px 0 10px;
-  line-height: 1.2;
   font-weight: 400;
+  line-height: 1.4;
+  margin: 0;
+  margin-bottom: 30px;
 }
 
 h1 {
-  font-size: 32px;
-  font-weight: 500;
+  font-size: 38px;
+  text-transform: capitalize;
+  font-weight: 300;
 }
 
 h2 {
@@ -132,40 +152,65 @@ h3 {
 
 h4 {
   font-size: 14px;
-  font-weight: 600;
+  font-weight: 500;
 }
 
-p, ul, ol {
-  margin-bottom: 10px;
+p,
+ul,
+ol {
+  font-family: "Helvetica Neue", Helvetica, Arial, "Lucida Grande", sans-serif;
+  font-size: 14px;
   font-weight: normal;
+  margin: 0;
+  margin-bottom: 15px;
 }
-p li, ul li, ol li {
-  margin-left: 5px;
+p li,
+ul li,
+ol li {
   list-style-position: inside;
+  margin-left: 5px;
 }
 
-/* -------------------------------------
-    LINKS & BUTTONS
-------------------------------------- */
 a {
   color: #348eda;
   text-decoration: underline;
 }
 
-.btn-primary {
-  text-decoration: none;
-  color: #FFF;
-  background-color: #348eda;
-  border: solid #348eda;
-  border-width: 10px 20px;
-  line-height: 2;
-  font-weight: bold;
-  margin: 20px 0;
+/* -------------------------------------
+    BUTTONS
+------------------------------------- */
+.btn {
+  margin-bottom: 15px;
+  width: auto;
+  -premailer-width: auto;
+}
+.btn td {
+  background-color: #fff;
+  border-radius: 5px;
   text-align: center;
+}
+.btn a {
+  background-color: #fff;
+  border: solid 1px #348eda;
+  border-radius: 5px;
+  color: #348eda;
   cursor: pointer;
   display: inline-block;
-  border-radius: 25px;
+  font-size: 14px;
+  font-weight: bold;
+  margin: 0;
+  padding: 12px 25px;
+  text-decoration: none;
   text-transform: capitalize;
+}
+
+.btn-primary td {
+  background-color: #348eda;
+}
+.btn-primary a {
+  background-color: #348eda;
+  border-color: #348eda;
+  color: #fff;
 }
 
 /* -------------------------------------
@@ -179,41 +224,73 @@ a {
   margin-top: 0;
 }
 
-.padding {
-  padding: 10px 0;
-}
-
-.aligncenter {
+.align-center {
   text-align: center;
 }
 
-.alignright {
+.align-right {
   text-align: right;
+}
+
+.align-left {
+  text-align: left;
 }
 
 .clear {
   clear: both;
 }
 
+.mt0 {
+  margin-top: 0;
+}
+
+.mb0 {
+  margin-bottom: 0;
+}
+
+.preheader {
+  color: transparent;
+  display: none;
+  height: 0;
+  max-height: 0;
+  max-width: 0;
+  opacity: 0;
+  overflow: hidden;
+  mso-hide: all;
+  visibility: hidden;
+  width: 0;
+}
+
 /* -------------------------------------
-    INVOICE
+    RESPONSIVE AND MOBILE FRIENDLY STYLES
 ------------------------------------- */
-.invoice {
-  margin: 40px auto;
-  text-align: left;
-  width: 80%;
+@media only screen and (max-width: 620px) {
+  table[class=body] h1,
+  table[class=body] h2,
+  table[class=body] h3,
+  table[class=body] h4 {
+    font-weight: 600 !important;
+  }
+  table[class=body] h1 {
+    font-size: 22px !important;
+  }
+  table[class=body] h2 {
+    font-size: 18px !important;
+  }
+  table[class=body] h3 {
+    font-size: 16px !important;
+  }
+  table[class=body] .content,
+  table[class=body] .wrapper {
+    padding: 10px !important;
+  }
+  table[class=body] .container {
+    padding: 0 !important;
+    width: 100% !important;
+  }
+  table[class=body] .btn {
+    width: 100% !important;
+  }
 }
-.invoice td {
-  padding: 5px 0;
-}
-.invoice .invoice-items {
-  width: 100%;
-}
-.invoice .invoice-items td {
-  border-top: #eee 1px solid;
-}
-.invoice .invoice-items .total td {
-  border-top: 2px solid #333;
-  border-bottom: 2px solid #333;
-  font-weight: 700;
-}
+
+/*# sourceMappingURL=main.css.map */

@@ -1,6 +1,7 @@
 /* -------------------------------------
     OTHER STYLES THAT MIGHT BE USEFUL
 ------------------------------------- */
+
 .last {
   margin-bottom: 0;
 }
@@ -9,41 +10,40 @@
   margin-top: 0;
 }
 
-.padding {
-  padding: 10px 0;
+.align-center {
+  text-align: center;
 }
 
-.aligncenter{
-  text-align:center;
+.align-right {
+  text-align: right;
 }
 
-.alignright{
-  text-align:right;
-}
-
-.clear{
-  clear:both;
-}
-
-/* -------------------------------------
-    INVOICE
-------------------------------------- */
-.invoice{
-  margin:$padding*2 auto;
+.align-left {
   text-align: left;
-  width:80%;
-  td{
-    padding:5px 0;
-  }
-  .invoice-items{
-    width:100%;
-    td{
-      border-top:#eee 1px solid;
-    }
-    .total td{
-      border-top:2px solid #333;
-      border-bottom:2px solid #333;
-      font-weight:700;
-    }
-  }
+}
+
+.clear {
+  clear: both;
+}
+
+.mt0 {
+  margin-top: 0;
+}
+
+.mb0 {
+  margin-bottom: 0;
+}
+
+// Preheader text is displayed in certain clients as a preview but not shown when the user opens the email
+.preheader {
+  color: transparent;
+  display: none;
+  height: 0;
+  max-height: 0;
+  max-width: 0;
+  opacity: 0;
+  overflow: hidden;
+  mso-hide: all;
+  visibility: hidden;
+  width: 0;
 }

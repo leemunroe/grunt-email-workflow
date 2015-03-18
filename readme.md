@@ -6,13 +6,13 @@ This grunt task helps simplify things at the design stage.
 
 1. Compiles your SCSS to CSS
 
-2. Builds your email templates
+2. Builds your HTML and TXT email templates
 
 3. Inlines your CSS
 
 4. Uploads any images to a CDN (optional)
 
-5. Sends you a test email to your inbox
+5. Sends you a test email to your inbox (optional)
 
 ## Requirements
 
@@ -20,7 +20,7 @@ This grunt task helps simplify things at the design stage.
 * Grunt-cli and Grunt (`npm install grunt-cli -g`)
 * Ruby - [Install ruby with RVM](https://rvm.io/rvm/install)
 * Premailer (`gem install premailer hpricot nokogiri`) - Inlines the CSS
-* [Mailgun](http://www.mailgun.com) - Sends the email
+* [Mailgun](http://www.mailgun.com) (optional) - Sends the email
 * [Litmus](https://litmus.com) (optional) - Tests the email across all clients/browsers/devices
 * [Rackspace Cloud](http://www.rackspace.com/cloud/files/) (optional) - Uses Cloud Files as a CDN
 
@@ -45,13 +45,13 @@ grunt
 
 This project uses [SCSS](http://sass-lang.com/). You don't need to touch the .css files, these are compiled automatically.
 
-For changes to CSS, modify the .scss files.
+For changes to CSS, modify the `.scss` files.
 
 Media queries and responsive styles are in a separate style sheet so that they don't get inlined. Note that only a few clients support media queries e.g. iOS Mail app.
 
 ### Email templates and content
 
-Handlebars is used for templating.
+Handlebars and Assemble are used for templating.
 
 `/layouts` contains the standard header/footer HTML markup. You most likely will only need one layout template, but you can have as many as you like.
 
@@ -82,9 +82,16 @@ Change 'transaction.html' to the name of the email template you want to send.
 
 ### How to test with Litmus
 
-If you have a [Litmus](http://www.litmus.com) account and want to test the email in multiple clients/devices, create a new test in Litmus, copy the email address they tell you to send the email to, open up `Gruntfile.js` and paste it where the recipient goes. Then run `grunt send --template=TEMPLATE_NAME.html` to send the email to Litmus.
+If you have a [Litmus](http://www.litmus.com) account and want to test the email in multiple clients/devices:
 
-<img src="http://f.cl.ly/items/1T003x0t1m2k0a2O302c/Image%202014-06-10%20at%2010.11.01%20AM.png" width=-"500">
+* Open up `Gruntfile.js` 
+* Replace `username`, `password` and `yourcompany` under the Litmus task with your credentials
+
+Run `grunt litmus --template=TEMPLATE_NAME.html` to send the email to Litmus. This will create a new test using the `<title>` value of your template.
+
+[See the Litmus results](https://litmus.com/pub/eb33459/screenshots) for the simple transactional email template that is included.
+
+<img src="https://s3.amazonaws.com/f.cl.ly/items/1a1H0B1o3v160147100S/Image%202014-12-31%20at%2010.10.01%20AM.png" width=-"500">
 
 
 ### CDN and working with image assets
@@ -105,9 +112,9 @@ Run `grunt cdnify send --template=branded.html` to send the email to yourself wi
 
 ### Sample email templates
 
-I've added a few templates to help you get started.
+I've added two templates here to help you get started.
 
 * [Simple transactional email template](http://leemunroe.github.io/grunt-email-design/dist/transaction.html)
-* [Simple confirmation email](http://leemunroe.github.io/grunt-email-design/dist/confirm.html)
 * [Branded email via CDN](http://leemunroe.github.io/grunt-email-design/dist/branded.html)
-* [Simple receipt/invoice](http://leemunroe.github.io/grunt-email-design/dist/receipt.html)
+
+For more transactional email templates check out [Mailgun's collection of templates](http://github.com/mailgun/transactional-email-templates).

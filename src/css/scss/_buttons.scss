@@ -1,0 +1,43 @@
+/* -------------------------------------
+    BUTTONS
+------------------------------------- */
+
+.btn {
+  margin-bottom: 15px;
+  width: auto;
+  -premailer-width: auto; // This is a specific style for the premailer gem
+
+  td {
+    background-color: #fff;
+    border-radius: $btn-br;
+    text-align: center;
+  }
+
+  a{
+    background-color: #fff;
+    border: solid 1px $primary-color;
+    border-radius: $btn-br;
+    color: $primary-color;
+    cursor: pointer;
+    display: inline-block;
+    font-size: 14px;
+    font-weight: bold;
+    margin: 0;
+    padding: 12px 25px;
+    text-decoration: none;
+    text-transform: capitalize;
+  }
+}
+
+.btn-primary {
+
+  td {
+    background-color: $primary-color;
+  }
+
+  a{
+    background-color: $primary-color;
+    border-color: $primary-color;
+    color: #fff;
+  }
+}

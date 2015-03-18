@@ -1,0 +1,27 @@
+This is preheader text. Some clients will show this text as a
+preview.
+
+*************************************
+Simple responsive HTML email template
+*************************************
+
+Hi there,
+
+Sometimes you just want to send a simple HTML email with a
+basic design.
+
+This is a really simple email template. It's sole purpose
+is to get you to click the button below.
+
+All the information you need is on GitHub.
+
+View the source on GitHub ( https://github.com/leemunroe/html-email-template )
+
+Feel free to use, copy, modify this email template as you
+wish.
+
+Thanks, have a lovely day.
+
+Follow @leemunroe on Twitter ( http://twitter.com/leemunroe )
+
+Don't like these annoying emails? Unsubscribe ( # ).
