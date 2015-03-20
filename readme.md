@@ -37,6 +37,30 @@ npm install
 grunt
 ```
 
+### Sensitive Information
+We encourage you __not__ to store sensitive data in your git repository. If you must, please look into [git-encrypt](https://github.com/shadowhand/git-encrypt) or some other method of encrypting your configuration secrets.
+
+1. Create a file `secrets.json` in your project root.
+2. Paste the following sample code in `secrets.json` and enter the appropriate credentials for the services you want to connect with. It's ok to leave these defaults, but they should exist.
+
+```
+{
+  "mailgun": {
+    "api_key": "YOUR MG PRIVATE API KEY"
+  },
+  "litmus": {
+    "username": "LITMUS USER NAME",
+    "password": "LITMUS PASS"
+  },
+  "cloudfiles": {
+    "user": "CLOUDFILES USERNAME",
+    "key": "CLOUDFILES KEY"
+  }
+}
+```
+
+
+
 ## How it works
 
 <img src="http://i.imgur.com/yrHpTdr.jpg" width="500">
