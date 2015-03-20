@@ -88,8 +88,8 @@ module.exports = function(grunt) {
           mailer: {
             options: {
               key: '<%= secrets.mailgun.api_key %>', // See README for secrets.json
-              sender: 'me@me.com', // Change this
-              recipient: 'you@you.com', // Change this
+              sender: '<%= secrets.mailgun.sender %>', // See README for secrets.json
+              recipient: '<%= secrets.mailgun.recipient %>', // See README for secrets.json
               subject: 'This is a test email'
             },
             src: ['dist/'+grunt.option('template')]
@@ -105,9 +105,9 @@ module.exports = function(grunt) {
           prod: {
             'user': '<%= secrets.cloudfiles.user %>', // See README for secrets.json
             'key': '<%= secrets.cloudfiles.key %>', // See README for secrets.json
-            'region': 'ORD', // Might need to change this
+            'region': '<%= secrets.cloudfiles.region %>', // See README for secrets.json
             'upload': [{
-              'container': 'Files Container Name', // Change this
+              'container': '<%= secrets.cloudfiles.container %>', // See README for secrets.json
               'src': 'src/img/*',
               'dest': '/',
               'stripcomponents': 0
@@ -118,7 +118,7 @@ module.exports = function(grunt) {
         // CDN will replace local paths with your Cloud CDN path
         cdn: {
           options: {
-            cdn: 'Rackspace Cloud CDN URI', // Change this
+            cdn: '<%= secrets.cloudfiles.uri %>', // See README for secrets.json
             flatten: true,
             supportedTypes: 'html'
           },
@@ -141,7 +141,7 @@ module.exports = function(grunt) {
             options: {
               username: '<%= secrets.litmus.username %>', // See README for secrets.json
               password: '<%= secrets.litmus.password %>', // See README for secrets.json
-              url: 'https://yourcompany.litmus.com', // Change this
+              url: 'https://<%= secrets.litmus.company %>.litmus.com', // See README for secrets.json
               clients: ['android4', 'aolonline', 'androidgmailapp', 'aolonline', 'ffaolonline',
               'chromeaolonline', 'appmail6', 'iphone6', 'ipadmini', 'ipad', 'chromegmailnew',
               'iphone6plus', 'notes85', 'ol2002', 'ol2003', 'ol2007', 'ol2010', 'ol2011',
