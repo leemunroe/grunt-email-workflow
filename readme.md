@@ -46,15 +46,21 @@ We encourage you __not__ to store sensitive data in your git repository. If you 
 ```
 {
   "mailgun": {
-    "api_key": "YOUR MG PRIVATE API KEY"
+    "api_key": "YOUR MG PRIVATE API KEY",
+    "sender": "E.G. POSTMASTER@YOURDOMAIN.COM",
+    "recipient": "WHO YOU WANT TO SEND THE EMAIL TO"
   },
   "litmus": {
     "username": "LITMUS USER NAME",
-    "password": "LITMUS PASS"
+    "password": "LITMUS PASS",
+    "company": "LITMUS COMPANY/API SUBDOMAIN NAME"
   },
   "cloudfiles": {
     "user": "CLOUDFILES USERNAME",
-    "key": "CLOUDFILES KEY"
+    "key": "CLOUDFILES KEY",
+    "region": "CLOUDFILES REGION E.G. ORD",
+    "container": "CLOUDFILES CONTAINER NAME",
+    "uri": "CLOUDFILES URI"
   }
 }
 ```

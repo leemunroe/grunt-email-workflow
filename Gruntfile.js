@@ -89,9 +89,9 @@ module.exports = function(grunt) {
         mailgun: {
           mailer: {
             options: {
-              key: '<%= secrets.mailgun.api_key %>', // See README for secrets.json
-              sender: 'me@me.com', // Change this
-              recipient: 'you@you.com', // Change this
+              key: '<%= secrets.mailgun.api_key %>', // See README for secrets.json or replace this with your own key
+              sender: '<%= secrets.mailgun.sender %>', // See README for secrets.json or replace this with your preferred sender
+              recipient: '<%= secrets.mailgun.recipient %>', // See README for secrets.json or replace this with your preferred recipient
               subject: 'This is a test email'
             },
             src: ['dist/'+grunt.option('template')]
@@ -105,11 +105,11 @@ module.exports = function(grunt) {
         // Use Rackspace Cloud Files if you're using images in your email
         cloudfiles: {
           prod: {
-            'user': '<%= secrets.cloudfiles.user %>', // See README for secrets.json
-            'key': '<%= secrets.cloudfiles.key %>', // See README for secrets.json
-            'region': 'ORD', // Might need to change this
+            'user': '<%= secrets.cloudfiles.user %>', // See README for secrets.json or replace this with your user
+            'key': '<%= secrets.cloudfiles.key %>', // See README for secrets.json or replace this with your own key
+            'region': '<%= secrets.cloudfiles.region %>', // See README for secrets.json or replace this with your region
             'upload': [{
-              'container': 'Files Container Name', // Change this
+              'container': '<%= secrets.cloudfiles.container %>', // See README for secrets.json or replace this with your container name
               'src': 'src/img/*',
               'dest': '/',
               'stripcomponents': 0
@@ -120,7 +120,7 @@ module.exports = function(grunt) {
         // CDN will replace local paths with your Cloud CDN path
         cdn: {
           options: {
-            cdn: 'Rackspace Cloud CDN URI', // Change this
+            cdn: '<%= secrets.cloudfiles.uri %>', // See README for secrets.json or replace this with your cdn uri
             flatten: true,
             supportedTypes: 'html'
           },
@@ -141,9 +141,9 @@ module.exports = function(grunt) {
           test: {
             src: ['dist/'+grunt.option('template')],
             options: {
-              username: '<%= secrets.litmus.username %>', // See README for secrets.json
-              password: '<%= secrets.litmus.password %>', // See README for secrets.json
-              url: 'https://yourcompany.litmus.com', // Change this
+              username: '<%= secrets.litmus.username %>', // See README for secrets.json or replace this with your username
+              password: '<%= secrets.litmus.password %>', // See README for secrets.json or replace this with your password
+              url: 'https://<%= secrets.litmus.company %>.litmus.com', // See README for secrets.json or replace this with your company url
               clients: ['android4', 'aolonline', 'androidgmailapp', 'aolonline', 'ffaolonline',
               'chromeaolonline', 'appmail6', 'iphone6', 'ipadmini', 'ipad', 'chromegmailnew',
               'iphone6plus', 'notes85', 'ol2002', 'ol2003', 'ol2007', 'ol2010', 'ol2011',
