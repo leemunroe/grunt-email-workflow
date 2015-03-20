@@ -81,6 +81,14 @@ Handlebars and Assemble are used for templating.
 
 `/emails` is where your email content will go. To start you off I've included example transactional emails based on my [simple HTML email template](https://github.com/leemunroe/html-email-template).
 
+`/data` contains _optional_ .yml or .json data files that can be used in your templates. It's a good way to store commonly used strings. See `/data/default.yml` and `/partials/follow_lee.hbs` for an example.
+
+`/partials` contains _optional_ .hbs files that can be thought of like includes. To use a partial, for example `/partials/follow_lee.hbs` you would use the following code in your emails template:
+
+```
+{{> follow_lee }}
+```
+
 ### Generate your email templates
 
 In terminal, run `grunt`. This will:
