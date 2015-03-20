@@ -3,6 +3,10 @@ module.exports = function(grunt) {
     grunt.initConfig({
         pkg: grunt.file.readJSON('package.json'),
 
+        // secrets.json is ignored in git because it contains sensitive data
+        // See the README for configuration settings
+        secrets: grunt.file.readJSON('secrets.json'),
+
 
 
 
@@ -83,7 +87,7 @@ module.exports = function(grunt) {
         mailgun: {
           mailer: {
             options: {
-              key: 'MAILGUN_KEY', // Enter your Mailgun API key here
+              key: '<%= secrets.mailgun.api_key %>', // See README for secrets.json
               sender: 'me@me.com', // Change this
               recipient: 'you@you.com', // Change this
               subject: 'This is a test email'
@@ -99,8 +103,8 @@ module.exports = function(grunt) {
         // Use Rackspace Cloud Files if you're using images in your email
         cloudfiles: {
           prod: {
-            'user': 'Rackspace Cloud Username', // Change this
-            'key': 'Rackspace Cloud API Key', // Change this
+            'user': '<%= secrets.cloudfiles.user %>', // See README for secrets.json
+            'key': '<%= secrets.cloudfiles.key %>', // See README for secrets.json
             'region': 'ORD', // Might need to change this
             'upload': [{
               'container': 'Files Container Name', // Change this
@@ -135,8 +139,8 @@ module.exports = function(grunt) {
           test: {
             src: ['dist/'+grunt.option('template')],
             options: {
-              username: 'username', // Change this
-              password: 'password', // Change this
+              username: '<%= secrets.litmus.username %>', // See README for secrets.json
+              password: '<%= secrets.litmus.password %>', // See README for secrets.json
               url: 'https://yourcompany.litmus.com', // Change this
               clients: ['android4', 'aolonline', 'androidgmailapp', 'aolonline', 'ffaolonline',
               'chromeaolonline', 'appmail6', 'iphone6', 'ipadmini', 'ipad', 'chromegmailnew',
