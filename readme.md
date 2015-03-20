@@ -105,6 +105,8 @@ In terminal, run `grunt`. This will:
 
 See the output HTML in the `dist` folder. Open them and preview it the browser.
 
+<img src="http://i.imgur.com/WoWgRxm.gif" width="500">
+
 Alternatively run `grunt watch`. This will check for any changes you make to your .scss and .hbs templates, then automatically run the tasks. Saves you having to run grunt every time.
 
 ### Send the email to yourself
@@ -115,6 +117,8 @@ Alternatively run `grunt watch`. This will check for any changes you make to you
 * Change the sender and recipient to your own email address (or whoever you want to send it to)
 
 Run `grunt send --template=transaction.html`. This will email out the template you specify.
+
+<img src="http://i.imgur.com/6N8VRen.gif" width="500">
 
 Change 'transaction.html' to the name of the email template you want to send.
 
