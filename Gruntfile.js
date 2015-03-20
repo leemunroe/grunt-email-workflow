@@ -31,6 +31,8 @@ module.exports = function(grunt) {
         assemble: {
           options: {
             layoutdir: 'src/layouts',
+            partials: ['src/partials/**/*.hbs'],
+            data: ['src/data/*.{json,yml}'],
             flatten: true
           },
           pages: {
@@ -74,7 +76,7 @@ module.exports = function(grunt) {
 
         // Watches for changes to css or email templates then runs grunt tasks
         watch: {
-          files: ['src/css/scss/*','src/emails/*','src/layouts/*'],
+          files: ['src/css/scss/*','src/emails/*','src/layouts/*','src/partials/*','src/data/*'],
           tasks: ['default']
         },
 
