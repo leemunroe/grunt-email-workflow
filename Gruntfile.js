@@ -212,7 +212,7 @@ module.exports = function(grunt) {
     grunt.loadNpmTasks('grunt-contrib-imagemin');
 
     // Where we tell Grunt what to do when we type "grunt" into the terminal.
-    grunt.registerTask('default', ['sass','assemble','premailer']);
+    grunt.registerTask('default', ['sass','assemble','premailer', 'imagemin']);
 
     // Use grunt send if you want to actually send the email to your inbox
     grunt.registerTask('send', ['mailgun']);
