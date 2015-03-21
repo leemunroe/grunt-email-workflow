@@ -37,6 +37,36 @@ npm install
 grunt
 ```
 
+### Sensitive Information
+We encourage you __not__ to store sensitive data in your git repository. If you must, please look into [git-encrypt](https://github.com/shadowhand/git-encrypt) or some other method of encrypting your configuration secrets.
+
+1. Create a file `secrets.json` in your project root.
+2. Paste the following sample code in `secrets.json` and enter the appropriate credentials for the services you want to connect with. It's ok to leave these defaults, but they should exist.
+
+```
+{
+  "mailgun": {
+    "api_key": "YOUR MG PRIVATE API KEY",
+    "sender": "E.G. POSTMASTER@YOURDOMAIN.COM",
+    "recipient": "WHO YOU WANT TO SEND THE EMAIL TO"
+  },
+  "litmus": {
+    "username": "LITMUS USER NAME",
+    "password": "LITMUS PASS",
+    "company": "LITMUS COMPANY/API SUBDOMAIN NAME"
+  },
+  "cloudfiles": {
+    "user": "CLOUDFILES USERNAME",
+    "key": "CLOUDFILES KEY",
+    "region": "CLOUDFILES REGION E.G. ORD",
+    "container": "CLOUDFILES CONTAINER NAME",
+    "uri": "CLOUDFILES URI"
+  }
+}
+```
+
+
+
 ## How it works
 
 <img src="http://i.imgur.com/yrHpTdr.jpg" width="500">
@@ -57,6 +87,14 @@ Handlebars and Assemble are used for templating.
 
 `/emails` is where your email content will go. To start you off I've included example transactional emails based on my [simple HTML email template](https://github.com/leemunroe/html-email-template).
 
+`/data` contains _optional_ .yml or .json data files that can be used in your templates. It's a good way to store commonly used strings. See `/data/default.yml` and `/partials/follow_lee.hbs` for an example.
+
+`/partials` contains _optional_ .hbs files that can be thought of like includes. To use a partial, for example `/partials/follow_lee.hbs` you would use the following code in your emails template:
+
+```
+{{> follow_lee }}
+```
+
 ### Generate your email templates
 
 In terminal, run `grunt`. This will:
@@ -66,6 +104,8 @@ In terminal, run `grunt`. This will:
 * Inline your CSS
 
 See the output HTML in the `dist` folder. Open them and preview it the browser.
+
+<img src="http://i.imgur.com/WoWgRxm.gif" width="500">
 
 Alternatively run `grunt watch`. This will check for any changes you make to your .scss and .hbs templates, then automatically run the tasks. Saves you having to run grunt every time.
 
@@ -77,6 +117,8 @@ Alternatively run `grunt watch`. This will check for any changes you make to you
 * Change the sender and recipient to your own email address (or whoever you want to send it to)
 
 Run `grunt send --template=transaction.html`. This will email out the template you specify.
+
+<img src="http://i.imgur.com/6N8VRen.gif" width="500">
 
 Change 'transaction.html' to the name of the email template you want to send.
 

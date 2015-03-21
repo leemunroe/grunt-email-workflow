@@ -5,6 +5,10 @@ module.exports = function(grunt) {
     grunt.initConfig({
         pkg: grunt.file.readJSON('package.json'),
 
+        // secrets.json is ignored in git because it contains sensitive data
+        // See the README for configuration settings
+        secrets: grunt.file.readJSON('secrets.json'),
+
 
 
 
@@ -29,6 +33,8 @@ module.exports = function(grunt) {
         assemble: {
           options: {
             layoutdir: 'src/layouts',
+            partials: ['src/partials/**/*.hbs'],
+            data: ['src/data/*.{json,yml}'],
             flatten: true
           },
           pages: {
@@ -68,8 +74,6 @@ module.exports = function(grunt) {
 
 
 
-
-
         // Optimize images
         imagemin: {
           dynamic: {
@@ -90,7 +94,7 @@ module.exports = function(grunt) {
 
         // Watches for changes to css or email templates then runs grunt tasks
         watch: {
-          files: ['src/css/scss/*','src/emails/*','src/layouts/*'],
+          files: ['src/css/scss/*','src/emails/*','src/layouts/*','src/partials/*','src/data/*'],
           tasks: ['default']
         },
 
@@ -103,9 +107,9 @@ module.exports = function(grunt) {
         mailgun: {
           mailer: {
             options: {
-              key: 'MAILGUN_KEY', // Enter your Mailgun API key here
-              sender: 'me@me.com', // Change this
-              recipient: 'you@you.com', // Change this
+              key: '<%= secrets.mailgun.api_key %>', // See README for secrets.json or replace this with your own key
+              sender: '<%= secrets.mailgun.sender %>', // See README for secrets.json or replace this with your preferred sender
+              recipient: '<%= secrets.mailgun.recipient %>', // See README for secrets.json or replace this with your preferred recipient
               subject: 'This is a test email'
             },
             src: ['dist/'+grunt.option('template')]
@@ -119,11 +123,11 @@ module.exports = function(grunt) {
         // Use Rackspace Cloud Files if you're using images in your email
         cloudfiles: {
           prod: {
-            'user': 'Rackspace Cloud Username', // Change this
-            'key': 'Rackspace Cloud API Key', // Change this
-            'region': 'ORD', // Might need to change this
+            'user': '<%= secrets.cloudfiles.user %>', // See README for secrets.json or replace this with your user
+            'key': '<%= secrets.cloudfiles.key %>', // See README for secrets.json or replace this with your own key
+            'region': '<%= secrets.cloudfiles.region %>', // See README for secrets.json or replace this with your region
             'upload': [{
-              'container': 'Files Container Name', // Change this
+              'container': '<%= secrets.cloudfiles.container %>', // See README for secrets.json or replace this with your container name
               'src': 'src/img/*',
               'dest': '/',
               'stripcomponents': 0
@@ -131,11 +135,26 @@ module.exports = function(grunt) {
           }
         },
 
+        // CDN will replace local paths with your Cloud CDN path
+        cdn: {
+          options: {
+            cdn: '<%= secrets.cloudfiles.uri %>', // See README for secrets.json or replace this with your cdn uri
+            flatten: true,
+            supportedTypes: 'html'
+          },
+          dist: {
+            cwd: './dist/',
+            dest: './dist/',
+            src: ['*.html']
+          }
+        },
+
+
         // Use Amazon S3 for images
         s3: {
           options: {
-            key: 'KEY', // define this
-            secret: 'SECRET', // define this
+            key: '<%= secrets.s3.key %>', // define this in secrets.json
+            secret: '<%= secrets.s3.secret %>', // define this in secrets.json
             access: 'public-read',
             region: 'us-east-1', // feel free to change this
             headers: {
@@ -160,21 +179,6 @@ module.exports = function(grunt) {
           }
         },
 
-        // CDN will replace local paths with your Cloud CDN path
-        cdn: {
-          options: {
-            cdn: 'Rackspace Cloud CDN URI', // Change this
-            flatten: true,
-            supportedTypes: 'html'
-          },
-          dist: {
-            src: ['./dist/*.html']
-          }
-        },
-
-
-
-
 
         // Send your email template to Litmus for testing
         // grunt litmus --template=transaction.html
@@ -182,9 +186,9 @@ module.exports = function(grunt) {
           test: {
             src: ['dist/'+grunt.option('template')],
             options: {
-              username: 'username', // Change this
-              password: 'password', // Change this
-              url: 'https://yourcompany.litmus.com', // Change this
+              username: '<%= secrets.litmus.username %>', // See README for secrets.json or replace this with your username
+              password: '<%= secrets.litmus.password %>', // See README for secrets.json or replace this with your password
+              url: 'https://<%= secrets.litmus.company %>.litmus.com', // See README for secrets.json or replace this with your company url
               clients: ['android4', 'aolonline', 'androidgmailapp', 'aolonline', 'ffaolonline',
               'chromeaolonline', 'appmail6', 'iphone6', 'ipadmini', 'ipad', 'chromegmailnew',
               'iphone6plus', 'notes85', 'ol2002', 'ol2003', 'ol2007', 'ol2010', 'ol2011',
@@ -208,7 +212,7 @@ module.exports = function(grunt) {
     grunt.loadNpmTasks('grunt-contrib-imagemin');
 
     // Where we tell Grunt what to do when we type "grunt" into the terminal.
-    grunt.registerTask('default', ['sass','assemble','premailer','imagemin']);
+    grunt.registerTask('default', ['sass','assemble','premailer']);
 
     // Use grunt send if you want to actually send the email to your inbox
     grunt.registerTask('send', ['mailgun']);
