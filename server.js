@@ -18,7 +18,9 @@ app.get('/',function(req,res){
       templateFiles = fs.readdirSync(__dirname + '/dist/');
 
   templateFiles.forEach( function (file) {
-      templates.push(file);
+      if (file.indexOf('.html') != -1) {
+        templates.push(file);
+      }
   });
 
   // Set the templates data and send the rendered template
