@@ -297,6 +297,13 @@ module.exports = function(grunt) {
           }
         },
 
+        // Open browser preview
+        open: {
+          preview: {
+            path: 'http://localhost:4000'
+          }
+        }
+
     });
 
 
@@ -320,6 +327,9 @@ module.exports = function(grunt) {
     // Upload image files to Amazon S3
     grunt.registerTask('s3upload', ['aws_s3:prod', 'cdn:aws_s3']);
 
-    grunt.registerTask('serve', ['default', 'express', 'watch']);
+    // Launch the express server and start watching
+    // NOTE: The server will not stay running if the grunt watch task is not active
+    grunt.registerTask('serve', ['default', 'express', 'open', 'watch']);
+
 
 };
