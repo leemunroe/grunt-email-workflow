@@ -199,6 +199,13 @@ module.exports = function(grunt) {
           }
         },
 
+        // Open browser preview
+        open: {
+          preview: {
+            path: 'http://localhost:4000'
+          }
+        }
+
     });
 
     // Where we tell Grunt we plan to use this plug-in.
@@ -212,6 +219,7 @@ module.exports = function(grunt) {
     grunt.loadNpmTasks('grunt-litmus');
     grunt.loadNpmTasks('grunt-express');
     grunt.loadNpmTasks('grunt-autoprefixer');
+    grunt.loadNpmTasks('grunt-open');
 
     // Where we tell Grunt what to do when we type "grunt" into the terminal.
     grunt.registerTask('default', ['sass','autoprefixer:preview','assemble','premailer']);
@@ -222,6 +230,9 @@ module.exports = function(grunt) {
     // Upload images to our CDN on Rackspace Cloud Files
     grunt.registerTask('cdnify', ['default','cloudfiles','cdn']);
 
-    grunt.registerTask('serve', ['default', 'express', 'watch']);
+    // Launch the express server and start watching
+    // NOTE: The server will not stay running if the grunt watch task is not active
+    grunt.registerTask('serve', ['default', 'express', 'open', 'watch']);
+
 
 };
