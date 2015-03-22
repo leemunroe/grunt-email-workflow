@@ -1,6 +1,7 @@
 var express = require('express'),
-    app = express(),
-    fs = require('fs');
+    cheerio = require('cheerio'),
+    fs = require('fs'),
+    app = express();
 
 // Use embedded javascript for the view engine (templates)
 app.set('view engine', 'ejs');
@@ -13,19 +14,8 @@ app.get('/',function(req,res){
 
   res.status(200);
 
-  // Simple directory walker to get array of ./dist template files
-  var templates = [],
-      templateFiles = fs.readdirSync(__dirname + '/dist/');
-
-  templateFiles.forEach( function (file) {
-      if (file.indexOf('.html') != -1) {
-        templates.push(file);
-      }
-  });
-
-  // Set the templates data and send the rendered template
   var data = {
-      templates: templates
+      templates: getTemplates()
   };
 
   res.render(__dirname + '/preview/index', data);
@@ -33,3 +23,28 @@ app.get('/',function(req,res){
 });
 
 module.exports = app;
+
+
+// Helper function to get templates and their "subject" from <title> tag
+function getTemplates() {
+    var templates = [],
+        templateDir = __dirname + '/dist/',
+        templateFiles = fs.readdirSync(templateDir);
+
+    templateFiles.forEach( function (file) {
+        if (file.substr(-5) === '.html') {
+          var contents = fs.readFileSync(templateDir + file, 'utf8');
+          
+          if (contents) {
+            $ = cheerio.load(contents);
+
+            templates.push({
+              'filename': file,
+              'subject': $("html title").text() || "Subject not available"
+            });
+          }
+        }
+    });
+
+    return templates;
+}
