@@ -2,8 +2,8 @@
   "name": "email-template",
   "version": "0.1.0",
   "repository": {
-	  "type": "git",
-	  "url": "https://github.com/leemunroe/grunt-email-design"
+    "type": "git",
+    "url": "https://github.com/leemunroe/grunt-email-design"
   },
   "devDependencies": {
     "grunt": "~0.4.4",
@@ -14,6 +14,9 @@
     "grunt-premailer": "0.2.5",
     "grunt-cloudfiles": "^0.3.0",
     "grunt-cdn": "^0.6.1",
-    "grunt-litmus": "^0.1.8"
+    "grunt-litmus": "^0.1.8",
+    "express": "^4.12.3",
+    "grunt-express": "^1.4.1",
+    "ejs": "^2.3.1"
   }
 }
