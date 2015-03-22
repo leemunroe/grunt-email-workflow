@@ -20,6 +20,14 @@ module.exports = function(grunt) {
             files: {
               'src/css/main.css': 'src/css/scss/main.scss'
             }
+          },
+          preview: {
+            options: {
+              style: 'compressed'
+            },
+            files: {
+              'preview/css/preview.css': 'preview/scss/preview.scss'
+            }
           }
         },
 
@@ -76,8 +84,24 @@ module.exports = function(grunt) {
 
         // Watches for changes to css or email templates then runs grunt tasks
         watch: {
-          files: ['src/css/scss/*','src/emails/*','src/layouts/*','src/partials/*','src/data/*'],
-          tasks: ['default']
+          emails: {
+            files: ['src/css/scss/*','src/emails/*','src/layouts/*','src/partials/*','src/data/*'],
+            tasks: ['default']
+          },
+          preview_dist: {
+            files: ['./dist/*'],
+            tasks: [],
+            options: {
+              livereload: true
+            }
+          },
+          preview: {
+            files: ['./preview/scss/*'],
+            tasks: ['sass:preview'],
+            options: {
+              livereload: true
+            }
+          }
         },
 
 
@@ -150,7 +174,20 @@ module.exports = function(grunt) {
               'ol2013', 'outlookcom', 'chromeoutlookcom', 'chromeyahoo', 'windowsphone8'] // https://#{company}.litmus.com/emails/clients.xml
             }
           }
-        }
+        },
+
+        // Express server for browser previews
+        express: {
+          server: {
+            options: {
+              port: 4000,
+              hostname: '127.0.0.1',
+              bases: ['./dist', './preview', './src'],
+              server: './server.js',
+              livereload: true
+            }
+          }
+        },
 
     });
 
@@ -163,6 +200,7 @@ module.exports = function(grunt) {
     grunt.loadNpmTasks('grunt-cloudfiles');
     grunt.loadNpmTasks('grunt-cdn');
     grunt.loadNpmTasks('grunt-litmus');
+    grunt.loadNpmTasks('grunt-express');
 
     // Where we tell Grunt what to do when we type "grunt" into the terminal.
     grunt.registerTask('default', ['sass','assemble','premailer']);
@@ -172,5 +210,7 @@ module.exports = function(grunt) {
 
     // Upload images to our CDN on Rackspace Cloud Files
     grunt.registerTask('cdnify', ['default','cloudfiles','cdn']);
+
+    grunt.registerTask('serve', ['default', 'express', 'watch']);
 
 };

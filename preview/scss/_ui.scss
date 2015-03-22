@@ -1,0 +1,175 @@
+.preview-interface-view {
+  
+  // Basic elements
+  body {
+    background: #fff;
+    color: #333;
+    font: normal 14px/1.4 Helvetica, Arial, Sans-serif;
+  }
+  a {
+    color: #000;
+    text-decoration: none;
+
+    &:hover {
+      color: #348eda;
+    }
+  }
+  iframe {
+    border: none;
+    width: 100%;
+  }
+
+  // Header
+  .header {
+    box-shadow: 0 0 5px rgba(0,0,0,0.4);
+    display: table;
+    width: 100%;
+    position: relative;
+    z-index: 2;
+
+    > div {
+      display: table-cell;
+      padding: 8px 20px;
+      vertical-align: middle;
+    }
+  }
+  .header--brand {
+    font-size: 22px;
+  }
+  .header--select {
+    text-align: right;
+  }
+
+  // Preview Screens
+  .preview-ui--full,
+  .preview-ui--mobile,
+  .preview-ui--mobile__container {
+    transition: margin all $drawer-animation-duration linear, 
+                padding all $drawer-animation-duration linear, 
+                width all $drawer-animation-duration linear, 
+                opaciy all $drawer-animation-duration linear;
+  }
+
+  .preview-ui {
+    overflow: hidden;
+    position: relative;
+    z-index: 1;
+  }
+  .preview-ui--full {
+    float: left;
+    padding-right: 500px;
+    width: 100%;
+  }
+  .preview-ui--mobile {
+    background: #333;
+    float: right;
+    width: 500px;
+    margin-left: -500px;
+    position: relative;
+    text-align: center;
+
+    iframe {
+      border-top: 1px solid #efefef;
+      border-bottom: 1px solid #efefef;
+      width: 320px;
+      height: 461px;
+      margin: 129px 0 0 23px;
+    }
+  }
+  .preview-ui--mobile__container {
+    background: transparent url(../img/phone.png) no-repeat 50% 0;
+    background-size: 363px 711px;
+    width: 363px;
+    height: 711px;
+    margin: 20px auto 0 auto;
+    opacity: 1;
+    text-align: left;
+  }
+
+  .preview-ui--mobile__toggle {
+    cursor: pointer;
+    position: absolute;
+    left: 10px;
+    top: 10px;
+    width: 40px;
+    height: 40px;
+    z-index: 10;
+  }
+  
+  // Layout elemnts when mobile drawer is hidden
+  .mobile-drawer-hidden {
+    .preview-ui--full {
+      padding-right: 60px;
+    }
+    .preview-ui--mobile {
+      width: 60px;
+      margin-left: -60px;
+    }
+    .preview-ui--mobile__container {
+      opacity: 0;
+    }
+  }
+
+  // Drawer open toggle (phone)
+  .toggle-drawer-open {
+    background: transparent url(../img/phone-icon.png) no-repeat 50% 50%;
+    background-size: 40px 40px;
+    opacity: 0;
+    transition: all $drawer-animation-duration ease-in-out;
+    z-index: -1;
+  }
+  .mobile-drawer-hidden {
+    .toggle-drawer-open {
+      opacity: 1;
+      z-index: 2;
+
+      &:hover {
+        opacity: 0.8;
+      }
+    }
+  }
+  
+  // Drawer close toggle (x)
+  .toggle-drawer-close {
+    z-index: 1;
+
+    &:hover {
+      opacity: 0.8;
+    }
+
+    &:before,
+    &:after {
+      content: "";
+      position: absolute;
+      background: #fff;
+      display: block;
+      width: 4px;
+      height: 40px;
+      transition: all $drawer-animation-duration ease-in-out;
+    }
+    &:before {
+      left: 18px;
+      transform: rotate(45deg);
+    }
+    &:after {
+      right: 18px;
+      transform: rotate(-45deg);
+    }
+  }
+  .mobile-drawer-hidden {
+    .toggle-drawer-close {
+      &:before,
+      &:after {
+        width: 1px;
+        opacity: 0;
+        transform: rotate(0deg);
+      }
+      &:before {
+        left: 0;
+      }
+      &:after {
+        right: 0;
+      }
+    }
+  }
+}
