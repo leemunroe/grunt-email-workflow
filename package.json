@@ -17,6 +17,7 @@
     "grunt-litmus": "^0.1.8",
     "express": "^4.12.3",
     "grunt-express": "^1.4.1",
-    "ejs": "^2.3.1"
+    "ejs": "^2.3.1",
+    "grunt-autoprefixer": "^2.2.0"
   }
 }

@@ -31,6 +31,16 @@ module.exports = function(grunt) {
           }
         },
 
+        // Autoprefixer for css
+        autoprefixer: {
+          preview: {
+            options: {
+              browsers: ['last 6 versions', 'ie 9']
+            },
+            src: 'preview/css/preview.css'
+          }
+        },
+
 
 
 
@@ -97,7 +107,7 @@ module.exports = function(grunt) {
           },
           preview: {
             files: ['./preview/scss/*'],
-            tasks: ['sass:preview'],
+            tasks: ['sass:preview','autoprefixer:preview'],
             options: {
               livereload: true
             }
@@ -201,9 +211,10 @@ module.exports = function(grunt) {
     grunt.loadNpmTasks('grunt-cdn');
     grunt.loadNpmTasks('grunt-litmus');
     grunt.loadNpmTasks('grunt-express');
+    grunt.loadNpmTasks('grunt-autoprefixer');
 
     // Where we tell Grunt what to do when we type "grunt" into the terminal.
-    grunt.registerTask('default', ['sass','assemble','premailer']);
+    grunt.registerTask('default', ['sass','autoprefixer:preview','assemble','premailer']);
 
     // Use grunt send if you want to actually send the email to your inbox
     grunt.registerTask('send', ['mailgun']);
