@@ -13,7 +13,7 @@
       <select id="template-select">
         <option value="_blank.html">Select a Template</option>
         <% templates.forEach(function(template) { %>
-          <option value="<%= template %>"><%= template %></option>
+          <option value="<%= template.filename %>" data-subject="<%= template.subject %>"><%= template.filename %></option>
         <% }); %>
       </select>
     </div>
