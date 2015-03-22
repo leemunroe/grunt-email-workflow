@@ -5,3 +5,4 @@ node_modules
 *.css.map
 secrets.json
 dist/*
+preview/css

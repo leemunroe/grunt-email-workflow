@@ -15,7 +15,8 @@ module.exports = function(grunt) {
           src:        'src',
           src_img:    'src/img',
           dist:       'dist',
-          dist_img:   'dist/img'
+          dist_img:   'dist/img',
+          preview:    'preview'
         },
 
 
@@ -29,6 +30,14 @@ module.exports = function(grunt) {
             },
             files: {
               '<%= paths.src %>/css/main.css': '<%= paths.src %>/css/scss/main.scss'
+            }
+          },
+          preview: {
+            options: {
+              style: 'compressed'
+            },
+            files: {
+              '<%= paths.preview %>/css/preview.css': '<%= paths.preview %>/scss/preview.scss'
             }
           }
         },
@@ -136,8 +145,24 @@ module.exports = function(grunt) {
 
         // Watches for changes to css or email templates then runs grunt tasks
         watch: {
-          files: ['<%= paths.src %>/css/scss/*','<%= paths.src %>/emails/*','<%= paths.src %>/layouts/*','<%= paths.src %>/partials/*','<%= paths.src %>/data/*'],
-          tasks: ['default']
+          emails: {
+            files: ['<%= paths.src %>/css/scss/*','<%= paths.src %>/emails/*','<%= paths.src %>/layouts/*','<%= paths.src %>/partials/*','<%= paths.src %>/data/*','<%= paths.src %>/helpers/*'],
+            tasks: ['default']
+          },
+          preview_dist: {
+            files: ['<%= paths.dist %>/*'],
+            tasks: [],
+            options: {
+              livereload: true
+            }
+          },
+          preview: {
+            files: ['<%= paths.preview %>/scss/*'],
+            tasks: ['sass:preview'],
+            options: {
+              livereload: true
+            }
+          }
         },
 
 
@@ -247,7 +272,20 @@ module.exports = function(grunt) {
               'ol2013', 'outlookcom', 'chromeoutlookcom', 'chromeyahoo', 'windowsphone8'] // https://#{company}.litmus.com/emails/clients.xml
             }
           }
-        }
+        },
+
+        // Express server for browser previews
+        express: {
+          server: {
+            options: {
+              port: 4000,
+              hostname: '127.0.0.1',
+              bases: ['<%= paths.dist %>', '<%= paths.preview %>', '<%= paths.src %>'],
+              server: './server.js',
+              livereload: true
+            }
+          }
+        },
 
     });
 
@@ -271,5 +309,7 @@ module.exports = function(grunt) {
 
     // Upload image files to Amazon S3
     grunt.registerTask('s3upload', ['aws_s3:prod', 'cdn:aws_s3']);
+
+    grunt.registerTask('serve', ['default', 'express', 'watch']);
 
 };
