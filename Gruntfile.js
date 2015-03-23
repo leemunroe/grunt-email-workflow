@@ -1,5 +1,7 @@
 module.exports = function(grunt) {
 
+
+
     grunt.initConfig({
         pkg: grunt.file.readJSON('package.json'),
 
@@ -72,6 +74,22 @@ module.exports = function(grunt) {
 
 
 
+        // Optimize images
+        imagemin: {
+          dynamic: {
+            options: {
+              optimizationLevel: 3,
+              svgoPlugins: [{ removeViewBox: false }]
+            },
+            files: [{
+              expand: true,
+              cwd: 'src/img',
+              src: ['**/*.{png,jpg,gif}'],
+              dest: 'dist/img'
+            }]
+          }
+        },
+
 
 
         // Watches for changes to css or email templates then runs grunt tasks
@@ -132,7 +150,34 @@ module.exports = function(grunt) {
         },
 
 
-
+        // Use Amazon S3 for images
+        s3: {
+          options: {
+            key: '<%= secrets.s3.key %>', // define this in secrets.json
+            secret: '<%= secrets.s3.secret %>', // define this in secrets.json
+            access: 'public-read',
+            region: 'us-east-1', // feel free to change this
+            headers: {
+              // Two Year cache policy (1000 * 60 * 60 * 24 * 730)
+              "Cache-Control": "max-age=630720000, public",
+              "Expires": new Date(Date.now() + 63072000000).toUTCString()
+            }
+          },
+          dev: {
+            options: {
+              maxOperations: 20,
+              bucket: 'BUCKET-NAME' // define this
+            },
+            upload: [
+              {
+                src: 'dist/**/*',
+                dest: 'public/emails/', // define this
+                rel: 'dist', // rel must be set to maintain directory structure of src
+                options: { gzip: true }
+              }
+            ]
+          }
+        },
 
 
         // Send your email template to Litmus for testing
@@ -162,15 +207,20 @@ module.exports = function(grunt) {
     grunt.loadNpmTasks('grunt-contrib-watch');
     grunt.loadNpmTasks('grunt-cloudfiles');
     grunt.loadNpmTasks('grunt-cdn');
+    grunt.loadNpmTasks('grunt-s3');
     grunt.loadNpmTasks('grunt-litmus');
+    grunt.loadNpmTasks('grunt-contrib-imagemin');
 
     // Where we tell Grunt what to do when we type "grunt" into the terminal.
-    grunt.registerTask('default', ['sass','assemble','premailer']);
+    grunt.registerTask('default', ['sass','assemble','premailer', 'imagemin']);
 
     // Use grunt send if you want to actually send the email to your inbox
     grunt.registerTask('send', ['mailgun']);
 
     // Upload images to our CDN on Rackspace Cloud Files
     grunt.registerTask('cdnify', ['default','cloudfiles','cdn']);
+
+    // Separate task to manually upload files to Amazon S3 bucket
+    grunt.registerTask('upload', ['s3']);
 
 };
