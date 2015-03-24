@@ -6,8 +6,9 @@ var express = require('express'),
 // Use embedded javascript for the view engine (templates)
 app.set('view engine', 'ejs');
 
-// Allow relative links from ./dist to ./src/img
+// Allow relative image links from either ./dist/img or ./src/img
 app.use("/src/img", express.static(__dirname + "/src/img"));
+app.use("/dist/img", express.static(__dirname + "/dist/img"));
 
 // Set the route handler for the preview page.
 app.get('/',function(req,res){
