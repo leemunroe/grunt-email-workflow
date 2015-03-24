@@ -1,5 +1,6 @@
 module.exports = function(grunt) {
 
+
     grunt.initConfig({
 
         pkg: grunt.file.readJSON('package.json'),
@@ -8,6 +9,7 @@ module.exports = function(grunt) {
         // See the README for configuration settings
         secrets: grunt.file.readJSON('secrets.json'),
 
+
         // Re-usable filesystem paths (these shouldn't be modified)
         paths: {
           src:        'src',
@@ -15,7 +17,6 @@ module.exports = function(grunt) {
           dist:       'dist',
           dist_img:   'dist/img'
         },
-
 
 
 
@@ -194,33 +195,29 @@ module.exports = function(grunt) {
 
 
         // Use Amazon S3 for images
-        s3: {
+        aws_s3: {
           options: {
-            key: '<%= secrets.s3.key %>', // define this in secrets.json
-            secret: '<%= secrets.s3.secret %>', // define this in secrets.json
-            access: 'public-read',
-            region: 'us-east-1', // feel free to change this
-            headers: {
-              // Two Year cache policy (1000 * 60 * 60 * 24 * 730)
-              "Cache-Control": "max-age=630720000, public",
-              "Expires": new Date(Date.now() + 63072000000).toUTCString()
-            }
+            accessKeyId: '<%= secrets.s3.key %>', // See README for secrets.json
+            secretAccessKey: '<%= secrets.s3.secret %>', // See README for secrets.json
+            region: '', // Enter region or leave blank for US Standard region
+            uploadConcurrency: 5, // 5 simultaneous uploads
+            downloadConcurrency: 5 // 5 simultaneous downloads
           },
-          dev: {
+          prod: {
             options: {
-              maxOperations: 20,
-              bucket: 'BUCKET-NAME' // define this
-            },
-            upload: [
-              {
-                src: 'dist/**/*',
-                dest: 'public/emails/', // define this
-                rel: 'dist', // rel must be set to maintain directory structure of src
-                options: { gzip: true }
+              bucket: '<%= secrets.s3.bucketname %>', // Define your S3 bucket name in secrets.json
+              differential: true, // Only uploads the files that have changed
+              params: {
+                CacheControl: '2000'
               }
+            },
+            files: [
+              {expand: true, cwd: 'dist/img/', src: ['**'], dest: '/src/img'}
             ]
           }
         },
+
+
 
 
 
@@ -257,7 +254,8 @@ module.exports = function(grunt) {
     grunt.loadNpmTasks('grunt-contrib-watch');
     grunt.loadNpmTasks('grunt-cloudfiles');
     grunt.loadNpmTasks('grunt-cdn');
-    grunt.loadNpmTasks('grunt-s3');
+    grunt.loadNpmTasks('grunt-aws-s3');
+    grunt.loadNpmTasks('grunt-text-replace');
     grunt.loadNpmTasks('grunt-litmus');
     grunt.loadNpmTasks('grunt-contrib-imagemin');
     grunt.loadNpmTasks('grunt-replace');
@@ -271,7 +269,7 @@ module.exports = function(grunt) {
     // Upload images to our CDN on Rackspace Cloud Files
     grunt.registerTask('cdnify', ['default','cloudfiles','cdn']);
 
-    // Separate task to manually upload files to Amazon S3 bucket
-    grunt.registerTask('upload', ['s3']);
+    // Upload image files to Amazon S3
+    grunt.registerTask('s3upload', ['aws_s3:prod', 'cdn:aws_s3']);
 
 };
