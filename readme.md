@@ -64,7 +64,9 @@ We encourage you __not__ to store sensitive data in your git repository. If you 
   },
   "s3": {
     "key": "AMAZONS3 KEY",
-    "secret": "AMAZONS3 SECRET"
+    "secret": "AMAZONS3 SECRET",
+    "bucketname": "AMAZONS3 BUCKET NAME",
+    "bucketpath": "AMAZONS3 BUCKET PATH"
   }
 }
 ```
