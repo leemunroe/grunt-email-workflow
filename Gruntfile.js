@@ -222,7 +222,7 @@ module.exports = function(grunt) {
               }
             },
             files: [
-              {expand: true, cwd: 'dist/img/', src: ['**'], dest: '/src/img'} // Change dest to where you want images uploaded on S3
+              {expand: true, cwd: 'dist/img/', src: ['**'], dest: '/src/img'}
             ]
           }
         },
