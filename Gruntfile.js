@@ -176,16 +176,26 @@ module.exports = function(grunt) {
           }
         },
 
-        // CDN will replace local paths with your Cloud CDN path
+        // CDN will replace local paths with your CDN path
         cdn: {
-          options: {
-            cdn: '<%= secrets.cloudfiles.uri %>', // See README for secrets.json or replace this with your cdn uri
-            flatten: true,
-            supportedTypes: 'html'
+          cloudfiles: {
+            options: {
+              cdn: '<%= secrets.cloudfiles.uri %>', // See README for secrets.json or replace this with your cdn uri
+              flatten: true,
+              supportedTypes: 'html'
+            },
+            cwd: './dist/',
+            dest: './dist/',
+            src: ['*.html']
           },
-          dist: {
-            cwd: '<%= paths.dist %>',
-            dest: '<%= paths.dist %>',
+          aws_s3: {
+            options: {
+              cdn: '<%= secrets.s3.bucketpath %>', // See README for secrets.json or replace this with your Amazon S3 bucket uri
+              flatten: true,
+              supportedTypes: 'html'
+            },
+            cwd: './dist/',
+            dest: './dist/',
             src: ['*.html']
           }
         },
@@ -212,12 +222,10 @@ module.exports = function(grunt) {
               }
             },
             files: [
-              {expand: true, cwd: 'dist/img/', src: ['**'], dest: '/src/img'}
+              {expand: true, cwd: 'dist/img/', src: ['**'], dest: '/src/img'} // Change dest to where you want images uploaded on S3
             ]
           }
         },
-
-
 
 
 
@@ -255,7 +263,6 @@ module.exports = function(grunt) {
     grunt.loadNpmTasks('grunt-cloudfiles');
     grunt.loadNpmTasks('grunt-cdn');
     grunt.loadNpmTasks('grunt-aws-s3');
-    grunt.loadNpmTasks('grunt-text-replace');
     grunt.loadNpmTasks('grunt-litmus');
     grunt.loadNpmTasks('grunt-contrib-imagemin');
     grunt.loadNpmTasks('grunt-replace');
@@ -267,7 +274,7 @@ module.exports = function(grunt) {
     grunt.registerTask('send', ['mailgun']);
 
     // Upload images to our CDN on Rackspace Cloud Files
-    grunt.registerTask('cdnify', ['default','cloudfiles','cdn']);
+    grunt.registerTask('cdnify', ['default','cloudfiles','cdn:cloudfiles']);
 
     // Upload image files to Amazon S3
     grunt.registerTask('s3upload', ['aws_s3:prod', 'cdn:aws_s3']);

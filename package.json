@@ -24,7 +24,6 @@
     "grunt-replace": "^0.8.0"
 =======
     "grunt-s3": "^0.2.0-alpha.3",
-    "grunt-text-replace": "^0.4.0",
     "imagemin-mozjpeg": "^0.1.2"
 >>>>>>> Upgrade Amazon S3 task and update readme
   }
