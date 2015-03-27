@@ -32,6 +32,8 @@ module.exports = function(grunt) {
               '<%= paths.src %>/css/main.css': '<%= paths.src %>/css/scss/main.scss'
             }
           },
+          // This task complies sass for the browser-baed preview UI.
+          // You should not need to edit it.
           preview: {
             options: {
               style: 'compressed'
@@ -39,16 +41,6 @@ module.exports = function(grunt) {
             files: {
               '<%= paths.preview %>/css/preview.css': '<%= paths.preview %>/scss/preview.scss'
             }
-          }
-        },
-
-        // Autoprefixer for css
-        autoprefixer: {
-          preview: {
-            options: {
-              browsers: ['last 6 versions', 'ie 9']
-            },
-            src: '<%= paths.preview %>/css/preview.css'
           }
         },
 
@@ -284,6 +276,21 @@ module.exports = function(grunt) {
           }
         },
 
+        /**************************************************************************************************************
+          START: Brower-based preview tasks.
+          You should not need to edit anything between this and the end block.
+        ***************************************************************************************************************/
+
+        // Autoprefixer for css
+        autoprefixer: {
+          preview: {
+            options: {
+              browsers: ['last 6 versions', 'ie 9']
+            },
+            src: 'preview/css/preview.css'
+          }
+        },
+
         // Express server for browser previews
         express: {
           server: {
@@ -303,6 +310,11 @@ module.exports = function(grunt) {
             path: 'http://localhost:4000'
           }
         }
+
+        /**************************************************************************************************************
+          END: Brower-based preview tasks.
+          You should not need to edit anything between this and the start block.
+        ***************************************************************************************************************/
 
     });
 
