@@ -9,7 +9,13 @@ module.exports = function(grunt) {
         // See the README for configuration settings
         secrets: grunt.file.readJSON('secrets.json'),
 
-
+        // Re-usable filesystem paths (these shouldn't be modified)
+        paths: {
+          src:        'src',
+          src_img:    'src/img',
+          dist:       'dist',
+          dist_img:   'dist/img'
+        },
 
 
 
@@ -39,7 +45,7 @@ module.exports = function(grunt) {
           },
           pages: {
             src: ['src/emails/*.hbs'],
-            dest: 'dist/'
+            dest: '<%= paths.dist %>'
           }
         },
 
@@ -52,19 +58,19 @@ module.exports = function(grunt) {
               patterns: [
                 {
                   match: /(<img[^>]+[\"'])(\.\.\/src\/img\/)/gi,  // Matches <img * src="../src/img or <img * src='../src/img'
-                  replacement: '$1../dist/img/'
+                  replacement: '$1../<%= paths.dist_img %>/'
                 },
                 {
                   match: /(url\(*[^)])(\.\.\/src\/img\/)/gi,  // Matches url('../src/img') or url(../src/img) and even url("../src/img")
-                  replacement: '$1../dist/img/'
+                  replacement: '$1../<%= paths.dist_img %>/'
                 }
               ]
             },
             files: [{
               expand: true,
               flatten: true,
-              src: ['./dist/*.html'],
-              dest: './dist/'
+              src: ['<%= paths.dist %>/*.html'],
+              dest: '<%= paths.dist %>'
             }]
           }
         },
@@ -81,7 +87,7 @@ module.exports = function(grunt) {
             },
             files: [{
                 expand: true,
-                src: ['dist/*.html'],
+                src: ['<%= paths.dist %>/*.html'],
                 dest: ''
             }]
           },
@@ -91,7 +97,7 @@ module.exports = function(grunt) {
             },
             files: [{
                 expand: true,
-                src: ['dist/*.html'],
+                src: ['<%= paths.dist %>/*.html'],
                 dest: '',
                 ext: '.txt'
             }]
@@ -109,9 +115,9 @@ module.exports = function(grunt) {
             },
             files: [{
               expand: true,
-              cwd: 'src/img',
+              cwd: '<%= paths.src_img %>',
               src: ['**/*.{png,jpg,gif}'],
-              dest: 'dist/img'
+              dest: '<%= paths.dist_img %>'
             }]
           }
         },
@@ -138,7 +144,7 @@ module.exports = function(grunt) {
               recipient: '<%= secrets.mailgun.recipient %>', // See README for secrets.json or replace this with your preferred recipient
               subject: 'This is a test email'
             },
-            src: ['dist/'+grunt.option('template')]
+            src: ['<%= paths.dist %>/'+grunt.option('template')]
           }
         },
 
@@ -154,7 +160,7 @@ module.exports = function(grunt) {
             'region': '<%= secrets.cloudfiles.region %>', // See README for secrets.json or replace this with your region
             'upload': [{
               'container': '<%= secrets.cloudfiles.container %>', // See README for secrets.json or replace this with your container name
-              'src': 'src/img/*',
+              'src': '<%= paths.src_img %>/*',
               'dest': '/',
               'stripcomponents': 0
             }]
@@ -169,8 +175,8 @@ module.exports = function(grunt) {
             supportedTypes: 'html'
           },
           dist: {
-            cwd: './dist/',
-            dest: './dist/',
+            cwd: '<%= paths.dist %>',
+            dest: '<%= paths.dist %>',
             src: ['*.html']
           }
         },
@@ -210,7 +216,7 @@ module.exports = function(grunt) {
         // grunt litmus --template=transaction.html
         litmus: {
           test: {
-            src: ['dist/'+grunt.option('template')],
+            src: ['<%= paths.dist %>/'+grunt.option('template')],
             options: {
               username: '<%= secrets.litmus.username %>', // See README for secrets.json or replace this with your username
               password: '<%= secrets.litmus.password %>', // See README for secrets.json or replace this with your password
