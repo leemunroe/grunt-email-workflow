@@ -120,6 +120,15 @@ See the output HTML in the `dist` folder. Open them and preview it the browser.
 
 Alternatively run `grunt watch`. This will check for any changes you make to your .scss and .hbs templates, then automatically run the tasks. Saves you having to run grunt every time.
 
+### Browser-based Previews
+
+In terminal, run `grunt serve`. 
+
+* This will run the default tasks `grunt` + the `watch` task will be initiated.
+* A preview ui will automagically open on [http://localhost:4000](http://localhost:4000) and you can review your templates.
+* Go about your business editing templates and see your template changes live-reload.
+* __NOTE:__ The express server stops working when the `watch` task is not running.
+
 ### Send the email to yourself
 
 * Sign up for a [Mailgun](http://www.mailgun.com) account (it's free)
