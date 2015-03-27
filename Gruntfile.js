@@ -44,6 +44,32 @@ module.exports = function(grunt) {
         },
 
 
+        // Replace compiled template images sources from ../src/html to ../dist/html
+        replace: {
+          src_images: {
+            options: {
+              usePrefix: false,
+              patterns: [
+                {
+                  match: /(<img[^>]+[\"'])(\.\.\/src\/img\/)/gi,  // Matches <img * src="../src/img or <img * src='../src/img'
+                  replacement: '$1../dist/img/'
+                },
+                {
+                  match: /(url\(*[^)])(\.\.\/src\/img\/)/gi,  // Matches url('../src/img') or url(../src/img) and even url("../src/img")
+                  replacement: '$1../dist/img/'
+                }
+              ]
+            },
+            files: [{
+              expand: true,
+              flatten: true,
+              src: ['./dist/*.html'],
+              dest: './dist/'
+            }]
+          }
+        },
+
+
 
 
 
@@ -210,9 +236,10 @@ module.exports = function(grunt) {
     grunt.loadNpmTasks('grunt-s3');
     grunt.loadNpmTasks('grunt-litmus');
     grunt.loadNpmTasks('grunt-contrib-imagemin');
+    grunt.loadNpmTasks('grunt-replace');
 
     // Where we tell Grunt what to do when we type "grunt" into the terminal.
-    grunt.registerTask('default', ['sass','assemble','premailer', 'imagemin']);
+    grunt.registerTask('default', ['sass','assemble','premailer','imagemin','replace:src_images']);
 
     // Use grunt send if you want to actually send the email to your inbox
     grunt.registerTask('send', ['mailgun']);
