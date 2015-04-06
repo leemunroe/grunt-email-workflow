@@ -1,8 +1,7 @@
 module.exports = function(grunt) {
 
-
-
     grunt.initConfig({
+
         pkg: grunt.file.readJSON('package.json'),
 
         // secrets.json is ignored in git because it contains sensitive data
@@ -74,6 +73,8 @@ module.exports = function(grunt) {
 
 
 
+
+
         // Optimize images
         imagemin: {
           dynamic: {
@@ -89,6 +90,8 @@ module.exports = function(grunt) {
             }]
           }
         },
+
+
 
 
 
@@ -150,6 +153,9 @@ module.exports = function(grunt) {
         },
 
 
+
+
+
         // Use Amazon S3 for images
         s3: {
           options: {
@@ -180,6 +186,9 @@ module.exports = function(grunt) {
         },
 
 
+
+
+
         // Send your email template to Litmus for testing
         // grunt litmus --template=transaction.html
         litmus: {
@@ -198,6 +207,10 @@ module.exports = function(grunt) {
         }
 
     });
+
+
+
+
 
     // Where we tell Grunt we plan to use this plug-in.
     grunt.loadNpmTasks('grunt-contrib-sass');
