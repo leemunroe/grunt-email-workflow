@@ -1,0 +1,5 @@
+# needs to be here for the docker builder
+
+*
+
+!.gitignore

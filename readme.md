@@ -20,6 +20,8 @@ This Grunt task helps simplify things.
 
 You may already have these installed on your system. If not, you'll have to install them.
 
+**Note: if you use docker, skip to the Docker section**
+
 * Node.js - [Install Node.js](https://github.com/joyent/node/wiki/Installing-Node.js-via-package-manager)
 * Grunt-cli and Grunt (`npm install grunt-cli -g`)
 * [Mailgun](http://www.mailgun.com) (optional) - Sends the email
@@ -48,7 +50,52 @@ Create a `secrets.json` file in your project root as **outlined below under "[Se
 
 Run `grunt` in command line and check out your `/dist` folder to see your compiled and inlined email templates.
 
-### Sensitive information
+## Docker
+
+### Docker Run
+
+A public image is on the docker hub, so using it is easy:
+
+**Note: if you don't care about permissions for the `dist` files on the host, just remove the `/etc/passwd` and `/etc/group` from the `docker run` command**
+
+```
+docker run -it \
+    -u $(whoami) \
+    -v $(pwd)/src:/app/src \
+    -v $(pwd)/dist:/app/dist \
+    -v /etc/passwd:/etc/passwd:ro \
+    -v /etc/group:/etc/group:ro \
+    sherzberg/grunt-email-workflow:latest
+```
+
+### Docker Build
+
+If you have docker setup and installed, this repo has a `Dockerfile` that sets up all required dependencies:
+
+```
+git clone https://github.com/leemunroe/grunt-email-design.git
+cd grunt-email-design
+docker build -t _grunt-email-design .
+```
+
+This image needs a few volumes mapped into the running container to do the work. Also, to fix a few permission issues,
+we set the containers user and pass along `/etc/password` and `/etc/group` as well as `src` and `dist`. This allows
+use to generate the final templates with the correct permissions and have the files on the host.
+
+**Note: if you don't care about permissions for the `dist` files on the host, just remove the `/etc/passwd` and `/etc/group` from the `docker run` command**
+
+```
+docker run -it \
+    -u $(whoami) \
+    -v $(pwd)/src:/app/src \
+    -v $(pwd)/dist:/app/dist \
+    -v /etc/passwd:/etc/passwd:ro \
+    -v /etc/group:/etc/group:ro \
+    _grunt-email-design default
+```
+
+### Sensitive Information
+
 We encourage you __not__ to store sensitive data in your git repository. If you must, please look into [git-encrypt](https://github.com/shadowhand/git-encrypt) or some other method of encrypting your configuration secrets.
 
 1. Create a file `secrets.json` in your project root.
