@@ -26,7 +26,7 @@ module.exports = function(grunt) {
               style: 'expanded'
             },
             files: {
-              'src/css/main.css': 'src/css/scss/main.scss'
+              '<%= paths.src %>/css/main.css': '<%= paths.src %>/css/scss/main.scss'
             }
           }
         },
@@ -38,13 +38,13 @@ module.exports = function(grunt) {
         // Assembles your email content with html layout
         assemble: {
           options: {
-            layoutdir: 'src/layouts',
-            partials: ['src/partials/**/*.hbs'],
-            data: ['src/data/*.{json,yml}'],
+            layoutdir: '<%= paths.src %>/layouts',
+            partials: ['<%= paths.src %>/partials/**/*.hbs'],
+            data: ['<%= paths.src %>/data/*.{json,yml}'],
             flatten: true
           },
           pages: {
-            src: ['src/emails/*.hbs'],
+            src: ['<%= paths.src %>/emails/*.hbs'],
             dest: '<%= paths.dist %>'
           }
         },
@@ -126,7 +126,7 @@ module.exports = function(grunt) {
 
         // Watches for changes to css or email templates then runs grunt tasks
         watch: {
-          files: ['src/css/scss/*','src/emails/*','src/layouts/*','src/partials/*','src/data/*'],
+          files: ['<%= paths.src %>/css/scss/*','<%= paths.src %>/emails/*','<%= paths.src %>/layouts/*','<%= paths.src %>/partials/*','<%= paths.src %>/data/*'],
           tasks: ['default']
         },
 
