@@ -9,7 +9,13 @@ module.exports = function(grunt) {
         // See the README for configuration settings
         secrets: grunt.file.readJSON('secrets.json'),
 
-
+        // Re-usable filesystem paths (these shouldn't be modified)
+        paths: {
+          src:        'src',
+          src_img:    'src/img',
+          dist:       'dist',
+          dist_img:   'dist/img'
+        },
 
 
 
@@ -20,7 +26,7 @@ module.exports = function(grunt) {
               style: 'expanded'
             },
             files: {
-              'src/css/main.css': 'src/css/scss/main.scss'
+              '<%= paths.src %>/css/main.css': '<%= paths.src %>/css/scss/main.scss'
             }
           }
         },
@@ -32,14 +38,40 @@ module.exports = function(grunt) {
         // Assembles your email content with html layout
         assemble: {
           options: {
-            layoutdir: 'src/layouts',
-            partials: ['src/partials/**/*.hbs'],
-            data: ['src/data/*.{json,yml}'],
+            layoutdir: '<%= paths.src %>/layouts',
+            partials: ['<%= paths.src %>/partials/**/*.hbs'],
+            data: ['<%= paths.src %>/data/*.{json,yml}'],
             flatten: true
           },
           pages: {
-            src: ['src/emails/*.hbs'],
-            dest: 'dist/'
+            src: ['<%= paths.src %>/emails/*.hbs'],
+            dest: '<%= paths.dist %>'
+          }
+        },
+
+
+        // Replace compiled template images sources from ../src/html to ../dist/html
+        replace: {
+          src_images: {
+            options: {
+              usePrefix: false,
+              patterns: [
+                {
+                  match: /(<img[^>]+[\"'])(\.\.\/src\/img\/)/gi,  // Matches <img * src="../src/img or <img * src='../src/img'
+                  replacement: '$1../<%= paths.dist_img %>/'
+                },
+                {
+                  match: /(url\(*[^)])(\.\.\/src\/img\/)/gi,  // Matches url('../src/img') or url(../src/img) and even url("../src/img")
+                  replacement: '$1../<%= paths.dist_img %>/'
+                }
+              ]
+            },
+            files: [{
+              expand: true,
+              flatten: true,
+              src: ['<%= paths.dist %>/*.html'],
+              dest: '<%= paths.dist %>'
+            }]
           }
         },
 
@@ -55,7 +87,7 @@ module.exports = function(grunt) {
             },
             files: [{
                 expand: true,
-                src: ['dist/*.html'],
+                src: ['<%= paths.dist %>/*.html'],
                 dest: ''
             }]
           },
@@ -65,7 +97,7 @@ module.exports = function(grunt) {
             },
             files: [{
                 expand: true,
-                src: ['dist/*.html'],
+                src: ['<%= paths.dist %>/*.html'],
                 dest: '',
                 ext: '.txt'
             }]
@@ -83,9 +115,9 @@ module.exports = function(grunt) {
             },
             files: [{
               expand: true,
-              cwd: 'src/img',
+              cwd: '<%= paths.src_img %>',
               src: ['**/*.{png,jpg,gif}'],
-              dest: 'dist/img'
+              dest: '<%= paths.dist_img %>'
             }]
           }
         },
@@ -94,7 +126,7 @@ module.exports = function(grunt) {
 
         // Watches for changes to css or email templates then runs grunt tasks
         watch: {
-          files: ['src/css/scss/*','src/emails/*','src/layouts/*','src/partials/*','src/data/*'],
+          files: ['<%= paths.src %>/css/scss/*','<%= paths.src %>/emails/*','<%= paths.src %>/layouts/*','<%= paths.src %>/partials/*','<%= paths.src %>/data/*'],
           tasks: ['default']
         },
 
@@ -112,7 +144,7 @@ module.exports = function(grunt) {
               recipient: '<%= secrets.mailgun.recipient %>', // See README for secrets.json or replace this with your preferred recipient
               subject: 'This is a test email'
             },
-            src: ['dist/'+grunt.option('template')]
+            src: ['<%= paths.dist %>/'+grunt.option('template')]
           }
         },
 
@@ -128,7 +160,7 @@ module.exports = function(grunt) {
             'region': '<%= secrets.cloudfiles.region %>', // See README for secrets.json or replace this with your region
             'upload': [{
               'container': '<%= secrets.cloudfiles.container %>', // See README for secrets.json or replace this with your container name
-              'src': 'src/img/*',
+              'src': '<%= paths.src_img %>/*',
               'dest': '/',
               'stripcomponents': 0
             }]
@@ -143,8 +175,8 @@ module.exports = function(grunt) {
             supportedTypes: 'html'
           },
           dist: {
-            cwd: './dist/',
-            dest: './dist/',
+            cwd: '<%= paths.dist %>',
+            dest: '<%= paths.dist %>',
             src: ['*.html']
           }
         },
@@ -184,7 +216,7 @@ module.exports = function(grunt) {
         // grunt litmus --template=transaction.html
         litmus: {
           test: {
-            src: ['dist/'+grunt.option('template')],
+            src: ['<%= paths.dist %>/'+grunt.option('template')],
             options: {
               username: '<%= secrets.litmus.username %>', // See README for secrets.json or replace this with your username
               password: '<%= secrets.litmus.password %>', // See README for secrets.json or replace this with your password
@@ -210,9 +242,10 @@ module.exports = function(grunt) {
     grunt.loadNpmTasks('grunt-s3');
     grunt.loadNpmTasks('grunt-litmus');
     grunt.loadNpmTasks('grunt-contrib-imagemin');
+    grunt.loadNpmTasks('grunt-replace');
 
     // Where we tell Grunt what to do when we type "grunt" into the terminal.
-    grunt.registerTask('default', ['sass','assemble','premailer', 'imagemin']);
+    grunt.registerTask('default', ['sass','assemble','premailer','imagemin','replace:src_images']);
 
     // Use grunt send if you want to actually send the email to your inbox
     grunt.registerTask('send', ['mailgun']);
