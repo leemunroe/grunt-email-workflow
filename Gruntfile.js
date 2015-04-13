@@ -18,6 +18,8 @@ module.exports = function(grunt) {
 
 
 
+
+
         // Takes your scss files and compiles them to css
         sass: {
           dist: {
@@ -47,6 +49,9 @@ module.exports = function(grunt) {
             dest: '<%= paths.dist %>/'
           }
         },
+
+
+
 
 
         // Replace compiled template images sources from ../src/html to ../dist/html
