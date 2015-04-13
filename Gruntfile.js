@@ -44,7 +44,7 @@ module.exports = function(grunt) {
           },
           pages: {
             src: ['<%= paths.src %>/emails/*.hbs'],
-            dest: '<%= paths.dist %>'
+            dest: '<%= paths.dist %>/'
           }
         },
 
