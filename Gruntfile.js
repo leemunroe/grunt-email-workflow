@@ -222,7 +222,7 @@ module.exports = function(grunt) {
               }
             },
             files: [
-              {expand: true, cwd: 'dist/img/', src: ['**'], dest: '/src/img'}
+              {expand: true, cwd: '<%= paths.dist_img %>', src: ['**'], dest: 'test/<%= paths.dist_img %>'}
             ]
           }
         },
