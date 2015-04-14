@@ -184,8 +184,8 @@ module.exports = function(grunt) {
               flatten: true,
               supportedTypes: 'html'
             },
-            cwd: './dist/',
-            dest: './dist/',
+            cwd: './<%= paths.dist %>',
+            dest: './<%= paths.dist %>',
             src: ['*.html']
           },
           aws_s3: {
@@ -194,8 +194,8 @@ module.exports = function(grunt) {
               flatten: true,
               supportedTypes: 'html'
             },
-            cwd: './dist/',
-            dest: './dist/',
+            cwd: './<%= paths.dist %>',
+            dest: './<%= paths.dist %>',
             src: ['*.html']
           }
         },
