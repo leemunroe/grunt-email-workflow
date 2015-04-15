@@ -63,10 +63,12 @@ We encourage you __not__ to store sensitive data in your git repository. If you 
     "uri": "CLOUDFILES URI"
   },
   "s3": {
-    "key": "AMAZONS3 KEY",
-    "secret": "AMAZONS3 SECRET",
-    "bucketname": "AMAZONS3 BUCKET NAME",
-    "bucketpath": "AMAZONS3 BUCKET PATH"
+    "key": "AMAZON S3 KEY",
+    "secret": "AMAZON S3 SECRET",
+    "region": "AMAZON S3 REGION",
+    "bucketname": "AMAZON S3 BUCKET NAME",
+    "bucketdir": "AMAZON S3 BUCKET SUBDIRECTORY (optional)",
+    "bucketpath": "AMAZON S3 BUCKET PATH"
   }
 }
 ```

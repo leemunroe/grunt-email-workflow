@@ -190,7 +190,7 @@ module.exports = function(grunt) {
           },
           aws_s3: {
             options: {
-              cdn: '<%= secrets.s3.bucketpath %>', // See README for secrets.json or replace this with your Amazon S3 bucket uri
+              cdn: '<%= secrets.s3.bucketuri %>/<%= secrets.s3.bucketname %>/<%= secrets.s3.bucketdir %>', // See README for secrets.json or replace this with your Amazon S3 bucket uri
               flatten: true,
               supportedTypes: 'html'
             },
@@ -209,7 +209,7 @@ module.exports = function(grunt) {
           options: {
             accessKeyId: '<%= secrets.s3.key %>', // See README for secrets.json
             secretAccessKey: '<%= secrets.s3.secret %>', // See README for secrets.json
-            region: '', // Enter region or leave blank for US Standard region
+            region: '<%= secrets.s3.region %>', // Enter region or leave blank for US Standard region
             uploadConcurrency: 5, // 5 simultaneous uploads
             downloadConcurrency: 5 // 5 simultaneous downloads
           },
@@ -222,7 +222,7 @@ module.exports = function(grunt) {
               }
             },
             files: [
-              {expand: true, cwd: '<%= paths.dist_img %>', src: ['**'], dest: 'test/<%= paths.dist_img %>'}
+              {expand: true, cwd: '<%= paths.dist_img %>', src: ['**'], dest: '<%= secrets.s3.bucketdir %>/<%= paths.dist_img %>'}
             ]
           }
         },
