@@ -15,13 +15,10 @@
     "grunt-contrib-watch": "^0.6.1",
     "grunt-litmus": "^0.1.8",
     "grunt-mailgun": "0.0.3",
-    "grunt-premailer": "^0.2.5",
+    "grunt-premailer": "0.2.5",
     "grunt-s3": "^0.2.0-alpha.3",
     "imagemin-mozjpeg": "^0.1.2",
-    "grunt-premailer": "0.2.5",
-    "grunt-cloudfiles": "^0.3.0",
-    "grunt-cdn": "^0.6.1",
-    "grunt-litmus": "^0.1.8",
-    "grunt-replace": "^0.8.0"
+    "grunt-replace": "^0.8.0",
+    "load-grunt-tasks": "^3.1.0"
   }
 }
