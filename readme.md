@@ -61,6 +61,14 @@ We encourage you __not__ to store sensitive data in your git repository. If you 
     "region": "CLOUDFILES REGION E.G. ORD",
     "container": "CLOUDFILES CONTAINER NAME",
     "uri": "CLOUDFILES URI"
+  },
+  "s3": {
+    "key": "AMAZON S3 KEY",
+    "secret": "AMAZON S3 SECRET",
+    "region": "AMAZON S3 REGION",
+    "bucketname": "AMAZON S3 BUCKET NAME",
+    "bucketdir": "AMAZON S3 BUCKET SUBDIRECTORY (optional)",
+    "bucketuri": "AMAZON S3 PATH (ex: https://s3.amazonaws.com/)"
   }
 }
 ```
@@ -151,6 +159,38 @@ If your email contains images you'll want to serve them from a CDN. This Gruntfi
 Run `grunt cdnify` to run the default tasks as well as upload any images to your CDN.
 
 Run `grunt cdnify send --template=branded.html` to send the email to yourself with the 'CDNified' images.
+
+
+### Using Amazon S3 for image assets
+
+Another option for serving images is to use Amazon S3. Basic service is free of charge. For more information on setting up an account, visit [Amazon](http://aws.amazon.com/s3/).
+
+The Gruntfile uses [grunt-aws-s3](https://github.com/MathieuLoutre/grunt-aws-s3).
+
+Once your AWS account is setup, create a Bucket within S3. You will need to ensure your Bucket has a policy setup under Permissions. Below is a very loose sample policy for testing purposes. You should read up on [AWS Identity and Access Management](http://aws.amazon.com/iam/) for more information.
+
+**Sample S3 Bucket Policy**
+
+```
+{
+  "Version": "2008-10-17",
+  "Id": "Policy123",
+  "Statement": [
+    {
+      "Sid": "Stmt456",
+      "Effect": "Allow",
+      "Principal": {
+        "AWS": "*"
+      },
+      "Action": "s3:*",
+      "Resource": "arn:aws:s3:::BUCKETNAME"
+    }
+  ]
+}
+```
+
+Run `grunt s3upload` to upload images to your S3 Bucket. This will also run a replace task to change image paths within the destination directory to use the new S3 path.
+
 
 ### Sample email templates
 
