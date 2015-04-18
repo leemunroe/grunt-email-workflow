@@ -68,7 +68,7 @@ We encourage you __not__ to store sensitive data in your git repository. If you 
     "region": "AMAZON S3 REGION",
     "bucketname": "AMAZON S3 BUCKET NAME",
     "bucketdir": "AMAZON S3 BUCKET SUBDIRECTORY (optional)",
-    "bucketpath": "AMAZON S3 BUCKET PATH"
+    "bucketuri": "AMAZON S3 PATH (ex: https://s3.amazonaws.com/)"
   }
 }
 ```
