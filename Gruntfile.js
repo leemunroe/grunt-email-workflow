@@ -252,20 +252,12 @@ module.exports = function(grunt) {
 
 
 
-
-
-    // Where we tell Grunt we plan to use this plug-in.
-    grunt.loadNpmTasks('grunt-contrib-sass');
+    // Load assemble
     grunt.loadNpmTasks('assemble');
-    grunt.loadNpmTasks('grunt-mailgun');
-    grunt.loadNpmTasks('grunt-premailer');
-    grunt.loadNpmTasks('grunt-contrib-watch');
-    grunt.loadNpmTasks('grunt-cloudfiles');
-    grunt.loadNpmTasks('grunt-cdn');
-    grunt.loadNpmTasks('grunt-aws-s3');
-    grunt.loadNpmTasks('grunt-litmus');
-    grunt.loadNpmTasks('grunt-contrib-imagemin');
-    grunt.loadNpmTasks('grunt-replace');
+
+    // Load all grunt tasks
+    // https://github.com/sindresorhus/load-grunt-tasks
+    require('load-grunt-tasks')(grunt);
 
     // Where we tell Grunt what to do when we type "grunt" into the terminal.
     grunt.registerTask('default', ['sass','assemble','premailer','imagemin','replace:src_images']);
