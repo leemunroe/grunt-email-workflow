@@ -120,11 +120,10 @@ Alternatively run `grunt watch`. This will check for any changes you make to you
 ### Send the email to yourself
 
 * Sign up for a [Mailgun](http://www.mailgun.com) account (it's free)
-* Open up `Gruntfile.js`
-* Replace 'MAILGUN_KEY' with your actual Mailgun API key
+* Insert your Mailgun API key, either in `Gruntfile.js` or `secrets.json`
 * Change the sender and recipient to your own email address (or whoever you want to send it to)
 
-Run `grunt send --template=transaction.html`. This will email out the template you specify.
+Run `grunt send --template=TEMPLATE_NAME.html`. This will email out the template you specify.
 
 <img src="http://i.imgur.com/6N8VRen.gif" width="500">
 
@@ -134,7 +133,7 @@ Change 'transaction.html' to the name of the email template you want to send.
 
 If you have a [Litmus](http://www.litmus.com) account and want to test the email in multiple clients/devices:
 
-* Open up `Gruntfile.js` 
+* Open up `Gruntfile.js` or `secrets.json`
 * Replace `username`, `password` and `yourcompany` under the Litmus task with your credentials
 
 Run `grunt litmus --template=TEMPLATE_NAME.html` to send the email to Litmus. This will create a new test using the `<title>` value of your template.
@@ -152,7 +151,7 @@ If your email contains images you'll want to serve them from a CDN. This Gruntfi
 
 * Sign up for a Rackspace Cloud account (use the [Developer Discount](http://developer.rackspace.com/devtrial/) for $300 credit)
 * Create a new Cloud Files container
-* Open up `Gruntfile.js`
+* Open up `Gruntfile.js` or `secrets.json`
 * Change 'cloudfiles' settings to your settings (you can find your Rackspace API key under your account settings)
 * Make any other config changes as per [grunt-cloudfiles](https://github.com/rtgibbons/grunt-cloudfiles) instructions
 
@@ -199,4 +198,8 @@ I've added two templates here to help you get started.
 * [Simple transactional email template](http://leemunroe.github.io/grunt-email-design/dist/transaction.html)
 * [Branded email via CDN](http://leemunroe.github.io/grunt-email-design/dist/branded.html)
 
-For more transactional email templates check out [Mailgun's collection of templates](http://github.com/mailgun/transactional-email-templates).
+### More resources
+
+* For more transactional email templates check out [Mailgun's collection of templates](http://github.com/mailgun/transactional-email-templates).
+* [Things I've learned about sending email](http://www.leemunroe.com/sending-email-designers-developers/)
+* [Things I've learned about building HTML email templates](http://www.leemunroe.com/building-html-email/)
