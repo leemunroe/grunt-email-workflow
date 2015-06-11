@@ -8,13 +8,11 @@ table,
 td,
 div,
 a {
-  box-sizing: border-box;
-}
+  box-sizing: border-box; }
 
 img {
   -ms-interpolation-mode: bicubic;
-  max-width: 100%;
-}
+  max-width: 100%; }
 
 body {
   font-family: "Helvetica Neue", "Helvetica", Helvetica, Arial, sans-serif;
@@ -26,24 +24,20 @@ body {
   padding: 0;
   -ms-text-size-adjust: 100%;
   -webkit-text-size-adjust: 100%;
-  width: 100% !important;
-}
+  width: 100% !important; }
 
 table {
   -premailer-width: 100%;
   border-collapse: separate !important;
   mso-table-lspace: 0pt;
-  mso-table-rspace: 0pt;
-}
-table td {
-  vertical-align: top;
-  mso-table-lspace: 0pt;
-  mso-table-rspace: 0pt;
-}
+  mso-table-rspace: 0pt; }
+  table td {
+    vertical-align: top;
+    mso-table-lspace: 0pt;
+    mso-table-rspace: 0pt; }
 
 .ExternalClass {
-  width: 100%;
-}
+  width: 100%; }
 
 .ExternalClass,
 .ExternalClass p,
@@ -51,20 +45,17 @@ table td {
 .ExternalClass font,
 .ExternalClass td,
 .ExternalClass div {
-  line-height: 100%;
-}
+  line-height: 100%; }
 
 /* -------------------------------------
     BODY & CONTAINER
 ------------------------------------- */
 body {
-  background-color: #f6f6f6;
-}
+  background-color: #f6f6f6; }
 
 .body {
   background-color: #f6f6f6;
-  width: 100%;
-}
+  width: 100%; }
 
 /* Set a max-width, and make it display as block so it will automatically stretch to that width, but will also shrink down on a phone or something */
 .container {
@@ -74,16 +65,14 @@ body {
   max-width: 580px;
   padding: 10px;
   width: auto !important;
-  width: 580px;
-}
+  width: 580px; }
 
 /* This should also be a block element, so that it will fill 100% of the .container */
 .content {
   display: block;
   margin: 0 auto;
   max-width: 580px;
-  padding: 10px;
-}
+  padding: 10px; }
 
 /* -------------------------------------
     HEADER, FOOTER, MAIN
@@ -92,34 +81,27 @@ body {
   background: #fff;
   border: 1px solid #e9e9e9;
   border-radius: 3px;
-  width: 100%;
-}
+  width: 100%; }
 
 .wrapper {
-  padding: 30px;
-}
+  padding: 30px; }
 
 .content-block {
-  padding: 0 0 30px;
-}
+  padding: 0 0 30px; }
 
 .header {
   margin-bottom: 30px;
   margin-top: 20px;
-  width: 100%;
-}
+  width: 100%; }
 
 .footer {
   clear: both;
-  width: 100%;
-}
-.footer * {
-  color: #999;
-  font-size: 12px;
-}
-.footer td {
-  padding: 20px 0;
-}
+  width: 100%; }
+  .footer * {
+    color: #999;
+    font-size: 12px; }
+  .footer td {
+    padding: 20px 0; }
 
 /* -------------------------------------
     TYPOGRAPHY
@@ -133,27 +115,22 @@ h4 {
   font-weight: 400;
   line-height: 1.4;
   margin: 0;
-  margin-bottom: 30px;
-}
+  margin-bottom: 30px; }
 
 h1 {
   font-size: 38px;
   text-transform: capitalize;
-  font-weight: 300;
-}
+  font-weight: 300; }
 
 h2 {
-  font-size: 24px;
-}
+  font-size: 24px; }
 
 h3 {
-  font-size: 18px;
-}
+  font-size: 18px; }
 
 h4 {
   font-size: 14px;
-  font-weight: 500;
-}
+  font-weight: 500; }
 
 p,
 ul,
@@ -162,19 +139,16 @@ ol {
   font-size: 14px;
   font-weight: normal;
   margin: 0;
-  margin-bottom: 15px;
-}
-p li,
-ul li,
-ol li {
-  list-style-position: inside;
-  margin-left: 5px;
-}
+  margin-bottom: 15px; }
+  p li,
+  ul li,
+  ol li {
+    list-style-position: inside;
+    margin-left: 5px; }
 
 a {
   color: #348eda;
-  text-decoration: underline;
-}
+  text-decoration: underline; }
 
 /* -------------------------------------
     BUTTONS
@@ -182,71 +156,59 @@ a {
 .btn {
   margin-bottom: 15px;
   width: auto;
-  -premailer-width: auto;
-}
-.btn td {
-  background-color: #fff;
-  border-radius: 5px;
-  text-align: center;
-}
-.btn a {
-  background-color: #fff;
-  border: solid 1px #348eda;
-  border-radius: 5px;
-  color: #348eda;
-  cursor: pointer;
-  display: inline-block;
-  font-size: 14px;
-  font-weight: bold;
-  margin: 0;
-  padding: 12px 25px;
-  text-decoration: none;
-  text-transform: capitalize;
-}
+  -premailer-width: auto; }
+  .btn td {
+    background-color: #fff;
+    border-radius: 5px;
+    text-align: center; }
+  .btn a {
+    background-color: #fff;
+    border: solid 1px #348eda;
+    border-radius: 5px;
+    color: #348eda;
+    cursor: pointer;
+    display: inline-block;
+    font-size: 14px;
+    font-weight: bold;
+    margin: 0;
+    padding: 12px 25px;
+    text-decoration: none;
+    text-transform: capitalize; }
 
 .btn-primary td {
-  background-color: #348eda;
-}
+  background-color: #348eda; }
+
 .btn-primary a {
   background-color: #348eda;
   border-color: #348eda;
-  color: #fff;
-}
+  color: #fff; }
 
 /* -------------------------------------
     OTHER STYLES THAT MIGHT BE USEFUL
 ------------------------------------- */
 .last {
-  margin-bottom: 0;
-}
+  margin-bottom: 0; }
 
 .first {
-  margin-top: 0;
-}
+  margin-top: 0; }
 
 .align-center {
-  text-align: center;
-}
+  text-align: center; }
 
 .align-right {
-  text-align: right;
-}
+  text-align: right; }
 
 .align-left {
-  text-align: left;
-}
+  text-align: left; }
 
 .clear {
-  clear: both;
-}
+  clear: both; }
 
 .mt0 {
-  margin-top: 0;
-}
+  margin-top: 0; }
 
 .mb0 {
-  margin-bottom: 0;
-}
+  margin-bottom: 0; }
 
 .preheader {
   color: transparent;
@@ -258,8 +220,7 @@ a {
   overflow: hidden;
   mso-hide: all;
   visibility: hidden;
-  width: 0;
-}
+  width: 0; }
 
 /* -------------------------------------
     RESPONSIVE AND MOBILE FRIENDLY STYLES
@@ -269,28 +230,18 @@ a {
   table[class=body] h2,
   table[class=body] h3,
   table[class=body] h4 {
-    font-weight: 600 !important;
-  }
+    font-weight: 600 !important; }
   table[class=body] h1 {
-    font-size: 22px !important;
-  }
+    font-size: 22px !important; }
   table[class=body] h2 {
-    font-size: 18px !important;
-  }
+    font-size: 18px !important; }
   table[class=body] h3 {
-    font-size: 16px !important;
-  }
+    font-size: 16px !important; }
   table[class=body] .content,
   table[class=body] .wrapper {
-    padding: 10px !important;
-  }
+    padding: 10px !important; }
   table[class=body] .container {
     padding: 0 !important;
-    width: 100% !important;
-  }
+    width: 100% !important; }
   table[class=body] .btn {
-    width: 100% !important;
-  }
-}
-
-/*# sourceMappingURL=main.css.map */
+    width: 100% !important; } }

@@ -12,13 +12,13 @@
     "grunt-cdn": "^0.6.1",
     "grunt-cloudfiles": "^0.3.0",
     "grunt-contrib-imagemin": "^0.9.3",
-    "grunt-contrib-sass": "^0.7.3",
     "grunt-contrib-watch": "^0.6.1",
     "grunt-litmus": "^0.1.8",
     "grunt-mailgun": "0.0.3",
     "grunt-premailer": "0.2.5",
     "imagemin-mozjpeg": "^0.1.2",
     "grunt-replace": "^0.8.0",
-    "load-grunt-tasks": "^3.1.0"
+    "load-grunt-tasks": "^3.1.0",
+    "grunt-sass": "^1.0.0"
   }
 }
