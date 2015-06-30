@@ -21,7 +21,7 @@ body {
   -webkit-font-smoothing: antialiased;
   font-size: 14px;
   height: 100% !important;
-  line-height: 1.6;
+  line-height: 1.6em;
   margin: 0;
   padding: 0;
   -ms-text-size-adjust: 100%;
@@ -30,15 +30,17 @@ body {
 }
 
 table {
-  -premailer-width: 100%;
   border-collapse: separate !important;
   mso-table-lspace: 0pt;
   mso-table-rspace: 0pt;
+  -premailer-width: 100%;
 }
 table td {
-  vertical-align: top;
+  font-family: "Helvetica Neue", Helvetica, Arial, "Lucida Grande", sans-serif;
+  font-size: 14px;
   mso-table-lspace: 0pt;
   mso-table-rspace: 0pt;
+  vertical-align: top;
 }
 
 .ExternalClass {
