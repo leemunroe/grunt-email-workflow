@@ -3,9 +3,11 @@
 ------------------------------------- */
 
 .btn {
+  -premailer-cellpadding: 0; // This is a specific style for the premailer gem
+  -premailer-cellspacing: 0; // This is a specific style for the premailer gem
+  -premailer-width: auto; // This is a specific style for the premailer gem
   margin-bottom: 15px;
   width: auto;
-  -premailer-width: auto; // This is a specific style for the premailer gem
 
   td {
     background-color: #fff;

@@ -182,9 +182,11 @@ a {
     BUTTONS
 ------------------------------------- */
 .btn {
+  -premailer-cellpadding: 0;
+  -premailer-cellspacing: 0;
+  -premailer-width: auto;
   margin-bottom: 15px;
   width: auto;
-  -premailer-width: auto;
 }
 .btn td {
   background-color: #fff;
