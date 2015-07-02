@@ -1,7 +1,9 @@
 // 
 // Helper for bullet proof buttons
+// Type accepts 'primary' or 'secondary'
+//
 // Example:
-// {{{ button 'http://www.leemunroe.com' 'Click here' }}}
+// {{{ button type="primary" url="http://www.leemunroe.com" title="Click to visit" }}}
 //
 module.exports.button = function (params) {
   return '\
