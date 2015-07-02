@@ -215,6 +215,15 @@ a {
   color: #fff;
 }
 
+.btn-secondary td {
+  background-color: transparent;
+}
+.btn-secondary a {
+  background-color: transparent;
+  border-color: #348eda;
+  color: #348eda;
+}
+
 /* -------------------------------------
     OTHER STYLES THAT MIGHT BE USEFUL
 ------------------------------------- */
