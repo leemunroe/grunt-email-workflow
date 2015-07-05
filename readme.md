@@ -195,8 +195,8 @@ Run `grunt s3upload` to upload images to your S3 Bucket. This will also run a re
 
 I've added two templates here to help you get started.
 
-* [Simple transactional email template](http://leemunroe.github.io/grunt-email-design/dist/transaction.html)
-* [Branded email via CDN](http://leemunroe.github.io/grunt-email-design/dist/branded.html)
+* [Simple transactional email template](http://leemunroe.github.io/grunt-email-workflow/dist/transaction.html)
+* [Branded email via CDN](http://leemunroe.github.io/grunt-email-workflow/dist/branded.html)
 
 ### More resources
 
