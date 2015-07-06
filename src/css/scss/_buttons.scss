@@ -3,11 +3,23 @@
 ------------------------------------- */
 
 .btn {
-  margin-bottom: 15px;
-  width: auto;
-  -premailer-width: auto; // This is a specific style for the premailer gem
+  -premailer-cellpadding: 0; // This is a specific style for the premailer gem
+  -premailer-cellspacing: 0; // This is a specific style for the premailer gem
+  -premailer-width: 100%; // This is a specific style for the premailer gem
+  width: 100%;
 
-  td {
+  > tr > td {
+    padding-bottom: 15px;
+  }
+
+  table {
+    -premailer-cellpadding: 0; // This is a specific style for the premailer gem
+    -premailer-cellspacing: 0; // This is a specific style for the premailer gem
+    -premailer-width: auto; // This is a specific style for the premailer gem
+    width: auto;
+  }
+
+  table td {
     background-color: #fff;
     border-radius: $btn-br;
     text-align: center;
@@ -29,9 +41,10 @@
   }
 }
 
+// Primary call to action button
 .btn-primary {
 
-  td {
+  table td {
     background-color: $primary-color;
   }
 
@@ -39,5 +52,19 @@
     background-color: $primary-color;
     border-color: $primary-color;
     color: #fff;
+  }
+}
+
+// Secondary button
+.btn-secondary {
+
+  table td {
+    background-color: transparent;
+  }
+
+  a{
+    background-color: transparent;
+    border-color: $primary-color;
+    color: $primary-color;
   }
 }

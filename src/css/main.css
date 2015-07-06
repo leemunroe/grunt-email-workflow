@@ -21,7 +21,7 @@ body {
   -webkit-font-smoothing: antialiased;
   font-size: 14px;
   height: 100% !important;
-  line-height: 1.6;
+  line-height: 1.6em;
   margin: 0;
   padding: 0;
   -ms-text-size-adjust: 100%;
@@ -30,15 +30,17 @@ body {
 }
 
 table {
-  -premailer-width: 100%;
   border-collapse: separate !important;
   mso-table-lspace: 0pt;
   mso-table-rspace: 0pt;
+  -premailer-width: 100%;
 }
 table td {
-  vertical-align: top;
+  font-family: "Helvetica Neue", Helvetica, Arial, "Lucida Grande", sans-serif;
+  font-size: 14px;
   mso-table-lspace: 0pt;
   mso-table-rspace: 0pt;
+  vertical-align: top;
 }
 
 .ExternalClass {
@@ -180,11 +182,21 @@ a {
     BUTTONS
 ------------------------------------- */
 .btn {
-  margin-bottom: 15px;
-  width: auto;
-  -premailer-width: auto;
+  -premailer-cellpadding: 0;
+  -premailer-cellspacing: 0;
+  -premailer-width: 100%;
+  width: 100%;
 }
-.btn td {
+.btn > tr > td {
+  padding-bottom: 15px;
+}
+.btn table {
+  -premailer-cellpadding: 0;
+  -premailer-cellspacing: 0;
+  -premailer-width: auto;
+  width: auto;
+}
+.btn table td {
   background-color: #fff;
   border-radius: 5px;
   text-align: center;
@@ -204,13 +216,22 @@ a {
   text-transform: capitalize;
 }
 
-.btn-primary td {
+.btn-primary table td {
   background-color: #348eda;
 }
 .btn-primary a {
   background-color: #348eda;
   border-color: #348eda;
   color: #fff;
+}
+
+.btn-secondary table td {
+  background-color: transparent;
+}
+.btn-secondary a {
+  background-color: transparent;
+  border-color: #348eda;
+  color: #348eda;
 }
 
 /* -------------------------------------
@@ -288,7 +309,7 @@ a {
     padding: 0 !important;
     width: 100% !important;
   }
-  table[class=body] .btn {
+  table[class=body] .btn table {
     width: 100% !important;
   }
 }
