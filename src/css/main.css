@@ -184,11 +184,19 @@ a {
 .btn {
   -premailer-cellpadding: 0;
   -premailer-cellspacing: 0;
+  -premailer-width: 100%;
+  width: 100%;
+}
+.btn > tr > td {
+  padding-bottom: 15px;
+}
+.btn table {
+  -premailer-cellpadding: 0;
+  -premailer-cellspacing: 0;
   -premailer-width: auto;
-  margin-bottom: 15px;
   width: auto;
 }
-.btn td {
+.btn table td {
   background-color: #fff;
   border-radius: 5px;
   text-align: center;
@@ -208,7 +216,7 @@ a {
   text-transform: capitalize;
 }
 
-.btn-primary td {
+.btn-primary table td {
   background-color: #348eda;
 }
 .btn-primary a {
@@ -217,7 +225,7 @@ a {
   color: #fff;
 }
 
-.btn-secondary td {
+.btn-secondary table td {
   background-color: transparent;
 }
 .btn-secondary a {
@@ -301,7 +309,7 @@ a {
     padding: 0 !important;
     width: 100% !important;
   }
-  table[class=body] .btn {
+  table[class=body] .btn table {
     width: 100% !important;
   }
 }
