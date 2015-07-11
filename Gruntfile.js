@@ -341,11 +341,6 @@ module.exports = function(grunt) {
 
     // Launch the express server and start watching
     // NOTE: The server will not stay running if the grunt watch task is not active
-    grunt.registerTask('serve', ['default', 'express', 'open', 'watch']);
-
-
-    // Launch the express server and start watching
-    // NOTE: The server will not stay running if the grunt watch task is not active
     grunt.registerTask('serve', ['default', 'autoprefixer:preview', 'express', 'open', 'watch']);
 
 };
