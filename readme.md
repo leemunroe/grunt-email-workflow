@@ -1,11 +1,10 @@
 # Grunt Email Design Workflow
 
 [![Built with Grunt](https://cdn.gruntjs.com/builtwith.png)](http://gruntjs.com/) 
-[![Dependency Status](https://gemnasium.com/leemunroe/grunt-email-workflow.svg)](https://gemnasium.com/leemunroe/grunt-email-workflow)
 
 Designing and testing emails is a pain. HTML tables, inline CSS, various devices and clients to test, and varying support for the latest web standards.
 
-This grunt task helps simplify things at the design stage.
+This Grunt task helps simplify things.
 
 1. Compiles your SCSS to CSS
 
@@ -13,16 +12,16 @@ This grunt task helps simplify things at the design stage.
 
 3. Inlines your CSS
 
-4. Uploads any images to a CDN (optional)
+4. Compresses and uploads images to a CDN (optional)
 
-5. Sends you a test email to your inbox (optional)
+5. Sends a test email to your inbox or Litmus (optional)
 
 ## Requirements
 
 * Node.js - [Install Node.js](https://github.com/joyent/node/wiki/Installing-Node.js-via-package-manager)
 * Grunt-cli and Grunt (`npm install grunt-cli -g`)
 * Ruby - [Install ruby with RVM](https://rvm.io/rvm/install)
-* Premailer (`gem install premailer hpricot nokogiri`) - Inlines the CSS
+* Premailer (`gem install premailer hpricot nokogiri`) - Required for inlining the CSS
 * [Mailgun](http://www.mailgun.com) (optional) - Sends the email
 * [Litmus](https://litmus.com) (optional) - Tests the email across all clients/browsers/devices
 * [Rackspace Cloud](http://www.rackspace.com/cloud/files/) (optional) - Uses Cloud Files as a CDN
@@ -34,11 +33,14 @@ If you haven't used [Grunt](http://gruntjs.com/) before check out Chris Coyier's
 Clone this repo, cd to the directory, run `npm install` to install the necessary packages.
 
 ```
-git clone https://github.com/leemunroe/grunt-email-design.git
-cd grunt-email-design
+git clone https://github.com/leemunroe/grunt-email-workflow.git
+cd grunt-email-workflow
 npm install
-grunt
 ```
+
+Create a `secrets.json` file as outlined below under "Sensitive Information".
+
+Run `grunt` in command line and check out your `/dist` folder to see your compiled and inlined email templates.
 
 ### Sensitive Information
 We encourage you __not__ to store sensitive data in your git repository. If you must, please look into [git-encrypt](https://github.com/shadowhand/git-encrypt) or some other method of encrypting your configuration secrets.
@@ -106,19 +108,26 @@ Handlebars and Assemble are used for templating.
 {{> follow_lee }}
 ```
 
+`/helpers` contains _optional_ .js files that can help generate your markup. To use a helper, for example `/helpers/helper-button.js` you would use the following code in your emails template:
+
+```
+{{{ button type="primary" align="center" url="LINK GOES HERE" title="ANCHOR TEXT GOES HERE" }}}
+```
+
 ### Generate your email templates
 
-In terminal, run `grunt`. This will:
+In Terminal/command-line, run `grunt`. This will:
 
 * Compile your SCSS to CSS
 * Generate your email layout and content
 * Inline your CSS
+* Compress your images
 
 See the output HTML in the `dist` folder. Open them and preview it the browser.
 
 <img src="http://i.imgur.com/WoWgRxm.gif" width="500">
 
-Alternatively run `grunt watch`. This will check for any changes you make to your .scss and .hbs templates, then automatically run the tasks. Saves you having to run grunt every time.
+Alternatively run `grunt serve`. This will check for any changes you make to your .scss and .hbs templates, automatically run the tasks, and serve you a preview in the browser on http://localhost:4000. Saves you having to run grunt every time you make a change.
 
 ### Browser-based Previews
 
@@ -157,7 +166,7 @@ Run `grunt litmus --template=TEMPLATE_NAME.html` to send the email to Litmus. Th
 
 ### CDN and working with image assets
 
-If your email contains images you'll want to serve them from a CDN. This Gruntfile has support for Rackspace Cloud Files ([pricing](http://www.rackspace.com/cloud/files/pricing/)).
+If your email contains images you'll want to serve them from a CDN. This Gruntfile has support for Rackspace Cloud Files ([pricing](http://www.rackspace.com/cloud/files/pricing/)) and AWS S3.
 
 <img src="http://i.imgur.com/oO5gfkZ.jpg" width="500">
 
