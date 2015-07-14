@@ -1,6 +1,5 @@
 module.exports = function(grunt) {
 
-
     grunt.initConfig({
 
         pkg: grunt.file.readJSON('package.json'),
@@ -8,7 +7,6 @@ module.exports = function(grunt) {
         // secrets.json is ignored in git because it contains sensitive data
         // See the README for configuration settings
         secrets: grunt.file.readJSON('secrets.json'),
-
 
         // Re-usable filesystem paths (these shouldn't be modified)
         paths: {
@@ -22,7 +20,8 @@ module.exports = function(grunt) {
 
 
 
-        // Takes your scss files and compiles them to css
+
+        // Takes your SCSS files and compiles them to CSS
         sass: {
           dist: {
             options: {
@@ -32,7 +31,8 @@ module.exports = function(grunt) {
               '<%= paths.src %>/css/main.css': '<%= paths.src %>/css/scss/main.scss'
             }
           },
-          // This task complies sass for the browser-baed preview UI.
+
+          // This task compiles Sass for the browser-baed preview UI.
           // You should not need to edit it.
           preview: {
             options: {
@@ -48,7 +48,7 @@ module.exports = function(grunt) {
 
 
 
-        // Assembles your email content with html layout
+        // Assembles your email content with HTML layout
         assemble: {
           options: {
             layoutdir: '<%= paths.src %>/layouts',
@@ -96,7 +96,7 @@ module.exports = function(grunt) {
 
 
 
-        // Inlines your css
+        // Inlines your CSS
         premailer: {
           html: {
             options: {
@@ -145,7 +145,7 @@ module.exports = function(grunt) {
 
 
 
-        // Watches for changes to css or email templates then runs grunt tasks
+        // Watches for changes to CSS or email templates then runs grunt tasks
         watch: {
           emails: {
             files: ['<%= paths.src %>/css/scss/*','<%= paths.src %>/emails/*','<%= paths.src %>/layouts/*','<%= paths.src %>/partials/*','<%= paths.src %>/data/*','<%= paths.src %>/helpers/*'],
@@ -190,6 +190,7 @@ module.exports = function(grunt) {
 
 
         // Use Rackspace Cloud Files if you're using images in your email
+        // grunt cdnify
         cloudfiles: {
           prod: {
             'user': '<%= secrets.cloudfiles.user %>', // See README for secrets.json or replace this with your user
@@ -233,6 +234,7 @@ module.exports = function(grunt) {
 
 
         // Use Amazon S3 for images
+        // grunt s3upload
         aws_s3: {
           options: {
             accessKeyId: '<%= secrets.s3.key %>', // See README for secrets.json
@@ -276,8 +278,12 @@ module.exports = function(grunt) {
           }
         },
 
+
+
+
+
         /**************************************************************************************************************
-          START: Brower-based preview tasks.
+          START: Browser-based preview tasks.
           You should not need to edit anything between this and the end block.
         ***************************************************************************************************************/
 
@@ -312,18 +318,16 @@ module.exports = function(grunt) {
         }
 
         /**************************************************************************************************************
-          END: Brower-based preview tasks.
+          END: Browser-based preview tasks.
           You should not need to edit anything between this and the start block.
         ***************************************************************************************************************/
 
     });
 
-
-
     // Load assemble
     grunt.loadNpmTasks('assemble');
 
-    // Load all grunt tasks
+    // Load all Grunt tasks
     // https://github.com/sindresorhus/load-grunt-tasks
     require('load-grunt-tasks')(grunt);
 
