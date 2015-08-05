@@ -18,8 +18,11 @@ This Grunt task helps simplify things.
 
 ## Requirements
 
+You may already have these installed on your system. If not, you'll have to install them.
+
 * Node.js - [Install Node.js](https://github.com/joyent/node/wiki/Installing-Node.js-via-package-manager)
 * Grunt-cli and Grunt (`npm install grunt-cli -g`)
+* Command Line Tools for Mac OS X (`xcode-select --install`)
 * Ruby - [Install ruby with RVM](https://rvm.io/rvm/install)
 * Premailer (`gem install premailer hpricot nokogiri`) - Required for inlining the CSS
 * [Mailgun](http://www.mailgun.com) (optional) - Sends the email
@@ -30,6 +33,8 @@ This Grunt task helps simplify things.
 
 If you haven't used [Grunt](http://gruntjs.com/) before check out Chris Coyier's post on [getting started with Grunt](http://24ways.org/2013/grunt-is-not-weird-and-hard/).
 
+#### 1. Setup
+
 Clone this repo, cd to the directory, run `npm install` to install the necessary packages.
 
 ```
@@ -38,7 +43,11 @@ cd grunt-email-workflow
 npm install
 ```
 
-Create a `secrets.json` file as outlined below under "Sensitive Information".
+#### 2. Create secrets.json
+
+Create a `secrets.json` file in your project root as **outlined below under "Sensitive Information"**.
+
+#### 3. Run Grunt
 
 Run `grunt` in command line and check out your `/dist` folder to see your compiled and inlined email templates.
 
@@ -46,7 +55,9 @@ Run `grunt` in command line and check out your `/dist` folder to see your compil
 We encourage you __not__ to store sensitive data in your git repository. If you must, please look into [git-encrypt](https://github.com/shadowhand/git-encrypt) or some other method of encrypting your configuration secrets.
 
 1. Create a file `secrets.json` in your project root.
-2. Paste the following sample code in `secrets.json` and enter the appropriate credentials for the services you want to connect with. It's ok to leave these defaults, but they should exist.
+2. Paste the following sample code in `secrets.json` and enter the appropriate credentials for the services you want to connect with. 
+
+If you don't use or need these services **it's ok to leave these defaults**, but they should exist for this to work.
 
 ```
 {
@@ -78,7 +89,7 @@ We encourage you __not__ to store sensitive data in your git repository. If you 
 }
 ```
 
-
+After this you should be good to go. Run `grunt` and your email templates should appear automagically in a `/dist` folder.
 
 ## How it works
 
