@@ -97,28 +97,44 @@ module.exports = function(grunt) {
 
 
         // Inlines your CSS
-        premailer: {
-          html: {
+        // premailer: {
+        //   html: {
+        //     options: {
+        //       removeComments: true
+        //     },
+        //     files: [{
+        //         expand: true,
+        //         src: ['<%= paths.dist %>/*.html'],
+        //         dest: ''
+        //     }]
+        //   },
+        //   txt: {
+        //     options: {
+        //       mode: 'txt'
+        //     },
+        //     files: [{
+        //         expand: true,
+        //         src: ['<%= paths.dist %>/*.html'],
+        //         dest: '',
+        //         ext: '.txt'
+        //     }]
+        //   }
+        // },
+        juice: {
+          your_target: {
             options: {
-              removeComments: true
+              preserveMediaQueries: true,
+              applyAttributesTableElements: true,
+              applyWidthAttributes: true,
+              preserveImportant: true,
+              removeStyleTags: false,
             },
             files: [{
-                expand: true,
-                src: ['<%= paths.dist %>/*.html'],
-                dest: ''
+              expand: true,
+              src: ['<%= paths.dist %>/*.html'],
+              dest: ''
             }]
           },
-          txt: {
-            options: {
-              mode: 'txt'
-            },
-            files: [{
-                expand: true,
-                src: ['<%= paths.dist %>/*.html'],
-                dest: '',
-                ext: '.txt'
-            }]
-          }
         },
 
 
@@ -332,7 +348,7 @@ module.exports = function(grunt) {
     require('load-grunt-tasks')(grunt);
 
     // Where we tell Grunt what to do when we type "grunt" into the terminal.
-    grunt.registerTask('default', ['sass','assemble','premailer','imagemin','replace:src_images']);
+    grunt.registerTask('default', ['sass','assemble','juice','imagemin','replace:src_images']);
 
     // Use grunt send if you want to actually send the email to your inbox
     grunt.registerTask('send', ['mailgun']);
