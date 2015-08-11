@@ -97,29 +97,6 @@ module.exports = function(grunt) {
 
 
         // Inlines your CSS
-        // premailer: {
-        //   html: {
-        //     options: {
-        //       removeComments: true
-        //     },
-        //     files: [{
-        //         expand: true,
-        //         src: ['<%= paths.dist %>/*.html'],
-        //         dest: ''
-        //     }]
-        //   },
-        //   txt: {
-        //     options: {
-        //       mode: 'txt'
-        //     },
-        //     files: [{
-        //         expand: true,
-        //         src: ['<%= paths.dist %>/*.html'],
-        //         dest: '',
-        //         ext: '.txt'
-        //     }]
-        //   }
-        // },
         juice: {
           your_target: {
             options: {
