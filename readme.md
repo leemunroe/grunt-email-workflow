@@ -25,7 +25,6 @@ You may already have these installed on your system. If not, you'll have to inst
 * Command Line Tools for Mac OS X (`xcode-select --install`)
 * Ruby - [Install ruby with RVM](https://rvm.io/rvm/install)
 * Premailer (`gem install premailer hpricot nokogiri`) - Required for inlining the CSS
-* Sass (`gem install sass`) - Required for compiling SCSS to CSS
 * [Mailgun](http://www.mailgun.com) (optional) - Sends the email
 * [Litmus](https://litmus.com) (optional) - Tests the email across all clients/browsers/devices
 * [Rackspace Cloud](http://www.rackspace.com/cloud/files/) (optional) - Uses Cloud Files as a CDN
