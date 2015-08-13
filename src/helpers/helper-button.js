@@ -7,10 +7,10 @@
 //
 module.exports.button = function (params) {
   return '\
-    <table class="btn btn-' + params.hash.type + '">\
+    <table class="btn btn-' + params.hash.type + '" cellpadding="0" cellspacing="0">\
       <tr>\
         <td align="' + params.hash.align + '">\
-          <table>\
+          <table cellpadding="0" cellspacing="0">\
             <tr>\
               <td>\
                 <a href="' + params.hash.url + '">' + params.hash.title + '</a>\
