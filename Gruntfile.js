@@ -103,8 +103,7 @@ module.exports = function(grunt) {
               preserveMediaQueries: true,
               applyAttributesTableElements: true,
               applyWidthAttributes: true,
-              preserveImportant: true,
-              removeStyleTags: false,
+              preserveImportant: true
             },
             files: [{
               expand: true,
@@ -325,7 +324,7 @@ module.exports = function(grunt) {
     require('load-grunt-tasks')(grunt);
 
     // Where we tell Grunt what to do when we type "grunt" into the terminal.
-    grunt.registerTask('default', ['sass','assemble','juice','imagemin','replace:src_images']);
+    grunt.registerTask('default', ['sass:dist','assemble','juice','imagemin','replace:src_images']);
 
     // Use grunt send if you want to actually send the email to your inbox
     grunt.registerTask('send', ['mailgun']);
@@ -338,6 +337,6 @@ module.exports = function(grunt) {
 
     // Launch the express server and start watching
     // NOTE: The server will not stay running if the grunt watch task is not active
-    grunt.registerTask('serve', ['default', 'autoprefixer:preview', 'express', 'open', 'watch']);
+    grunt.registerTask('serve', ['default', 'sass:preview', 'autoprefixer:preview', 'express', 'open', 'watch']);
 
 };
