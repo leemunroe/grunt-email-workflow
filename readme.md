@@ -8,7 +8,7 @@ This Grunt task helps simplify things.
 
 1. Compiles your SCSS to CSS
 
-2. Builds your HTML and TXT email templates
+2. Builds your HTML email templates
 
 3. Inlines your CSS
 
