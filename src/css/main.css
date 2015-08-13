@@ -30,12 +30,10 @@ table {
   border-collapse: separate !important;
   mso-table-lspace: 0pt;
   mso-table-rspace: 0pt;
-  -premailer-width: 100%; }
+  width: 100%; }
   table td {
     font-family: "Helvetica Neue", Helvetica, Arial, "Lucida Grande", sans-serif;
     font-size: 14px;
-    mso-table-lspace: 0pt;
-    mso-table-rspace: 0pt;
     vertical-align: top; }
 
 .ExternalClass {
@@ -156,16 +154,10 @@ a {
     BUTTONS
 ------------------------------------- */
 .btn {
-  -premailer-cellpadding: 0;
-  -premailer-cellspacing: 0;
-  -premailer-width: 100%;
   width: 100%; }
   .btn > tr > td {
     padding-bottom: 15px; }
   .btn table {
-    -premailer-cellpadding: 0;
-    -premailer-cellspacing: 0;
-    -premailer-width: auto;
     width: auto; }
   .btn table td {
     background-color: #fff;
