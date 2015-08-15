@@ -24,7 +24,6 @@
     "grunt-litmus": "^0.1.8",
     "grunt-mailgun": "^0.2.1",
     "grunt-open": "^0.2.3",
-    "grunt-premailer": "^0.2.13",
     "grunt-replace": "^0.9.3",
     "grunt-sass": "^1.0.0",
     "imagemin-mozjpeg": "^5.1.0",
