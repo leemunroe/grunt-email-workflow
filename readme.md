@@ -133,7 +133,7 @@ In Terminal/command-line, run `grunt`. This will:
 
 See the output HTML in the `dist` folder. Open them and preview it the browser.
 
-<img src="http://i.imgur.com/WoWgRxm.gif" width="500">
+<img src="http://i.imgur.com/EnTCqUE.gif" width="500">
 
 Alternatively run `grunt serve`. This will check for any changes you make to your .scss and .hbs templates, automatically run the tasks, and serve you a preview in the browser on http://localhost:4000. Saves you having to run grunt every time you make a change.
 
