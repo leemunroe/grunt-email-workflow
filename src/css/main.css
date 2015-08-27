@@ -60,7 +60,7 @@ body {
 /* Set a max-width, and make it display as block so it will automatically stretch to that width, but will also shrink down on a phone or something */
 .container {
   display: block;
-  margin: 0 auto !important;
+  Margin: 0 auto !important;
   /* makes it centered */
   max-width: 580px;
   padding: 10px;
