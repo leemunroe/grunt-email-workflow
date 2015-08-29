@@ -103,14 +103,17 @@ module.exports = function(grunt) {
           preserveMediaQueries: true,
           applyAttributesTableElements: true,
           applyWidthAttributes: true,
-          preserveImportant: true
+          preserveImportant: true,
+          webResources: {
+            images: false
+          }
         },
         files: [{
           expand: true,
           src: ['<%= paths.dist %>/*.html'],
           dest: ''
         }]
-      },
+      }
     },
 
 
