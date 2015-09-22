@@ -1,0 +1,37 @@
+---
+layout: ubiome-default.hbs
+subject: Please confirm your email address - uBiome
+---
+<span class="preheader">This is preheader text. Some clients will show this text as a preview.</span>
+<table class="main">
+  <tr>
+    <td class="wrapper">
+      <table>
+        <tr>
+          <td>
+            <h1 class="align-center">Please confirm your email address.</h1>
+            <p>	*|IF:FNAME|*Hi *|TITLE:FNAME|*,
+				        *|ELSE:|*Hello,
+				        *|END:IF|*</p>
+            <p>Welcome to uBiome!</p>
+            <p>To ensure that only you have access to your personal information, please confirm your email address.</p>
+            <p>You won’t be able to access your account until you complete this step.</p>
+
+            {{{ button type="primary" align="center" url="https://github.com/uBiome/email-templates" title="View the source on uBiome GitHub" }}}
+
+            <p>{{> closing }}</p>
+          </td>
+        </tr>
+      </table>
+    </td>
+  </tr>
+</table>
+<div class="footer">
+  <table>
+    <tr>
+      <td class="align-center">
+        <p>Don't like these annoying emails? <a href="{{ default.unsubscribe_url }}"><unsubscribe>Unsubscribe</unsubscribe></a>.</p>
+      </td>
+    </tr>
+  </table>
+</div>
