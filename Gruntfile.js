@@ -3,6 +3,8 @@ module.exports = function(grunt) {
   grunt.initConfig({
 
     pkg: grunt.file.readJSON('package.json'),
+    config: grunt.file.readJSON('config.json'),
+
 
     // secrets.json is ignored in git because it contains sensitive data
     // See the README for configuration settings
@@ -274,7 +276,33 @@ module.exports = function(grunt) {
     },
 
 
+    http_upload: {
+      publish: {
+        options: {
+          url:  '<%= config.host %>' +'/template/' + '<%= template.substr(0,template.lastIndexOf(".")) %>',
+          method: 'POST',
+          rejectUnauthorized: false,
+          headers: {
+            'Authorization': '<%= config.emailing_key %>'
+          },
+          data: {
+            subject: '<%= subject %>',
+            from_email : '<%= fromName %>',
+            from_name : '<%= fromEmail %>'
+          },
+          onComplete: function(data) {
+              console.log('Result: ' + data);
+          }
+        },
+        src: '<%= paths.dist %>/' + '<%= template %>',
+        dest: 'file'
+      },
+    },
 
+    template : grunt.option( "file" ),
+    subject : grunt.option( "subject" ),
+    fromEmail : grunt.option( "fromEmail" ),
+    fromName : grunt.option( "fromName" ),
 
 
     /**************************************************************************************************************
@@ -322,6 +350,9 @@ module.exports = function(grunt) {
   // Load assemble
   grunt.loadNpmTasks('assemble');
 
+  // Load file upload
+  grunt.loadNpmTasks('grunt-http-upload');
+
   // Load all Grunt tasks
   // https://github.com/sindresorhus/load-grunt-tasks
   require('load-grunt-tasks')(grunt);
@@ -337,6 +368,9 @@ module.exports = function(grunt) {
 
   // Upload image files to Amazon S3
   grunt.registerTask('s3upload', ['aws_s3:prod', 'cdn:aws_s3']);
+
+  // Use grunt to upload files
+  grunt.registerTask('publish', ['http_upload:publish']);
 
   // Launch the express server and start watching
   // NOTE: The server will not stay running if the grunt watch task is not active
