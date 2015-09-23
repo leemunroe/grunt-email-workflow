@@ -1,8 +1,9 @@
+.idea
 .DS_Store
 node_modules
 .sass-cache
 .secret
 *.css.map
-secrets.json
+# secrets.json
 dist/*
 preview/css
