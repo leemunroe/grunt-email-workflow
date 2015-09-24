@@ -319,12 +319,9 @@ module.exports = function(grunt) {
 
   });
 
-  // Load assemble
-  grunt.loadNpmTasks('assemble');
-
   // Load all Grunt tasks
   // https://github.com/sindresorhus/load-grunt-tasks
-  require('load-grunt-tasks')(grunt);
+  require('load-grunt-tasks')(grunt, {pattern: ['grunt-*', 'assemble']});
 
   // Where we tell Grunt what to do when we type "grunt" into the terminal.
   grunt.registerTask('default', ['sass:dist','assemble','juice','imagemin','replace:src_images']);
