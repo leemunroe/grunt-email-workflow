@@ -4,7 +4,7 @@
   "license": "MIT",
   "repository": {
     "type": "git",
-    "url": "https://github.com/leemunroe/grunt-email-design"
+    "url": "https://github.com/leemunroe/grunt-email-workflow"
   },
   "devDependencies": {
     "assemble": "^0.4.42",

@@ -6,6 +6,7 @@ module.exports = {
       applyAttributesTableElements: true,
       applyWidthAttributes: true,
       preserveImportant: true,
+      preserveFontFaces: true,
       webResources: {
         images: false
       }
