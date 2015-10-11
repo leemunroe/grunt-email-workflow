@@ -186,9 +186,9 @@ If your email contains images you'll want to serve them from a CDN. This Gruntfi
 * Change 'cloudfiles' settings to your settings (you can find your Rackspace API key under your account settings)
 * Make any other config changes as per [grunt-cloudfiles](https://github.com/rtgibbons/grunt-cloudfiles) instructions
 
-Run `grunt cdnify` to run the default tasks as well as upload any images to your CDN.
+Run `grunt rsupload` to run the default tasks as well as upload any images to your CDN.
 
-Run `grunt cdnify send --template=branded.html` to send the email to yourself with the 'CDNified' images.
+Run `grunt rsupload send --template=branded.html` to send the email to yourself with the 'CDNified' images.
 
 
 ### Using Amazon S3 for image assets
