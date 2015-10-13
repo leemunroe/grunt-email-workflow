@@ -1,6 +1,7 @@
 # Where we tell Grunt what to do when we type "grunt" into the terminal
 # $ grunt
 default:
+  - 'clean'
   - 'sass:dist'
   - 'assemble'
   - 'juice'

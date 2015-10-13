@@ -17,6 +17,7 @@
     "grunt-aws-s3": "^0.13.1",
     "grunt-cdn": "^0.6.5",
     "grunt-cloudfiles": "^0.3.0",
+    "grunt-contrib-clean": "^0.6.0",
     "grunt-contrib-imagemin": "^0.9.4",
     "grunt-contrib-watch": "^0.6.1",
     "grunt-express": "^1.4.1",
