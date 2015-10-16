@@ -194,6 +194,58 @@ a {
   color: #348eda; }
 
 /* -------------------------------------
+  NOTICES
+------------------------------------- */
+.notice {
+  border-collapse: separate;
+  margin: 20px 0; }
+  .notice td {
+    line-height: 1.6;
+    font-size: 14px;
+    font-weight: 400; }
+  .notice-info td {
+    background: #f0f6fb;
+    border: 1px solid #b7d3ed;
+    border-radius: 6px;
+    color: #2c6eac !important;
+    padding: 8px 12px; }
+  .notice-success td {
+    background: #e1f2bd;
+    border: 1px solid #c6e682;
+    border-radius: 6px;
+    color: #61821a !important;
+    padding: 8px 12px; }
+  .notice-warning td {
+    background: #f7eed0;
+    border: 1px solid #edd993;
+    border-radius: 6px;
+    color: #9a7d1a !important;
+    padding: 8px 12px; }
+  .notice-danger td {
+    background: #f5d5d5;
+    border: 1px solid #e89b9b;
+    border-radius: 6px;
+    color: #952222 !important;
+    padding: 8px 12px; }
+  .notice-lg td {
+    font-size: 16.8px;
+    line-height: 1.6; }
+
+/* -------------------------------------
+  DIVIDERS
+------------------------------------- */
+.divider > tr > td {
+  padding: 20px 0 0 0; }
+
+.divider .divider-inner {
+  border-top: 1px solid #ccc;
+  line-height: 0;
+  font-size: 0;
+  height: 20px;
+  margin: 0;
+  padding: 0; }
+
+/* -------------------------------------
     OTHER STYLES THAT MIGHT BE USEFUL
 ------------------------------------- */
 .last {
