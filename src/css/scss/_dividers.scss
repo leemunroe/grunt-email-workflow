@@ -1,0 +1,18 @@
+/* -------------------------------------
+  DIVIDERS
+------------------------------------- */
+
+.divider {
+  > tr > td {
+    padding: $divider-padding;
+  }
+
+  .divider-inner {
+    border-top: 1px solid $divider-color;
+    line-height: 0;
+    font-size: 0;
+    height: $divider-height;
+    margin: 0;
+    padding: 0;
+  }
+}
