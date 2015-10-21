@@ -7,21 +7,24 @@
     background: lighten($color, 44%);
     border: 1px solid lighten($color, 30%);
     border-radius: $notice-border-radius;
-    color: darken($color, 10%) !important;
+    color: darken($color, 10%);
     padding: $notice-padding;
   }
 }
 
 .notice {
   border-collapse: separate;
-  margin: $notice-margin;
+
+  &-spacer {
+    padding: $notice-margin;
+  }
 
   td {
     line-height: $notice-line-height;
     font-size: $notice-font-size;
     font-weight: $notice-font-weight;
   }
-  
+
   // Color Variations
   &-info {
     @include create-notice($notice-color-info);

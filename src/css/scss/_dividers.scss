@@ -3,15 +3,17 @@
 ------------------------------------- */
 
 .divider {
-  > tr > td {
-    padding: $divider-padding;
+  border-collapse: separate;
+
+  &-spacer {
+    padding: $divider-margin;
   }
 
-  .divider-inner {
+  td {
     border-top: 1px solid $divider-color;
     line-height: 0;
     font-size: 0;
-    height: $divider-height;
+    height: 1px;
     margin: 0;
     padding: 0;
   }

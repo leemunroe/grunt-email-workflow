@@ -5,10 +5,14 @@
 		class: (string) opional classes you may want to apply such as 'align-center'
 		text: (string) unescaped, the text you wish to display in the notice
 }}
-<table class="notice notice-{{ type }} {{ class }}" cellpadding="0" cellspacing="0">
+<table class="notice-wrapper" cellpadding="0" cellspacing="0">
 	<tr>
-		<td>
-			{{{ text }}}
+		<td class="notice-spacer">
+			<table class="notice notice-{{ type }} {{ class }}" cellpadding="0" cellspacing="0">
+				<tr>
+					<td>{{{ text }}}</td>
+				</tr>
+			</table>
 		</td>
 	</tr>
 </table>
