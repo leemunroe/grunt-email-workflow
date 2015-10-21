@@ -49,3 +49,14 @@ a {
   color: $primary-color;
   text-decoration: underline;
 }
+
+// Break long strings to prevent x-scrolling
+code,
+pre,
+.word-wrap {
+  word-break: break-word;
+  word-wrap: break-word;
+  -webkit-hyphens: auto;
+  -moz-hyphens: auto;
+  hyphens: auto;
+}
