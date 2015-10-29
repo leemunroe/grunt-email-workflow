@@ -42,13 +42,13 @@ npm install
 
 #### 2. Create secrets.json
 
-Create a `secrets.json` file in your project root as **outlined below under "Sensitive Information"**.
+Create a `secrets.json` file in your project root as **outlined below under "[Sensitive Information](#sensitive-information)"**.
 
 #### 3. Run Grunt
 
 Run `grunt` in command line and check out your `/dist` folder to see your compiled and inlined email templates.
 
-### Sensitive Information
+### Sensitive information
 We encourage you __not__ to store sensitive data in your git repository. If you must, please look into [git-encrypt](https://github.com/shadowhand/git-encrypt) or some other method of encrypting your configuration secrets.
 
 1. Create a file `secrets.json` in your project root.
@@ -104,11 +104,11 @@ Media queries and responsive styles are in a separate style sheet so that they d
 
 Handlebars and Assemble are used for templating.
 
-`/layouts` contains the standard header/footer HTML markup. You most likely will only need one layout template, but you can have as many as you like.
+`/layouts` contains the standard header/footer HTML wrapper markup. You most likely will only need one layout template, but you can have as many as you like.
 
 `/emails` is where your email content will go. To start you off I've included example transactional emails based on my [simple HTML email template](https://github.com/leemunroe/html-email-template).
 
-`/data` contains _optional_ .yml or .json data files that can be used in your templates. It's a good way to store commonly used strings. See `/data/default.yml` and `/partials/follow_lee.hbs` for an example.
+`/data` contains _optional_ .yml or .json data files that can be used in your templates. It's a good way to store commonly used strings and variables. See `/data/default.yml` and `/partials/follow_lee.hbs` for an example.
 
 `/partials` contains _optional_ .hbs files that can be thought of like includes. To use a partial, for example `/partials/follow_lee.hbs` you would use the following code in your emails template:
 
@@ -116,7 +116,7 @@ Handlebars and Assemble are used for templating.
 {{> follow_lee }}
 ```
 
-`/partials/components` contains _optional_ .hbs files that can help generate your markup. Each component will typically have a corresponding sass file in `src/css/sass/<component_name>.scss`. To use a component, for example `/partials/components/button.hbs` you would use the following code in your emails template. _(note: You can use single -or- double quotes for attributes)_
+`/partials/components` contains _optional_ .hbs files that can help generate your markup. Each component will typically have a corresponding Sass file in `src/css/sass/<component_name>.scss`. To use a component, for example `/partials/components/button.hbs` you would use the following code in your emails template. _(note: You can use single -or- double quotes for attributes)_
 
 ```
 {{> button type="primary" align="center" url="LINK GOES HERE" title="ANCHOR TEXT GOES HERE" }}
@@ -141,10 +141,10 @@ Alternatively run `grunt serve`. This will check for any changes you make to you
 
 In terminal, run `grunt serve`. 
 
-* This will run the default tasks `grunt` + the `watch` task will be initiated.
-* A preview ui will automagically open on [http://localhost:4000](http://localhost:4000) and you can review your templates.
-* Go about your business editing templates and see your template changes live-reload.
-* __NOTE:__ The express server stops working when the `watch` task is not running.
+* This will run the default tasks `grunt` + the `watch` task will be initiated
+* A preview UI will automagically open on [http://localhost:4000](http://localhost:4000) and you can review your templates
+* Go about your business editing templates and see your template changes live-reload
+* __NOTE:__ The express server stops working when the `watch` task is not running
 
 <img src="http://i.imgur.com/AGZqbIn.png" width="500">
 
@@ -224,14 +224,14 @@ Run `grunt s3upload` to upload images to your S3 Bucket. This will also run a re
 
 ### Sample email templates
 
-I've added two templates here to help you get started.
+I've added a few templates here to help you get started.
 
 * [Simple transactional email template](http://leemunroe.github.io/grunt-email-workflow/dist/transaction.html)
 * [Branded email via CDN](http://leemunroe.github.io/grunt-email-workflow/dist/branded.html)
 
 ### More resources
 
-* For more transactional email templates check out [Mailgun's collection of templates](http://github.com/mailgun/transactional-email-templates).
+* For more transactional email templates check out [Mailgun's collection of templates](http://github.com/mailgun/transactional-email-templates)
 * [Things I've learned about sending email](http://www.leemunroe.com/sending-email-designers-developers/)
 * [Things I've learned about building HTML email templates](http://www.leemunroe.com/building-html-email/)
 * Prefer Gulp? Daryll Doyle has created a [Gulp email creator](https://github.com/darylldoyle/Gulp-Email-Creator)
