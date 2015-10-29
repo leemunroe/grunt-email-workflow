@@ -116,10 +116,10 @@ Handlebars and Assemble are used for templating.
 {{> follow_lee }}
 ```
 
-`/helpers` contains _optional_ .js files that can help generate your markup. To use a helper, for example `/helpers/helper-button.js` you would use the following code in your emails template:
+`/partials/components` contains _optional_ .hbs files that can help generate your markup. Each component will typically have a corresponding sass file in `src/css/sass/<component_name>.scss`. To use a component, for example `/partials/components/button.hbs` you would use the following code in your emails template. _(note: You can use single -or- double quotes for attributes)_
 
 ```
-{{{ button type="primary" align="center" url="LINK GOES HERE" title="ANCHOR TEXT GOES HERE" }}}
+{{> button type="primary" align="center" url="LINK GOES HERE" title="ANCHOR TEXT GOES HERE" }}
 ```
 
 ### Generate your email templates

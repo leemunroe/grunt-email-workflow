@@ -6,3 +6,4 @@ node_modules
 secrets.json
 dist/*
 preview/css
+src/css/*.css
