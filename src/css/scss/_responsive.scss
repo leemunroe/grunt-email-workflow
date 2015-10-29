@@ -37,7 +37,8 @@ table[class=body]{
     }
 
     // Buttons
-    .btn table {
+    .btn table,
+    .btn a {
       width: 100% !important;
     }
   }
