@@ -228,6 +228,7 @@ I've added a few templates here to help you get started.
 
 * [Simple transactional email template](http://leemunroe.github.io/grunt-email-workflow/dist/transaction.html)
 * [Branded email via CDN](http://leemunroe.github.io/grunt-email-workflow/dist/branded.html)
+* [Email with components](http://leemunroe.github.io/grunt-email-workflow/dist/components.html)
 
 ### More resources
 
