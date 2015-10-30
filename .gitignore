@@ -4,6 +4,5 @@ node_modules
 .secret
 *.css.map
 secrets.json
-dist/*
 preview/css
 src/css/*.css
