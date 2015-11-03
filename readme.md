@@ -34,7 +34,7 @@ If you haven't used [Grunt](http://gruntjs.com/) before check out Chris Coyier's
 
 Clone this repo, cd to the directory, run `npm install` to install the necessary packages.
 
-```
+```sh
 git clone https://github.com/leemunroe/grunt-email-workflow.git
 cd grunt-email-workflow
 npm install
@@ -56,7 +56,7 @@ We encourage you __not__ to store sensitive data in your git repository. If you 
 
 If you don't use or need these services **it's ok to leave these defaults**, but they should exist for this to work.
 
-```
+```json
 {
   "mailgun": {
     "api_key": "YOUR MG PRIVATE API KEY",
@@ -112,13 +112,13 @@ Handlebars and Assemble are used for templating.
 
 `/partials` contains _optional_ .hbs files that can be thought of like includes. To use a partial, for example `/partials/follow_lee.hbs` you would use the following code in your emails template:
 
-```
+```hbs
 {{> follow_lee }}
 ```
 
 `/partials/components` contains _optional_ .hbs files that can help generate your markup. Each component will typically have a corresponding Sass file in `src/css/sass/<component_name>.scss`. To use a component, for example `/partials/components/button.hbs` you would use the following code in your emails template. _(note: You can use single -or- double quotes for attributes)_
 
-```
+```hbs
 {{> button type="primary" align="center" url="LINK GOES HERE" title="ANCHOR TEXT GOES HERE" }}
 ```
 
@@ -201,7 +201,7 @@ Once your AWS account is setup, create a Bucket within S3. You will need to ensu
 
 **Sample S3 Bucket Policy**
 
-```
+```json
 {
   "Version": "2008-10-17",
   "Id": "Policy123",
