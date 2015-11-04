@@ -24,6 +24,7 @@
     "grunt-juice-email": "^0.1.3",
     "grunt-litmus": "^0.1.8",
     "grunt-mailgun": "^1.0.1",
+    "grunt-newer-explicit": "^0.9.4",
     "grunt-open": "^0.2.3",
     "grunt-replace": "^0.9.3",
     "grunt-sass": "^1.0.0",

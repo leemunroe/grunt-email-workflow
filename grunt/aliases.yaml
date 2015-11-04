@@ -1,11 +1,10 @@
 # Where we tell Grunt what to do when we type "grunt" into the terminal
 # $ grunt
 default:
-  - 'clean'
-  - 'sass:dist'
-  - 'assemble'
-  - 'juice'
-  - 'imagemin'
+  - 'newer:sass'
+  - 'newer:assemble'
+  - 'newer:juice'
+  - 'newer:imagemin'
   - 'replace:src_images'
 
 # Use grunt send if you want to actually send the email to your inbox
