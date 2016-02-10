@@ -1,0 +1,63 @@
+#!/bin/bash
+
+set -e
+
+DIR="$( cd "$( dirname "${BASH_SOURCE[0]}" )" && pwd )"
+
+if [ "$1" == "confirmed" ]; then
+    if [ "$2" == "$DIR" ]; then
+        echo "platutils successfully installed"
+        exit 0
+    else
+        echo "installed platform-utils is $DIR, but tried to install $2" >&2
+        exit 1
+    fi
+fi
+
+function link {
+    local name=$1
+    local to=$2
+    rm -f ~/bin/platutils$to
+    cat > ~/bin/$name <<END
+#!/bin/bash
+set -e
+$DIR/$to "\$@"
+END
+    chmod +x ~/bin/$name
+    echo linked \~/bin/$name to $DIR/$to
+}
+
+mkdir -p ~/bin
+$DIR/remove
+link platutils platutils
+for subcommand in $(ls $DIR | grep -v '^platutils$'); do
+    if [ -x $DIR/$subcommand ]; then
+        link platutils-$subcommand $subcommand
+    fi
+done
+
+set +e
+platutils install confirmed $DIR
+status=$?
+if [ "$status" -eq "127" ]; then
+    echo "platutils was not found
+
+This is most likely because ~/bin has not been added to your PATH:
+  
+    $PATH
+
+To fix this for this session, run:
+
+    export PATH=\"\$HOME/bin:\$PATH\"
+
+To fix permanently, add the following to the bottom of your ~/.profile or ~/.bashrc:
+
+    # set PATH so it includes user's private bin if it exists
+    if [ -d \"\$HOME/bin\" ] ; then
+       PATH=\"\$HOME/bin:\$PATH\"
+    fi
+" >&2
+    exit 1
+elif [ "$status" -ne "0" ]; then
+    exit $status
+fi

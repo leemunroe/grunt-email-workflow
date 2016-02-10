@@ -1,0 +1,84 @@
+#!/bin/bash
+
+set -eo pipefail
+
+. $(dirname $0)/functions.sh
+
+source $(dirname $0)/generate-component-name
+
+if [[ -n "$COMPONENT_SUFFIX" ]]; then
+   COMPONENT_NAME=$COMPONENT_NAME-$COMPONENT_SUFFIX
+   echo
+   echo COMPONENT_SUFFIX EXISTS:
+   echo -e "\tSetting COMPONENT_NAME to $COMPONENT_NAME"
+   echo
+fi
+
+SERVICE=$COMPONENT_NAME
+FOLDER=$(jenkins-config-folder)
+
+CURDIR=$(dirname $0)
+
+TEAM=$(cat service.json | jq -r .TEAM)
+
+# Optional Parameter to Override Jenkins Config Name
+CONFIG_REPO=$1
+
+if [[ -z "$CONFIG_REPO" ]]; then
+    REPO_USED=$TEAM-config
+else
+    REPO_USED=$CONFIG_REPO
+fi
+
+echo Downloading Jenkins Config into folder $(pwd)/$FOLDER:
+echo
+echo   Team: $TEAM
+echo   Service: $SERVICE
+echo
+echo   Config Repo: $REPO_USED
+echo
+
+if [[ -z "$EMAIL" ]]; then
+    read -p "Mergermarket email: " EMAIL
+fi
+
+read -s -p "Mergermarket password: " PASSWORD
+echo
+
+if [ -z "$TEAM_PATH" ]; then
+    TEAM_PATH="job/$TEAM"
+fi
+
+TEAM_URL="https://jenkins.mergermarket.it/$TEAM_PATH"
+BASE_URL=$TEAM_URL/job/$SERVICE
+
+RESPONSE=$(curl --fail -s -u "$EMAIL:$PASSWORD" $BASE_URL/api/json)
+CONFIGS=$(echo "$RESPONSE" | jq -r '
+    [ ..
+    | .url?
+    | strings
+    | select(startswith("'$BASE_URL'/"))
+    | ltrimstr("'$BASE_URL'/")
+    ] | unique | .[] | . + "config.xml"
+')
+
+if [ "$CONFIGS" == "" ]; then
+    echo no configs were found in $BASE_URL/api/json, $RESPONSE >&2
+    exit 1
+fi
+
+for CONFIG in $CONFIGS; do
+    mkdir -p $FOLDER/$(dirname $CONFIG)
+    echo downloading $BASE_URL/$CONFIG to $FOLDER/$CONFIG
+
+    TEAM_PREFIX="$(echo "$TEAM_PATH" | sed "s@job/@@g")/"
+
+    curl -s -S -u "$EMAIL:$PASSWORD" "$BASE_URL/$CONFIG" |
+        sed "s/$REPO_USED/{CONFIG_REPO}/g"   | # Replace config repo with token
+        sed "s@$TEAM_PATH@{TEAM_PATH}@g"     | # Replease the team path
+        sed "s@$TEAM_PREFIX@{TEAM_PREFIX}@g" | # Replace the team prefix (e.g. for linked jobs that don't have "job/")
+        sed "s/$TEAM/{TEAM}/g"               | # Replace the team
+        sed "s/$SERVICE/{SERVICE}/g"         | # Replace the service
+        cat > $FOLDER/$CONFIG
+
+done

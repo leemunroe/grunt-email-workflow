@@ -1,0 +1,252 @@
+#!/usr/bin/env python
+from __future__ import print_function
+import boto3
+import json
+import sys
+from time import sleep
+from textwrap import dedent
+from botocore.exceptions import ClientError
+from six import iteritems
+
+red = '\033[1;31m'
+green = '\033[1;32m'
+yellow = '\033[1;33m'
+blue = '\033[1;34m'
+cyan = '\033[1;36m'
+reset = '\033[0;00m'
+
+progress = set(['CREATE_IN_PROGRESS', 'UPDATE_IN_PROGRESS', 'DELETE_IN_PROGRESS'])
+success = set(['CREATE_COMPLETE', 'UPDATE_COMPLETE', 'UPDATE_COMPLETE_CLEANUP_IN_PROGRESS', 'DELETE_COMPLETE'])
+uh_oh = set(['ROLLBACK_IN_PROGRESS', 'UPDATE_ROLLBACK_IN_PROGRESS'])
+bad = set(['CREATE_FAILED', 'ROLLBACK_COMPLETE', 'UPDATE_ROLLBACK_COMPLETE', 'UPDATE_ROLLBACK_COMPLETE_CLEANUP_IN_PROGRESS', 'DELETE_FAILED'])
+grave = set(['ROLLBACK_FAILED', 'UPDATE_ROLLBACK_FAILED'])
+failure = set(['CREATE_FAILED', 'UPDATE_FAILED', 'DELETE_FAILED'])
+
+def output_cloudformation_event(event, failed):
+    if event.get('ResourceStatus') in (bad | grave | uh_oh | failure):
+        status_colour = red
+    elif failed:
+        status_colour = yellow
+    else:
+        status_colour = green
+    print("* {time} {status_colour}{status}{reset} {blue}{type}{reset} : {cyan}{logical}{reset}\n".format(
+        time=event.get('Timestamp').strftime('%H:%M:%S'),
+        status=event.get('ResourceStatus'),
+        type=event.get('ResourceType'),
+        logical=event.get('LogicalResourceId'),
+        physical=event.get('PhysicalResourceId'),
+        reason=event.get('ResourceStatusReason', ''),
+        status_colour=status_colour,
+        reset=reset,
+        cyan=cyan,
+        blue=blue,
+        red=red,
+    ) + (
+        "  Physical id: {status_colour}{physical}{reset}\n".format(
+            status_colour=status_colour, physical=event.get('PhysicalResourceId', ''), reset=reset
+        ) if event.get('PhysicalResourceId', '') != '' else ''
+    ) + (
+        "  Reason: {status_colour}{reason}{reset}\n".format(
+            status_colour=status_colour, reason=event.get('ResourceStatusReason'), reset=reset
+        ) if 'ResourceStatusReason' in event else ''
+    ), file=sys.stderr)
+
+def handle_stack_events(events, arn, failure_reason):
+    for event in reversed(events):
+        output_cloudformation_event(event, failure_reason != None)
+        if event['PhysicalResourceId'] == arn:
+            # validate assumptions about statuses we get back
+            if type == 'create' and not (event['ResourceStatus'].startswith('CREATE_') or event['ResourceStatus'].startswith('ROLLBACK_')):
+                raise Exception('unexpected resource_status for stack during update: ' + event['ResourceStatus'])
+            elif type == 'update' and not event['ResourceStatus'].startswith('UPDATE_'):
+                raise Exception('unexpected resource_status for stack during update: ' + event['ResourceStatus'])
+            elif type == 'delete' and not event['ResourceStatus'].startswith('DELETE_'):
+                raise Exception('unexpected resource_status for stack during delete: ' + event['ResourceStatus'])
+
+            if event['ResourceStatus'] in success:
+                return True, None
+            elif event['ResourceStatus'] in progress or event['ResourceStatus'] in uh_oh:
+                pass
+            elif event['ResourceStatus'] in bad or event['ResourceStatus'] in grave:
+                raise Exception('stack creation failed: ' + failure_reason)
+            else:
+                raise Exception('unexpected status ' + event['ResourceStatus'])
+        elif failure_reason == None and event['ResourceStatus'] in failure:
+            failure_reason = event['ResourceStatusReason']
+
+    return False, failure_reason
+
+def get_new_stack_events(name, cloudformation, last_seen_event_id):
+    new_events = []
+    response = cloudformation.describe_stack_events(StackName=name)
+    while True:
+        for event in response['StackEvents']:
+            if event['EventId'] == last_seen_event_id:
+                return new_events
+            else:
+                new_events.append(event)
+        if 'NextToken' in response:
+            response = cloudformation.describe_stack_events(StackName=name, NextToken=response['NextToken'])
+        else:
+            return new_events
+
+def wait_for_stack_operation(name, cloudformation, last_seen_event_id, operation_type):
+    if operation_type not in set(['create', 'update', 'delete']):
+        raise Exception('operation_type must be "create", "update" or "delete"')
+
+    arn = cloudformation.describe_stacks(StackName=name)['Stacks'][0]['StackId']
+    print('waiting for stack ' + arn + '...', file=sys.stderr)
+
+    next_token = None
+    failure_reason = None
+
+    while True:
+        new_events = get_new_stack_events(name, cloudformation, last_seen_event_id)
+        if len(new_events) > 0:
+            last_seen_event_id = new_events[0]['EventId']
+
+        finished, latest_failure_reason = handle_stack_events(new_events, arn, failure_reason)
+
+        # first failure is generally the reason, so keep that
+        if latest_failure_reason != None and failure_reason == None:
+            failure_reason = latest_failure_reason
+
+        if finished:
+            return
+
+        sleep(5)
+
+def stack_params(type, name, template_file, template, template_url, parameters, tags, capabilities):
+    params = {
+        'StackName': name,
+        'Parameters': [
+            { 'ParameterKey': key, 'UsePreviousValue': True } if value == None
+            else { 'ParameterKey': key, 'ParameterValue': value }
+                for key, value in sorted(iteritems(parameters))
+        ],
+        'Capabilities': capabilities,
+    }
+    if template_file != None:
+        params['TemplateBody'] = open(template_file).read()
+    elif template != None:
+        if not isinstance(template, dict):
+            raise Exception('embedded template object must be a dict')
+        params['TemplateBody'] = json.dumps(template)
+    elif template_url != None:
+        params['TemplateURL'] = template_url
+    else:
+        raise Exception('template or template_file key must be present in input')
+    if type == 'create' and tags != None:
+        params['Tags'] = [
+                {
+                    'Key': key,
+                    'Value': value,
+                } for key, value in sorted(iteritems(tags))
+            ]
+    return params
+
+def create_stack(cloudformation, name, template_file=None, template=None, template_url=None, parameters={}, tags={}, capabilities=[], region=None):
+
+    print("creating stack {}...".format(name), file=sys.stderr)
+
+    try:
+        cloudformation.create_stack(**stack_params('create', name, template_file, template, template_url, parameters, tags, capabilities))
+        wait_for_stack_operation(name, cloudformation, None, 'create')
+        print('finished creating', file=sys.stderr)
+    except ClientError as e:
+        if 'ValidationError' in str(e) and 'No updates are to be performed.' in str(e):
+            print('no updates to be performed', file=sys.stderr)
+        else:
+            raise
+
+def update_stack(cloudformation, name, template_file=None, template=None, template_url=None, parameters={}, tags={}, capabilities=[], region=None):
+
+    print("updating stack {}...".format(name), file=sys.stderr)
+
+    last_seen_event_id = cloudformation.describe_stack_events(StackName=name)['StackEvents'][0]['EventId']
+
+    try:
+        cloudformation.update_stack(**stack_params('update', name, template_file, template, template_url, parameters, tags, capabilities))
+        wait_for_stack_operation(name, cloudformation, last_seen_event_id, 'update')
+        print('finished updating', file=sys.stderr)
+    except ClientError as e:
+        if 'ValidationError' in str(e) and 'No updates are to be performed.' in str(e):
+            print('no updates to be performed', file=sys.stderr)
+        else:
+            raise
+
+def stack_exists(cloudformation, name):
+    try:
+        cloudformation.describe_stacks(StackName=name)
+        return True
+    except ClientError as e:
+        print("got exception {}".format(str(e)), file=sys.stderr)
+        if 'Stack with id {} does not exist'.format(name) in str(e):
+            return False
+        else:
+            raise
+
+def get_stack_result(cloudformation, name):
+    result = {}
+    details = cloudformation.describe_stacks(StackName=name)['Stacks'][0]
+    result['name'] = name
+    result['id'] = details['StackId']
+    result['status'] = details['StackStatus']
+    if 'CreationTime' in details:
+        result['created'] = str(details['CreationTime'])
+    if 'LastUpdatedTime' in details:
+        result['updated'] = str(details['LastUpdatedTime'])
+    result['outputs'] = {
+        output['OutputKey']: output['OutputValue']
+        for output in details.get('Outputs', [])
+    }
+    resources = cloudformation.describe_stack_resources(StackName=name)['StackResources']
+    result['resources'] = {
+        resource['LogicalResourceId']: resource['PhysicalResourceId']
+        for resource in resources
+    }
+    return result
+
+def main(data, operation):
+    details = json.loads(data)
+    region = details.get('region', 'eu-west-1')
+    print("connecting to region {}...".format(region), file=sys.stderr)
+    session = boto3.session.Session(region_name=region)
+    cloudformation = session.client('cloudformation')
+    if operation == 'create_or_update':
+        print("checking stack {} exists...".format(details['name']), file=sys.stderr)
+        if stack_exists(cloudformation, details['name']):
+            print("stack found, updating...", file=sys.stderr)
+            operation = 'update'
+        else:
+            print("stack not found, creating...", file=sys.stderr)
+            operation = 'create'
+    if operation == 'create':
+        create_stack(cloudformation, **details)
+    else:
+        update_stack(cloudformation, **details)
+    print("done.", file=sys.stderr)
+    print(json.dumps(get_stack_result(cloudformation, details['name'])))
+
+if __name__ == "__main__":
+    if len(sys.argv) < 2 or len(sys.argv) > 3 or len(sys.argv) == 3 and sys.argv[2] not in ['create_or_update', 'create', 'update']:
+        print("Usage: create-or-update-stack JSON [ create_or_update | create | update ]", file=sys.stderr)
+        print(dedent("""
+            JSON is a (properly shell quoted) JSON document containing (or "-" to read from stdin):
+              {
+                "name": "stack-name",
+                "parameters": { "key": "value", ... },
+                "tags": { "key": "value", ... },
+                "capabilities": [ "CAPABILITY_IAM" ],
+                "template_file": "path/to/stack.json"
+                ...or...
+                "template": { ...cloudformation template... },
+                ...or...
+                "template_url": "s3://bucket/key"
+              }
+        """).strip(), file=sys.stderr)
+    else:
+        main(
+            sys.stdin.read() if sys.argv[1] == '-' else sys.argv[1],
+            sys.argv[2] if len(sys.argv) == 3 else 'create_or_update'
+        )

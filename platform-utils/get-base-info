@@ -1,0 +1,36 @@
+#!/bin/bash
+
+set -eo pipefail
+
+ENV_NAME=$1
+VERSION=$2
+
+if [ -z "$ENV_NAME" ] || [ -z "$VERSION" ]; then
+    echo usage: $0 ENV_NAME VERSION >&2
+    exit 1
+fi
+
+. $(dirname $0)/generate-component-name
+
+if [ ! -f service.json ]; then
+    echo required project metadata service.json missing - see: >&2
+    echo \ \ https://intranet.mergermarket.com/display/TECH/ECS+Deployment+Draft#ECSDeploymentDraft-Step2:Addservicemeta-data >&2
+    exit 1
+fi
+
+# Insert Default values for:
+# region, type and account_scheme
+REGION=eu-west-1
+TYPE=slug
+ACCOUNT_SCHEME=multi
+
+echo {} | jq "{
+    meta: ({
+        ENV_NAME: \"$ENV_NAME\",
+        VERSION: \"$VERSION\",
+        COMPONENT_NAME: \"$COMPONENT_NAME\",
+        REGION:  \"$REGION\",
+        TYPE:  \"$TYPE\",
+        ACCOUNT_SCHEME:  \"$ACCOUNT_SCHEME\",                
+    } + $(cat service.json))
+}"
