@@ -1,0 +1,47 @@
+#!/bin/bash
+
+set -e
+
+if [[ "$1" == "help" || "$1" == "-h" || "$1" == "--help" ]]; then
+    echo Usage: platutils-write-npm-config \[ NPMRC_PATH\(\~/.npmrc\) \] >&2
+    exit
+fi
+
+CONFIG_FILE="$1"
+if [ -z "$CONFIG_FILE" ]; then
+    CONFIG_FILE=~/.npmrc
+fi
+
+if [[ -t 0 ]]; then
+    # interactive
+    if [ ! -z "$EMAIL" ]; then
+        DEFAULT_TEXT=" ($EMAIL)"
+    fi
+    while [ -z "$NPM_USERNAME" ]; do
+        read -p "npm username$DEFAULT_TEXT? "
+        if [[ -z "$REPLY" && ! -z "$EMAIL" ]]; then
+            NPM_USERNAME="$EMAIL"
+        else
+            NPM_USERNAME="$REPLY"
+        fi
+    done
+    while [ -z "$NPM_PASSWORD" ]; do
+        read -s -p "npm password? "
+        echo
+        NPM_PASSWORD="$REPLY"
+    done
+else
+    # non-interactive
+    if [[  -z "$NPM_USERNAME" || -z "$NPM_PASSWORD" ]]; then
+        echo "NPM_USERNAME and NPM_PASSWORD must be set in a non-interactive session" >&2
+        exit 1
+    fi
+fi
+
+CONFIG=$(curl -fsSu "$NPM_USERNAME:$NPM_PASSWORD" http://mmrepo.artifactoryonline.com/mmrepo/api/npm/auth)
+
+echo 'registry = http://mmrepo.artifactoryonline.com/mmrepo/api/npm/npm-virtual' > $CONFIG_FILE
+echo "$CONFIG" >> $CONFIG_FILE
+
+echo wrote config to $CONFIG_FILE
+
