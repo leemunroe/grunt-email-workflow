@@ -1,0 +1,109 @@
+//variables
+$grey: #928F8F;
+$primary-brand-color: #069591;
+$grey-background: #F5F5F5;
+$grey-border: #E3E1E1;
+
+
+body, .body {
+  background: #fff;
+}
+
+a {
+  text-decoration: underline;
+  color: $primary-brand-color;
+}
+
+body, table.body, h1, h2, h3, h4, h5, h6, p, td {
+  font-family: helvetica, arial, sans-serif;
+}
+
+.intelligence {
+  border-bottom: solid 1px $grey-border;
+  &__headline {
+    font-family: Georgia, serif;
+    font-size: 24px;
+    line-height: 1;
+  }
+  &__date {
+    text-align: right;
+    color: $grey;
+  }
+  &__proprietary {
+    color: $grey;
+  }
+}
+
+.uppercase {
+  text-transform: uppercase;
+}
+
+table.footer {
+  background-color:$grey-background;
+}
+table.footer td {
+  padding:5px;
+}
+
+table.footer strong {
+  display:block;
+  border-bottom: 1px solid $grey-border;
+  padding-bottom:5px;
+  font-size:0.9em;
+}
+
+table.footer p {
+  padding-top:5px;
+}
+
+.primary-header {
+  background-color: $primary-brand-color;
+  padding: 0.5em;
+  &__content{
+    margin: 0;
+  }
+}
+
+.secondary-header {
+  background-color: $grey-background;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  padding: 0.5em;
+  font-weight: bold;
+}
+
+@media screen and (max-width: 480px) {
+  .teaser__link {
+    display: inline-block;
+    vertical-align: top;
+    padding: 0.5em 0;
+    width: 50%;
+    &:nth-child(even) {
+      margin-left: 0.5em;
+      width: calc(50% - 0.5em);
+    }
+  }
+}
+
+.teaser__link {
+  font-size: 13px;
+}
+
+.row-spacer {
+  font-size: 13px;
+  line-height:0.5;
+  padding: 0.5em;
+}
+
+.contact-info {
+  background-color: $grey-background;
+  h3.secondary-header {
+    font-size: 13px;
+    border-bottom: solid 1px $grey-border;
+    margin-bottom: 0;
+  }
+  &__description{
+    margin-bottom: 0;
+    padding: 0.5em;
+  }
+}

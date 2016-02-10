@@ -36,7 +36,7 @@ body{
 
 .main {
   background: #ffffff;
-  border: 1px solid darken($grey, 5);
+  border: 1px solid #E3E1E1;
   border-radius: $br;
   width: 100%;
 }
@@ -69,3 +69,9 @@ body{
     padding: 20px 0;
   }
 }
+
+//td, tr, table, th {
+//  border: solid 1px blue;
+//}
+
+
