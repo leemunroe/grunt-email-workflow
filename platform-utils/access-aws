@@ -1,0 +1,69 @@
+#!/bin/bash
+
+aws configure --profile=mergermarket list 2>&1 > /dev/null
+unset AWS_ACCESS_KEY_ID
+
+if [ "$?" -eq "0" ]; then
+    export AWS_PROFILE=mergermarket
+elif [ "$?" -eq "127" ]; then
+    echo aws cli not found, install with: sudo pip install awscli \(see http://aws.amazon.com/cli/\) >&2
+    exit 1
+# else continue with whatever profile/credentials configured
+fi
+
+if [ -z "$EMAIL" ]; then
+    echo please set the EMAIL environment variable to your Mergermarket email address >&2
+    exit 1
+fi
+
+USAGE="Usage: platutils access-aws ROLE ACCOUNT|ACCOUNT_ALIAS (e.g. \"access-aws developer mmgdev\" or \"access-aws readonly mmgprod\")"
+
+ROLE=$1
+if [ -z "$ROLE" ]; then
+    echo $USAGE >&2
+    exit 1
+fi
+
+ACCOUNT=$2
+ACCOUNT_COLOUR='\033[1;31m' # red
+if [ "$ACCOUNT" == "mmgdev" ]; then
+    ACCOUNT_ID=733578946173
+    ACCOUNT_COLOUR='\033[1;34m' # blue
+elif [ "$ACCOUNT" == "mmgprod" ]; then
+    ACCOUNT_ID=371640587010
+elif ! [[ "$ACCOUNT" =~ '^[0-9]+$' ]]; then
+    echo Second parameter must be \"mmgdev\", \"mmgprod\", or a numeric account id >&2
+    exit 1
+else
+    ACCOUNT_ID=$ACCOUNT
+fi
+
+
+set -e
+DETAILS="$(aws sts assume-role --role-arn arn:aws:iam::$ACCOUNT_ID:role/$ROLE --role-session-name $EMAIL)"
+
+NC='\033[0m' # No Color
+VALUE_COLOUR='\033[1;35m' # light magenta
+printf "AssumedRoleId: $VALUE_COLOUR$(echo "$DETAILS" | jq -r .AssumedRoleUser.AssumedRoleId)$NC\n" >&2
+printf "AssumedRoleUserArn: $VALUE_COLOUR$(echo "$DETAILS" | jq -r .AssumedRoleUser.Arn)$NC\n" >&2
+printf "AccessKeyId: $VALUE_COLOUR$(echo "$DETAILS" | jq -r .Credentials.AccessKeyId)$NC\n" >&2
+printf "Expires: $VALUE_COLOUR$(echo "$DETAILS" | jq -r .Credentials.Expiration)$NC\n" >&2
+printf "Writing credentilas to STDOUT for shell configuration...\n" >&2
+
+echo "
+export AWS_ACCESS_KEY_ID='$(echo "$DETAILS" | jq -r .Credentials.AccessKeyId)'
+export AWS_SECRET_ACCESS_KEY='$(echo "$DETAILS" | jq -r .Credentials.SecretAccessKey)'
+export AWS_SESSION_TOKEN='$(echo "$DETAILS" | jq -r .Credentials.SessionToken)'
+export ACCESS_AWS_ROLE='$ROLE'
+export ACCESS_AWS_ACCOUNT='$ACCOUNT'
+export ACCESS_AWS_EXPIRES='$(echo "$DETAILS" | jq -r .Credentials.Expiration)'
+"
+
+if [ "$ROLE" == "readonly" ]; then
+    ROLE_COLOUR='\033[1;32m' # green
+else
+    ROLE_COLOUR='\033[1;31m' # red
+fi
+
+printf "Set environment to use $ROLE_COLOUR$ROLE$NC role in $ACCOUNT_COLOUR$ACCOUNT$NC account\n" >&2
+

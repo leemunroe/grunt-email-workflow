@@ -1,0 +1,98 @@
+#!/bin/bash
+
+set -eo pipefail
+
+. $(dirname $0)/functions.sh
+
+source $(dirname $0)/generate-component-name
+
+if [[ -n "$COMPONENT_SUFFIX" ]]; then
+   COMPONENT_NAME=$COMPONENT_NAME-$COMPONENT_SUFFIX
+   echo
+   echo COMPONENT_SUFFIX EXISTS:
+   echo -e "\tSetting COMPONENT_NAME to $COMPONENT_NAME"
+   echo
+fi
+
+SERVICE=$COMPONENT_NAME
+FOLDER=$(jenkins-config-folder)
+
+TEAM=$(cat service.json | jq -r .TEAM)
+
+# Optional Parameter to Override Jenkins Config Name
+CONFIG_REPO=$1
+
+if [[ -z "$CONFIG_REPO" ]]; then
+    REPO_USED=$TEAM-config
+else
+    REPO_USED=$CONFIG_REPO
+fi
+
+echo
+echo Uploading Jenkins Config from folder $(pwd)/$FOLDER:
+echo
+echo   Team: $TEAM
+echo   Service: $SERVICE
+echo
+echo   Config Repo: $REPO_USED
+echo
+
+
+if [[ -z "$EMAIL" ]]; then
+    read -p "Mergermarket email: " EMAIL
+fi
+
+read -s -p "Mergermarket password: " PASSWORD
+echo
+
+if [ -z "$TEAM_PATH" ]; then
+    TEAM_PATH="job/$TEAM"
+fi
+
+TEAM_URL="https://jenkins.mergermarket.it/$TEAM_PATH"
+BASE_URL=$TEAM_URL/job/$SERVICE
+
+if [[ ! "$(curl -sS --fail -u "$EMAIL:$PASSWORD" $TEAM_URL/checkJobName?value=$SERVICE)" == *"exists"* ]]; then
+    echo creating folder
+    curl -sS --fail -u "$EMAIL:$PASSWORD" -X POST \
+        --data-urlencode name=$SERVICE \
+        --data-urlencode mode=com.cloudbees.hudson.plugins.folder.Folder \
+        --data-urlencode from= \
+        --data-urlencode json='{"name": "'$SERVICE'", "mode": "com.cloudbees.hudson.plugins.folder.Folder", "from": ""}' \
+        --data-urlencode Submit=OK \
+        $TEAM_URL/createItem
+fi
+
+for CONFIG in $(cd $FOLDER && find . -type f -name config.xml | cut -c 3-); do
+    if [[ "$CONFIG" == "view/"* ]]; then
+        # this info is handled in the containing folder
+        continue
+    fi
+    if [ "$CONFIG" == "config.xml" ]; then
+        NAME=$SERVICE
+        PARENT_BASE_URL=$TEAM_URL
+    else
+        NAME=$(echo $CONFIG | perl -ne '/([^\/]+)\/config\.xml$/ && print $1')
+        PARENT_BASE_URL=$BASE_URL
+    fi
+    if [[ "$(curl -sS --fail -u "$EMAIL:$PASSWORD" $PARENT_BASE_URL/checkJobName?value=$NAME)" == *"exists"* ]]; then
+        URL=$BASE_URL/$CONFIG
+    else
+        URL=$PARENT_BASE_URL/createItem?name=$NAME
+    fi
+    echo uploading $FOLDER/$CONFIG to $URL
+
+    TEAM_PREFIX="$(echo "$TEAM_PATH" | sed "s@job/@@g")/"
+
+    cat "$FOLDER/$CONFIG" |
+        sed "s/{CONFIG_REPO}/$REPO_USED/g"   | # replace the config repo
+        sed "s/{TEAM}/$TEAM/g"               | # replace the team
+        sed "s@{TEAM_PREFIX}@$TEAM_PREFIX@g" | # replace the team prefix (without "job/")
+        sed "s@{TEAM_PATH}@$TEAM_PATH@g"     | # replace the team path
+        sed "s/{SERVICE}/$SERVICE/g"         | # replace the service
+        curl --fail -u "$EMAIL:$PASSWORD" -s -S -H 'Content-Type: text/xml' -X POST --data-binary @- $URL
+done
+
+echo
+echo Jenkins Config has been uploaded to folder: $TEAM/$SERVICE
+echo

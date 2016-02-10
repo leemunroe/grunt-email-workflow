@@ -1,0 +1,16 @@
+#!/bin/bash
+
+set -e
+
+DIR="$( cd "$( dirname "${BASH_SOURCE[0]}" )" && pwd )"
+
+USAGE="Usage: platutils SUBCOMMAND [ ARGS ]"
+
+echo $USAGE >&2
+echo Subcommands: >&2
+for subcommand in $(ls $DIR | grep -v '^platutils$'); do
+    if [ -x $DIR/$subcommand ]; then
+        echo \ \ $subcommand >&2
+    fi
+done
+
