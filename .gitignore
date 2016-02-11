@@ -7,3 +7,4 @@ secrets.json
 dist/*
 preview/css
 src/css/*.css
+.idea

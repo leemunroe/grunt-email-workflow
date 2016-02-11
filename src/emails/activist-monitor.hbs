@@ -1,6 +1,6 @@
 ---
 layout: default.hbs
-subject: Simple Alert Email
+subject: Simple Alert Email Activist Monitor
 ---
 
 <span class="preheader">This is preheader text. Some clients will show this text as a preview.</span>
@@ -38,7 +38,14 @@ subject: Simple Alert Email
                 </tr>
                 <tr>
                     <td class="intelligence__proprietary">
-                        Proprietary
+                        <table>
+                            <tr class="intelligence__prop">
+                                <td class="intelligence__prop-image"><img
+                                        src="http://s3-eu-west-1.amazonaws.com/notifications-assembler/img/Prop-Icon-20x20.png"
+                                </td>
+                                <td class="intelligence__prop-text">Proprietary</td>
+                            </tr>
+                        </table>
                     </td>
                     <td class="intelligence__date">
                         {{date}} 26 Jan 2016 | 10:33 GMT
@@ -100,7 +107,7 @@ subject: Simple Alert Email
                         <h3 class="secondary-header">For help and support</h3>
                         <p class="contact-info__description">
                             Contact your CRM Consultant on <a href="tel:00441234567890">+44 1234567890</a> or
-                                email <a href="mailto:help@activistmonitor.com">help@activistmonitor.com</a>
+                            email <a href="mailto:help@activistmonitor.com">help@activistmonitor.com</a>
                         </p>
                     </td>
                 </tr>
@@ -110,7 +117,8 @@ subject: Simple Alert Email
                 <tr>
                     <td>
                         <h3 class="secondary-header">To Contact Editorial</h3>
-                        <p class="contact-info__description">Lucinda Guthrie, Editor,  <a href="tel:00441234567890">+44 1234567890</a> <a
+                        <p class="contact-info__description">Lucinda Guthrie, Editor, <a href="tel:00441234567890">+44
+                            1234567890</a> <a
                                 href="mailto:lucinda.guthrie@activistmonitor.com">lucinda.guthrie@activistmonitor.com</a>
                         </p>
                     </td>
@@ -119,11 +127,9 @@ subject: Simple Alert Email
                     <td class="row-spacer">&nbsp;</td>
                 </tr>
                 <tr>
-                    <td class="row-spacer">&nbsp;</td>
-                </tr>
-                <tr>
                     <td>
-                        <p class="contact-info__description">IMPORTANT: This e-mail contains information protected by copyright which can only
+                        <p class="contact-info__description">IMPORTANT: This e-mail contains information protected by
+                            copyright which can only
                             be used in accordance with the terms of your Activistmonitor subscription
                             agreement. You must not therefore copy or forward this e-mail, its contents, or
                             any contents on the password-protected Activistmonitor website to anyone who is
@@ -136,15 +142,14 @@ subject: Simple Alert Email
         </td>
     </tr>
 </table>
-<div class="footer">
-    <table>
-        <tr>
-            <td class="align-center">
-                <p><a href="{{ default.unsubscribe_url }}">
-                    <unsubscribe>Unsubscribe</unsubscribe>
-                </a>
-                </p>
-            </td>
-        </tr>
-    </table>
-</div>
+<table class="footer">
+    <tr>
+        <td class="align-center">
+            <p class="footer__content"><a href="{{ default.unsubscribe_url }}">
+                <unsubscribe>Unsubscribe</unsubscribe>
+            </a>
+            </p>
+        </td>
+    </tr>
+</table>
+
