@@ -47,6 +47,7 @@ body, table.body, h1, h2, h3, h4, h5, h6, p, td {
   }
   &__prop{
     vertical-align: middle;
+    color: $grey;
     &-image {
       height: 20px;
       width: 20px;
@@ -56,6 +57,7 @@ body, table.body, h1, h2, h3, h4, h5, h6, p, td {
     &-text {
       padding: 0;
       vertical-align: top;
+      color: $grey;
     }
   }
 }
