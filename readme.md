@@ -9,6 +9,10 @@ Specific email templates can be found in - /src/emails
 
 _the following is from the original readme, it contains instructions about installation and use_
 
+# Grunt Email Design Workflow
+
+[![Built with Grunt](https://cdn.gruntjs.com/builtwith.png)](http://gruntjs.com/)
+
 Designing and testing emails is a pain. HTML tables, inline CSS, various devices and clients to test, and varying support for the latest web standards.
 
 This Grunt task helps simplify things.
