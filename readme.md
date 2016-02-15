@@ -1,6 +1,10 @@
-# Grunt Email Design Workflow
+# Notifications Email Templates
 
-[![Built with Grunt](https://cdn.gruntjs.com/builtwith.png)](http://gruntjs.com/) 
+Based on https://github.com/leemunroe/grunt-email-workflow
+
+Here you can find the email templates for notificiations delivered using the new notifications platform. This project allows the creation of email templates using modern techniques. It also makes it easier to test teh templates either by emailing them to a test account or using Litmus.
+
+_the following is from the original readme_
 
 Designing and testing emails is a pain. HTML tables, inline CSS, various devices and clients to test, and varying support for the latest web standards.
 
