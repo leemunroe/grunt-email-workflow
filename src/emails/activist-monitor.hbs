@@ -38,14 +38,16 @@ subject: Activist Monitor - Single Alert Email
                 <tr>
                     <td class="intelligence__proprietary">
                         <table>
+                            \{{#if isProprietary}}
                             <tr class="intelligence__prop">
                                 <td class="intelligence__prop-image"><img src="http://s3-eu-west-1.amazonaws.com/notifications-assembler/img/Prop-Icon-20x20.png"></img></td>
                                 <td class="intelligence__prop-text">Proprietary</td>
                             </tr>
+                            \{{/if}}
                         </table>
                     </td>
                     <td class="intelligence__date">
-                        {{date}} 26 Jan 2016 | 10:33 GMT
+                        \{{date}}
                     </td>
                 </tr>
                 <tr>

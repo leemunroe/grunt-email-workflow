@@ -93,14 +93,16 @@
                 <tr>
                     <td class="intelligence__proprietary" style="box-sizing: border-box; font-family: 'Helvetica Neue', Helvetica, Arial, 'Lucida Grande', sans-serif; font-size: 14px; vertical-align: middle; color: #928F8F;" valign="middle">
                         <table style="box-sizing: border-box; mso-table-lspace: 0pt; mso-table-rspace: 0pt; width: 100%; border-collapse: separate !important;" width="100%">
+                            {{#if isProprietary}}
                             <tr class="intelligence__prop" style="vertical-align: middle; color: #928F8F;" valign="middle">
                                 <td class="intelligence__prop-image" style="box-sizing: border-box; font-family: 'Helvetica Neue', Helvetica, Arial, 'Lucida Grande', sans-serif; font-size: 14px; vertical-align: middle; height: 20px; width: 20px; padding: 0;" width="20" valign="middle"><img src="http://s3-eu-west-1.amazonaws.com/notifications-assembler/img/Prop-Icon-20x20.png" style="-ms-interpolation-mode: bicubic; max-width: 100%;"></td>
                                 <td class="intelligence__prop-text" style="box-sizing: border-box; font-family: 'Helvetica Neue', Helvetica, Arial, 'Lucida Grande', sans-serif; font-size: 14px; vertical-align: top; padding: 0; color: #928F8F;" valign="top">Proprietary</td>
                             </tr>
+                            {{/if}}
                         </table>
                     </td>
                     <td class="intelligence__date" style="box-sizing: border-box; font-family: 'Helvetica Neue', Helvetica, Arial, 'Lucida Grande', sans-serif; font-size: 14px; vertical-align: middle; text-align: right; color: #928F8F; padding: 0;" valign="middle" align="right">
-                         26 Jan 2016 | 10:33 GMT
+                        {{date}}
                     </td>
                 </tr>
                 <tr>
