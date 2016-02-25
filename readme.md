@@ -7,6 +7,8 @@ Here you can find the email templates for notificiations delivered using the new
 Layouts can be found in - /src/layouts
 Specific email templates can be found in - /src/emails
 
+Static assets are published to the MMG CDN via S3, in order to do this you must add your AWS account details to the `secrets.json` file. See the instructions below for details on creating this.
+
 _the following is from the original readme, it contains instructions about installation and use_
 
 # Grunt Email Design Workflow
