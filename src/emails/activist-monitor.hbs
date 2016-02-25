@@ -9,8 +9,7 @@ subject: Activist Monitor - Single Alert Email
             <table>
                 <tr>
                     <td class="primary-header">
-                        <h1 class="primary-header__content"><a href="\{{homepage_url}}\{{google_analytics_tracking}}"><img
-                                src="http://s3-eu-west-1.amazonaws.com/notifications-assembler/img/activistmonitor-logo.png"/></a>
+                        <h1 class="primary-header__content"><a href="\{{homepage_url}}\{{google_analytics_tracking}}"><img src="{{ activistmonitor.logo_image }}"/></a>
                         </h1>
                     </td>
                 </tr>
@@ -39,7 +38,7 @@ subject: Activist Monitor - Single Alert Email
                         <table>
                             \{{#if isProprietary}}
                             <tr class="intelligence__prop">
-                                <td class="intelligence__prop-image"><img src="http://s3-eu-west-1.amazonaws.com/notifications-assembler/img/Prop-Icon-20x20.png"></img></td>
+                                <td class="intelligence__prop-image"><img src="{{ activistmonitor.prop_image }}"></img></td>
                                 <td class="intelligence__prop-text">Proprietary</td>
                             </tr>
                             \{{/if}}
