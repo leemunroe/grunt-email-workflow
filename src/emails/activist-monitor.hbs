@@ -3,14 +3,13 @@ layout: default.hbs
 subject: Activist Monitor - Single Alert Email
 ---
 
-<span class="preheader">This is preheader text. Some clients will show this text as a preview.</span>
 <table class="main">
     <tr>
         <td>
             <table>
                 <tr>
                     <td class="primary-header">
-                        <h1 class="primary-header__content"><a href="{{homepage_url}}"><img
+                        <h1 class="primary-header__content"><a href="\{{homepage_url}}\{{google_analytics_tracking}}"><img
                                 src="http://s3-eu-west-1.amazonaws.com/notifications-assembler/img/activistmonitor-logo.png"/></a>
                         </h1>
                     </td>
@@ -29,7 +28,7 @@ subject: Activist Monitor - Single Alert Email
             <table class="intelligence">
                 <tr>
                     <td class="intelligence__headline" colspan="2">
-                        <a href="\{{article_link}}">\{{headline}}</a>
+                        <a href="\{{article_link}}\{{google_analytics_tracking}}">\{{headline}}</a>
                     </td>
                 </tr>
                 <tr>
@@ -55,7 +54,7 @@ subject: Activist Monitor - Single Alert Email
                 </tr>
                 <tr>
                     <td class="intelligence__link" colspan="2">
-                        <a href="\{{article_link}}">Read full article</a>
+                        <a href="\{{article_link}}\{{google_analytics_tracking}}">Read full article</a>
                     </td>
                 </tr>
                 <tr>
@@ -80,16 +79,16 @@ subject: Activist Monitor - Single Alert Email
                 </tr>
                 <tr>
                     <td class="teaser__link">
-                        <a href="\{{explore_intel_link}}">Explore Intelligence</a>
+                        <a href="\{{explore_intel_link}}\{{google_analytics_tracking}}">Explore Intelligence</a>
                     </td>
                     <td class="teaser__link">
-                        <a href="\{{explore_campaigns_link}}">Explore Campaigns</a>
+                        <a href="\{{explore_campaigns_link}}\{{google_analytics_tracking}}">Explore Campaigns</a>
                     </td>
                     <td class="teaser__link">
-                        <a href="\{{explore_activists_link}}">Explore Activists</a>
+                        <a href="\{{explore_activists_link}}\{{google_analytics_tracking}}">Explore Activists</a>
                     </td>
                     <td class="teaser__link">
-                        <a href="\{{explore_filings_link}}">Explore Filings</a>
+                        <a href="\{{explore_filings_link}}\{{google_analytics_tracking}}">Explore Filings</a>
                     </td>
                 </tr>
                 <tr>
