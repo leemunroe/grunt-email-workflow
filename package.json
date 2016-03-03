@@ -1,6 +1,6 @@
 {
   "name": "notifications-email-templates",
-  "version": "0.1.21",
+  "version": "0.1.22",
   "repository": {
     "type": "git",
     "url": "https://github.com/mergermarket/notifications-email-templates"
