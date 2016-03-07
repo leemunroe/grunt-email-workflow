@@ -1,0 +1,118 @@
+---
+layout: debtwire.hbs
+subject: Debtwire - Single Alert Email
+---
+
+<table class="main">
+  <tr>
+    <td>
+      <table>
+        <tr>
+          <td class="primary-header">
+            <h1 class="primary-header__content"><a href="\{{homepage_url}}\{{google_analytics_tracking}}"><img src="{{ debtwire.logo_image }}"/></a>
+            </h1>
+          </td>
+        </tr>
+
+        <tr>
+          <td class="secondary-header">
+            intelligence alert
+          </td>
+        </tr>
+        <tr>
+          <td class="row-spacer">&nbsp;</td>
+        </tr>
+      </table>
+
+      <table class="intelligence">
+        <tr>
+          <td class="intelligence__headline" colspan="2">
+            <a href="\{{article_link}}\{{google_analytics_tracking}}">\{{headline}}</a>
+          </td>
+        </tr>
+        <tr>
+          <td class="row-spacer">&nbsp;</td>
+        </tr>
+        <tr>
+          <td class="intelligence__proprietary">
+            <table>
+              \{{#if isProprietary}}
+              <tr class="intelligence__prop">
+                <td class="intelligence__prop-image"><img src="{{ debtwire.prop_image }}"></img></td>
+                <td class="intelligence__prop-text">Proprietary</td>
+              </tr>
+              \{{/if}}
+            </table>
+          </td>
+          <td class="intelligence__date">
+            \{{publishDate}}
+          </td>
+        </tr>
+        <tr>
+          <td class="row-spacer">&nbsp;</td>
+        </tr>
+        <tr>
+          <td class="intelligence__link" colspan="2">
+            <a href="\{{article_link}}\{{google_analytics_tracking}}">Read full article</a>
+          </td>
+        </tr>
+        <tr>
+          <td class="row-spacer">&nbsp;</td>
+        </tr>
+      </table>
+
+      <table class="contact-info">
+        <tr>
+          <td class="row-spacer">&nbsp;</td>
+        </tr>
+        <tr>
+          <td>
+            <h3 class="secondary-header">For help and support</h3>
+            <p class="contact-info__description">
+              Contact your CRM Consultant on <a href="tel:+12123907812">+1 2123907812</a> or
+              email <a href="mailto:help@debtwire.com">help@debtwire.com</a>
+            </p>
+          </td>
+        </tr>
+        <tr>
+          <td class="row-spacer">&nbsp;</td>
+        </tr>
+        <tr>
+          <td>
+            <h3 class="secondary-header">To Contact Editorial</h3>
+            <p class="contact-info__description">Lucinda Guthrie, Editor, <a href="tel:+442037411216">+44
+              2037411216</a> <a
+                href="mailto:lucinda.guthrie@debtwire.com">lucinda.guthrie@debtwire.com</a>
+            </p>
+          </td>
+        </tr>
+        <tr>
+          <td class="row-spacer">&nbsp;</td>
+        </tr>
+        <tr>
+          <td>
+            <p class="contact-info__description">IMPORTANT: This e-mail contains information protected by
+              copyright which can only
+              be used in accordance with the terms of your Debtwire subscription
+              agreement. You must not therefore copy or forward this e-mail, its contents, or
+              any contents on the password-protected Debtwire website to anyone who is
+              not an employee of the subscriber organisation. (Your subscription agreement
+              explains how you can use contents for reports and presentations.) UNAUTHORISED
+              USE OR DISCLOSURE IS UNLAWFUL.</p>
+          </td>
+        </tr>
+      </table>
+    </td>
+  </tr>
+</table>
+<table class="footer">
+  <tr>
+    <td class="align-center">
+      <p class="footer__content">
+        <unsubscribe>If you no longer wish to receive this Intelligence, please contact your Debtwire CRM Consultant</unsubscribe>
+        </a>
+      </p>
+    </td>
+  </tr>
+</table>
+

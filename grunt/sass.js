@@ -5,7 +5,8 @@ module.exports = {
       style: 'expanded'
     },
     files: {
-      '<%= paths.src %>/css/main.css': '<%= paths.src %>/css/scss/main.scss'
+      '<%= paths.src %>/css/activistmonitor-main.css': '<%= paths.src %>/css/scss/activistmonitor-main.scss',
+      '<%= paths.src %>/css/debtwire-main.css': '<%= paths.src %>/css/scss/debtwire-main.scss'
     }
   },
 

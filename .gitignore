@@ -7,3 +7,4 @@ secrets.json
 preview/css
 src/css/*.css
 .idea
+.npmrc
