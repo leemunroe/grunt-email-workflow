@@ -1,5 +1,28 @@
 # Notifications Email Templates
 
+
+This node package is used by Assembler to construct e-mail templates.  It provides a single HTML file (withing `/dist/`) which is parsed by Assembler service using Handlebars.
+
+Based on https://github.com/leemunroe/grunt-email-workflow
+
+
+## Add New E-mail Template
+
+
+## Test E-mails
+
+
+## Publish Package
+
+
+
+
+----
+
+
+# Original Readme from `grunt-email-workflow`
+
+
 Based on https://github.com/leemunroe/grunt-email-workflow
 
 Here you can find the email templates for notificiations delivered using the new notifications platform. This project allows the creation of email templates using modern techniques. It also makes it easier to test teh templates either by emailing them to a test account or using Litmus.

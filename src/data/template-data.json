@@ -1,0 +1,20 @@
+{
+  "debtwire" : [
+    {
+      "id": "debtwire-html-v1",
+      "description": "Debtwire html v1",
+      "format": "html",
+      "deprecated": false,
+      "dateCreated": "2016-04-27T16:04:57.892Z"
+    }
+  ],
+  "activistmonitor" : [
+    {
+      "id": "activistmonitor-html-v1",
+      "description": "ActivistMonitor html v1",
+      "format": "html",
+      "deprecated": false,
+      "dateCreated": "2016-04-27T16:04:57.892Z"
+    }
+  ]
+}
