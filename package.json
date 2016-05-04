@@ -30,5 +30,8 @@
     "imagemin-mozjpeg": "^5.1.0",
     "load-grunt-config": "^0.19.0",
     "load-grunt-tasks": "^3.2.0"
+  },
+  "dependencies": {
+    "grunt-parallel": "^0.4.1"
   }
 }

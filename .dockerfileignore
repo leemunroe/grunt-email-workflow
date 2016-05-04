@@ -2,3 +2,4 @@ Dockerfile
 .git
 .sass-config
 dist
+./node_modules/
