@@ -51,13 +51,9 @@
             <table style="box-sizing: border-box; mso-table-lspace: 0pt; mso-table-rspace: 0pt; width: 100%; border-collapse: separate !important;" width="100%">
                 <tr>
                     <td class="primary-header" style="box-sizing: border-box;">
-                        <h1 class="primary-header__content"><a href="{{homepage_url}}{{google_analytics_tracking}}" style="box-sizing: border-box;"><img src="https://cdn.mmgcache.net/notifications-email-templates/dist/img/dw_logo.png" style="-ms-interpolation-mode: bicubic; max-width: 100%;"></a>
+                        <h1 class="primary-header__content"><a href="{{homepage_url}}{{google_analytics_tracking}}" style="box-sizing: border-box;"><img src="https://cdn.mmgcache.net/notifications-email-templates/dist/img/old_logo_dw.gif" style="-ms-interpolation-mode: bicubic; max-width: 100%;"></a>
                         </h1>
                     </td>
-                </tr>
-
-                <tr>
-                    <td class="row-spacer" style="box-sizing: border-box;">&nbsp;</td>
                 </tr>
             </table>
 
@@ -67,20 +63,15 @@
                 </tr>
 
                 <tr>
-                    <td class="sector" style="box-sizing: border-box;">
-                        <p style="box-sizing: border-box; margin: 0;">{{sector}}</p>
-                    </td>
+                    <p style="box-sizing: border-box; margin: 0;">{{sector}}</p>
                 </tr>
 
                 <tr>
                     <td style="box-sizing: border-box;">
-                        <p style="box-sizing: border-box; margin: 0;">{{publishDate}}</p>
+                        <p style="box-sizing: border-box; margin: 0;">{{formattedPublishDate}} {{#if isProprietary}}<b>(DW)</b>{{/if}}</p>
                     </td>
-                    <td style="box-sizing: border-box;">
-                        <p style="box-sizing: border-box; margin: 0;">{{isProprietary}}</p>
-                    </td>
-                    <td class="intelligence__headline" colspan="2" style="box-sizing: border-box;">
-                        <a href="{{article_link}}{{google_analytics_tracking}}" style="box-sizing: border-box;">{{headline}}</a>
+                    <td class="intelligence_headline" style="box-sizing: border-box; text-align: left;" align="left">
+                        <a href="{{article_link}}" style="box-sizing: border-box;">{{headline}}</a>
                     </td>
                 </tr>
                 <tr>

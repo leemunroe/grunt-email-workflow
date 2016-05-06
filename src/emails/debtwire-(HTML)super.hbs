@@ -9,13 +9,9 @@ subject: Debtwire - Enhanced Email Alert
             <table>
                 <tr>
                     <td class="primary-header">
-                        <h1 class="primary-header__content"><a href="\{{homepage_url}}\{{google_analytics_tracking}}"><img src="{{ debtwire.logo_image }}"/></a>
+                        <h1 class="primary-header__content"><a href="\{{homepage_url}}\{{google_analytics_tracking}}"><img src="{{ debtwire.old_logo_image }}"/></a>
                         </h1>
                     </td>
-                </tr>
-
-                <tr>
-                    <td class="row-spacer">&nbsp;</td>
                 </tr>
             </table>
 
@@ -25,20 +21,15 @@ subject: Debtwire - Enhanced Email Alert
                 </tr>
 
                 <tr>
-                    <td class="sector">
-                        <p>\{{sector}}</p>
-                    </td>
+                    <p>\{{sector}}</p>
                 </tr>
 
                 <tr>
                     <td>
-                        <p>\{{publishDate}}</p>
+                        <p>\{{formattedPublishDate}} \{{#if isProprietary}}<b>(DW)</b>\{{/if}}</p>
                     </td>
-                    <td>
-                        <p>\{{isProprietary}}</p>
-                    </td>
-                    <td class="intelligence__headline" colspan="2">
-                        <a href="\{{article_link}}\{{google_analytics_tracking}}">\{{headline}}</a>
+                    <td class="intelligence_headline">
+                        <a href="\{{article_link}}">\{{headline}}</a>
                     </td>
                 </tr>
                 <tr>
