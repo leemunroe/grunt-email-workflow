@@ -13,6 +13,13 @@
       "format": "html",
       "deprecated": false,
       "dateCreated": "2016-05-05T16:24:57.892Z"
+    },
+    {
+      "id": "debtwire-HTML",
+      "description": "Equivalent to Legacy HTML template",
+      "format": "html",
+      "deprecated": false,
+      "dateCreated": "2016-05-09T16:24:57.892Z"
     }
   ],
   "activism" : [

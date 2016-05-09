@@ -6,7 +6,8 @@ module.exports = {
     },
     files: {
       '<%= paths.src %>/css/activistmonitor-main.css': '<%= paths.src %>/css/scss/activistmonitor-main.scss',
-      '<%= paths.src %>/css/debtwire-main.css': '<%= paths.src %>/css/scss/debtwire-main.scss'
+      '<%= paths.src %>/css/debtwire-main.css': '<%= paths.src %>/css/scss/debtwire-main.scss',
+      '<%= paths.src %>/css/debtwire-HTML.css': '<%= paths.src %>/css/scss/debtwire-HTML.scss'
     }
   },
 
