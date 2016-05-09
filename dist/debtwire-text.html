@@ -1,0 +1,112 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html>
+<head>
+    <meta name="viewport" content="width=device-width">
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+    <title>Debtwire - Plain Text Email Alert</title>
+    <style media="all" type="text/css">
+@media only screen and (max-width: 620px) {
+  table[class=body] h1,
+    table[class=body] h2,
+    table[class=body] h3,
+    table[class=body] h4 {
+    font-weight: 600 !important;
+  }
+  table[class=body] h1 {
+    font-size: 22px !important;
+  }
+  table[class=body] h2 {
+    font-size: 18px !important;
+  }
+  table[class=body] h3 {
+    font-size: 16px !important;
+  }
+  table[class=body] .content,
+    table[class=body] .wrapper {
+    padding: 10px !important;
+  }
+  table[class=body] .container {
+    padding: 0 !important;
+    width: 100% !important;
+  }
+  table[class=body] .btn table,
+    table[class=body] .btn a {
+    width: 100% !important;
+  }
+}
+</style>
+</head>
+
+<body style="padding: 0; font-family: 'Helvetica Neue', 'Helvetica', Helvetica, Arial, sans-serif; font-size: 14px; background-color: #928F8F; line-height: 1.6em; margin: 0; -webkit-font-smoothing: antialiased; -ms-text-size-adjust: 100%; -webkit-text-size-adjust: 100%; background: #fff; width: 100% !important; height: 100% !important;">
+
+<table class="body" style="box-sizing: border-box; mso-table-lspace: 0pt; mso-table-rspace: 0pt; width: 100%; background-color: #928F8F; background: #fff; border-collapse: separate !important;" width="100%" bgcolor="#928F8F">
+    <tr>
+        <td style="box-sizing: border-box;"></td>
+        <td class="container" style="box-sizing: border-box; display: block; max-width: 580px; padding: 10px; width: 580px; Margin: 0 auto !important;" width="580">
+            <div class="content" style="box-sizing: border-box; display: block; margin: 0 auto; max-width: 580px; padding: 10px;">
+
+<table class="main" style="box-sizing: border-box; mso-table-lspace: 0pt; mso-table-rspace: 0pt; width: 100%; background: #ffffff; border: 1px solid #E3E1E1; border-radius: 3px; border-collapse: separate !important;" width="100%">
+    <tr>
+        <td style="box-sizing: border-box;">
+            <table class="intelligence" style="box-sizing: border-box; mso-table-lspace: 0pt; mso-table-rspace: 0pt; width: 100%; border-collapse: separate !important;" width="100%">
+                <tr>
+                    <p style="box-sizing: border-box; margin: 0;">1. {{#if isProprietary}}(DW){{/if}} {{headline}} - Plain Text</p>
+                </tr>
+                <tr>
+                    <td style="box-sizing: border-box;">
+                        <p style="box-sizing: border-box; margin: 0;">Main body:</p>
+                        <p style="box-sizing: border-box; margin: 0;">{{body}}</p>
+                        <a href="{{article_link}}" style="box-sizing: border-box;">{{article_link}}</a>
+                    </td>
+                </tr>
+                <tr>
+                    <td class="row-spacer" style="box-sizing: border-box;">&nbsp;</td>
+                </tr>
+                <tr>
+                    <td style="box-sizing: border-box;">
+                        <p style="box-sizing: border-box; margin: 0;">Alert Name: {{profileName}}</p>
+                    </td>
+                </tr>
+            </table>
+
+            <table style="box-sizing: border-box; mso-table-lspace: 0pt; mso-table-rspace: 0pt; width: 100%; border-collapse: separate !important;" width="100%">
+                <tr>
+                    <td style="box-sizing: border-box;">
+                        <p class="contact-info__description" style="box-sizing: border-box; margin: 0;">IMPORTANT: This e-mail contains information protected by
+                            copyright which can only
+                            be used in accordance with the terms of your Debtwire subscription
+                            agreement. You must not therefore copy or forward this e-mail, its contents, or
+                            any contents on the password-protected Debtwire website to anyone who is
+                            not an employee of the subscriber organisation. (Your subscription agreement
+                            explains how you can use contents for reports and presentations.) UNAUTHORISED
+                            USE OR DISCLOSURE IS UNLAWFUL.</p>
+                    </td>
+                </tr>
+                <tr>
+                    <td style="box-sizing: border-box;">
+                        <p class="unsubscribe" style="box-sizing: border-box; margin: 0;">
+                            If you no longer wish to receive this Intelligence, please contact your Debtwire CRM Consultant.
+                        </p>
+                    </td>
+                </tr>
+            </table>
+
+        </td>
+    </tr>
+</table>
+<table class="footer" style="box-sizing: border-box; mso-table-lspace: 0pt; mso-table-rspace: 0pt; width: 100%; border-collapse: separate !important;" width="100%">
+    <tr>
+        <td class="align-center" style="box-sizing: border-box;">
+
+        </td>
+    </tr>
+</table>
+
+</div>
+        </td>
+        <td style="box-sizing: border-box;"></td>
+    </tr>
+</table>
+
+</body>
+</html>
