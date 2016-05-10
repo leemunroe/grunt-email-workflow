@@ -19,7 +19,15 @@
       "description": "Equivalent to Legacy HTML template",
       "format": "html",
       "deprecated": false,
-      "dateCreated": "2016-05-09T16:24:57.892Z"
+      "dateCreated": "2016-05-09T16:24:57.892Z",
+      "subject": "{{profileName}}: \{{#if isProprietary}}(DW)\{{/if}} {{headline}}"
+    },
+    {
+      "id": "debtwire-text",
+      "description": "debtwire-text",
+      "format": "txt",
+      "deprecated": false,
+      "dateCreated": "2016-05-09T17:24:57.892Z"
     }
   ],
   "activism" : [

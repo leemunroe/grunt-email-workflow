@@ -1,0 +1,62 @@
+---
+layout: debtwire-text.hbs
+subject: Debtwire - Plain Text Email Alert
+---
+
+<table class="main">
+    <tr>
+        <td>
+            <table class="intelligence">
+                <tr>
+                    <p>1. \{{#if isProprietary}}(DW)\{{/if}} \{{headline}} - Plain Text</p>
+                </tr>
+                <tr>
+                    <td>
+                        <p>Main body:</p>
+                        <p>\{{body}}</p>
+                        <a href="\{{article_link}}">\{{article_link}}</a>
+                    </td>
+                </tr>
+                <tr>
+                    <td class="row-spacer">&nbsp;</td>
+                </tr>
+                <tr>
+                    <td>
+                        <p>Alert Name: \{{profileName}}</p>
+                    </td>
+                </tr>
+            </table>
+
+            <table>
+                <tr>
+                    <td>
+                        <p class="contact-info__description">IMPORTANT: This e-mail contains information protected by
+                            copyright which can only
+                            be used in accordance with the terms of your Debtwire subscription
+                            agreement. You must not therefore copy or forward this e-mail, its contents, or
+                            any contents on the password-protected Debtwire website to anyone who is
+                            not an employee of the subscriber organisation. (Your subscription agreement
+                            explains how you can use contents for reports and presentations.) UNAUTHORISED
+                            USE OR DISCLOSURE IS UNLAWFUL.</p>
+                    </td>
+                </tr>
+                <tr>
+                    <td>
+                        <p class="unsubscribe">
+                            If you no longer wish to receive this Intelligence, please contact your Debtwire CRM Consultant.
+                        </p>
+                    </td>
+                </tr>
+            </table>
+
+        </td>
+    </tr>
+</table>
+<table class="footer">
+    <tr>
+        <td class="align-center">
+
+        </td>
+    </tr>
+</table>
+
