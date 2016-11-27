@@ -20,4 +20,5 @@ module.exports = function(grunt) {
 
     }
   });
+  grunt.loadNpmTasks('grunt-newer-explicit');
 };
