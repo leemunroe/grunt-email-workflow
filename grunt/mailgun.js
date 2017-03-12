@@ -4,6 +4,7 @@ module.exports = function(grunt) {
     mailer: {
       options: {
         key: '<%= secrets.mailgun.api_key %>', // See README for secrets.json or replace this with your own key
+        domain: '<%= secrets.mailgun.domain %>', // See README for secrets.json or replace this with your own email domain
         sender: '<%= secrets.mailgun.sender %>', // See README for secrets.json or replace this with your preferred sender
         recipient: '<%= secrets.mailgun.recipient %>', // See README for secrets.json or replace this with your preferred recipient
         subject: 'This is a test email'

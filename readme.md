@@ -60,6 +60,7 @@ If you don't use or need these services **it's ok to leave these defaults**, but
 {
   "mailgun": {
     "api_key": "YOUR MG PRIVATE API KEY",
+    "domain": "YOURDOMAIN.COM",
     "sender": "E.G. POSTMASTER@YOURDOMAIN.COM",
     "recipient": "WHO YOU WANT TO SEND THE EMAIL TO"
   },
