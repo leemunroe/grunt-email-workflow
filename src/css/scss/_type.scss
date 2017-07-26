@@ -3,15 +3,18 @@
 ------------------------------------- */
 
 h1,
+.h1,
 h2,
+.h2,
 h3,
-h4 {
-  color: $font-color !important;
+.h3,
+h4,
+.h4 {
+  color: $font-color;
   font-family: "Helvetica Neue", Helvetica, Arial, "Lucida Grande", sans-serif;
   font-weight: 400;
   line-height: 1.4em;
-  margin: 0;
-  margin-bottom: 30px;
+  margin: 0 0 15px;
 }
 
 h1 {
@@ -26,7 +29,7 @@ h3 {
   font-size: 18px;
 }
 h4 {
-  font-size: 14px;
+  font-size: 15px;
   font-weight:500;
 }
 
@@ -47,8 +50,8 @@ ol {
 
 a {
   color: $primary-color;
-  text-decoration: underline;
 }
+
 
 // Break long strings to prevent x-scrolling
 code,
@@ -59,4 +62,29 @@ pre,
   -webkit-hyphens: auto;
   -moz-hyphens: auto;
   hyphens: auto;
+}
+
+.text-decoration-none {
+  text-decoration: none;
+}
+
+.text-gray-lightest {
+  color: #999999;
+}
+
+.date {
+  color: $primary-color;
+  font-size: 12px;
+  text-transform: uppercase;
+  display: block;
+  letter-spacing: 0.06em;
+  font-weight: 400;
+}
+.top {
+  color: darken($font-color, 25%);
+  font-size: 20px;
+  font-weight: 700;
+  display: block;
+  margin: 0;
+  padding: 0 0 8px;
 }
