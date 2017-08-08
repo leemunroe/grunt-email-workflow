@@ -1,0 +1,34 @@
+/* -------------------------------------
+    INVOICE
+    Styles for the billing table
+------------------------------------- */
+.invoice {
+  margin: 40px auto;
+  text-align: left;
+  width: 100%;
+}
+.invoice td {
+  padding: 5px 0;
+}
+.invoice .invoice-items {
+  width: 100%;
+}
+.invoice .invoice-items td {
+  border-top: #dfdfdf 1px solid;
+  &.invoice-header {
+    border-top: none;
+    color: $font-color;
+    font-weight: bold;
+    font-size: 14px;
+  }
+}
+
+.invoice .invoice-items .total td {
+  border-top: 2px solid #333;
+  border-bottom: 2px solid #333;
+  font-weight: 700;
+  &.align-right {
+    font-size: 18px;
+  }
+}
+
