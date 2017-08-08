@@ -14,11 +14,21 @@
   width: 100%;
 }
 .invoice .invoice-items td {
-  border-top: #eee 1px solid;
+  border-top: #dfdfdf 1px solid;
+  &.invoice-header {
+    border-top: none;
+    color: $font-color;
+    font-weight: bold;
+    font-size: 14px;
+  }
 }
+
 .invoice .invoice-items .total td {
   border-top: 2px solid #333;
   border-bottom: 2px solid #333;
   font-weight: 700;
+  &.align-right {
+    font-size: 18px;
+  }
 }
 
