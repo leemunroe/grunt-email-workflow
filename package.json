@@ -1,10 +1,15 @@
 {
-  "name": "email-template",
+  "name": "nkba-email-workflow",
   "version": "0.1.0",
   "license": "MIT",
   "repository": {
     "type": "git",
-    "url": "https://github.com/leemunroe/grunt-email-workflow"
+    "url": "https://github.com/nkba/nkba-email-workflow"
+  },
+  "scripts": {
+    "build": "./node_modules/.bin/grunt",
+    "start": "./node_modules/.bin/grunt serve",
+    "watch": "./node_modules/.bin/grunt watch"
   },
   "devDependencies": {
     "assemble": "^0.4.42",
@@ -16,6 +21,7 @@
     "grunt-autoprefixer": "^2.2.0",
     "grunt-aws-s3": "^0.13.1",
     "grunt-cdn": "^0.6.5",
+    "grunt-cli": "^1.2.0",
     "grunt-cloudfiles": "^0.3.0",
     "grunt-contrib-clean": "^0.6.0",
     "grunt-contrib-imagemin": "^1.0.0",

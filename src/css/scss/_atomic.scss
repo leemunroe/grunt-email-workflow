@@ -1,0 +1,87 @@
+.bg-gray-lighter {
+  background: $gray-lighter;
+}
+
+.border-bottom {
+  border-bottom: 1px solid #F5F5F6;
+  border-collapse: initial;
+}
+
+.text-4 {
+  font-size: 16px;
+  line-height: 24px;
+  letter-spacing: -.32px;
+  color: #262626;
+}
+
+
+
+.pt0 {
+  padding-top: 0 !important;
+}
+.pt1 {
+  padding-top: 10px !important;
+}
+.pt2 {
+  padding-top: 20px !important;
+}
+.pt3 {
+  padding-top: 20px !important;
+}
+
+.pb0 {
+  padding-bottom: 0 !important;
+}
+
+.pb1 {
+  padding-bottom: 10px !important;
+}
+
+.pb2 {
+  padding-bottom: 20px !important;
+}
+
+.pb3 {
+  padding-bottom: 20px !important;
+}
+
+.py0 {
+  padding-top: 0 !important;
+  padding-bottom: 0 !important;
+}
+
+.py1 {
+  padding-top: 10px !important;
+  padding-bottom: 10px !important;
+}
+
+.py2 {
+  padding-top: 20px !important;
+  padding-bottom: 20px !important;
+}
+
+.py3 {
+  padding-top: 30px !important;
+  padding-bottom: 30px !important;
+}
+
+
+.px0 {
+  padding-left: 0 !important;
+  padding-right: 0 !important;
+}
+
+.px1 {
+  padding-left: 10px !important;
+  padding-right: 10px !important;
+}
+
+.px2 {
+  padding-left: 20px !important;
+  padding-right: 20px !important;
+}
+
+.px3 {
+  padding-left: 30px !important;
+  padding-right: 30px !important;
+}
