@@ -16,7 +16,7 @@ subject: Receipt
             <table width="100%">
                 <tr>
                     <td class="content-block pt1" valign="top">
-                        <h1>Receipt</h1>
+                        <h1>\{{#if invoice}}Invoice\{{else}}Receipt\{{/if}}</h1>
                     </td>
                 </tr>
 
@@ -36,8 +36,8 @@ subject: Receipt
                             <tr>
                                 <td><strong>Account billed:</strong> \{{ account.name }} <small>(\{{ email }})</small><br>                                    
                                     <strong>Account ID:</strong> \{{ account.id }}<br>
-                                    <strong>Order ID:</strong> \{{ order.id }}<br>
-                                    <strong>Transaction ID:</strong> \{{ transaction.id }}<br>
+                                    <strong>Order ID:</strong> \{{ order.number }}<br>
+                                    \{{#if transaction}}<strong>Transaction ID:</strong> \{{ transaction.number }}<br>\{{/if}}
                                     \{{ date }}
                                     
                                 </td>
@@ -63,7 +63,7 @@ subject: Receipt
                                                     <td>\{{name}} x \{{quantity}}</td>
                                                     <td class="align-right">$ \{{ price }}</td>
                                                 </tr>
-                                             \{{/#each}}
+                                             \{{/each}}
                                         \{{/if}}
                                        
                                        \{{#if subtotal}}
@@ -93,7 +93,7 @@ subject: Receipt
                                             <td class="align-right" width="70%">Paid</td>
                                             <td class="align-right">$ \{{paymentAmount}}</td>
                                         </tr>
-                                        \{{/if invoice}}
+                                        \{{/if}}
                                     </table>
                                 </td>
                             </tr>
@@ -113,7 +113,7 @@ subject: Receipt
     <table>
         <tr>
             <td class="align-center">
-                You are receiving the email because you made purchase at <a href="\{{WEB_URL}}">NKBA</a>. <br/> The National Kitchen
+                You are receiving the email because you made a purchase at <a href="\{{WEB_URL}}">NKBA</a>. <br/> The National Kitchen
                 and Bath Association<br/> 687 Willow Grove St<br/> Hackettstown, NJ 07840
             </td>
         </tr>
