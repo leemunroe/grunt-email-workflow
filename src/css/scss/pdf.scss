@@ -1,0 +1,26 @@
+// Main scss styles
+@import 'config';
+@import 'global';
+@import 'layout';
+@import 'type';
+@import 'buttons';
+@import 'notices';
+@import 'dividers';
+@import 'other';
+@import 'responsive';
+
+
+// Custom
+
+@import 'invoice';
+@import 'atomic';
+
+
+body{
+  background-color: #fff !important;
+}
+
+.body {
+  background-color: #fff !important;
+  width: 100%;
+}
