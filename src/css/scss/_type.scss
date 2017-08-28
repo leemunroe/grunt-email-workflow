@@ -17,21 +17,25 @@ h4,
   margin: 0 0 15px;
 }
 
-h1 {
+h1, .text-1 {
   font-size: 38px;
   font-weight: 600;
   letter-spacing: -.36px;
 }
 
-h2 {
+h2, .text-2 {
   font-size: 24px;
 }
-h3 {
+h3, .text-3 {
   font-size: 18px;
 }
 h4 {
   font-size: 15px;
   font-weight:500;
+}
+
+.text-5 {
+  font-size: 12px;
 }
 
 p,
@@ -81,6 +85,7 @@ pre,
   letter-spacing: 0.06em;
   font-weight: 400;
 }
+
 .top {
   color: darken($font-color, 25%);
   font-size: 20px;
@@ -89,3 +94,12 @@ pre,
   margin: 0;
   padding: 0 0 8px;
 }
+
+.bold {
+  font-weight: bold;
+}
+
+.italic {
+  font-style: italic;
+}
+
