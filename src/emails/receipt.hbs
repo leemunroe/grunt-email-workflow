@@ -85,8 +85,12 @@ subject: Receipt
                                         </tr>
                                         \{{#if invoice}}
                                         <tr class="total">
+                                            <td class="align-right" width="70%">Paid</td>
+                                            <td class="align-right">$ \{{paymentAmount}}</td>
+                                        </tr>
+                                        <tr class="total">
                                             <td class="align-right" width="70%">Due</td>
-                                            <td class="align-right">$ \{{billAmount}}</td>
+                                            <td class="align-right">$ \{{dueAmount}}</td>
                                         </tr>
                                         \{{else}}
                                         <tr class="total">
