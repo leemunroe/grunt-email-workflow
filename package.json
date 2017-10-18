@@ -9,7 +9,8 @@
   "scripts": {
     "build": "./node_modules/.bin/grunt",
     "start": "./node_modules/.bin/grunt serve",
-    "watch": "./node_modules/.bin/grunt watch"
+    "watch": "./node_modules/.bin/grunt watch",
+    "send": "./node_modules/.bin/grunt send"
   },
   "devDependencies": {
     "assemble": "^0.4.42",

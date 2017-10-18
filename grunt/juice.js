@@ -1,12 +1,17 @@
+const fs = require('fs')
+const path = require('path')
 // Inlines your CSS
 module.exports = {
   your_target: {
     options: {
       preserveMediaQueries: true,
       applyAttributesTableElements: true,
+      applyStyleTags: true,
+      removeStyleTags: false,
       applyWidthAttributes: true,
       preserveImportant: true,
-      preserveFontFaces: true,
+      preserveFontFaces: false,
+
       webResources: {
         images: false
       }
