@@ -1,8 +1,8 @@
 ---
 layout: default.hbs
-subject: Receipt
+subject: We received your check
 ---
-<span class="preheader">\{{ previewText }}</span>
+<span class="preheader">We are in receipt of your check #\{{ checkNumber }} in payment of invoice #\{{ order.number }}.</span>
 <table class="header" align="center" width="100%" cellspacing="0" cellpadding="0" bgcolor="#FDFDFE" border="0">
     <tr>
         <td class="wrapper border-bottom" valign="middle">
@@ -22,24 +22,21 @@ subject: Receipt
                 </tr>
                 <tr>
                     <td class="pb2 text-4" valign="top">
-                        We are in receipt of your check #\{{ checkNumber }} in payment of invoice #\{{ order.number }}.
+                        The NKBA Accounting Department are in receipt of your check #\{{ checkNumber }} in payment of invoice #\{{ order.number }}.
                     </td>
                 </tr>
                 <tr>
-                    <td class="pb2 text-4" valign="top">
-                       Thank you.
+                    <td class="content-block text-4" valign="top">
+                       If you have any questions about the status of your order, please call the NKBA Member Services team at 1-800-THE-NKBA or send an email to <a href="mailto:info@nkba.org">info@nkba.org</a>. 
+                    </td>
+                </tr>
+                 <tr>
+                    <td class="content-block text-4" valign="top">
+                      Thank you,<br>
+                      The NKBA
                     </td>
                 </tr>
             </table>
         </td>
     </tr>
 </table>
-<div class="footer">
-    <table>
-        <tr>
-            <td class="align-center">
-                The National Kitchen and Bath Association<br/> 687 Willow Grove St<br/> Hackettstown, NJ 07840
-            </td>
-        </tr>
-    </table>
-</div>
