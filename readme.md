@@ -8,13 +8,15 @@ This Grunt task helps simplify things.
 
 1. Compiles your SCSS to CSS
 
-2. Builds your HTML email templates
+1. Builds your HTML email templates
 
-3. Inlines your CSS
+1. Inlines your CSS
 
-4. Compresses and uploads images to a CDN (optional)
+1. Compresses and uploads images to a CDN such as Rackspace Cloud or AWS S3 (optional)
 
-5. Sends a test email to your inbox or Litmus (optional)
+1. Replaces the image URLs with the urls that point to the CDN images (optional)
+
+1. Sends a test email to your inbox or Litmus (optional)
 
 ## Requirements
 
@@ -161,6 +163,8 @@ Run `grunt send --template=TEMPLATE_NAME.html`. This will email out the template
 
 Change 'transaction.html' to the name of the email template you want to send.
 
+If the email contains images, you will need to pass an additional directive to grunt to have it first upload the images to a CDN and replace the image urls in the email template.  See the **CDN and working with image assets** section below.
+
 ### How to test with Litmus
 
 If you have a [Litmus](http://www.litmus.com) account and want to test the email in multiple clients/devices:
@@ -175,7 +179,7 @@ Run `grunt litmus --template=TEMPLATE_NAME.html` to send the email to Litmus. Th
 <img src="https://s3.amazonaws.com/f.cl.ly/items/1a1H0B1o3v160147100S/Image%202014-12-31%20at%2010.10.01%20AM.png" width=-"500">
 
 
-### CDN and working with image assets
+### Using Rackspace Cloud as a CDN to serve image assets
 
 If your email contains images you'll want to serve them from a CDN. This Gruntfile has support for Rackspace Cloud Files ([pricing](http://www.rackspace.com/cloud/files/pricing/)) and AWS S3.
 
@@ -192,7 +196,7 @@ Run `grunt rsupload` to run the default tasks as well as upload any images to yo
 Run `grunt rsupload send --template=branded.html` to send the email to yourself with the 'CDNified' images.
 
 
-### Using Amazon S3 for image assets
+### Using Amazon S3 as a CDN to serve image assets
 
 Another option for serving images is to use Amazon S3. Basic service is free of charge. For more information on setting up an account, visit [Amazon](http://aws.amazon.com/s3/).
 
@@ -222,6 +226,7 @@ Once your AWS account is setup, create a Bucket within S3. You will need to ensu
 
 Run `grunt s3upload` to upload images to your S3 Bucket. This will also run a replace task to change image paths within the destination directory to use the new S3 path.
 
+Run `grunt s3upload send --template=branded.html` to send the email to yourself with the 'CDNified' images.
 
 ### Sample email templates
 
