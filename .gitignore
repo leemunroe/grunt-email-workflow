@@ -1,7 +1,7 @@
 .DS_Store
 node_modules
 .sass-cache
-.secret
+.secrets
 *.css.map
 secrets.json
 dist/*
