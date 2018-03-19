@@ -2,7 +2,7 @@
 layout: default.hbs
 subject: You've been invited to join {{org.name}} on the new NKBA.org
 ---
-<span class="preheader">You've been invited to NKBA.org as an employee of \{{ org.name }}</span>
+<span class="preheader">You’ve been invited to NKBA.org as \{{#if isStudent}}a student member\{{else}}an employee\{{/if}} of \{{ org.name }}</span>
 <table class="header" align="center"  width="100%" cellspacing="0" cellpadding="0" bgcolor="#FDFDFE"  border="0">
     <tr>
         <td class="wrapper border-bottom" valign="middle">
@@ -16,19 +16,27 @@ subject: You've been invited to join {{org.name}} on the new NKBA.org
             <table width="100%">
                 <tr>
                     <td class="content-block text-4 pt1 " valign="top">
-                       <h2 class="bold">You've been invited to the \{{ org.name }} organization on the new NKBA.org.</h2>
+                       <h2 class="bold">You’ve been invited to NKBA.org</h2>
                     </td>
                 </tr>
 
                
                 <tr>
                     <td class="content-block text-4" valign="top">
-                       Please click the link below to create your login and create your public profile.
+                       \{{#if isStudent}}You’ve been invited to the \{{ org.name }} on the new NKBA.org. Please click the link below to login and create your public profile.  
+                        Your complimentary NKBA membership is sponsored by Monogram.
+                       \{{else}}
+                        You’ve been invited to the \{{ org.name }} organization on the new NKBA.org. Please click the link below to login and create your public profile.  
+                       \{{/if}}
                     </td>
                 </tr>
                 <tr>
                     <td class="pb3 text-4" valign="top">   
-                        {{> button type="primary" title="Join your organization" url="{{WEB_URL}}/reset/{{token}}" align="left"}}
+                        \{{#if isStudent}}
+                            {{> button type="primary" title="Join your organization" url="{{WEB_URL}}/reset/{{token}}" align="left"}}
+                        \{{else}}
+                            {{> button type="primary" title="Join your school" url="{{WEB_URL}}/reset/{{token}}" align="left"}}
+                        \{{/if}}
                     </td>
                 </tr>
                 <tr>
