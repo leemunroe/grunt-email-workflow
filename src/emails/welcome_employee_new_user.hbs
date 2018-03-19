@@ -22,12 +22,9 @@ subject: You've been invited to join {{org.name}} on the new NKBA.org
 
                
                 <tr>
-                    <td class="content-block text-4" valign="top">
-                       \{{#if isStudent}}You’ve been invited to the \{{ org.name }} on the new NKBA.org. Please click the link below to login and create your public profile.  
-                        Your complimentary NKBA membership is sponsored by Monogram.
-                       \{{else}}
-                        You’ve been invited to the \{{ org.name }} organization on the new NKBA.org. Please click the link below to login and create your public profile.  
-                       \{{/if}}
+                    <td class="content-block text-4" valign="top"> 
+                        You’ve been invited to the \{{ org.name }} organization on the new NKBA.org. Please click the link below to login and create your public profile.
+                        \{{#if isStudent}} Your complimentary NKBA membership is sponsored by Monogram.\{{/if}}
                     </td>
                 </tr>
                 <tr>
