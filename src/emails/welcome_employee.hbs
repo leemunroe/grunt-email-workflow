@@ -1,15 +1,9 @@
 ---
 layout: default.hbs
-subject: \{{#if isStudent}}You’ve been added as a student member of \{{ org.name }} on NKBA.org\{{else}}You've been added as to \{{ org.name }} on the new NKBA.org\{{/if}}
+subject: You’ve been added as {{#if isStudent}}a student member{{else}}an employee{{/if}} of {{ org.name }} on the new NKBA.org
 ---
 
-<span class="preheader">
-    \{{#if isStudent}}
-        You’ve been added as a student member of \{{ org.name }} on NKBA.org
-    \{{else}}
-        You've been added as an employee of \{{ org.name }} on the new NKBA.org
-    \{{/if}}
-</span>
+<span class="preheader">You’ve been added as \{{#if isStudent}}a student member\{{else}}an employee\{{/if}} of \{{ org.name }} on the new NKBA.org</span>
 <table class="header" align="center"  width="100%" cellspacing="0" cellpadding="0" bgcolor="#FDFDFE"  border="0">
     <tr>
         <td class="wrapper border-bottom" valign="middle">
@@ -32,12 +26,13 @@ subject: \{{#if isStudent}}You’ve been added as a student member of \{{ org.na
                         </h2>
                     </td>
                 </tr>
-                
-                <tr>
-                    <td class="content-block text-4" valign="top">
-                       Your complimentary NKBA membership is sponsored by Monogram.
-                    </td>
-                </tr>
+                \{{#if isStudent}}
+                    <tr>
+                        <td class="content-block text-4" valign="top">
+                        Your complimentary NKBA membership is sponsored by Monogram.
+                        </td>
+                    </tr>
+                \{{/if}}
                 <tr>
                     <td class="content-block text-4" valign="top">
                        If you believe this move was made in error, please call the NKBA Member Services team at 1-800-THE-NKBA or send an email to <a href="mailto:info@nkba.org">info@nkba.org</a>. 
