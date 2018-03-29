@@ -238,7 +238,8 @@ I've added a few templates here to help you get started.
 
 ### More resources
 
-* For more transactional email templates check out [Mailgun's collection of templates](http://github.com/mailgun/transactional-email-templates)
+* For more transactional email templates check out [HTML Email templates](https://htmlemail.io)
 * [Things I've learned about sending email](http://www.leemunroe.com/sending-email-designers-developers/)
-* [Things I've learned about building HTML email templates](http://www.leemunroe.com/building-html-email/)
+* [Things I've learned about building email templates](http://www.leemunroe.com/building-html-email/)
+* [Things I've learned about responsive email](https://www.leemunroe.com/responsive-email-design/)
 * Prefer Gulp? Daryll Doyle has created a [Gulp email creator](https://github.com/darylldoyle/Gulp-Email-Creator)
