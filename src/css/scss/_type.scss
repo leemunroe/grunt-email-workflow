@@ -9,11 +9,13 @@ h2,
 h3,
 .h3,
 h4,
-.h4 {
+.h4,
+h5,
+h6 {
   color: $font-color;
   font-family: $sans;
   font-weight: 400;
-  line-height: 1.4em;
+  line-height: 1.3125em;
   margin: 0 0 15px;
 }
 
@@ -29,18 +31,23 @@ h2, .text-2 {
 h3, .text-3 {
   font-size: 18px;
 }
-h4 {
-  font-size: 15px;
-  font-weight:500;
+
+h4, .text-4 {
+  font-size: 14px;
 }
 
-.text-5 {
+h5, .text-5 {
   font-size: 12px;
+}
+
+h6, .text-6 {
+  font-size: 10px;
 }
 
 p,
 ul,
-ol {
+ol,
+.text-4 {
   font-family: $sans;
   font-size: 14px;
   font-weight: normal;

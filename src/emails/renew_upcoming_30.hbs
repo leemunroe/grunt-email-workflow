@@ -2,7 +2,7 @@
 layout: default.hbs
 subject: NKBA Dues Reminder
 ---
-<span class="preheader">We hope you’ve had a happy and prosperous year. This is a gentle reminder that your \{{year}} NKBA membership fee is due \{{dueDate}}.</span>
+<span class="preheader">We hope you’ve had a happy and prosperous year. This is a gentle reminder that your annual NKBA membership fee is due \{{dueDate}}.</span>
 <table class="header" align="center" width="100%" cellspacing="0" cellpadding="0" bgcolor="#FDFDFE" border="0">
     <tr>
         <td class="wrapper border-bottom" valign="middle">
@@ -27,23 +27,23 @@ subject: NKBA Dues Reminder
                 </tr>
                 <tr>
                     <td class="pb2 text-4" valign="top">
-                        We hope you’ve had a happy and prosperous year. This is a gentle reminder that your \{{year}} NKBA membership fee is due \{{dueDate}}.
+                        We hope you’ve had a happy and prosperous year. This is a gentle reminder that your annual NKBA membership fee is due \{{dueDate}}.
                     </td>
                 </tr>
                 <tr>
                     <td class="pb2 text-4" valign="top">
-                        We value your membership and look forward to a fantastic year ahead. Our industry is thriving, and with your continued support, we are able to provide benefits and programs to inspire, lead and empower the kitchen and bath business. We eagerly anticipate the launch of our enhanced, mobile-first web site, which will be easier to navigate and provide advanced search and matching services, all designed to help you do business better. The site, along with terrific learning opportunities and affinity programs, are among the improved member benefits we have planned for you throughout the year.
+                        We value your membership and look forward to a fantastic year ahead. Our industry is thriving, and with your continued support, we are able to provide benefits and programs to inspire, lead and empower the kitchen and bath business. We recently launch of our enhanced, mobile-first website designed to help you do business better. The site, along with terrific learning opportunities and affinity programs, are among the improved member benefits we have planned for you throughout the year.
                     </td>
                 </tr>
-                <tr>
-                    <td class="pb2 text-3 bold" valign="top">
-                        Renew early at this year’s rates and save!
+                   <tr>
+                    <td class="pb3 text-4" valign="top">
+                        To pay dues online, please click the button below, or call <a href="tel:+18008436522">800-843-6522</a> and one of our member relations associates will assist you. NKBA accepts American Express, Visa, MasterCard and Discover. Please allow up to 72 hours for processing.
                     </td>
                 </tr>
+    
                 <tr>
-                    <td class="pb2 text-4" valign="top">
-                        Enclosed please find your \{{year}} membership dues invoice. Please note that dues not paid by \{{dueDate}}, will incur a 10% late fee.
-                        
+                    <td class="pb3 text-4" valign="top">   
+                      {{> button type="primary" title="Pay Online" url="{{WEB_URL}}/autologin/{{token}}?redirect={{WEB_URL}}/orders/{{orderId}}" align="left"}}
                     </td>
                 </tr>
                 <tr>
@@ -51,37 +51,7 @@ subject: NKBA Dues Reminder
                        Please take a moment to review your membership information such as point of contact, address, phone and email address.
                        If you need to make any changes to the membership information, you may do so online or contact the NKBA Engagement Team at <a href="tel:+18008436522">800-843-6522</a> or email <a href="mailto:info@nkba.org">info@nkba.org</a>  
                     </td>
-                </tr>
-                <tr>
-                    <td class="pb2 text-4" valign="top">
-                       Please make checks payable to NKBA and remit along with a copy of your invoice to
-                    </td>
-                </tr>
-                <tr>
-                    <td class="pb2 text-4" valign="top">
-                       NKBA<br>
-                       87 Willow Grove Street<br>
-                       Hackettstown, NJ 07840<br>
-                    </td>
-                </tr>
-                <tr>
-                    <td class="pb2 text-4 bold italic" valign="top">
-                        All dues must be paid in U.S. Funds 
-                    </td>
-                </tr>
-                <tr>
-                    <td class="pb3 text-4" valign="top">
-                        Paying by credit card? Simply click on the button below, or call 800-843-6522 and any one of our member relations associates will assist you. NKBA accepts American Express, Visa, MasterCard and Discover. Please allow up to 72 hours for processing.
-                    </td>
-                </tr>
-                <tr>
-                    <td class="pb3 text-4" valign="top">   
-                       {{> button type="primary" title="Pay Online" url="{{WEB_URL}}/dues/{{member.id}}" align="left"}}
-                    </td>
-                </tr>
-                
-               
-                
+                </tr>  
                 <tr>
                     <td class="pb2 text-4" valign="top">
                         Don’t miss out on your member benefits and renew by \{{dueDate}}

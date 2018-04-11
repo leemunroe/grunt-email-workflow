@@ -1,0 +1,43 @@
+---
+layout: chapter.hbs
+subject: NOT USED
+---
+<table class="header" align="center"  width="100%" cellspacing="0" cellpadding="0" bgcolor="#FDFDFE"  border="0">
+    <tr>
+        <td class="wrapper border-bottom" valign="middle">
+            <a href="{{default.WEB_URL}}"><img class="logo" border="0" src="{{default.WEB_URL}}/nkba-logo@2x.png" alt="NKBA" height="30" width="141"></a>
+        </td>
+    </tr>
+</table>
+<table class="main" cellspacing="0" cellpadding="0" border="0">
+    <tr>
+        <td class="wrapper">
+            <table width="100%">
+                <tr>
+                    <td class="content-block pt1" valign="top">
+                        <h2 class="bold">NKBA \{{chapter}} Chapter Meeting</h2>
+                    </td>
+                </tr>
+                <tr>
+                    <td class="content-block" valign="top">
+                        <h3 class="bold">\{{title}}</h3>
+                    </td>
+                </tr>
+                 <tr>
+                    <td class="content-block pb3" valign="top">
+                        \{{date}} @ \{{startAt}} \{{#if endAt}}- \{{endAt}} \{{/if}}<br/>
+                        \{{street1}}\{{#if street2}}, \{{street2}} \{{/if}}<br/>
+                        \{{city}}, \{{state}} \{{postal}}<br/>
+                    </td>
+                </tr>
+                <tr>
+                    <td class="content-block pb3" valign="top">
+                        \{{description}}
+                    </td>
+                </tr>
+               
+                 {{> button type="primary" title="RSVP Now" url="\{{rsvpUrl}}" align="left"}}
+            </table>
+        </td>
+    </tr>
+</table>

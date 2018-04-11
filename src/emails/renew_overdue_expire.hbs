@@ -1,0 +1,83 @@
+---
+layout: default.hbs
+subject: We want you back!
+---
+<span class="preheader">Perhaps you missed our email reminder that your NKBA membership fee is currently past-due, as of \{{dueDate}}, and your membership was placed on inactive status as of \{{deactivateDate}}. <em>But there’s still time to renew, and return to active status!</span>
+<table class="header" align="center" width="100%" cellspacing="0" cellpadding="0" bgcolor="#FDFDFE" border="0">
+    <tr>
+        <td class="wrapper border-bottom" valign="middle">
+            <a href="\{{WEB_URL}}"><img class="logo" border="0" src="https://media.nkba.org/img/nkba-logo@2x.png" alt="NKBA" height="30" width="141"></a>
+        </td>
+    </tr>
+</table>
+<table class="main" cellspacing="0" cellpadding="0" border="0">
+    <tr>
+        <td class="wrapper">
+            <table width="100%">
+                {{!-- <tr>
+                    <td class="content-block pt1" valign="top">
+                        <h1>\{{#if invoice}}Invoice\{{else}}Receipt\{{/if}}</h1>
+                    </td>
+                </tr> --}}
+
+                <tr>
+                    <td class="py3 text-4" valign="top">
+                        Dear \{{name}},
+                    </td>
+                </tr>
+                <tr>
+                    <td class="pb2 text-3 bold" valign="top">
+                        We want you back!
+                    </td>
+                </tr>
+                <tr>
+                    <td class="pb2 text-4" valign="top">
+                        Perhaps you missed our email reminders that your NKBA membership fee is currently past-due, as of \{{dueDate}}, and your membership was placed on inactive status as of \{{deactivateDate}}. <em>But there’s still time to renew, and return to active status! </em>
+                    </td>
+                </tr>
+                <tr>
+                    <td class="pb2 text-4" valign="top">
+                        We value your membership and look forward to a fantastic year ahead. Our industry is thriving, and with your continued support, we are able to provide benefits and programs to inspire, lead and empower the kitchen and bath business.
+                    </td>
+                </tr>
+                 <tr>
+                    <td class="pb2 text-4" valign="top">
+                       We recently launched our enhanced, mobile-first website designed to help you do business better. The site, which provides a free page for you to showcase your work and generate leads, along with terrific learning opportunities, affinity programs and access to exclusive market research are among the improved member benefits we have planned for you throughout the year.
+                    </td>
+                </tr>
+                   <tr>
+                    <td class="pb3 text-4 italic" valign="top">
+                        If you don’t renew, you risk losing access to all these great membership perks.
+                    </td>
+                </tr>
+    
+                <tr>
+                    <td class="pb3 text-4" valign="top">   
+                       To pay your dues, call 800-843-6522 and any one of our member relations associates will assist you. NKBA accepts American Express, Visa, MasterCard and Discover. Please allow up to 72 hours for processing.
+                    </td>
+                </tr>
+                <tr>
+                    <td class="pb2 text-4 bold" valign="top">
+                       Please be aware that members with unpaid dues are considered inactive and will not be able to access their accounts on NKBA.org, upload photos, or have visible individual or company profiles.
+                    </td>
+                </tr>
+                <tr>
+                    <td class="pb2 text-4" valign="top">
+                        Don’t miss out on your member benefits and renew now!
+                    </td>
+                </tr>
+                <tr>
+                    <td class="pb2 text-4 italic" valign="top">
+                       If you have previously submitted your dues for payment, please disregard this message and we thank you for your prompt payment.
+                    </td>
+                </tr>
+                <tr>
+                    <td class="pb2 text-5 italic" valign="top">
+                       Note: Five (5) percent of NKBA dues are allocable to lobbying activities and are not deductible for federal tax purposes, in accordance with IRS regulations. The NKBA membership year is January to December.
+                    </td>
+                </tr>
+                
+            </table>
+        </td>
+    </tr>
+</table>

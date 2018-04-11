@@ -1,8 +1,8 @@
 ---
 layout: default.hbs
-subject: We want you back!
+subject: NKBA Dues Reminder
 ---
-<span class="preheader">Perhaps you missed our email reminder that your NKBA membership fee is currently past-due, as of \{{dueDate}}, and your membership was placed on inactive status as of \{{deactivateDate}}. <em>But there’s still time to renew, and return to active status!</span>
+<span class="preheader">This is a gentle reminder that your NKBA membership fee is past-due \{{dueDate}}.</span>
 <table class="header" align="center" width="100%" cellspacing="0" cellpadding="0" bgcolor="#FDFDFE" border="0">
     <tr>
         <td class="wrapper border-bottom" valign="middle">
@@ -26,13 +26,8 @@ subject: We want you back!
                     </td>
                 </tr>
                 <tr>
-                    <td class="pb2 text-3 bold" valign="top">
-                        We want you back!
-                    </td>
-                </tr>
-                <tr>
                     <td class="pb2 text-4" valign="top">
-                        Perhaps you missed our email reminder that your NKBA membership fee is currently past-due, as of \{{dueDate}}, and your membership was placed on inactive status as of \{{deactivateDate}}. <em>But there’s still time to renew, and return to active status! </em>
+                        We hope you’ve had a happy and prosperous year. This is a gentle reminder that your NKBA membership fee is currently past-due, as of \{{dueDate}}.
                     </td>
                 </tr>
                 <tr>
@@ -42,23 +37,29 @@ subject: We want you back!
                 </tr>
                  <tr>
                     <td class="pb2 text-4" valign="top">
-                       We recently launched our enhanced, mobile-first website designed to help you do business better. The site, which provides a free page for you to showcase your work and generate leads, along with terrific learning opportunities, affinity programs and access to exclusive market research are among the improved member benefits we have planned for you throughout the year.
+                        We recently launched our enhanced, mobile-first website designed to help you do business better. The site, which provides a free page for you to showcase your work and generate leads, along with terrific learning opportunities, affinity programs and access to exclusive market research are among the improved member benefits we have planned for you throughout the year.
                     </td>
                 </tr>
                    <tr>
-                    <td class="pb3 text-4 italic" valign="top">
-                        If you don’t renew, you risk losing access to all these great membership perks.
+                    <td class="pb3 text-4" valign="top">
+                        To pay dues online, please click the button below, or call 800-843-6522 and any one of our member relations associates will assist you. NKBA accepts American Express, Visa, MasterCard and Discover. Please allow up to 72 hours for processing.
                     </td>
                 </tr>
     
                 <tr>
                     <td class="pb3 text-4" valign="top">   
-                       To pay your dues, call 800-843-6522 and any one of our member relations associates will assist you. NKBA accepts American Express, Visa, MasterCard and Discover. Please allow up to 72 hours for processing.
+                       {{> button type="primary" title="Pay Online" url="{{WEB_URL}}/autologin/{{token}}?redirect={{WEB_URL}}/orders/{{orderId}}" align="left"}}
                     </td>
                 </tr>
                 <tr>
                     <td class="pb2 text-4 bold" valign="top">
-                       Please be aware that members with unpaid dues are considered inactive and will not be able to access their accounts on NKBA.org, upload photos, or have visible individual or company profiles.
+                       Please be aware that members with unpaid dues will be moved to an inactive status as of \{{deactivateDate}}. At that time, suspended members will not be able to access their accounts on NKBA.org, upload photos, or have visible individual or company profiles. 
+                    </td>
+                </tr>
+                <tr>
+                    <td class="pb2 text-4" valign="top">
+                       Please take a moment to review your membership information such as point of contact, address, phone and email address.
+                       If you need to make any changes to the membership information, you may do so online or contact the NKBA Engagement Team at <a href="tel:+18008436522">800-843-6522</a> or email <a href="mailto:info@nkba.org">info@nkba.org</a>  
                     </td>
                 </tr>
                 <tr>

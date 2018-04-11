@@ -48,12 +48,12 @@ subject: NKBA Dues Reminder
     
                 <tr>
                     <td class="pb3 text-4" valign="top">   
-                       {{> button type="primary" title="Pay Online" url="{{WEB_URL}}/autologin/{{token}}?redirect={{WEB_URL}}/dues/{{memberId}}" align="left"}}
+                       {{> button type="primary" title="Pay Online" url="{{WEB_URL}}/autologin/{{token}}?redirect={{WEB_URL}}/orders/{{orderId}}" align="left"}}
                     </td>
                 </tr>
                 <tr>
                     <td class="pb2 text-4 bold" valign="top">
-                       Please be aware that members with unpaid dues will be moved to an inactive status as of 04/01/2018. At that time, suspended members will not be able to access their accounts on NKBA.org, upload photos, or have visible individual or company profiles. 
+                       Please be aware that members with unpaid dues will be moved to an inactive status as of \{{deactivateDate}}. At that time, suspended members will not be able to access their accounts on NKBA.org, upload photos, or have visible individual or company profiles. 
                     </td>
                 </tr>
                 <tr>
