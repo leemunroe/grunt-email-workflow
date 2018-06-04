@@ -1,0 +1,35 @@
+---
+layout: default.hbs
+subject: Contact message
+---
+<table class="header" align="center" width="100%" cellspacing="0" cellpadding="0" bgcolor="#FDFDFE" border="0">
+    <tr>
+        <td class="wrapper border-bottom" valign="middle">
+            <a href="\{{WEB_URL}}"><img class="logo" border="0" src="https://media.nkba.org/img/nkba-logo@2x.png" alt="NKBA" height="30" width="141"></a>
+        </td>
+    </tr>
+</table>
+<table class="main" cellspacing="0" cellpadding="0" border="0">
+    <tr>
+        <td class="wrapper">
+            <table width="100%">
+         
+                <tr>
+                    <td class="content-block text-4 pt1" valign="top">
+                        \{{name}},
+                    </td>
+                </tr>
+                <tr>
+                    <td class="pb2 text-4" valign="top">
+                        You have received a message from \\{{fromName}} (\\{{fromEmail}}):
+                    </td>
+                </tr>
+                <tr>
+                    <td class="content-block text-4" valign="top">
+                       \{{message}}
+                    </td>
+                </tr>
+            </table>
+        </td>
+    </tr>
+</table>
