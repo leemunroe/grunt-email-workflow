@@ -25,14 +25,21 @@ subject: You’ve been added as {{#if isStudent}}a student member{{else}}an empl
                             \{{/if}}
                         </h2>
                     </td>
-                </tr>
+                </tr>                
                 \{{#if isStudent}}
                     <tr>
                         <td class="content-block text-4" valign="top">
                         Your complimentary NKBA membership is sponsored by Monogram.
                         </td>
                     </tr>
-                \{{/if}}
+                \{{/if}} 
+                \{{#if number}}
+                    <tr>
+                        <td class="content-block text-4" valign="top">
+                        Your NKBA member number is \{{ number }}.
+                        </td>
+                    </tr>
+                \{{/if}}             
                 <tr>
                     <td class="content-block text-4" valign="top">
                        If you believe this move was made in error, please call the NKBA Member Services team at 1-800-THE-NKBA or send an email to <a href="mailto:info@nkba.org">info@nkba.org</a>. 
