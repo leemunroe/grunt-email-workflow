@@ -30,9 +30,9 @@ subject: You've been invited to join {{org.name}} on the new NKBA.org
                 <tr>
                     <td class="pb3 text-4" valign="top">   
                         \{{#if isStudent}}
-                            {{> button type="primary" title="Join your organization" url="{{WEB_URL}}/reset/{{token}}" align="left"}}
-                        \{{else}}
                             {{> button type="primary" title="Join your school" url="{{WEB_URL}}/reset/{{token}}" align="left"}}
+                        \{{else}}
+                            {{> button type="primary" title="Join your organization" url="{{WEB_URL}}/reset/{{token}}" align="left"}}
                         \{{/if}}
                     </td>
                 </tr>
