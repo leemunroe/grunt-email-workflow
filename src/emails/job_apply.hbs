@@ -1,9 +1,10 @@
 ---
 layout: default.hbs
-subject: NKBA Jobs - New Applicant for {{job.title}} at {{job.companyName}}
+subject: NKBA Jobs - New Applicant for {{jobTitle}} at {{jobCompanyName}}
 ---
 
-<span class="preheader">{{{message}}}</span>
+<span class="preheader">\{{ applyName }} applied to your job post on NKBA.org! Below you'll 
+                       find their contact information and cover letter. If you want to, follow up with this applicant directly at the email address provided below.</span>
 <table class="header" align="center"  width="100%" cellspacing="0" cellpadding="0" bgcolor="#FDFDFE"  border="0">
     <tr>
         <td class="wrapper border-bottom" valign="middle">
@@ -18,7 +19,7 @@ subject: NKBA Jobs - New Applicant for {{job.title}} at {{job.companyName}}
                 <tr>
                     <td class="content-block text-4 pt1 " valign="top">
                         <h1  class="text-2 bold">
-                            New Applicant for \{{job.title}} at \{{job.companyName}} on NKBA.org!
+                            New Applicant for \{{jobTitle}} at \{{jobCompanyName}} on NKBA.org!
                         </h1>
                     </td>
                 </tr>               
@@ -36,17 +37,17 @@ subject: NKBA Jobs - New Applicant for {{job.title}} at {{job.companyName}}
                 </tr>
                 <tr>
                     <td class="content-block text-4" valign="top">
-                       <strong>Job Title:</strong> \{{ job.title }} at \{{job.companyName}} (<a href="\{{WEB_URL}}/job/\{{job.id}}">\{{WEB_URL}}/job/\{{job.id}}</a>)
+                       <strong>Job Title:</strong> \{{ jobTitle }} at \{{jobCompanyName}} (<a href="\{{WEB_URL}}/job/\{{jobId}}">\{{WEB_URL}}/job/\{{jobId}}</a>)
                     </td>
                 </tr>
                 <tr>
                     <td class="content-block text-4" valign="top">
-                       <strong>Name:</strong> \{{ name }}
+                       <strong>Name:</strong> \{{ applyName }}
                     </td>
                 </tr>
                 <tr>
                     <td class="content-block text-4" valign="top">
-                       <strong>Email Address:</strong> \{{ email }}
+                       <strong>Email Address:</strong> \{{ applyEmail }}
                     </td>
                 </tr>
                 \{{#if linkedinUrl}}<tr>
@@ -64,7 +65,7 @@ subject: NKBA Jobs - New Applicant for {{job.title}} at {{job.companyName}}
 
                  <tr>
                     <td class="pb3 text-4" valign="top">   
-                      {{> button type="primary" title="Contact Applicant" url="mailto:{{email}}?subject=Re: {{job.title}} at {{job.companyName}}" align="center"}}
+                      {{> button type="primary" title="Contact Applicant" url="mailto:{{applyEmail}}?subject=Re: {{jobTitle}} at {{jobCompanyName}}" align="center"}}
                     </td>
                 </tr>
                 <tr>
@@ -72,7 +73,7 @@ subject: NKBA Jobs - New Applicant for {{job.title}} at {{job.companyName}}
                 </tr>
                 <tr>
                     <td class="pb3 text-4" valign="top">   
-                      {{> button type="secondary" title="View Job Post" url="{{WEB_URL}}/job/{{job.id}}" align="center"}}
+                      {{> button type="secondary" title="View Job Post" url="{{WEB_URL}}/job/{{jobId}}" align="center"}}
                     </td>
                 </tr>
             </table>
