@@ -38,7 +38,8 @@ subject: Receipt
                                     <strong>Account ID:</strong> \{{ account.number }}<br>
                                     <strong>Order ID:</strong> \{{ order.number }}<br>
                                     \{{#if transaction}}<strong>Transaction ID:</strong> \{{ transaction.number }}<br>\{{/if}}
-                                    \{{ date }}
+                                    <strong>Date:</strong> \{{ date }}<br>                                    
+                                    \{{#if startDate}}<strong>Period:</strong> \{{startDate}} to \{{endDate}}<br>\{{/if}}                                   
                                     
                                 </td>
                             </tr>
