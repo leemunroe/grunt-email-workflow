@@ -7,7 +7,8 @@
     "url": "https://github.com/nkba/nkba-email-workflow"
   },
   "scripts": {
-    "build": "./node_modules/.bin/grunt && cp -r ./dist ./deploy/ && node prod.js",
+    "postinstall": "npm run build",
+    "build": "./node_modules/.bin/grunt && cp -r ./dist ./deploy/ && node deploy.js",
     "start": "./node_modules/.bin/grunt serve",
     "watch": "./node_modules/.bin/grunt watch",
     "send": "./node_modules/.bin/grunt send"
