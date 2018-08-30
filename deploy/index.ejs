@@ -50,7 +50,7 @@
       v = 'dist/' + $s.val(),
       ms = new Date().getTime();  // We'll timestamp each iframe load for cache-busting
 
-    if (!v)
+    if (!v || v == 'dist/null')
       return;
     
     $('iframe').attr('src', v + '?t=' + ms);
