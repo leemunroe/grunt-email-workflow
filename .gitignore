@@ -7,3 +7,5 @@ secrets.json
 dist/*
 preview/css
 src/css/*.css
+deploy/dist/*
+deploy/index.html

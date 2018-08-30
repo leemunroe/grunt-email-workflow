@@ -1,0 +1,98 @@
+.welcome-view {
+
+  &, body {
+    height: 100%;
+  }
+  body {
+    color: #666;
+    font: normal 16px/1.4 Helvetica,Arial,Sans-serif;
+  }
+  h1 {
+    color: #333;
+    font-size: 24px;
+    margin: 20px 0 10px 0;
+    padding: 0;
+  }
+  p {
+    margin: 0;
+    padding: 0;
+  }
+  .wrapper {
+    display: table;
+    height: 100%;
+    min-height: 100%;
+    width: 100%;
+  }
+  .wrapper--inner {
+    display: table-cell;
+    text-align: center;
+    vertical-align: middle;
+  }
+  .animation {
+    height: 70px;
+    position: relative;
+  }
+  .animation--stem {
+    position: absolute;
+    left: 50%;
+    top: 35px;
+    width: 2px;
+    height: 50px;
+    margin-left: -1px;
+    background: #348eda;
+
+    &:before {
+      content: "";
+      position: absolute;
+      left: 50%;
+      top: 0;
+      border-radius: 100%;
+      background: #348eda;
+      width: 6px;
+      height: 6px;
+      margin-left: -3px;
+      margin-top: -3px;
+    }
+  }
+  .animation--icon {
+    position: absolute;
+    left: 50%;
+    top: 50%;
+    width: 80px;
+    height: 80px;
+    margin-left: -40px;
+    margin-top: -40px;
+    
+    span {
+      background: #348eda;
+      background: rgba(52, 142, 218, 0);
+      border-radius: 100%;
+      display: block;
+      width: 80px;
+      height: 80px;
+      transform: scale(.2);
+      animation-name: wilkomen;
+      animation-duration: 1.8s;
+      animation-iteration-count: infinite;
+      animation-timing-function: linear;
+    }
+    + .animation--icon span {
+      animation-delay: .9s;
+    }
+  }
+}
+
+@keyframes wilkomen {
+  0%   { }
+  25%  { 
+    background: rgba(52, 142, 218, 1); 
+  }
+  50%  { 
+    background: transparent; 
+    box-shadow: inset 0 0 2px rgba(52, 142, 218, 1);
+  }
+  100% { 
+    transform: scale(1,1); 
+    box-shadow: inset 0 0 2px rgba(52, 142, 218, 0);
+  }
+}

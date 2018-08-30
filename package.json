@@ -7,7 +7,7 @@
     "url": "https://github.com/nkba/nkba-email-workflow"
   },
   "scripts": {
-    "build": "./node_modules/.bin/grunt",
+    "build": "./node_modules/.bin/grunt && cp -r ./dist ./deploy/ && node prod.js",
     "start": "./node_modules/.bin/grunt serve",
     "watch": "./node_modules/.bin/grunt watch",
     "send": "./node_modules/.bin/grunt send"
@@ -38,5 +38,8 @@
     "imagemin-mozjpeg": "^5.1.0",
     "load-grunt-config": "^0.19.0",
     "load-grunt-tasks": "^3.2.0"
+  },
+  "dependencies": {
+    "glob": "^7.1.3"
   }
 }
