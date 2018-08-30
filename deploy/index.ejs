@@ -47,7 +47,7 @@
   // On change, reload template
   $templateSelect.on('change', function() {
     var $s = $(this),
-      v = $s.val(),
+      v = 'dist/' + $s.val(),
       ms = new Date().getTime();  // We'll timestamp each iframe load for cache-busting
 
     if (!v)
