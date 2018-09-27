@@ -1,0 +1,69 @@
+---
+layout: default.hbs
+subject: NKBA Dues Reminder
+---
+<span class="preheader">We hope you’ve had a happy and prosperous year. This is a gentle reminder that your \{{year}} NKBA membership and/or certification fee is due \{{dueDate}}.</span>
+<table class="header" align="center" width="100%" cellspacing="0" cellpadding="0" bgcolor="#FDFDFE" border="0">
+    <tr>
+        <td class="wrapper border-bottom" valign="middle">
+            <a href="\{{WEB_URL}}"><img class="logo" border="0" src="https://media.nkba.org/img/nkba-logo@2x.png" alt="NKBA" height="30" width="141"></a>
+        </td>
+    </tr>
+</table>
+<table class="main" cellspacing="0" cellpadding="0" border="0">
+    <tr>
+        <td class="wrapper">
+            <table width="100%">
+                <tr>
+                    <td class="py3 text-1" valign="top">
+                        Style Guide
+                    </td>
+                </tr>
+                <tr>
+                    <td class="py3 text-2 bold" valign="top">
+                        Typography
+                    </td>
+                </tr>
+                <tr>
+                    <td class="py0 text-3 bold" valign="top">
+                        Headers and Sizing
+                    </td>
+                </tr>
+                 <tr>
+                    <td class="py1 text-4" valign="top">
+                        Header sizes are defined from <code>h1</code> to <code>h6</code>. Headers and text sizing classes have no margins or padding by default.
+                    </td>
+                </tr>
+                <tr>
+                    <td class="pb0 text-5" valign="top">
+                        <div><code>h1</code>, <code>.text-1</code></div>
+                        <h1>The quick brown fox jumps over the lazy dog.</h1>                        
+                        <div><code>h2</code>, <code>.text-2</code></div>
+                        <h2>The quick brown fox jumps over the lazy dog.</h2>                        
+                        <div><code>h3</code>, <code>.text-3</code></div>
+                        <h3>The quick brown fox jumps over the lazy dog.</h3>                        
+                        <div><code>h4</code>, <code>.text-4</code></div>
+                        <h4>The quick brown fox jumps over the lazy dog.</h4>                        
+                        <div><code>h5</code>, <code>.text-5</code></div>
+                        <h5>The quick brown fox jumps over the lazy dog.</h5>   
+                        <div><code>h6</code>, <code>.text-5</code></div>
+                        <h6>The quick brown fox jumps over the lazy dog.</h6>                        
+                    </td>
+                </tr>              
+                
+                <tr>
+                    <td class="py0 text-3 bold" valign="top">
+                        Emphasis
+                    </td>
+                </tr>    
+                <tr>
+                    <td class="pb3 text-4" valign="top">   
+                       {{> button type="primary" title="Pay Online" url="{{WEB_URL}}/autologin/{{token}}?redirect={{WEB_URL}}/dues/{{memberId}}" align="left"}}
+                    </td>
+                </tr>
+
+                
+            </table>
+        </td>
+    </tr>
+</table>

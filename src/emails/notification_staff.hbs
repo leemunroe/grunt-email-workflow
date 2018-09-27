@@ -1,0 +1,33 @@
+---
+layout: default.hbs
+subject: {{title}}
+---
+
+<span class="preheader">{{{message}}}</span>
+<table class="header" align="center"  width="100%" cellspacing="0" cellpadding="0" bgcolor="#FDFDFE"  border="0">
+    <tr>
+        <td class="wrapper border-bottom" valign="middle">
+            <a href="\{{WEB_URL}}"><img class="logo" border="0" src="https://media.nkba.org/img/nkba-logo@2x.png" alt="NKBA" height="30" width="141"></a>
+        </td>
+    </tr>
+</table>
+<table class="main" cellspacing="0" cellpadding="0" border="0">
+    <tr>
+        <td class="wrapper">
+            <table width="100%">
+                <tr>
+                    <td class="content-block text-4 pt1 " valign="top">
+                        <h1 class="text-1 bold">
+                            \{{title}}
+                        </h1>
+                    </td>
+                </tr>               
+                <tr>
+                    <td class="content-block text-4" valign="top">
+                       \{{{ message }}}
+                    </td>
+                </tr>
+            </table>
+        </td>
+    </tr>
+</table>

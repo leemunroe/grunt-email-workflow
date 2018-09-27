@@ -3,37 +3,52 @@
 ------------------------------------- */
 
 h1,
+.h1,
 h2,
+.h2,
 h3,
-h4 {
-  color: $font-color !important;
-  font-family: "Helvetica Neue", Helvetica, Arial, "Lucida Grande", sans-serif;
+.h3,
+h4,
+.h4,
+h5,
+h6 {
+  color: $font-color;
+  font-family: $sans;
   font-weight: 400;
-  line-height: 1.4em;
-  margin: 0;
-  margin-bottom: 30px;
+  line-height: 1.3125em;
+  margin: 0 0 15px;
 }
 
-h1 {
+h1, .text-1 {
   font-size: 38px;
-  text-transform: capitalize;
-  font-weight: 300;
+  font-weight: 600;
+  letter-spacing: -.36px;
 }
-h2 {
+
+h2, .text-2 {
   font-size: 24px;
 }
-h3 {
+h3, .text-3 {
   font-size: 18px;
 }
-h4 {
+
+h4, .text-4 {
   font-size: 14px;
-  font-weight:500;
+}
+
+h5, .text-5 {
+  font-size: 12px;
+}
+
+h6, .text-6 {
+  font-size: 10px;
 }
 
 p,
 ul,
-ol {
-  font-family: "Helvetica Neue", Helvetica, Arial, "Lucida Grande", sans-serif;
+ol,
+.text-4 {
+  font-family: $sans;
   font-size: 14px;
   font-weight: normal;
   margin: 0;
@@ -47,8 +62,8 @@ ol {
 
 a {
   color: $primary-color;
-  text-decoration: underline;
 }
+
 
 // Break long strings to prevent x-scrolling
 code,
@@ -60,3 +75,38 @@ pre,
   -moz-hyphens: auto;
   hyphens: auto;
 }
+
+.text-decoration-none {
+  text-decoration: none;
+}
+
+.text-gray-lightest {
+  color: #999999;
+}
+
+.date {
+  color: $primary-color;
+  font-size: 12px;
+  text-transform: uppercase;
+  display: block;
+  letter-spacing: 0.06em;
+  font-weight: 400;
+}
+
+.top {
+  color: darken($font-color, 25%);
+  font-size: 20px;
+  font-weight: 700;
+  display: block;
+  margin: 0;
+  padding: 0 0 8px;
+}
+
+.bold {
+  font-weight: bold;
+}
+
+.italic {
+  font-style: italic;
+}
+

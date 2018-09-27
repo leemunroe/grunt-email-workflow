@@ -1,0 +1,46 @@
+---
+layout: default.hbs
+subject: NKBA Dues Renewal Failure. Please update your credit card information.
+---
+<span class="preheader">The auto-renewal of your NKBA membership dues could not be completed because there was a problem with your credit card.</span>
+<table class="header" align="center"  width="100%" cellspacing="0" cellpadding="0" bgcolor="#FDFDFE"  border="0">
+    <tr>
+        <td class="wrapper border-bottom" valign="middle">
+            <a href="\{{WEB_URL}}"><img class="logo" border="0" src="https://media.nkba.org/img/nkba-logo@2x.png" alt="NKBA" height="30" width="141"></a>
+        </td>
+    </tr>
+</table>
+<table class="main" cellspacing="0" cellpadding="0" border="0">
+    <tr>
+        <td class="wrapper">
+            <table width="100%">
+                <tr>
+                    <td class="content-block text-4 pt1 " valign="top">
+                      \{{name}},
+                    </td>
+                </tr>               
+                <tr>
+                    <td class="content-block text-4" valign="top">
+                       The auto-renewal of your NKBA membership dues could not be completed because there was a problem with your credit card. To continue your membership, please pay through the online portal by clicking the button below. 
+                    </td>
+                </tr>
+                 <tr>
+                    <td class="pb3 text-4" valign="top">   
+                       {{> button type="primary" title="Pay Online" url="{{WEB_URL}}/dues/{{member.id}}" align="left"}}
+                    </td>
+                </tr>                
+                <tr>
+                    <td class="content-block text-4" valign="top">
+                      If you have any questions regarding your membership dues, please call the NKBA Member Services team at 1-800-THE-NKBA or send an email to <a href="mailto:info@nkba.org">info@nkba.org</a>. 
+                    </td>
+                </tr>
+                <tr>
+                    <td class="content-block text-4" valign="top">
+                      Thank you,<br>
+                      The NKBA
+                    </td>
+                </tr>             
+            </table>
+        </td>
+    </tr>
+</table>

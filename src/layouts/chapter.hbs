@@ -3,12 +3,14 @@
 <head>
 	<meta name="viewport" content="width=device-width" />
 	<meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
-	<title>{{{ subject }}}</title>
+	<title>*|MC:SUBJECT|*</title>
 	<link href="../src/css/main.css" media="all" rel="stylesheet" type="text/css" />
 </head>
 
 <body>
-
+<!--*|IF:MC_PREVIEW_TEXT|*--> 
+<!--[if !gte mso 9]><!----><span class="mcnPreview Text" style="display:none; font-size:0px; line-height:0px; max-height:0px; max-width:0px; opacity:0; overflow:hidden; visibility:hidden; mso-hide:all;">*|MC_PREVIEW_TEXT|*</span><!--<![endif]--> 
+<!--*|END:IF|*-->
 <table cellpadding="0" cellspacing="0" border="0" id="backgroundTable">
  <tbody>  
 	<tr>
@@ -21,7 +23,7 @@
                 </table>
 								
 									{{ body }}
-								  {{> footer }}
+								  {{> footer_chapter }}
 								
 
 						</td>	

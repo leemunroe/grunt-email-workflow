@@ -1,0 +1,60 @@
+---
+layout: default.hbs
+subject: You've been invited to join {{org.name}} on the new NKBA.org
+---
+<span class="preheader">You’ve been invited to NKBA.org as \{{#if isStudent}}a student member\{{else}}an employee\{{/if}} of \{{ org.name }}</span>
+<table class="header" align="center"  width="100%" cellspacing="0" cellpadding="0" bgcolor="#FDFDFE"  border="0">
+    <tr>
+        <td class="wrapper border-bottom" valign="middle">
+            <a href="\{{WEB_URL}}"><img class="logo" border="0" src="https://media.nkba.org/img/nkba-logo@2x.png" alt="NKBA" height="30" width="141"></a>
+        </td>
+    </tr>
+</table>
+<table class="main" cellspacing="0" cellpadding="0" border="0">
+    <tr>
+        <td class="wrapper">
+            <table width="100%">
+                <tr>
+                    <td class="content-block text-4 pt1 " valign="top">
+                       <h2 class="bold">You’ve been invited to NKBA.org</h2>
+                    </td>
+                </tr>
+
+               
+                <tr>
+                    <td class="content-block text-4" valign="top"> 
+                        You’ve been invited to the \{{ org.name }} organization on the new NKBA.org. Please click the link below to login and create your public profile.
+                        \{{#if isStudent}} Your complimentary NKBA membership is sponsored by Monogram.\{{/if}}
+                    </td>
+                </tr>
+                <tr>
+                    <td class="pb3 text-4" valign="top">   
+                        \{{#if isStudent}}
+                            {{> button type="primary" title="Join your school" url="{{WEB_URL}}/reset/{{token}}" align="left"}}
+                        \{{else}}
+                            {{> button type="primary" title="Join your organization" url="{{WEB_URL}}/reset/{{token}}" align="left"}}
+                        \{{/if}}
+                    </td>
+                </tr>
+                \{{#if number}}
+                <tr>
+                    <td class="content-block text-4" valign="top">
+                       Your NKBA member number is \{{ number }}.
+                    </td>
+                </tr>
+                 \{{/if}}
+                <tr>
+                    <td class="content-block text-4" valign="top">
+                       If you believe this move was made in error, please call the NKBA Member Services team at 1-800-THE-NKBA or send an email to <a href="mailto:info@nkba.org">info@nkba.org</a>. 
+                    </td>
+                </tr>
+                 <tr>
+                    <td class="content-block text-4" valign="top">
+                      Thank you,<br>
+                      The NKBA
+                    </td>
+                </tr>
+            </table>
+        </td>
+    </tr>
+</table>

@@ -1,0 +1,82 @@
+---
+layout: default.hbs
+subject: NKBA Jobs - New Applicant for {{jobTitle}} at {{jobCompanyName}}
+---
+
+<span class="preheader">\{{ applyName }} applied to your job post on NKBA.org! Below you'll 
+                       find their contact information and cover letter. If you want to, follow up with this applicant directly at the email address provided below.</span>
+<table class="header" align="center"  width="100%" cellspacing="0" cellpadding="0" bgcolor="#FDFDFE"  border="0">
+    <tr>
+        <td class="wrapper border-bottom" valign="middle">
+            <a href="\{{WEB_URL}}"><img class="logo" border="0" src="https://media.nkba.org/img/nkba-logo@2x.png" alt="NKBA" height="30" width="141"></a>
+        </td>
+    </tr>
+</table>
+<table class="main" cellspacing="0" cellpadding="0" border="0">
+    <tr>
+        <td class="wrapper">
+            <table width="100%">
+                <tr>
+                    <td class="content-block text-4 pt1 " valign="top">
+                        <h1  class="text-2 bold">
+                            New Applicant for \{{jobTitle}} at \{{jobCompanyName}} on NKBA.org!
+                        </h1>
+                    </td>
+                </tr>               
+                <tr>
+                    <td class="content-block text-4" valign="top">
+                       Someone applied to your job post on NKBA.org! Below you'll 
+                       find their contact information and cover letter. You can follow up with this applicant directly at the email address provided below or send a reply to this email message.
+                    </td>
+                </tr>
+                
+                <tr>
+                    <td class="content-block text-4 pt3" valign="top">
+                      <h3 class="text-3 bold pb0">Applicant Information</h3>
+                    </td>
+                </tr>
+                <tr>
+                    <td class="content-block text-4" valign="top">
+                       <strong>Job Title:</strong> \{{ jobTitle }} at \{{jobCompanyName}} (<a href="\{{WEB_URL}}/job/\{{jobId}}">\{{WEB_URL}}/job/\{{jobId}}</a>)
+                    </td>
+                </tr>
+                <tr>
+                    <td class="content-block text-4" valign="top">
+                       <strong>Name:</strong> \{{ applyName }}
+                    </td>
+                </tr>
+                <tr>
+                    <td class="content-block text-4" valign="top">
+                       <strong>Email Address:</strong> \{{ applyEmail }}
+                    </td>
+                </tr>
+                \{{#if linkedinUrl}}<tr>
+                    <td class="content-block text-4" valign="top">
+                       <strong>LinkedIn Profile:</strong> <a href="\{{ linkedinUrl }}">\{{linkedinUrl}}</a>
+                    </td>
+                </tr>
+                \{{/if}}
+                <tr>
+                    <td class="content-block text-4" valign="top">
+                       <strong>Cover Letter:</strong><br>
+                       \{{ coverLetter }}
+                    </td>
+                </tr>
+
+                 <tr>
+                    <td class="pb3 text-4" valign="top">   
+                      {{> button type="primary" title="Contact Applicant" url="mailto:{{applyEmail}}?subject=Re: {{jobTitle}} at {{jobCompanyName}}" align="center"}}
+                    </td>
+                </tr>
+                <tr>
+                    <td class="pb3 text-4" valign="top"> {{> divider }}</td>
+                </tr>
+                <tr>
+                    <td class="pb3 text-4" valign="top">   
+                      {{> button type="secondary" title="View Job Post" url="{{WEB_URL}}/job/{{jobId}}" align="center"}}
+                    </td>
+                </tr>
+            </table>
+        </td>
+    </tr>
+</table>

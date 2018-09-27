@@ -1,0 +1,57 @@
+---
+layout: default.hbs
+subject: You’ve been added as {{#if isStudent}}a student member{{else}}an employee{{/if}} of {{ org.name }} on the new NKBA.org
+---
+
+<span class="preheader">You’ve been added as \{{#if isStudent}}a student member\{{else}}an employee\{{/if}} of \{{ org.name }} on the new NKBA.org</span>
+<table class="header" align="center"  width="100%" cellspacing="0" cellpadding="0" bgcolor="#FDFDFE"  border="0">
+    <tr>
+        <td class="wrapper border-bottom" valign="middle">
+            <a href="\{{WEB_URL}}"><img class="logo" border="0" src="https://media.nkba.org/img/nkba-logo@2x.png" alt="NKBA" height="30" width="141"></a>
+        </td>
+    </tr>
+</table>
+<table class="main" cellspacing="0" cellpadding="0" border="0">
+    <tr>
+        <td class="wrapper">
+            <table width="100%">
+                <tr>
+                    <td class="content-block text-4 pt1 " valign="top">
+                        <h2 class="bold">
+                            \{{#if isStudent}}
+                                You've been added as a student member of \{{ org.name }} on NKBA.org.
+                                \{{else}}
+                                You've been added to the \{{ org.name }} organization on NKBA.org. 
+                            \{{/if}}
+                        </h2>
+                    </td>
+                </tr>                
+                \{{#if isStudent}}
+                    <tr>
+                        <td class="content-block text-4" valign="top">
+                        Your complimentary NKBA membership is sponsored by Monogram.
+                        </td>
+                    </tr>
+                \{{/if}} 
+                \{{#if number}}
+                    <tr>
+                        <td class="content-block text-4" valign="top">
+                        Your NKBA member number is \{{ number }}.
+                        </td>
+                    </tr>
+                \{{/if}}             
+                <tr>
+                    <td class="content-block text-4" valign="top">
+                       If you believe this move was made in error, please call the NKBA Member Services team at 1-800-THE-NKBA or send an email to <a href="mailto:info@nkba.org">info@nkba.org</a>. 
+                    </td>
+                </tr>
+                 <tr>
+                    <td class="content-block text-4" valign="top">
+                      Thank you,<br>
+                      The NKBA
+                    </td>
+                </tr>
+            </table>
+        </td>
+    </tr>
+</table>

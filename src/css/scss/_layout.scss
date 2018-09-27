@@ -3,11 +3,11 @@
 ------------------------------------- */
 
 body{
-  background-color: $grey;
+  background-color: $gray;
 }
 
 .body {
-  background-color: $grey;
+  background-color: $gray;
   width: 100%;
 }
 
@@ -36,9 +36,14 @@ body{
 
 .main {
   background: #ffffff;
-  border: 1px solid darken($grey, 5);
-  border-radius: $br;
+  border: 1px solid #dfdfdf;
+  border-top: 0 none;
+  border-radius: 0 0 $br $br;
   width: 100%;
+}
+
+.main--pdf {
+  border: none;
 }
 
 .wrapper {
@@ -50,10 +55,26 @@ body{
   padding: 0 0 $padding;
 }
 
+
+
 .header {
-  margin-bottom: $padding;
   margin-top: ($padding - 10);
+  border-radius: $br $br 0 0;
+  border: 1px solid #dfdfdf;
+  border-bottom: 0 none;
   width: 100%;
+  text-align: left;
+
+  &--pdf {
+    border: 0;
+  }
+}
+
+
+.logo {
+  width: 141px;
+  height: 30px;
+  vertical-align: middle;
 }
 
 .footer {

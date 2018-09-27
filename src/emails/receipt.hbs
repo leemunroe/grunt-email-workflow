@@ -1,0 +1,116 @@
+---
+layout: default.hbs
+subject: Receipt
+---
+<span class="preheader">\{{ previewText }}</span>
+<table class="header" align="center" width="100%" cellspacing="0" cellpadding="0" bgcolor="#FDFDFE" border="0">
+    <tr>
+        <td class="wrapper border-bottom" valign="middle">
+            <a href="\{{WEB_URL}}"><img class="logo" border="0" src="https://media.nkba.org/img/nkba-logo@2x.png" alt="NKBA" height="30" width="141"></a>
+        </td>
+    </tr>
+</table>
+<table class="main" cellspacing="0" cellpadding="0" border="0">
+    <tr>
+        <td class="wrapper">
+            <table width="100%">
+                <tr>
+                    <td class="content-block pt1" valign="top">
+                        <h1>\{{#if invoice}}Invoice\{{else}}Receipt\{{/if}}</h1>
+                    </td>
+                </tr>
+
+                <tr>
+                    <td class="content-block text-4" valign="top">
+                        \{{name}},
+                    </td>
+                </tr>
+                <tr>
+                    <td class="pb2 text-4" valign="top">
+                        \{{message}}
+                    </td>
+                </tr>
+                <tr>
+                    <td class="content-block align-center">
+                        <table class="invoice">
+                            <tr>
+                                <td><strong>Account billed:</strong> \{{ account.name }} <small>(\{{ email }})</small><br>                                    
+                                    <strong>Account ID:</strong> \{{ account.number }}<br>
+                                    <strong>Order ID:</strong> \{{ order.number }}<br>
+                                    \{{#if transaction}}<strong>Transaction ID:</strong> \{{ transaction.number }}<br>\{{/if}}
+                                    <strong>Date:</strong> \{{ date }}<br>                                    
+                                    \{{#if startDate}}<strong>Period:</strong> \{{startDate}} to \{{endDate}}<br>\{{/if}}                                   
+                                    
+                                </td>
+                            </tr>
+                            \{{#if memo}}
+                            <tr>
+                                <td class="text-4 align-left" valign="top">
+                                    \{{ memo }}
+                                </td>
+                            <tr>    
+                            \{{/if}}
+                            <tr>
+                                <td>
+                                    <table class="invoice-items" cellpadding="0" cellspacing="0">
+                                        <tr>
+                                            <td class="invoice-header">Description</td>
+                                            <td class="invoice-header align-right">Amount</td>
+                                        </tr>
+                                        
+                                        \{{#if items}}
+                                             \{{#each items}}
+                                                 <tr>
+                                                    <td>\{{name}} x \{{quantity}}</td>
+                                                    <td class="align-right">$ \{{ price }}</td>
+                                                </tr>
+                                             \{{/each}}
+                                        \{{/if}}
+                                       
+                                       \{{#if subtotal}}
+                                        <tr >
+                                            <td class="align-right" width="70%">Subtotal</td>
+                                            <td class="align-right">$ \{{subtotal}}</td>
+                                        </tr>
+                                        \{{/if}}
+                                        \{{#if tax}}
+                                        <tr >
+                                            <td class="align-right" width="70%">Tax</td>
+                                            <td class="align-right">$  \{{tax}}</td>
+                                        </tr>
+                                        \{{/if}}
+                                        
+                                        <tr>
+                                            <td class="align-right" width="70%">Total</td>
+                                            <td class="align-right">$  \{{billAmount}}</td>
+                                        </tr>
+                                        \{{#if invoice}}
+                                        <tr class="total">
+                                            <td class="align-right" width="70%">Paid</td>
+                                            <td class="align-right">$ \{{paymentAmount}}</td>
+                                        </tr>
+                                        <tr class="total">
+                                            <td class="align-right" width="70%">Due</td>
+                                            <td class="align-right">$ \{{dueAmount}}</td>
+                                        </tr>
+                                        \{{else}}
+                                        <tr class="total">
+                                            <td class="align-right" width="70%">Paid</td>
+                                            <td class="align-right">$ \{{paymentAmount}}</td>
+                                        </tr>
+                                        \{{/if}}
+                                    </table>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td class="text-4">
+                                   All prices are in USD. Questions? Contact us anytime at <a href="mailto:info@nkba.org">billing@nkba.org</a>
+                                </td>
+                            </tr>
+                        </table>
+                    </td>
+                </tr>
+            </table>
+        </td>
+    </tr>
+</table>
