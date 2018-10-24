@@ -3,7 +3,6 @@ node_modules
 .sass-cache
 .secret
 *.css.map
-secrets.json
 dist/*
 preview/css
 src/css/*.css
