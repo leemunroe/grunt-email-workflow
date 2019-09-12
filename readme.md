@@ -116,7 +116,7 @@ Handlebars and Assemble are used for templating.
 `/partials` contains _optional_ .hbs files that can be thought of like includes. To use a partial, for example `/partials/follow_lee.hbs` you would use the following code in your emails template:
 
 ```hbs
-{{> footer }}
+{{> follow_lee }}
 ```
 
 `/partials/components` contains _optional_ .hbs files that can help generate your markup. Each component will typically have a corresponding Sass file in `src/css/sass/<component_name>.scss`. To use a component, for example `/partials/components/button.hbs` you would use the following code in your emails template. _(note: You can use single -or- double quotes for attributes)_
