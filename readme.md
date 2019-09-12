@@ -1,6 +1,6 @@
 # Grunt Email Design Workflow
 
-[![Built with Grunt](https://cdn.gruntjs.com/builtwith.png)](http://gruntjs.com/) 
+[![Built with Grunt](https://cdn.gruntjs.com/builtwith.png)](http://gruntjs.com/)
 
 Designing and testing emails is a pain. HTML tables, inline CSS, various devices and clients to test, and varying support for the latest web standards.
 
@@ -54,7 +54,7 @@ Run `grunt` in command line and check out your `/dist` folder to see your compil
 We encourage you __not__ to store sensitive data in your git repository. If you must, please look into [git-encrypt](https://github.com/shadowhand/git-encrypt) or some other method of encrypting your configuration secrets.
 
 1. Create a file `secrets.json` in your project root.
-2. Paste the following sample code in `secrets.json` and enter the appropriate credentials for the services you want to connect with. 
+2. Paste the following sample code in `secrets.json` and enter the appropriate credentials for the services you want to connect with.
 
 If you don't use or need these services **it's ok to leave these defaults**, but they should exist for this to work.
 
@@ -116,13 +116,29 @@ Handlebars and Assemble are used for templating.
 `/partials` contains _optional_ .hbs files that can be thought of like includes. To use a partial, for example `/partials/follow_lee.hbs` you would use the following code in your emails template:
 
 ```hbs
-{{> follow_lee }}
+{{> footer }}
 ```
 
 `/partials/components` contains _optional_ .hbs files that can help generate your markup. Each component will typically have a corresponding Sass file in `src/css/sass/<component_name>.scss`. To use a component, for example `/partials/components/button.hbs` you would use the following code in your emails template. _(note: You can use single -or- double quotes for attributes)_
 
 ```hbs
 {{> button type="primary" align="center" url="LINK GOES HERE" title="ANCHOR TEXT GOES HERE" }}
+```
+
+### Working with Mailgun's handlebar engine
+In order to be using handlebars in this repo and still retain plain syntax in mailgun's templates (so you can just copy and paste instead of cherry pecking your values) wrap the values you want to avoid processing in the following way:
+
+```hbs
+<p>
+  Hello, this is an <mgtag>example</mgtag>
+</p>
+```
+
+which will get converted to:
+```hbs
+<p>
+  Hello, this is an {{example}}
+</p>
 ```
 
 ### Generate your email templates
@@ -142,7 +158,7 @@ Alternatively run `grunt serve`. This will check for any changes you make to you
 
 ### Browser-based previews
 
-In terminal, run `grunt serve`. 
+In terminal, run `grunt serve`.
 
 * This will run the default tasks `grunt` + the `watch` task will be initiated
 * A preview UI will automagically open on [http://localhost:4000](http://localhost:4000) and you can review your templates

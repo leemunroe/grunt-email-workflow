@@ -11,7 +11,11 @@ module.exports = {
         {
           match: /(url\(*[^)])(\.\.\/src\/img\/)/gi,  // Matches url('../src/img') or url(../src/img) and even url("../src/img")
           replacement: '$1../<%= paths.dist_img %>/'
-        }
+        },
+        {
+          match: /<mgtag>(.*?)<\/mgtag>/gi,  // Matches <mgtag>example</mgtag> and converts it to handlebar's {{example}}
+          replacement: '{{$1}}'
+        },
       ]
     },
 
