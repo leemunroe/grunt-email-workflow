@@ -1,0 +1,83 @@
+@import url("fonts.css"); /* Import @font-face Declarations */
+@import url("dark-color-scheme.css"); /* Support (prefers-color-scheme: dark) media query */
+
+* {
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+/*MMQ*/
+@media screen and (max-width:597px) {
+  .hideline {
+    border-top: 0px solid #ffffff !important;
+    height: 14px !important;
+  }
+}
+
+@media screen and (max-width:413px) {
+  a[x-apple-data-detectors] {
+    color: inherit !important;
+    text-decoration: none !important;
+    font-size: inherit !important;
+    font-family: inherit !important;
+    font-weight: inherit !important;
+    line-height: inherit !important;
+  }
+
+  .mcoupon {
+    max-width: 163px !important;
+    height: auto !important;
+  }
+}
+
+@media screen and (max-width:374px) {
+  .mcoupon {
+    max-width: 136px !important;
+    height: auto !important;
+  }
+
+  .iphone5pad {
+    padding-left: 0px;
+    padding-right: 0px;
+  }
+}
+
+a[x-apple-data-detectors] {
+  color: inherit !important;
+  text-decoration: none !important;
+  font-size: inherit !important;
+  font-family: inherit !important;
+  font-weight: inherit !important;
+  line-height: inherit !important;
+}
+
+@media yahoo {
+  .wrapper {
+    min-width: 600px !important;
+  }
+}
+
+/* zero out paragraph spacing */
+p {
+  margin: 0;
+}
+
+@media screen and (max-width:375px) {
+  .gprodimgv2 {
+    width: 30% !important;
+  }
+
+  .gprodname {
+    max-width: 190px !important;
+  }
+
+  .gprodprice {
+    max-width: 60px !important;
+  }
+
+  .mobprodinfoleftpad {
+    padding-left: 12px !important;
+  }
+}
+
+</style>

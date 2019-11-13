@@ -1,0 +1,198 @@
+<body data-force-encoding="✓">
+  <table align="center" border="0" cellpadding="0" cellspacing="0" width="600">
+    <tr>
+      <td height="40" style="margin-top: 5px; text-align: center; font-size: 13px;">
+        <a href="https://www.glossier.com/winwin" target="_blank" style="text-decoration: underline;">
+          {{#order_data}}
+            Want {{referrer_reward_amount}} off your next order? Here's how.
+          {{/order_data}}
+        </a>
+      </td>
+    </tr>
+    <tr>
+      <td height="40"></td>
+    </tr>
+    <tr>
+      <td align="center">
+        <img src="https://glossier-com.s3.amazonaws.com/mailers/images/logo.jpg" alt="Glossier Logo" width="25">
+      </td>
+    </tr>
+    <tr>
+      <td height="40"></td>
+    </tr>
+    <tr>
+      <td align="center">
+        <h1 style="border-bottom: 4px solid; padding-bottom: 8px; display: inline-block; font-size: 30px;">
+          Glossier Shipping Confirmation
+        </h1>
+      </td>
+    </tr>
+    <tr>
+      <td height="20"></td>
+    </tr>
+    <tr>
+      <td style="font-size: 16px; line-height: 24px;">
+        Your order has shipped and will be with you shortly. Go ahead and clear off some shelf space. Track your package below.</a>
+      </td>
+    </tr>
+    <tr>
+      <td height="40"></td>
+    </tr>
+    <tr>
+      <td style="font-size: 16px; line-height: 24px;">
+        <table border="0" cellpadding="0" cellspacing="0" width="600">
+          <tr>
+            <th style="font-size: 12px; padding-bottom: 10px; border-bottom: 1px #e5e5e5 solid; text-align: left;">
+              Your Order
+            </th>
+            <th style="font-size: 12px; padding-bottom: 10px; border-bottom: 1px #e5e5e5 solid; text-align: left;">
+              Product Name
+            </th>
+            <th style="font-size: 12px; padding-bottom: 10px; border-bottom: 1px #e5e5e5 solid; text-align: left;">
+              Quantity
+            </th>
+            <th style="font-size: 12px; padding-bottom: 10px; text-align: right; border-bottom: 1px #e5e5e5 solid; text-align: right;" width="180">
+              Subtotal
+            </th>
+          </tr>
+          {{#items_data}}
+            <tr style="border-bottom: 1px #e5e5e5 solid; font-weight: bold;">
+              {{#image}}
+                <td class="image" height="130" width="150" style="border-bottom: 1px #e5e5e5 solid; padding: 15px 0; text-align: left; width: 15px;">
+                  <img src="{{image}}" alt="Product image" />
+                </td>
+              {{/image}}
+              <td class="name" style="border-bottom: 1px #e5e5e5 solid;">
+                <a href="{{product_url}}" style="color: #0000FF;" target="_blank|{{name}}">
+                  {{name}}
+                </a>
+                <br />
+                <div class="fs-12" style="font-style: italic; font-weight: lighter;">
+                  {{shade}} <br />
+                  {{#kit_title}}
+                    <span class="fs-12">included in {{kit_title}}</span>
+                  {{/kit_title}}
+                </div>
+              </td>
+              <td class="quantity fs-14" style="border-bottom: 1px #e5e5e5 solid; text-align: center;">
+                {{item_quantity}}
+              </td>
+              <td class="price fs-14" style="border-bottom: 1px #e5e5e5 solid;" align="right">
+                {{display_amount}}
+              </td>
+          {{/items_data}}
+    </tr>
+    <tr>
+      <td height="20"></td>
+    </tr>
+  </table>
+  </td>
+  </tr>
+  <tr>
+    <td height="30"></td>
+  </tr>
+
+  {{#order_data}}
+    <tr style="background-color: #faf9f7">
+      <td class="bottom-blocks" style="font-size: 12px; line-height: 20px; padding: 20px">
+        <div style="font-weight: bold; font-size: 14px;">
+          Shipped To:
+        </div>
+        {{ship_address}}
+      </td>
+    </tr>
+    <tr>
+      <td height="10"></td>
+    </tr>
+    <tr style="background-color: #fbf4f5;">
+      <td class="bottom-blocks" style="font-size: 12px; line-height: 20px; padding: 20px;">
+        <div style="font-weight: bold; font-size: 14px;">
+          Shipping Method:
+        </div>
+        {{shipping_method}}
+      </td>
+    </tr>
+    <tr>
+      <td height="10"></td>
+    </tr>
+  {{/order_data}}
+
+  {{#tracking_infos}}
+    <tr style="background-color: #faf9f7">
+      <td class="bottom-blocks" style="font-size: 12px; line-height: 20px; padding: 20px">
+        <div style="font-weight: bold; font-size: 14px;">
+          Tracking Information: {{number}} <a href="{{link}}" target='_blank'>Track your parcel</a>
+        </div>
+      </td>
+    </tr>
+  {{/tracking_infos}}
+
+  <tr>
+    <td height="10"></td>
+  </tr>
+
+  {{#send_as_gift}}
+    {{#order_data}}
+      <tr style="background-color: #fbf4f5">
+        <td class="bottom-blocks" style="font-size: 12px; line-height: 20px; padding: 20px;">
+          <div style="font-weight: bold; font-size: 14px;">
+            Gift Message:
+            <br>
+            To: {{gift_recipient_name}}
+            <br>
+            From: {{gift_purchaser_name}}
+            <br>
+            {{#gift_card_message}}
+              Message: {{gift_card_message}}
+            {{/gift_card_message}}
+          </div>
+        </td>
+      </tr>
+    {{/order_data}}
+  {{/send_as_gift}}
+
+  <tr>
+    <td height="40"></td>
+  </tr>
+  <tr>
+    <td align="center" style="font-size: 15px; line-height: 24px;">
+      You can always keep track of your order status in the Glossier.com <a href="https://www.glossier.com/account" target="_blank" style="color: #0000FF; font-weight: bold; text-decoration: none;">Account Section</a>.
+    </td>
+  </tr>
+  <tr>
+    <td height="20"></td>
+  </tr>
+  <tr>
+    <td align="center" style="font-size: 15px; line-height: 24px;">
+      If you have any questions, concerns, or want to share your thoughts, <br />email us at <a href="mailto:gTEAM@glossier.com" style="color: #0000FF; font-weight: bold; text-decoration: none;">gTEAM@glossier.com</a>.
+    </td>
+  </tr>
+  <tr>
+    <td height="20"></td>
+  </tr>
+  <tr>
+    <td align="center" style="font-size: 15px; line-height: 24px;">
+      Need to make a return? Just include your order number (#GLO) and the item(s) you would like to return, and we’ll take care of the rest!
+    </td>
+  </tr>
+  <tr>
+    <td height="40"></td>
+  </tr>
+  <tr>
+    <td align="center">
+      <img src="https://glossier-com.s3.amazonaws.com/mailers/images/icons.png" width="60" />
+    </td>
+  </tr>
+  <tr>
+    <td height="40" style="margin-top: 5px; text-align: center; font-size: 11px;">
+      <br />
+      <b>Glossier</b><br>
+      233 Spring Street, New York, NY 10013<br />
+      5 New Street Square, London, EC4A 3TW<br>
+      <a href="https://www.glossier.com/">www.glossier.com</a> // <a href="mailto:gteam@glossier.com" target="_top">gteam@glossier.com</a><br />
+      <br />
+    </td>
+  </tr>
+
+  </table>
+</body>

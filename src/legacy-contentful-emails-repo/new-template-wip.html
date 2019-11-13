@@ -1,0 +1,820 @@
+<!DOCTYPE html>
+<html lang="en" xmlns="http://www.w3.org/1999/xhtml" xmlns:v="urn:schemas-microsoft-com:vml" xmlns:o="urn:schemas-microsoft-com:office:office">
+
+  <head>
+    <link rel="stylesheet" type="text/css" media="screen" href="css/fonts.css"/>
+    <meta charset="utf-8">
+    <!-- utf-8 works for most cases -->
+    <meta http-equiv="Content-Type" content="text/html charset=UTF-8"/>
+    <meta name="viewport" content="width=device-width">
+    <!-- Forcing initial-scale shouldn't be necessary -->
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <!-- Use the latest (edge) version of IE rendering engine -->
+    <meta name="x-apple-disable-message-reformatting">
+    <!-- Disable auto-scale in iOS 10 Mail entirely -->
+    <meta name="format-detection" content="telephone=no,address=no,email=no,date=no,url=no">
+    <!-- Tell iOS not to automatically link certain text strings. -->
+    <title></title>
+    <!-- The title tag shows in email notifications, like Android 4.4. -->
+
+    <!--[if mso]> <style> * { font-family: sans-serif !important; } </style> <![endif]-->
+
+    <!-- CSS Reset : BEGIN -->
+    <style>
+      /* What it does: Remove spaces around the email design added by some email clients. */
+      /* Beware: It can remove the padding / margin and add a background color to the compose a reply window. */
+      body,
+      html {
+        margin: 0 !important;
+        padding: 0 !important;
+        height: 100% !important;
+        width: 100% !important;
+      }
+
+      /* What it does: Stops email clients resizing small text. */
+      * {
+        -ms-text-size-adjust: 100%;
+        -webkit-text-size-adjust: 100%;
+        -webkit-font-smoothing: antialiased;
+        -moz-osx-font-smoothing: grayscale;
+      }
+
+      /* What it does: Centers email on Android 4.4 */
+      div[style*="margin: 16px 0"] {
+        margin: 0 !important;
+      }
+
+      /* What it does: Stops Outlook from adding extra spacing to tables. */
+      table,
+      td {
+        mso-table-lspace: 0 !important;
+        mso-table-rspace: 0 !important;
+      }
+
+      /* What it does: Replaces default bold style. */
+      th {
+        font-weight: normal;
+      }
+
+      /* What it does: Fixes webkit padding issue. */
+      table {
+        border-spacing: 0 !important;
+        border-collapse: collapse !important;
+        table-layout: fixed !important;
+        margin: 0 auto !important;
+      }
+
+      /* What it does: Prevents Windows 10 Mail from underlining links despite inline CSS. Styles for underlined links should be inline. */
+      a {
+        text-decoration: none;
+      }
+
+      /* What it does: Uses a better rendering method when resizing images in IE. */
+      img {
+        -ms-interpolation-mode: bicubic;
+      }
+
+      /* What it does: A work-around for email clients meddling in triggered links. */
+      a[x-apple-data-detectors],
+      /* iOS */
+      .aBn,
+      .unstyle-auto-detected-links a {
+        border-bottom: 0 !important;
+        cursor: default !important;
+        color: inherit !important;
+        text-decoration: none !important;
+        font-size: inherit !important;
+        font-family: inherit !important;
+        font-weight: inherit !important;
+        line-height: inherit !important;
+      }
+
+      /* What it does: Prevents Gmail from changing the text color in conversation threads. */
+      .im {
+        color: inherit !important;
+      }
+
+      /* What it does: Prevents Gmail from displaying a download button on large, non-linked images. */
+      .a6S {
+        display: none !important;
+        opacity: 0.01 !important;
+      }
+
+      /* If the above doesn't work, add a .g-img class to any image in question. */
+      img.g-img+div {
+        display: none !important;
+      }
+
+      /* What it does: Removes right gutter in Gmail iOS app: https://github.com/TedGoas/Cerberus/issues/89  */
+      /* Create one of these media queries for each additional viewport size you'd like to fix */
+
+      /* iPhone 4, 4S, 5, 5S, 5C, and 5SE */
+      @media only screen and (min-device-width: 320px) and (max-device-width: 374px) {
+        u~div .email-container {
+          min-width: 320px !important;
+        }
+      }
+
+      /* iPhone 6, 6S, 7, 8, and X */
+      @media only screen and (min-device-width: 375px) and (max-device-width: 413px) {
+        u~div .email-container {
+          min-width: 375px !important;
+        }
+      }
+
+      /* iPhone 6+, 7+, and 8+ */
+      @media only screen and (min-device-width: 414px) {
+        u~div .email-container {
+          min-width: 414px !important;
+        }
+      }
+    </style>
+
+    <!-- What it does: Makes background images in 72ppi Outlook render at correct size. -->
+    <!--[if gte mso 9]> <xml> <o:OfficeDocumentSettings> <o:AllowPNG/> <o:PixelsPerInch>96</o:PixelsPerInch> </o:OfficeDocumentSettings> </xml> <![endif]-->
+
+    <!-- CSS Reset : END -->
+
+    <!-- Progressive Enhancements : BEGIN -->
+    <style>
+      /* What it does: Hover styles for buttons */
+      .button-a,
+      .button-td {
+        transition: all 100ms ease-in;
+      }
+
+      .button-a-primary:hover,
+      .button-td-primary:hover {
+        background: #555555 !important;
+        border-color: #555555 !important;
+      }
+
+      /* Media Queries */
+      @media screen and (max-width: 600px) {
+        .email-container {
+          width: 100% !important;
+          margin: auto !important;
+        }
+
+        /* What it does: Forces table cells into full-width rows. */
+        .stack-column,
+        .stack-column-center {
+          display: block !important;
+          width: 100% !important;
+          max-width: 100% !important;
+          direction: ltr !important;
+        }
+
+        /* And center justify these ones. */
+        .stack-column-center {
+          text-align: center !important;
+        }
+
+        /* What it does: Generic utility class for centering. Useful for images, buttons, and nested tables. */
+        .center-on-narrow {
+          text-align: center !important;
+          display: block !important;
+          margin-left: auto !important;
+          margin-right: auto !important;
+          float: none !important;
+        }
+
+        table.center-on-narrow {
+          display: inline-block !important;
+        }
+
+        /* What it does: Adjust typography on small screens to improve readability */
+        /*
+            .email-container p {
+                font-size: 17px !important;
+            }
+	*/
+        .email-container p,
+        h3 {
+          margin-left: 10px !important;
+          margin-right: 10px !important;
+        }
+
+        .customShow {
+          display: block !important;
+          margin: 0 !important;
+          padding: 0 !important;
+          overflow: visible !important;
+          width: auto !important;
+          max-height: inherit !important;
+          height: auto !important;
+        }
+
+        .hideInMobile {
+          display: none !important;
+        }
+      }
+    </style>
+    <!-- Progressive Enhancements : END -->
+
+  </head>
+  <!-- The email background color (#ffffff) is defined in three places: 1. body tag: for most email clients 2. center tag: for Gmail and Inbox mobile apps and web versions of Gmail, GSuite, Inbox, Yahoo, AOL, Libero, Comcast, freenet, Mail.ru,
+  Orange.fr 3. mso conditional: For Windows 10 Mail -->
+
+  <body width="100%" style="margin: 0; padding: 0 !important; mso-line-height-rule: exactly; background-color: #ffffff;">
+    <center style="width: 100%; background-color: #ffffff;">
+      <!--[if mso | IE]> <table role="presentation" border="0" cellpadding="0" cellspacing="0" width="100%" style="background-color: #ffffff;"> <tr> <td> <![endif]-->
+
+      <!-- Visually Hidden Preheader Text : BEGIN -->
+      <div style="display: none; font-size: 1px; line-height: 1px; max-height: 0px; max-width: 0px; opacity: 0; overflow: hidden; mso-hide: all; font-family: sans-serif;">
+        INSERT PREHEADER HERE
+      </div>
+      <!-- Visually Hidden Preheader Text : END -->
+
+      <!-- Create white space after the desired preview text so email clients don’t pull other distracting text into the inbox preview. Extend as necessary. -->
+      <!-- Preview Text Spacing Hack : BEGIN -->
+      <div style="display: none; font-size: 1px; line-height: 1px; max-height: 0px; max-width: 0px; opacity: 0; overflow: hidden; mso-hide: all; font-family: sans-serif;">
+        &zwnj;&nbsp;&zwnj;&nbsp;&zwnj;&nbsp;&zwnj;&nbsp;&zwnj;&nbsp;&zwnj;&nbsp;&zwnj;&nbsp;&zwnj;&nbsp;&zwnj;&nbsp;&zwnj;&nbsp;&zwnj;&nbsp;&zwnj;&nbsp;&zwnj;&nbsp;&zwnj;&nbsp;&zwnj;&nbsp;&zwnj;&nbsp;&zwnj;&nbsp;&zwnj;&nbsp;
+      </div>
+      <!-- Preview Text Spacing Hack : END -->
+
+      <!-- Email Body : BEGIN -->
+      <table align="center" role="presentation" cellspacing="0" cellpadding="0" border="0" width="600" style="margin: auto;" class="email-container">
+        <!-- Email Header : BEGIN -->
+        <tr>
+          <td style="padding: 23px 0; text-align: center">
+            <picture>
+              <source srcset="https://f001.backblazeb2.com/file/public-ramy/glossier-emails/glossier-wordmark-white@2x.png" media="(prefers-color-scheme: dark)" height="20px" alt="Glossier Wordmark" border="0" style="height: 20px;">
+              <img src="https://images.ctfassets.net/p3w8f4svwgcg/12fYG1MnyumublONhcr9Wi/01720d107a910bb800f092dead210398/glossier-wordmark_2x.png" height="20px" alt="Glossier Wordmark" border="0" style="height: 20px;">
+            </picture>
+          </td>
+        </tr>
+        <!-- Email Header : END -->
+
+        <!-- Title Text: BEGIN -->
+        <tr>
+          <td style="background-color: #ffffff;">
+            <table role="presentation" cellspacing="0" cellpadding="0" border="0" width="100%">
+              <tr>
+                <td valign="middle" style="text-align: center; padding: 33px; font-family: 'Apercu Pro',Calibri,sans-serif; font-size:28px; line-height: 32px; color: #000000; font-weight: 700">
+                  <h2 style="margin: 0;">Title Text Here</h2>
+                </td>
+              </tr>
+            </table>
+          </td>
+        </tr>
+        <!-- Title Text: END -->
+
+        <!-- Hero Image, Flush : BEGIN -->
+        <tr>
+          <td style="background-color: #ffffff;">
+            <a href="#" target="_blank"><img
+              src="https://via.placeholder.com/600"
+              width="600"
+              height="600"
+              alt="alt_text"
+              border="0"
+              style="width: 100%; max-width: 600px; height: auto; background: #dddddd; font-family: sans-serif; font-size: 15px; line-height: 15px; color: #555555; margin: auto; display: block;"
+              class="g-img"></a>
+          </td>
+        </tr>
+        <!-- Hero Image, Flush : END -->
+
+        <!-- Clear Spacer : BEGIN -->
+        <tr>
+          <td aria-hidden="true" height="20" style="font-size: 0px; line-height: 0px;">&nbsp;
+
+          </td>
+        </tr>
+        <!-- Clear Spacer : END -->
+
+        <!-- Hero Image, Mobile Swap : BEGIN -->
+
+        <!-- Mobile Image : BEGIN -->
+        <!--[if !mso 9]><!-->
+        <tr>
+          <td align="left" valign="top" class="customShow" style="background-color: #ffffff;">
+            <div class="customShow" style="font-size: 0; max-height: 0; overflow: hidden; display: none;">
+              <table width="100%" border="0" cellspacing="0" cellpadding="0" style="display:none;" class="customShow">
+                <tbody>
+                  <tr>
+                    <td style="color:#ffffff; font-family:Helvetica, Arial, sans-serif; font-size:11px; text-align:left; background-color: #ffffff">
+                      <a href="#" target="_blank"><img src="https://via.placeholder.com/360" alt="" width="360" class="email-container" style="display: block" border="0"/></a>
+                    </td>
+                  </tr>
+                </tbody>
+              </table>
+            </div>
+          </td>
+        </tr>
+        <!--<![endif]-->
+        <!-- Mobile Image End -->
+        <!-- Desktop Image : Begin -->
+        <tr>
+          <td class="hideInMobile" style="background-color: #ffffff;">
+            <a href="#" target="_blank"><img
+              src="https://via.placeholder.com/600"
+              width="600"
+              height="600"
+              alt="alt_text"
+              border="0"
+              style="width: 100%; max-width: 600px; height: auto; background: #dddddd; font-family: sans-serif; font-size: 15px; line-height: 15px; color: #555555; margin: auto; display: block;"
+              class="g-img"></a>
+          </td>
+        </tr>
+        <!-- Desktop Image : End -->
+        <!-- Hero Image, Mobile Swap : END -->
+
+        <!-- Clear Spacer : BEGIN -->
+        <tr>
+          <td aria-hidden="true" height="20" style="font-size: 0px; line-height: 0px;">&nbsp;
+
+          </td>
+        </tr>
+        <!-- Clear Spacer : END -->
+
+        <!-- Hero Image, Two-up : BEGIN -->
+        <tr>
+          <td style="background-color: #ffffff;">
+            <a href="#" target="_blank"><img
+              src="https://via.placeholder.com/600x455"
+              width="600"
+              height="455"
+              alt="alt_text"
+              border="0"
+              style="width: 100%; max-width: 600px; height: auto; background: #dddddd; font-family: sans-serif; font-size: 15px; line-height: 15px; color: #555555; margin: auto; display: block;"
+              class="g-img"></a>
+          </td>
+        </tr>
+        <!-- Hero Image, Two-up : END -->
+
+        <!-- Clear Spacer : BEGIN -->
+        <tr>
+          <td aria-hidden="true" height="20" style="font-size: 0px; line-height: 0px;">&nbsp;
+
+          </td>
+        </tr>
+        <!-- Clear Spacer : END -->
+
+        <!-- Hero Image, Two-up Alt : BEGIN -->
+        <tr>
+          <td style="background-color: #ffffff;">
+            <a href="#"><img
+              src="https://via.placeholder.com/600x727"
+              width="600"
+              height="727"
+              alt="alt_text"
+              border="0"
+              style="width: 100%; max-width: 600px; height: auto; background: #dddddd; font-family: sans-serif; font-size: 15px; line-height: 15px; color: #555555; margin: auto; display: block;"
+              class="g-img"></a>
+          </td>
+        </tr>
+        <!-- Hero Image, Two-up Alt : END -->
+
+        <!-- 1 Column Default Text : BEGIN -->
+        <tr>
+          <td style="background-color: #ffffff;">
+            <table role="presentation" cellspacing="0" cellpadding="0" border="0" width="100%">
+              <tr>
+                <td valign="middle" style=" font-family: 'Apercu Pro', -apple-system, BlinkMacSystemFont, 'Helvetica','Helvetica Neue', 'Arial', sans-serif; font-size: 14px; line-height: 24px; color: #000000; text-align: center;font-weight: 400;">
+                  <p style="margin: 40px;">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Maecenas felis odio, ornare quis efficitur eu, laoreet nec ex.
+                    <span>
+                      <a style="color: #0000FF; font-weight: bold; text-decoration: none;" href="#" target="_blank">Product name</a>
+                    </span>. Vivamus nibh mauris, aliquet
+                    <span>
+                      <a style="color: #0000FF;  text-decoration: none; font-weight: bold" href="#" target="_blank">Product name</a>
+                    </span>
+                    eu aliquam non, pulvinar eget tortor.
+                  </p>
+                </td>
+              </tr>
+            </table>
+          </td>
+        </tr>
+        <!-- 1 Column Default Text : END -->
+
+        <!-- Clear Spacer : BEGIN -->
+        <tr>
+          <td aria-hidden="true" height="20" style="font-size: 0px; line-height: 0px;">&nbsp;
+
+          </td>
+        </tr>
+        <!-- Clear Spacer : END -->
+
+        <!-- 1 Column Emphasis Text : BEGIN -->
+        <tr>
+          <td style="background-color: #FAF2F4;">
+            <table role="presentation" cellspacing="0" cellpadding="0" border="0" width="100%">
+              <tr>
+                <td valign="middle" style=" font-family: 'Apercu Pro', -apple-system, BlinkMacSystemFont, 'Helvetica','Helvetica Neue', 'Arial', sans-serif; font-size: 14px; line-height: 24px; color: #000000; text-align: center;font-weight: 400;">
+                  <p style="margin: 40px;">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Maecenas felis odio, ornare quis efficitur eu, laoreet nec ex.
+                    <span>
+                      <a style="color: #0000FF; font-weight: bold; text-decoration: none;" href="#" target="_blank">Product name</a>
+                    </span>. Vivamus nibh mauris, aliquet
+                    <span>
+                      <a style="color: #0000FF;  text-decoration: none; font-weight: bold" href="#" target="_blank">Product name</a>
+                    </span>
+                    eu aliquam non, pulvinar eget tortor.
+                  </p>
+                </td>
+              </tr>
+            </table>
+          </td>
+        </tr>
+        <!-- 1 Column Emphasis Text : END -->
+
+        <!-- Clear Spacer : BEGIN -->
+        <tr>
+          <td aria-hidden="true" height="20" style="font-size: 0px; line-height: 0px;">&nbsp;
+
+          </td>
+        </tr>
+        <!-- Clear Spacer : END -->
+
+        <!-- Button Blue : BEGIN -->
+        <tr>
+          <td style="padding: 0 20px 20px;">
+            <table align="center" role="presentation" cellspacing="0" cellpadding="0" border="0" style="margin: auto;">
+              <tr>
+                <td style="border-radius: 3px; background: #0000FF;">
+                  <a
+                    href="https://google.com/"
+                    style="background: #0000FF; border: 1px solid #0000FF; font-family: 'Apercu Pro', -apple-system, BlinkMacSystemFont, 'Helvetica','Helvetica Neue', 'Arial', sans-serif; font-weight: bold;font-size: 14px; line-height: 20px; text-decoration: none; padding: 12px 45px; color: #ffffff; display: block; border-radius: 3px; text-transform: uppercase">CALL&nbsp;TO&nbsp;ACTION</a>
+                </td>
+              </tr>
+            </table>
+          </td>
+        </tr>
+        <!-- Button Blue : END -->
+
+        <!-- Clear Spacer : BEGIN -->
+        <tr>
+          <td aria-hidden="true" height="20" style="font-size: 0px; line-height: 0px;">&nbsp;
+
+          </td>
+        </tr>
+        <!-- Clear Spacer : END -->
+
+        <!-- Button black: BEGIN -->
+        <tr>
+          <td style="padding: 0 20px 20px;">
+            <table align="center" role="presentation" cellspacing="0" cellpadding="0" border="0" style="margin: auto;">
+              <tr>
+                <td style="border-radius: 3px; background: #000000;">
+                  <a
+                    href="https://google.com/"
+                    style="background: #000000; border: 1px solid #000000; font-family: 'Apercu Pro', -apple-system, BlinkMacSystemFont, 'Helvetica','Helvetica Neue', 'Arial', sans-serif;font-weight: bold; font-size: 14px; line-height: 18px; text-decoration: none; padding: 12px 45px; color: #ffffff; display: block; border-radius: 3px; text-transform: uppercase">CALL&nbsp;TO&nbsp;ACTION</a>
+                </td>
+              </tr>
+            </table>
+          </td>
+        </tr>
+        <!-- Button Black : END -->
+
+        <!-- Clear Spacer : BEGIN -->
+        <tr>
+          <td aria-hidden="true" height="20" style="font-size: 0px; line-height: 0px;">&nbsp;
+
+          </td>
+        </tr>
+        <!-- Clear Spacer : END -->
+
+        <!-- Button : BEGIN -->
+        <tr>
+          <td style="padding: 0 20px 20px;">
+            <table align="center" role="presentation" cellspacing="0" cellpadding="0" border="0" style="margin: auto;">
+              <tr>
+                <td style="border-radius: 3px; background: #ffffff;">
+                  <a
+                    href="https://google.com/"
+                    style="background: #ffffff; border: 1px solid #000000; font-family: 'Apercu Pro', -apple-system, BlinkMacSystemFont, 'Helvetica','Helvetica Neue', 'Arial', sans-serif; font-weight: bold;font-size: 14px; line-height: 18px; text-decoration: none; padding: 12px 45px; color: #000000; display: block; border-radius: 3px; text-transform: uppercase">CALL&nbsp;TO&nbsp;ACTION</a>
+                </td>
+              </tr>
+            </table>
+          </td>
+        </tr>
+        <!-- Button : END -->
+
+        <!-- Title, CTA : BEGIN -->
+        <tr>
+          <td style="background-color: #FAFAFA;">
+            <table role="presentation" cellspacing="0" cellpadding="0" border="0" width="100%">
+              <tr>
+                <td valign="middle" style=" font-family: 'Apercu Pro', -apple-system, BlinkMacSystemFont, 'Helvetica','Helvetica Neue', 'Arial', sans-serif; font-size: 20px; line-height: 32px; color: #000000; text-align: center;font-weight: 400;">
+                  <h3 style="margin-top: 53px; margin-bottom: 24px">Lorem ipsum dolor sit amet, consectetur?</h3>
+                </td>
+              </tr>
+              <tr>
+                <td style="padding: 0 20px 20px;">
+                  <table align="center" role="presentation" cellspacing="0" cellpadding="0" border="0" style="margin: auto;">
+                    <tr>
+                      <td style="border-radius: 3px; background: #000000;">
+                        <a
+                          href="https://google.com/"
+                          style="background: #000000; border: 1px solid #000000; font-family: 'Apercu Pro', -apple-system, BlinkMacSystemFont, 'Helvetica','Helvetica Neue', 'Arial', sans-serif; font-size: 14px; line-height: 15px; text-decoration: none; padding: 12px 45px; color: #ffffff; display: block; border-radius: 3px; text-transform: uppercase">CALL&nbsp;TO&nbsp;ACTION</a>
+                      </td>
+                    </tr>
+                  </table>
+                </td>
+              </tr>
+            </table>
+          </td>
+        </tr>
+        <!-- Title, CTA : END -->
+
+        <!-- Clear Spacer : BEGIN -->
+        <tr>
+          <td aria-hidden="true" height="20" style="font-size: 0px; line-height: 0px;">&nbsp;
+
+          </td>
+        </tr>
+        <!-- Clear Spacer : END -->
+
+        <!-- Title, CTA : BEGIN -->
+        <tr>
+          <td style="background-color: #FAFAFA;">
+            <table role="presentation" cellspacing="0" cellpadding="0" border="0" width="100%">
+              <tr>
+                <td valign="middle" style=" font-family: 'Apercu Pro', -apple-system, BlinkMacSystemFont, 'Helvetica','Helvetica Neue', 'Arial', sans-serif; font-size: 20px; line-height: 32px; color: #000000; text-align: center;font-weight: 400;">
+                  <h3 style="margin-top: 53px; margin-bottom: 24px;">Lorem ipsum dolor sit amet, consectetur?</h3>
+                  <p style="margin: 0;font-size:14px; line-height: 16px;margin-bottom:32px;">
+                    <a style="color: #000000; text-decoration: underline" href="#" target="_blank">Learn&nbsp;more</a>
+                  </p>
+                </td>
+              </tr>
+            </table>
+          </td>
+        </tr>
+        <!-- Title, CTA : END -->
+
+        <tr>
+          <td aria-hidden="true" height="20" style="font-size: 0px; line-height: 0px;">&nbsp;
+
+          </td>
+        </tr>
+        <!-- Clear Spacer : END -->
+
+        <!-- Thumbnail Left, Text Right with Button : BEGIN -->
+
+        <tr>
+          <td dir="ltr" width="100%" style="background-color: #FAF2F4;">
+            <table role="presentation" border="0" cellpadding="0" cellspacing="0" width="100%">
+              <tr>
+                <!-- Column : BEGIN -->
+                <th width="50%" class="stack-column-center">
+                  <table role="presentation" border="0" cellpadding="0" cellspacing="0" width="100%">
+                    <tr>
+                      <td dir="ltr" valign="top">
+                        <img src="images/half-image-desktop.png" width="300" height="416" alt="alt_text" border="0" class="email-container" style="height: auto; background: #dddddd; font-family: sans-serif; font-size: 15px; line-height: 15px; color: #000000;">
+                      </td>
+                    </tr>
+                  </table>
+                </th>
+                <!-- Column : END -->
+                <!-- Column : BEGIN -->
+                <th width="50%" class="stack-column-center">
+                  <table role="presentation" border="0" cellpadding="0" cellspacing="0" width="100%">
+                    <tr>
+                      <td
+                        dir="ltr"
+                        valign="top"
+                        style="font-family: 'Apercu Pro', -apple-system, BlinkMacSystemFont, 'Helvetica','Helvetica Neue', 'Arial', sans-serif; font-size: 15px; line-height: 20px; color: #000000; padding: 50px; text-align: left;"
+                        class="center-on-narrow">
+                        <h2 style="margin: 0 0 10px 0; font-family: 'Apercu Pro', -apple-system, BlinkMacSystemFont, 'Helvetica','Helvetica Neue', 'Arial', sans-serif; font-size: 18px; line-height: 22px; color: #000000; font-weight: bold;">Subheader here.</h2>
+                        <p style="margin: 0 0 20px 0; font-size: 14px; line-height: 24px;">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Maecenas
+                          <a style="color: #0000FF;  text-decoration: none; font-weight: bold" href="#" target="_blank">Product name</a>
+                          felis, ornare quis efficitur eu, laoreet nec ex.
+                        </p>
+                        <!-- Button : BEGIN -->
+                        <table role="presentation" cellspacing="0" cellpadding="0" border="0" class="center-on-narrow" style="float:left;">
+                          <tr>
+                            <td style="padding: 0 0 20px;">
+                              <table align="center" role="presentation" cellspacing="0" cellpadding="0" border="0" style="margin: auto;">
+                                <tr>
+                                  <td style="border-radius: 3px; background: #000000;">
+                                    <a
+                                      href="https://google.com/"
+                                      style="background: #000000; border: 1px solid #000000; font-family: 'Apercu Pro', -apple-system, BlinkMacSystemFont, 'Helvetica','Helvetica Neue', 'Arial', sans-serif; font-size: 14px; line-height: 15px; text-decoration: none; padding: 12px 45px; color: #ffffff; display: block; border-radius: 3px; text-transform: uppercase">CALL&nbsp;TO&nbsp;ACTION</a>
+                                  </td>
+                                </tr>
+                              </table>
+                            </td>
+                          </tr>
+                        </table>
+                        <!-- Button : END -->
+                      </td>
+                    </tr>
+                  </table>
+                </th>
+                <!-- Column : END -->
+              </tr>
+            </table>
+          </td>
+        </tr>
+        <!-- Thumbnail Left, Text Right : END -->
+
+        <!-- Clear Spacer : BEGIN -->
+        <tr>
+          <td aria-hidden="true" height="20" style="font-size: 0px; line-height: 0px;">&nbsp;
+
+          </td>
+        </tr>
+        <!-- Clear Spacer : END -->
+
+        <!-- Thumbnail Left, Text Right with Button : BEGIN -->
+
+        <tr>
+          <td dir="ltr" width="100%" style="background-color: #FAF2F4;">
+            <table role="presentation" border="0" cellpadding="0" cellspacing="0" width="100%">
+              <tr>
+                <!-- Column : BEGIN -->
+                <th width="50%" class="stack-column-center">
+                  <table role="presentation" border="0" cellpadding="0" cellspacing="0" width="100%">
+                    <tr>
+                      <td dir="ltr" valign="top">
+                        <img
+                          src="https://f001.backblazeb2.com/file/public-ramy/glossier-emails/email-store@2x.jpg"
+                          width="300"
+                          height="416"
+                          alt="alt_text"
+                          border="0"
+                          class="email-container"
+                          style="height: auto; background: #dddddd; font-family: sans-serif; font-size: 15px; line-height: 15px; color: #000000;">
+                      </td>
+                    </tr>
+                  </table>
+                </th>
+                <!-- Column : END -->
+                <!-- Column : BEGIN -->
+                <th width="50%" class="stack-column-center">
+                  <table role="presentation" border="0" cellpadding="0" cellspacing="0" width="100%">
+                    <tr>
+                      <td
+                        dir="ltr"
+                        valign="top"
+                        style="font-family: 'Apercu Pro', -apple-system, BlinkMacSystemFont, 'Helvetica','Helvetica Neue', 'Arial', sans-serif; font-size: 15px; line-height: 20px; color: #000000; padding: 50px; text-align: left;"
+                        class="center-on-narrow">
+                        <h2 style="margin: 0 0 10px 0; font-family: 'Apercu Pro', -apple-system, BlinkMacSystemFont, 'Helvetica','Helvetica Neue', 'Arial', sans-serif; font-size: 18px; line-height: 22px; color: #000000; font-weight: bold;">Subheader here.</h2>
+                        <p style="margin: 0 0 20px 0; font-size: 14px; line-height: 24px;">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Maecenas
+                          <a style="color: #0000FF;  text-decoration: none; font-weight: bold" href="#" target="_blank">Product name</a>
+                          felis, ornare quis efficitur eu, laoreet nec ex.
+                        </p>
+                        fro
+                      </td>
+                    </tr>
+                  </table>
+                </th>
+                <!-- Column : END -->
+              </tr>
+            </table>
+          </td>
+        </tr>
+        <!-- Thumbnail Left, Text Right with Button : END -->
+
+        <!-- Clear Spacer : BEGIN -->
+        <tr>
+          <td aria-hidden="true" height="20" style="font-size: 0px; line-height: 0px;">&nbsp;
+
+          </td>
+        </tr>
+        <!-- Clear Spacer : END -->
+
+        <!-- Thumbnail Right, Text Left with Button : BEGIN -->
+        <tr>
+          <td dir="rtl" width="100%" style=" background-color: #FAF2F4;">
+            <table role="presentation" border="0" cellpadding="0" cellspacing="0" width="100%">
+              <tr>
+                <!-- Column : BEGIN -->
+                <th width="50%" class="stack-column-center">
+                  <table role="presentation" border="0" cellpadding="0" cellspacing="0" width="100%">
+                    <tr>
+                      <td dir="ltr" valign="top">
+                        <img
+                          src="https://f001.backblazeb2.com/file/public-ramy/glossier-emails/email-store@2x.jpg"
+                          width="300px"
+                          height="420px"
+                          alt="alt_text"
+                          border="0"
+                          class="email-container"
+                          style="height: auto; background: #dddddd; font-family: sans-serif; font-size: 15px; line-height: 15px; color: #ffffff;">
+                      </td>
+                    </tr>
+                  </table>
+                </th>
+                <!-- Column : END -->
+                <!-- Column : BEGIN -->
+                <th width="50%" class="stack-column-center">
+                  <table role="presentation" border="0" cellpadding="0" cellspacing="0" width="100%">
+                    <tr>
+                      <td dir="ltr" valign="top" style="font-family: sans-serif; font-size: 15px; line-height: 20px; color: #000000; padding: 50px; text-align: left;" class="center-on-narrow">
+                        <h2 style="margin: 0 0 10px 0; font-family: 'Apercu Pro', -apple-system, BlinkMacSystemFont, 'Helvetica','Helvetica Neue', 'Arial', sans-serif; font-size: 18px; line-height: 22px; color: #000000; font-weight: bold;">Subheader here.</h2>
+                        <p style="margin: 0 0 20px 0; font-size: 14px; line-height: 24px;">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Maecenas
+                          <a style="color: #0000FF;  text-decoration: none; font-weight: bold" href="#" target="_blank">Product name</a>
+                          felis, ornare quis efficitur eu, laoreet nec ex.
+                        </p>
+                        <!-- Button : BEGIN -->
+                        <table role="presentation" cellspacing="0" cellpadding="0" border="0" class="center-on-narrow" style="float:left;">
+                          <tr>
+                            <td style="padding: 0 0 20px;">
+                              <table align="center" role="presentation" cellspacing="0" cellpadding="0" border="0" style="margin: auto;">
+                                <tr>
+                                  <td style="border-radius: 3px; background: #000000;">
+                                    <a
+                                      href="https://google.com/"
+                                      style="background: #000000; border: 1px solid #000000; font-family: 'Apercu Pro', -apple-system, BlinkMacSystemFont, 'Helvetica','Helvetica Neue', 'Arial', sans-serif; font-size: 14px; line-height: 15px; text-decoration: none; padding: 12px 45px; color: #ffffff; display: block; border-radius: 3px; text-transform: uppercase">CALL&nbsp;TO&nbsp;ACTION</a>
+                                  </td>
+                                </tr>
+                              </table>
+                            </td>
+                          </tr>
+                        </table>
+                        <!-- Button : END -->
+                      </td>
+                    </tr>
+                  </table>
+                </th>
+                <!-- Column : END -->
+              </tr>
+            </table>
+          </td>
+        </tr>
+        <!-- Thumbnail Right, Text Left with Button : END -->
+
+        <!-- Clear Spacer : BEGIN -->
+        <tr>
+          <td aria-hidden="true" height="40" style="font-size: 0px; line-height: 0px;">&nbsp;
+
+          </td>
+        </tr>
+        <!-- Clear Spacer : END -->
+
+        <!-- 1 Column Text : BEGIN -->
+        <tr>
+          <td style="background-color: #ffffff;">
+            <table role="presentation" cellspacing="0" cellpadding="0" border="0" width="100%">
+              <tr>
+                <td style="padding: 20px; font-family: sans-serif; font-size: 15px; line-height: 20px; color: #555555;">
+                  Maecenas sed ante pellentesque, posuere leo id, eleifend dolor. Class aptent taciti sociosqu ad litora torquent per conubia nostra, per inceptos himenaeos. Praesent laoreet malesuada cursus. Maecenas scelerisque congue eros eu posuere. Praesent in
+                  felis ut velit pretium lobortis rhoncus ut&nbsp;erat.
+                </td>
+              </tr>
+            </table>
+          </td>
+        </tr>
+        <!-- 1 Column Text : END -->
+
+      </table>
+
+      <!-- Footer Begins -->
+
+      <table border="0" cellpadding="0" cellspacing="0" class="kmTextBlock" width="100%" style="border-collapse:collapse;mso-table-lspace:0;mso-table-rspace:0;">
+        <tbody class="kmTextBlockOuter">
+          <tr>
+            <td class="kmTextBlockInner" valign="top" style="border-collapse:collapse;mso-table-lspace:0;mso-table-rspace:0;padding-bottom:50px;">
+              <table align="left" border="0" cellpadding="0" cellspacing="0" class="kmTextContentContainer" width="100%" style="border-collapse:collapse;mso-table-lspace:0;mso-table-rspace:0;">
+                <tbody>
+                  <tr>
+                    <td
+                      class="kmTextContent"
+                      valign="top"
+                      style="padding-top:20px;border-collapse:collapse;mso-table-lspace:0;mso-table-rspace:0;color:#505050;font-family:'Apercu Pro', -apple-system, BlinkMacSystemFont, 'Helvetica','Helvetica Neue', 'Arial', sans-serif;font-size:14px;line-height:150%;letter-spacing:normal;text-align:left;padding-top:9px;padding-bottom:9px;padding-left:18px;padding-right:18px;">
+                      <p
+                        dir="ltr"
+                        style="color:rgb(34, 34, 34);font-family:'Apercu Pro', -apple-system, BlinkMacSystemFont, 'Helvetica','Helvetica Neue', 'Arial', sans-serif;font-size:12.8px;line-height:1.2;margin-top:0pt;margin-bottom:0pt;text-align:center;color:#888888;font-variant-ligatures:none;">
+
+                        <br>
+                        <span style="font-size:12px;text-align:center;">
+                          233 Spring Street, Floor 10<br>New York, NY 10013<br>United States
+                        </span>
+                        <br><br>
+
+                        <span style="font-size:12px;text-align:center;">
+                          5 New Street Square<br>London<br>EC4A 3TW<br>United Kingdom
+                        </span>
+                        <br>
+
+                        <br>
+                        <br>
+                        <span style="color:#888888;font-size:12px;text-align:center;font-variant-ligatures:none;">
+                          For information about how we process data and monitor communications<br/>
+                          please see our
+                          <a
+                            href="https://www.glossier.com/privacy-policy?utm_medium=email&utm_source=order-conf&utm_campaign=RP_order-confirmation_footer&utm_content=order-confirmation&utm_term=footer"
+                            style="color: #888888;font-size:12px;text-align:center;text-decoration:underline;">Privacy Policy</a>
+                          and
+                          <a
+                            href="https://www.glossier.com/terms-of-use?utm_medium=email&utm_source=order-conf&utm_campaign=RP_order-confirmation_footer&utm_content=order-confirmation&utm_term=footer"
+                            style="color: #888888;font-size:12px;text-align:center;text-decoration:underline;font-variant-ligatures:none;">Terms of Use</a>.
+                        </span>
+                      </p>
+                    </td>
+                  </tr>
+                </tbody>
+              </table>
+            </td>
+          </tr>
+        </tbody>
+      </table>
+      <!-- Footer Ends -->
+      <!-- Email Body : END -->
+
+      <!--[if mso | IE]> </td> </tr> </table> <![endif]-->
+    </center>
+  </body>
+
+</html>

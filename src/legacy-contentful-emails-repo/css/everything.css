@@ -1,0 +1,66 @@
+@import url("fonts.css"); /* Import @font-face Declarations */
+@import url("dark-color-scheme.css"); /* Support (prefers-color-scheme: dark) media query */
+
+* {
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+a {
+  color: #000001;
+}
+
+table[width='600'] {
+  max-width: 600px;
+  width: 95%;
+  margin: 0 auto;
+}
+
+td.image {
+  width: 150px !important;
+}
+
+@media only screen(max-width: 480px) {
+  body {
+    width: 100%;
+  }
+
+  .bodyContent {
+    font-size: $font-size-small !important;
+  }
+
+  .fs-12 {
+    font-size: $font-size-small !important;
+  }
+
+  .fs-14 {
+    font-size: $font-size-small !important;
+  }
+
+  table tr td.image {
+    width: 20%;
+  }
+
+  table tr td.name {
+    width: 45%;
+  }
+
+  table tr td.quantity {
+    width: 25%;
+  }
+
+  table tr td.price {
+    width: 25%;
+  }
+
+  table.bottom-blocks {
+    text-align: center;
+  }
+}
+
+.teaser {
+  display: none;
+  visibility: hidden;
+  color: #ffffff;
+  font-size: 0;
+}

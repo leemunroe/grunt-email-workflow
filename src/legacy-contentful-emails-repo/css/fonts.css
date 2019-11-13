@@ -1,0 +1,81 @@
+/* Font Declarations Only */
+
+@font-face {
+  font-family: 'Apercu Pro';
+  src: url("https://glossier-email-assets.s3.amazonaws.com/pro-subsetted/apercu-light-pro-subset.woff2") format("woff2"), url("https://glossier-email-assets.s3.amazonaws.com/pro-subsetted/apercu-light-pro-subset.woff") format("woff"), url("https://glossier-email-assets.s3.amazonaws.com/pro-subsetted/apercu-light-pro-subset.ttf") format("truetype");
+  font-weight: 300;
+  font-style: normal;
+  mso-font-alt: 'Calibri';
+}
+
+@font-face {
+  font-family: 'Apercu Pro';
+  src: url("https://glossier-email-assets.s3.amazonaws.com/pro-subsetted/apercu-light-italic-pro-subset.woff2") format("woff2"), url("https://glossier-email-assets.s3.amazonaws.com/pro-subsetted/apercu-light-italic-pro-subset.woff") format("woff"), url("https://glossier-email-assets.s3.amazonaws.com/pro-subsetted/apercu-light-italic-pro-subset.ttf") format("truetype");
+  font-weight: 300;
+  font-style: italic;
+  mso-font-alt: 'Calibri';
+}
+
+@font-face {
+  font-family: 'Apercu Pro';
+  src: url("https://glossier-email-assets.s3.amazonaws.com/pro-subsetted/apercu-regular-pro-subset.woff2") format("woff2"), url("https://glossier-email-assets.s3.amazonaws.com/pro-subsetted/apercu-regular-pro-subset.woff") format("woff"), url("https://glossier-email-assets.s3.amazonaws.com/pro-subsetted/apercu-regular-pro-subset.ttf") format("truetype");
+  font-weight: 400;
+  font-style: normal;
+  mso-font-alt: 'Calibri';
+}
+
+@font-face {
+  font-family: 'Apercu Pro';
+  src: url("https://glossier-email-assets.s3.amazonaws.com/pro-subsetted/apercu-regular-italic-pro-subset.woff2") format("woff2"), url("https://glossier-email-assets.s3.amazonaws.com/pro-subsetted/apercu-regular-italic-pro-subset.woff") format("woff"), url("https://glossier-email-assets.s3.amazonaws.com/pro-subsetted/apercu-regular-italic-pro-subset.ttf") format("truetype");
+  font-weight: 400;
+  font-style: italic;
+  mso-font-alt: 'Calibri';
+}
+
+@font-face {
+  font-family: 'Apercu Pro';
+  src: url("https://glossier-email-assets.s3.amazonaws.com/pro-subsetted/apercu-medium-pro-subset.woff2") format("woff2"), url("https://glossier-email-assets.s3.amazonaws.com/pro-subsetted/apercu-medium-pro-subset.woff") format("woff"), url("https://glossier-email-assets.s3.amazonaws.com/pro-subsetted/apercu-medium-pro-subset.ttf") format("truetype");
+  font-weight: 500;
+  font-style: normal;
+  mso-font-alt: 'Calibri';
+}
+
+@font-face {
+  font-family: 'Apercu Pro';
+  src: url("https://glossier-email-assets.s3.amazonaws.com/pro-subsetted/apercu-medium-italic-pro-subset.woff2") format("woff2"), url("https://glossier-email-assets.s3.amazonaws.com/pro-subsetted/apercu-medium-italic-pro-subset.woff") format("woff"), url("https://glossier-email-assets.s3.amazonaws.com/pro-subsetted/apercu-medium-italic-pro-subset.ttf") format("truetype");
+  font-weight: 500;
+  font-style: italic;
+  mso-font-alt: 'Calibri';
+}
+
+@font-face {
+  font-family: 'Apercu Pro';
+  src: url("https://glossier-email-assets.s3.amazonaws.com/pro-subsetted/apercu-bold-pro-subset.woff2") format("woff2"), url("https://glossier-email-assets.s3.amazonaws.com/pro-subsetted/apercu-bold-pro-subset.woff") format("woff"), url("https://glossier-email-assets.s3.amazonaws.com/pro-subsetted/apercu-bold-pro-subset.ttf") format("truetype");
+  font-weight: 700;
+  font-style: normal;
+  mso-font-alt: 'Calibri';
+}
+
+@font-face {
+  font-family: 'Apercu Pro';
+  src: url("https://glossier-email-assets.s3.amazonaws.com/pro-subsetted/apercu-bold-italic-pro-subset.woff2") format("woff2"), url("https://glossier-email-assets.s3.amazonaws.com/pro-subsetted/apercu-bold-pro-subset.woff") format("woff"), url("https://glossier-email-assets.s3.amazonaws.com/pro-subsetted/apercu-bold-pro-subset.ttf") format("truetype");
+  font-weight: 700;
+  font-style: italic;
+  mso-font-alt: 'Calibri';
+}
+
+@font-face {
+  font-family: 'Freight Display';
+  src: url("https://glossier-email-assets.s3.amazonaws.com/pro-subsetted/freight-display.woff2") format("woff2"), url("https://glossier-email-assets.s3.amazonaws.com/pro-subsetted/freight-display.woff") format("woff"), url("https://glossier-email-assets.s3.amazonaws.com/pro-subsetted/freight-display.ttf") format("truetype");
+  font-weight: 400;
+  font-style: normal;
+  mso-font-alt: 'Calibri';
+}
+
+@font-face {
+  font-family: 'Freight Display';
+  src: url("https://glossier-email-assets.s3.amazonaws.com/pro-subsetted/freight-display-italic.woff2") format("woff2"), url("https://glossier-email-assets.s3.amazonaws.com/pro-subsetted/freight-display-italic.woff") format("woff"), url("https://glossier-email-assets.s3.amazonaws.com/pro-subsetted/freight-display-italic.ttf") format("truetype");
+  font-weight: 400;
+  font-style: italic;
+  mso-font-alt: 'Calibri';
+}
