@@ -8,3 +8,4 @@ dist/*
 !dist/.gitkeep
 preview/css
 src/css/*.css
+package-lock.json

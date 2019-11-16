@@ -35,6 +35,7 @@
   },
   "dependencies": {
     "balanced-match": "^1.0.0",
-    "prettier": "^1.19.1"
+    "prettier": "^1.19.1",
+    "s3upload": "^1.0.1"
   }
 }
