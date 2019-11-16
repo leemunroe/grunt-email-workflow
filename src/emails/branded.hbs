@@ -15,24 +15,26 @@ subject: Branded transaction email example
 <table class="main">
   <tr>
     <td class="wrapper">
+      <h2 style="text-align:center;">Welcome, friend!</h2>
       <table>
         <tr>
           <td>
-            <p>Example of an email with image asset.</p>
-            <p>You should upload your email images to a CDN, or for smaller file sizes you can also inline them.</p>
-            <p>Should come in handy for branded transactional emails or promotional type emails.</p>
+            <p>Thank you for making an account on Glossier.com, where you can sign in and access your order history, update your info, and edit your settings in the <a target="_blank" href="\{{account_url}}">Account Section</a> of our site.</p>
+            <p>Remember that your username is your email address &mdash; easy!</p>
+            <p>And if you ever have a question, concern, or want to share your thoughts, email us at <a href="mailto:\{{mail_from_email}}" target="_blank">gTEAM@glossier.com</a>.</p>
           </td>
         </tr>
       </table>
     </td>
   </tr>
 </table>
-<div class="footer">
+<div>
   <table>
     <tr>
       <td class="align-center">
-        <p>{{> follow_lee }}</p>
+        <p>{{> button label="My Label" }}</p>
       </td>
     </tr>
   </table>
 </div>
+{{> footer }}

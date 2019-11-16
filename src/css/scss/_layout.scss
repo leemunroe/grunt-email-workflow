@@ -3,11 +3,11 @@
 ------------------------------------- */
 
 body{
-  background-color: $grey;
+  background-color: #fff;
 }
 
 .body {
-  background-color: $grey;
+  background-color: #fff;
   width: 100%;
 }
 
@@ -35,8 +35,8 @@ body{
 ------------------------------------- */
 
 .main {
-  background: #ffffff;
-  border: 1px solid darken($grey, 5);
+  background: #fff;
+//border: 1px solid darken($grey, 5);
   border-radius: $br;
   width: 100%;
 }
@@ -60,12 +60,7 @@ body{
   clear: both;
   width: 100%;
 
-  * {
-    color: #999999;
-    font-size: 12px;
-  }
-
   td {
-    padding: 20px 0;
+    padding: 16px 0;
   }
 }
