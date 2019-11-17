@@ -9,3 +9,4 @@ dist/*
 preview/css
 src/css/*.css
 package-lock.json
+package-lock.json
