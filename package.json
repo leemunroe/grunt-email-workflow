@@ -6,6 +6,13 @@
     "type": "git",
     "url": "https://github.com/leemunroe/grunt-email-workflow"
   },
+  "scripts": {
+    "build": "grunt",
+    "rsupload": "grunt rsupload",
+    "s3upload": "grunt s3upload",
+    "send": "grunt send",
+    "serve": "grunt serve"
+  },
   "devDependencies": {
     "assemble": "^0.24.3",
     "cheerio": "^1.0.0-rc.2",
