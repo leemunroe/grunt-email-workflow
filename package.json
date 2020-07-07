@@ -15,13 +15,13 @@
   },
   "devDependencies": {
     "assemble": "^0.24.3",
-    "cheerio": "^1.0.0-rc.2",
-    "ejs": "^2.6.1",
+    "cheerio": "^1.0.0-rc.3",
+    "ejs": "^2.7.4",
     "express": "^4.17.1",
     "grunt": "^1.2.1",
     "grunt-assemble": "^0.6.3",
     "grunt-autoprefixer": "^3.0.4",
-    "grunt-aws-s3": "^2.0.0",
+    "grunt-aws-s3": "^2.0.2",
     "grunt-cdn": "^0.6.5",
     "grunt-cloudfiles": "^0.3.0",
     "grunt-contrib-clean": "^2.0.0",
@@ -34,9 +34,9 @@
     "grunt-open": "^0.2.4",
     "grunt-parallel": "^0.5.1",
     "grunt-replace": "^1.0.1",
-    "grunt-sass": "^3.0.2",
+    "grunt-sass": "^3.1.0",
     "imagemin-mozjpeg": "^8.0.0",
-    "load-grunt-config": "^1.0.1",
+    "load-grunt-config": "^1.0.2",
     "load-grunt-tasks": "^4.0.0",
     "node-sass": "^4.14.1"
   }
