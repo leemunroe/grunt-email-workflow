@@ -1,6 +1,6 @@
 # Grunt Email Design Workflow
 
-[![Built with Grunt](https://gruntjs.com/cdn/builtwith.png)](http://gruntjs.com/) 
+[![Built with Grunt](https://gruntjs.com/cdn/builtwith.png)](http://gruntjs.com/)
 
 Designing and testing emails is a pain. HTML tables, inline CSS, various devices and clients to test, and varying support for the latest web standards.
 
@@ -23,6 +23,7 @@ This Grunt task helps simplify things.
 You may already have these installed on your system. If not, you'll have to install them.
 
 * Node.js - [Install Node.js](https://github.com/joyent/node/wiki/Installing-Node.js-via-package-manager)
+* NVM - [Install node version manager](https://github.com/nvm-sh/nvm)
 * Grunt-cli and Grunt (`npm install grunt-cli -g`)
 * [Mailgun](http://www.mailgun.com) (optional) - Sends the email
 * [Litmus](https://litmus.com) (optional) - Tests the email across all clients/browsers/devices
@@ -34,11 +35,12 @@ If you haven't used [Grunt](http://gruntjs.com/) before check out Chris Coyier's
 
 #### 1. Setup
 
-Clone this repo, cd to the directory, run `npm install` to install the necessary packages.
+Clone this repo, cd to the directory, run `nvm use` _(to set correct node version)_ and `npm install` to install the necessary packages.
 
 ```sh
 git clone https://github.com/leemunroe/grunt-email-workflow.git
 cd grunt-email-workflow
+nvm use
 npm install
 ```
 
@@ -54,7 +56,7 @@ Run `grunt` in command line and check out your `/dist` folder to see your compil
 We encourage you __not__ to store sensitive data in your git repository. If you must, please look into [git-encrypt](https://github.com/shadowhand/git-encrypt) or some other method of encrypting your configuration secrets.
 
 1. Create a file `secrets.json` in your project root.
-2. Paste the following sample code in `secrets.json` and enter the appropriate credentials for the services you want to connect with. 
+2. Paste the following sample code in `secrets.json` and enter the appropriate credentials for the services you want to connect with.
 
 If you don't use or need these services **it's ok to leave these defaults**, but they should exist for this to work.
 
@@ -142,7 +144,7 @@ Alternatively run `grunt serve`. This will check for any changes you make to you
 
 ### Browser-based previews
 
-In terminal, run `grunt serve`. 
+In terminal, run `grunt serve`.
 
 * This will run the default tasks `grunt` + the `watch` task will be initiated
 * A preview UI will automagically open on [http://localhost:4000](http://localhost:4000) and you can review your templates

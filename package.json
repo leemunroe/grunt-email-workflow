@@ -13,6 +13,9 @@
     "send": "grunt send",
     "serve": "grunt serve"
   },
+  "engines": {
+    "node": ">=12 <13"
+  },
   "devDependencies": {
     "assemble": "^0.24.3",
     "cheerio": "^1.0.0-rc.3",
