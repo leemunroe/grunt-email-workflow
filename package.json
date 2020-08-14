@@ -6,6 +6,9 @@
     "type": "git",
     "url": "https://github.com/leemunroe/grunt-email-workflow"
   },
+  "engines": {
+    "node": ">=12 <13"
+  },
   "devDependencies": {
     "assemble": "^0.24.3",
     "cheerio": "^1.0.0-rc.2",
