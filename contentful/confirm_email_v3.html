@@ -1,0 +1,1037 @@
+<body width="100%" style="margin: 0; padding: 0 !important; mso-line-height-rule: exactly; background-color: #ffffff;">
+<center style="width: 100%; background-color: #ffffff;">
+
+<!--[if mso | IE]>
+<table role="presentation" border="0" cellpadding="0" cellspacing="0" width="100%" style="background-color: #ffffff;">
+<tr>
+<td>
+<![endif]-->
+
+<div style="display: none; font-size: 1px; line-height: 1px; max-height: 0px; max-width: 0px; opacity: 0; overflow: hidden; mso-hide: all; font-family: sans-serif;">
+We got your order (thank you!).
+</div>
+<div style="display: none; font-size: 1px; line-height: 1px; max-height: 0px; max-width: 0px; opacity: 0; overflow: hidden; mso-hide: all; font-family: sans-serif;">
+&zwnj;&nbsp;&zwnj;&nbsp;&zwnj;&nbsp;&zwnj;&nbsp;&zwnj;&nbsp;&zwnj;&nbsp;&zwnj;&nbsp;&zwnj;&nbsp;&zwnj;&nbsp;&zwnj;&nbsp;&zwnj;&nbsp;&zwnj;&nbsp;&zwnj;&nbsp;&zwnj;&nbsp;&zwnj;&nbsp;&zwnj;&nbsp;&zwnj;&nbsp;&zwnj;&nbsp;&zwnj;&nbsp;&zwnj;&nbsp;&zwnj;&nbsp;&zwnj;&nbsp;&zwnj;&nbsp;&zwnj;&nbsp;&zwnj;&nbsp;&zwnj;&nbsp;&zwnj;&nbsp;&zwnj;&nbsp;&zwnj;&nbsp;&zwnj;&nbsp;&zwnj;&nbsp;&zwnj;&nbsp;&zwnj;&nbsp;&zwnj;&nbsp;&zwnj;&nbsp;&zwnj;&nbsp;&nbsp;&zwnj;&nbsp;&zwnj;&nbsp;&zwnj;&nbsp;&zwnj;&nbsp;&zwnj;&nbsp;&zwnj;&nbsp;&zwnj;&nbsp;&zwnj;&nbsp;&nbsp;&zwnj;&nbsp;&zwnj;&nbsp;&zwnj;&nbsp;&zwnj;&nbsp;&zwnj;&nbsp;&zwnj;&nbsp;&zwnj;&nbsp;&zwnj;&nbsp;&nbsp;&zwnj;&nbsp;&zwnj;&nbsp;&zwnj;&nbsp;&zwnj;&nbsp;&zwnj;&nbsp;&zwnj;&nbsp;&zwnj;&nbsp;&zwnj;&nbsp;&nbsp;&zwnj;&nbsp;&zwnj;&nbsp;&zwnj;&nbsp;&zwnj;&nbsp;&zwnj;&nbsp;&zwnj;&nbsp;&zwnj;&nbsp;&zwnj;&nbsp;&zwnj;&nbsp;&zwnj;&nbsp;&zwnj;&nbsp;&zwnj;&nbsp;&zwnj;&nbsp;&zwnj;&nbsp;&zwnj;&nbsp;&zwnj;&nbsp;&zwnj;&nbsp;&zwnj;&nbsp;&zwnj;&nbsp;&zwnj;&nbsp;&zwnj;&nbsp;&zwnj;&nbsp;&zwnj;&nbsp;&zwnj;&nbsp;&zwnj;&nbsp;&zwnj;&nbsp;&zwnj;&nbsp;&zwnj;&nbsp;&zwnj;&nbsp;&zwnj;&nbsp;&zwnj;&nbsp;&zwnj;&nbsp;&zwnj;&nbsp;&zwnj;&nbsp;&zwnj;&nbsp;&zwnj;&nbsp;&zwnj;&nbsp;&zwnj;&nbsp;&zwnj;&nbsp;&zwnj;&nbsp;&zwnj;&nbsp;&zwnj;&nbsp;&zwnj;&nbsp;&zwnj;&nbsp;&nbsp;&zwnj;&nbsp;&zwnj;&nbsp;&zwnj;&nbsp;&zwnj;&nbsp;&zwnj;&nbsp;&zwnj;&nbsp;&zwnj;&nbsp;&zwnj;&nbsp;&nbsp;&zwnj;&nbsp;&zwnj;&nbsp;&zwnj;&nbsp;&zwnj;&nbsp;&zwnj;&nbsp;&zwnj;&nbsp;&zwnj;&nbsp;&zwnj;&nbsp;&nbsp;&zwnj;&nbsp;&zwnj;&nbsp;&zwnj;&nbsp;&zwnj;&nbsp;&zwnj;&nbsp;&zwnj;&nbsp;&zwnj;&nbsp;&zwnj;&nbsp;&nbsp;&zwnj;&nbsp;&zwnj;&nbsp;&zwnj;&nbsp;&zwnj;&nbsp;&zwnj;&nbsp;&zwnj;&nbsp;&zwnj;&nbsp;&zwnj;&nbsp;
+</div>
+
+{{#order_data}}
+<table align="center" border="0" cellpadding="0" cellspacing="0" class="email-container" role="presentation" style="margin: auto;" width="600">
+<!--logo-->
+<tr>
+<td style="padding-top: 25px; padding-bottom: 25px; text-align: center;">
+<a href="https://www.glossier.com/products?utm_medium=email&utm_source=mandrill&utm_campaign=glogo{{#is_bops_order}}_{{^is_la_bops}}flagship{{/is_la_bops}}{{#is_la_bops}}la{{/is_la_bops}}{{/is_bops_order}}&utm_content=order-confirmation" target="_blank">
+<img border="0" width="25" height="34" src="https://appboy-images.com/appboy/communication/assets/image_assets/images/5d4b27c1a12f744d59ccb1cb/original.png?1565206465" style="height: auto; background: #ffffff; font-family: sans-serif; font-size: 15px; line-height: 15px; color: #555555;">
+</a>
+</td>
+</tr>
+<!--end logo-->
+
+<!--header-->
+<tr>
+<td style="font-family: Apercu Pro, Calibri, sans-serif; font-size: 16px; color: #000000; text-align: center;" valign="middle">
+<a href="https://www.glossier.com/products?utm_medium=email&utm_source=mandrill&utm_campaign=header{{#is_bops_order}}_{{^is_la_bops}}flagship{{/is_la_bops}}{{#is_la_bops}}la{{/is_la_bops}}{{/is_bops_order}}&utm_content=order-confirmation" target="_blank" style="text-decoration: none; color: #000;">
+<h2 class="mobile-marginlr20" style="font-size: 30px; margin-left: 40px; margin-right: 40px; margin-bottom: 0px; font-family: Apercu Pro, Calibri, sans-serif; margin-top: 0px; line-height: 36px;">
+Order Confirmation
+</h2>
+</a>
+</td>
+</tr>
+<tr>
+<td style="font-family: Apercu Pro, Calibri, sans-serif; font-size: 16px; color: #4E4E4E; text-align: center; font-weight: 400;" valign="middle">
+<p class="mobile-marginlr20" style="font-size: 16px; margin-left: 40px; margin-right: 40px; margin-bottom: 0px; font-family: Apercu Pro, Calibri, sans-serif; margin-top: 0px; line-height: 24px;">
+{{number}}
+</p>
+</td>
+</tr>
+<!--end header-->
+
+<!--shipping delay banner-->
+{{#show_email_delay_ui}}
+<tr>
+<td aria-hidden="true" height="15" style="font-size: 0px; line-height: 0px;">
+&nbsp;
+</td>
+</tr>
+<tr>
+<td dir="ltr" width="100%" style="padding: 10px; background-color: #FAFAFA;">
+<table role="presentation" border="0" cellpadding="0" cellspacing="0" width="100%">
+<tr>
+<th valign="top" width="5%">
+<table role="presentation" border="0" cellpadding="0" cellspacing="0" width="100%">
+<tr>
+<td dir="ltr" valign="top" style="padding-left: 10px; text-align: left;">
+<img border="0" width="18" height="18" src="https://appboy-images.com/appboy/communication/assets/image_assets/images/5f6ceab2d602106ae490a5da/original.png?1600973490">
+</td>
+</tr>
+</table>
+</th>
+<th valign="top" width="95%" style="padding-left: 5px;">
+<table role="presentation" border="0" cellpadding="0" cellspacing="0" width="100%">
+<tr>
+<td class="mobilepadding10" dir="ltr" valign="top" style="text-align: left;">
+<p style="margin: 0 0 0 0; font-family: Apercu Pro, Calibri, sans-serif; font-size: 12px; line-height: 16px; color: #000000; font-weight: normal;">
+<strong>Just a heads up:</strong> Processing and delivery may take longer than usual due to the high volume of orders during the holiday weekend.
+</p>
+</td>
+</tr>
+</table>
+</th>
+</tr>
+</table>
+</td>
+</tr>
+{{/show_email_delay_ui}}
+<!--end shipping delay banner-->
+
+<!--start kits-->
+{{#kits_data}}
+<tr>
+<td dir="ltr" width="100%" style="padding: 15px 15px 0px 10px; background-color: #ffffff;">
+<table role="presentation" border="0" cellpadding="0" cellspacing="0" width="100%">
+<tr>
+<th valign="top" width="70%">
+<table role="presentation" border="0" cellpadding="0" cellspacing="0" width="100%">
+<tr>
+<td dir="ltr" valign="top" style="text-align: left;">
+<a href="{{url}}?utm_medium=email&utm_source=mandrill&utm_campaign=items{{#is_bops_order}}_{{^is_la_bops}}flagship{{/is_la_bops}}{{#is_la_bops}}la{{/is_la_bops}}{{/is_bops_order}}&utm_content=order-confirmation" target="_blank" style="text-decoration: none; color: #000;">
+<h6 style="margin: 0 0 3px 0px; font-family: Apercu Pro, Calibri, sans-serif; font-size: 16px; line-height: 24px; color: #000000; font-weight: bold;">
+{{title}} <span style="color: #555555; font-weight: normal;">x {{quantity}}</span>
+</h6>
+</a>
+</td>
+</tr>
+</table>
+</th>
+<th valign="top" width="30%">
+<table role="presentation" border="0" cellpadding="0" cellspacing="0" width="100%">
+<tr>
+<td dir="ltr" valign="top" style="text-align: right; padding-bottom: 0px;">
+<a href="{{url}}?utm_medium=email&utm_source=mandrill&utm_campaign=items{{#is_bops_order}}_{{^is_la_bops}}flagship{{/is_la_bops}}{{#is_la_bops}}la{{/is_la_bops}}{{/is_bops_order}}&utm_content=order-confirmation" target="_blank" style="text-decoration: none; color: #000;">
+<h2 style="margin: 0 0 10px 0; font-family: Apercu Pro, Calibri, sans-serif; font-size: 14px; line-height: 18px; color: #000000; font-weight: bold;">
+{{display_amount}}
+</h2>
+</a>
+</td>
+</tr>
+</table>
+</th>
+</tr>
+</table>
+</td>
+</tr>
+{{#items}}
+<tr>
+<td dir="ltr" width="100%" style="padding-top: 15px; background-color: #ffffff;">
+<table role="presentation" border="0" cellpadding="0" cellspacing="0" width="100%">
+<tr>
+<th valign="top" width="10%">
+<table role="presentation" border="0" cellpadding="0" cellspacing="0" width="100%">
+<tr>
+<td dir="ltr" valign="top" style="padding-left: 10px; text-align: left;">
+<a href="{{product_url}}?utm_medium=email&utm_source=mandrill&utm_campaign=items{{#is_bops_order}}_{{^is_la_bops}}flagship{{/is_la_bops}}{{#is_la_bops}}la{{/is_la_bops}}{{/is_bops_order}}&utm_content=order-confirmation" target="_blank">
+{{#image}}
+<img border="0" width="48" height="48" src="{{square_image}}">
+{{/image}}
+</a>
+</td>
+</tr>
+</table>
+</th>
+<th valign="top" width="90%" style="padding-left: 15px;">
+<table role="presentation" border="0" cellpadding="0" cellspacing="0" width="100%">
+<tr>
+<td dir="ltr" valign="top" style="text-align: left;" class="mobilepadding20">
+<a href="{{product_url}}?utm_medium=email&utm_source=mandrill&utm_campaign=items{{#is_bops_order}}_{{^is_la_bops}}flagship{{/is_la_bops}}{{#is_la_bops}}la{{/is_la_bops}}{{/is_bops_order}}&utm_content=order-confirmation" target="_blank" style="text-decoration: none; color: #000;">
+<p style="margin: 5px 0 0 0; font-family: Apercu Pro, Calibri, sans-serif; font-size: 14px; line-height: 18px; color: #000000; font-weight: bold;">
+{{name}}
+</p>
+{{#shade}}
+<p style="margin: 0 0 0 0; font-family: Apercu Pro, Calibri, sans-serif; font-size: 14px; line-height: 18px; color: #000000; font-weight: normal;">
+{{shade}}
+</p>
+{{/shade}}
+</a>
+</td>
+</tr>
+</table>
+</th>
+</tr>
+</table>
+</td>
+</tr>
+{{/items}}
+<tr>
+<td align="center" style="padding-top: 15px; padding-left: 5px;">
+<table width="99%" border="0" cellspacing="0" cellpadding="0">
+<tr>
+<td aria-hidden="true" height="1" style="font-size: 0px; line-height: 0px; background: #E6E6E6;">
+</td>
+</tr>
+</table>
+</td>
+</tr>
+{{/kits_data}}
+<!--end kits-->
+
+<!--start products-->
+{{#products_data}}
+<tr>
+<td dir="ltr" width="100%" style=" background-color: #ffffff; padding-top: 15px; padding-right: 15px;">
+<table role="presentation" border="0" cellpadding="0" cellspacing="0" width="100%">
+<tr>
+<th valign="top" width="10%">
+<table role="presentation" border="0" cellpadding="0" cellspacing="0" width="100%">
+<tr>
+<td dir="ltr" valign="top" style="padding-left: 10px; text-align: left;">
+<a href="{{product_url}}?utm_medium=email&utm_source=mandrill&utm_campaign=items{{#is_bops_order}}_{{^is_la_bops}}flagship{{/is_la_bops}}{{#is_la_bops}}la{{/is_la_bops}}{{/is_bops_order}}&utm_content=order-confirmation" target="_blank">
+{{#image}}
+<img border="0" width="48" height="48" src="{{square_image}}">
+{{/image}}
+</a>
+</td>
+</tr>
+</table>
+</th>
+<th valign="top" width="60%" style="padding-left: 15px;">
+<table role="presentation" border="0" cellpadding="0" cellspacing="0" width="100%">
+<tr>
+<td class="mobilepadding20" dir="ltr" valign="top" style="text-align: left;">
+<a href="{{product_url}}?utm_medium=email&utm_source=mandrill&utm_campaign=items{{#is_bops_order}}_{{^is_la_bops}}flagship{{/is_la_bops}}{{#is_la_bops}}la{{/is_la_bops}}{{/is_bops_order}}&utm_content=order-confirmation" target="_blank" style="text-decoration: none; color: #000;">
+<p style="margin: 5px 0 0 0; font-family: Apercu Pro, Calibri, sans-serif; font-size: 14px; line-height: 18px; color: #000000; font-weight: bold;">
+{{name}} <span style="color: #555555; font-weight: normal;">x {{item_quantity}}</span>
+</p>
+{{#shade}}
+<p style="margin: 0 0 0 0; font-family: Apercu Pro, Calibri, sans-serif; font-size: 14px; line-height: 18px; color: #000000; font-weight: normal;">
+{{shade}}
+</p>
+{{/shade}}
+</a>
+</td>
+</tr>
+</table>
+</th>
+<th valign="top" width="30%" style="padding-left: 15px;">
+<table role="presentation" border="0" cellpadding="0" cellspacing="0" width="100%">
+<tr>
+<td dir="ltr" valign="top" style="text-align: right; padding-top: 15px; padding-bottom: 0px;">
+<a href="{{product_url}}?utm_medium=email&utm_source=mandrill&utm_campaign=items{{#is_bops_order}}_{{^is_la_bops}}flagship{{/is_la_bops}}{{#is_la_bops}}la{{/is_la_bops}}{{/is_bops_order}}&utm_content=order-confirmation" target="_blank" style="text-decoration: none; color: #000;">
+<h2 style="margin: 0 0 10px 0; font-family: Apercu Pro, Calibri, sans-serif; font-size: 14px; line-height: 18px; color: #000000; font-weight: bold;">
+{{display_amount}}
+</h2>
+</a>
+</td>
+</tr>
+</table>
+</th>
+</tr>
+</table>
+</td>
+</tr>
+<tr>
+<td align="center" style="padding-top: 15px; padding-left: 5px;">
+<table width="99%" border="0" cellspacing="0" cellpadding="0">
+<tr>
+<td aria-hidden="true" height="1" style="font-size: 0px; line-height: 0px; background: #E6E6E6;">
+</td>
+</tr>
+</table>
+</td>
+</tr>
+{{/products_data}}
+<!--end products-->
+
+<!--start samples-->
+{{#samples_data}}
+<tr>
+<td dir="ltr" width="100%" style="background-color: #ffffff; padding-top: 15px; padding-right: 15px;">
+<table role="presentation" border="0" cellpadding="0" cellspacing="0" width="100%">
+<tr>
+<th valign="top" width="10%">
+<table role="presentation" border="0" cellpadding="0" cellspacing="0" width="100%">
+<tr>
+<td dir="ltr" valign="top" style="padding-left: 10px; text-align: left;">
+<a href="{{product_url}}?utm_medium=email&utm_source=mandrill&utm_campaign=items{{#is_bops_order}}_{{^is_la_bops}}flagship{{/is_la_bops}}{{#is_la_bops}}la{{/is_la_bops}}{{/is_bops_order}}&utm_content=order-confirmation" target="_blank">
+{{#image}}
+<img border="0" width="48" height="48" src="{{square_image}}">
+{{/image}}
+</a>
+</td>
+</tr>
+</table>
+</th>
+<th valign="top" width="60%" style="padding-left: 15px;">
+<table role="presentation" border="0" cellpadding="0" cellspacing="0" width="100%">
+<tr>
+<td class="mobilepadding20" dir="ltr" valign="top" style="text-align: left;">
+<a href="{{product_url}}?utm_medium=email&utm_source=mandrill&utm_campaign=items{{#is_bops_order}}_{{^is_la_bops}}flagship{{/is_la_bops}}{{#is_la_bops}}la{{/is_la_bops}}{{/is_bops_order}}&utm_content=order-confirmation" target="_blank" style="text-decoration: none; color: #000;">
+<p style="margin: 5px 0 0 0; font-family: Apercu Pro, Calibri, sans-serif; font-size: 14px; line-height: 18px; color: #000000; font-weight: bold;">
+{{name}} <span style="color: #555555; font-weight: normal;">x {{item_quantity}}</span>
+</p>
+{{#shade}}
+<p style="margin: 0 0 0 0; font-family: Apercu Pro, Calibri, sans-serif; font-size: 14px; line-height: 18px; color: #000000; font-weight: normal;">
+{{shade}}
+</p>
+{{/shade}}
+</a>
+</td>
+</tr>
+</table>
+</th>
+<th valign="top" width="30%" style="padding-left: 15px;">
+<table role="presentation" border="0" cellpadding="0" cellspacing="0" width="100%">
+<tr>
+<td dir="ltr" valign="top" style="text-align: right; padding-top: 15px; padding-bottom: 0px;">
+<a href="{{product_url}}?utm_medium=email&utm_source=mandrill&utm_campaign=items{{#is_bops_order}}_{{^is_la_bops}}flagship{{/is_la_bops}}{{#is_la_bops}}la{{/is_la_bops}}{{/is_bops_order}}&utm_content=order-confirmation" target="_blank" style="text-decoration: none; color: #000;">
+<h2 style="margin: 0 0 10px 0; font-family: Apercu Pro, Calibri, sans-serif; font-size: 14px; line-height: 18px; color: #000000; font-weight: bold;">
+{{display_amount}}
+</h2>
+</a>
+</td>
+</tr>
+</table>
+</th>
+</tr>
+</table>
+</td>
+</tr>
+<tr>
+<td align="center" style="padding-top: 15px; padding-left: 5px;">
+<table width="99%" border="0" cellspacing="0" cellpadding="0">
+<tr>
+<td aria-hidden="true" height="1" style="font-size: 0px; line-height: 0px; background: #E6E6E6;">
+</td>
+</tr>
+</table>
+</td>
+</tr>
+{{/samples_data}}
+<!--end samples-->
+
+<!--start gift cards-->
+{{#digital_items_data.any?}}
+{{#digital_items_data}}
+{{#is_print}}
+<tr>
+<td dir="ltr" width="100%" style=" background-color: #ffffff; padding-top: 15px; padding-right: 15px;">
+<table role="presentation" border="0" cellpadding="0" cellspacing="0" width="100%">
+<tr>
+<th valign="top" width="10%">
+<table role="presentation" border="0" cellpadding="0" cellspacing="0" width="100%">
+<tr>
+<td dir="ltr" valign="top" style="padding-left: 10px; text-align: left;">
+<a href="{{product_url}}?utm_medium=email&utm_source=mandrill&utm_campaign=items{{#is_bops_order}}_{{^is_la_bops}}flagship{{/is_la_bops}}{{#is_la_bops}}la{{/is_la_bops}}{{/is_bops_order}}&utm_content=order-confirmation" target="_blank">
+{{#image}}
+<img border="0" width="48" height="48" src="{{square_image}}">
+{{/image}}
+</a>
+</td>
+</tr>
+</table>
+</th>
+<th valign="top" width="60%" style="padding-left: 15px;">
+<table role="presentation" border="0" cellpadding="0" cellspacing="0" width="100%">
+<tr>
+<td class="mobilepadding20" dir="ltr" valign="top" style="text-align: left;">
+<a href="{{product_url}}?utm_medium=email&utm_source=mandrill&utm_campaign=items{{#is_bops_order}}_{{^is_la_bops}}flagship{{/is_la_bops}}{{#is_la_bops}}la{{/is_la_bops}}{{/is_bops_order}}&utm_content=order-confirmation" target="_blank" style="text-decoration: none; color: #000;">
+<p style="margin: 5px 0 0 0; font-family: Apercu Pro, Calibri, sans-serif; font-size: 14px; line-height: 18px; color: #000000; font-weight: bold;">
+{{name}} <span style="color: #555555; font-weight: normal;">x {{item_quantity}}</span>
+</p>
+<p style="margin: 0 0 0 0; font-family: Apercu Pro, Calibri, sans-serif; font-size: 14px; line-height: 18px; color: #000000; font-weight: normal;">
+To: {{recipient_name}}
+</p>
+</a>
+</td>
+</tr>
+</table>
+</th>
+<th valign="top" width="30%" style="padding-left: 15px;">
+<table role="presentation" border="0" cellpadding="0" cellspacing="0" width="100%">
+<tr>
+<td dir="ltr" valign="top" style="text-align: right; padding-top: 15px; padding-bottom: 0px;">
+<a href="{{product_url}}?utm_medium=email&utm_source=mandrill&utm_campaign=items{{#is_bops_order}}_{{^is_la_bops}}flagship{{/is_la_bops}}{{#is_la_bops}}la{{/is_la_bops}}{{/is_bops_order}}&utm_content=order-confirmation" target="_blank" style="text-decoration: none; color: #000;">
+<h2 style="margin: 0 0 10px 0; font-family: Apercu Pro, Calibri, sans-serif; font-size: 14px; line-height: 18px; color: #000000; font-weight: bold;">
+{{display_amount}}
+</h2>
+</a>
+</td>
+</tr>
+</table>
+</th>
+</tr>
+</table>
+</td>
+</tr>
+<tr>
+<td align="center" style="padding-top: 15px; padding-left: 5px;">
+<table width="99%" border="0" cellspacing="0" cellpadding="0">
+<tr>
+<td aria-hidden="true" height="1" style="font-size: 0px; line-height: 0px; background: #E6E6E6;">
+</td>
+</tr>
+</table>
+</td>
+</tr>
+{{/is_print}}
+{{^is_print}}
+<tr>
+<td dir="ltr" width="100%" style="padding-top: 15px; padding-right: 15px; background-color: #ffffff;">
+<table role="presentation" border="0" cellpadding="0" cellspacing="0" width="100%">
+<tr>
+<th valign="top" width="10%">
+<table role="presentation" border="0" cellpadding="0" cellspacing="0" width="100%">
+<tr>
+<td dir="ltr" valign="top" style="padding-left: 10px; text-align: left;">
+<a href="{{product_url}}?utm_medium=email&utm_source=mandrill&utm_campaign=items{{#is_bops_order}}_{{^is_la_bops}}flagship{{/is_la_bops}}{{#is_la_bops}}la{{/is_la_bops}}{{/is_bops_order}}&utm_content=order-confirmation" target="_blank">
+{{#image}}
+<img border="0" width="48" height="48" src="{{square_image}}">
+{{/image}}
+</a>
+</td>
+</tr>
+</table>
+</th>
+<th valign="top" width="60%" style="padding-left: 15px;">
+<table role="presentation" border="0" cellpadding="0" cellspacing="0" width="100%">
+<tr>
+<td class="mobilepadding20" dir="ltr" valign="top" style="text-align: left;">
+<a href="{{product_url}}?utm_medium=email&utm_source=mandrill&utm_campaign=items{{#is_bops_order}}_{{^is_la_bops}}flagship{{/is_la_bops}}{{#is_la_bops}}la{{/is_la_bops}}{{/is_bops_order}}&utm_content=order-confirmation" target="_blank" style="text-decoration: none; color: #000;">
+<p style="margin: 5px 0 0 0; font-family: Apercu Pro, Calibri, sans-serif; font-size: 14px; line-height: 18px; color: #000000; font-weight: bold;">
+{{name}} <span style="color: #555555; font-weight: normal;">x {{item_quantity}}</span>
+</p>
+<p style="margin: 0 0 0 0; font-family: Apercu Pro, Calibri, sans-serif; font-size: 14px; line-height: 18px; color: #000000; font-weight: normal;">
+<span style="color: #555555; font-weight: normal;">
+To: {{recipient_name}}
+<br>
+{{recipient_email}}
+<br>
+Deliver on: {{send_email_at}}
+</span>
+</p>
+</a>
+</td>
+</tr>
+</table>
+</th>
+<th valign="top" width="30%" style="padding-bottom: 20px; padding-left: 15px;">
+<table role="presentation" border="0" cellpadding="0" cellspacing="0" width="100%">
+<tr>
+<td dir="ltr" valign="top" style="text-align: right; padding-top: 15px; padding-bottom: 0px;">
+<a href="{{product_url}}?utm_medium=email&utm_source=mandrill&utm_campaign=items{{#is_bops_order}}_{{^is_la_bops}}flagship{{/is_la_bops}}{{#is_la_bops}}la{{/is_la_bops}}{{/is_bops_order}}&utm_content=order-confirmation" target="_blank" style="text-decoration: none; color: #000;">
+<h2 style="margin: 0 0 10px 0; font-family: Apercu Pro, Calibri, sans-serif; font-size: 14px; line-height: 18px; color: #000000; font-weight: bold;">
+{{display_amount}}
+</h2>
+</a>
+</td>
+</tr>
+</table>
+</th>
+</tr>
+</table>
+</td>
+</tr>
+<tr>
+<td align="center" style="padding-top: 15px; padding-left: 5px;">
+<table width="99%" border="0" cellspacing="0" cellpadding="0">
+<tr>
+<td aria-hidden="true" height="1" style="font-size: 0px; line-height: 0px; background: #E6E6E6;">
+</td>
+</tr>
+</table>
+</td>
+</tr>
+{{/is_print}}
+{{/digital_items_data}}
+{{/digital_items_data.any?}}
+<!--end gift cards-->
+
+<!--start summary-->
+<tr>
+<td dir="ltr" width="100%" style="background-color: #ffffff; padding-top: 15px; padding-right: 15px; padding-bottom: 5px;">
+<table role="presentation" border="0" cellpadding="0" cellspacing="0" width="100%">
+<tr>
+<th valign="top" width="70%">
+<table role="presentation" border="0" cellpadding="0" cellspacing="0" width="100%">
+<tr>
+<td dir="ltr" valign="top" style="padding: 3px; text-align: left;">
+<p style="margin: 0 0 3px 6px; font-family: Apercu Pro, Calibri, sans-serif; font-size: 14px; line-height: 18px; color: #000000; font-weight: normal;">
+Subtotal
+</p>
+</td>
+</tr>
+{{#adjustments_by_category}}
+{{#other}}
+<tr>
+<td dir="ltr" valign="top" style="padding: 3px; text-align: left;">
+<p style="margin: 0 0 3px 6px; font-family: Apercu Pro, Calibri, sans-serif; font-size: 14px; line-height: 18px; color: #000000; font-weight: normal;">
+{{label}}
+</p>
+</td>
+</tr>
+{{/other}}
+{{/adjustments_by_category}}
+{{#has_adjusted_promotion_cost}}
+<tr>
+<td dir="ltr" valign="top" style="padding: 3px; text-align: left;">
+<p style="margin: 0 0 3px 6px; font-family: Apercu Pro, Calibri, sans-serif; font-size: 14px; line-height: 18px; color: #000000; font-weight: normal;">
+Promotion
+</p>
+</td>
+</tr>
+{{/has_adjusted_promotion_cost}}
+{{#adjustments_by_category}}
+{{#tax}}
+<tr>
+<td dir="ltr" valign="top" style="padding: 3px; text-align: left;">
+<p style="margin: 0 0 3px 6px; font-family: Apercu Pro, Calibri, sans-serif; font-size: 14px; line-height: 18px; color: #000000; font-weight: normal;">
+{{label}}
+</p>
+</td>
+</tr>
+{{/tax}}
+{{#duty}}
+<tr>
+<td dir="ltr" valign="top" style="padding: 3px; text-align: left;">
+<p style="margin: 0 0 3px 6px; font-family: Apercu Pro, Calibri, sans-serif; font-size: 14px; line-height: 18px; color: #000000; font-weight: normal;">
+{{label}}
+</p>
+</td>
+</tr>
+{{/duty}}
+{{/adjustments_by_category}}
+<tr>
+<td dir="ltr" valign="top" style="padding: 3px; text-align: left;">
+<p style="margin: 0 0 3px 6px; font-family: Apercu Pro, Calibri, sans-serif; font-size: 14px; line-height: 18px; color: #000000; font-weight: normal;">
+Shipping
+</p>
+</td>
+</tr>
+<tr>
+<td dir="ltr" valign="top" style="padding: 3px; text-align: left;">
+<p style="margin: 0 0 3px 6px; font-family: Apercu Pro, Calibri, sans-serif; font-size: 14px; line-height: 18px; color: #000000; font-weight: bold;">
+Order Total
+</p>
+</td>
+</tr>
+</table>
+</th>
+<th valign="top" width="30%">
+<table role="presentation" border="0" cellpadding="0" cellspacing="0" width="100%">
+<tr>
+<td dir="ltr" valign="top" style="text-align: right;">
+<h2 style="margin: 0 0 10px 0; font-family: Apercu Pro, Calibri, sans-serif; font-size: 14px; line-height: 18px; color: #000000; font-weight: normal;">
+{{spree_money}}
+</h2>
+</td>
+</tr>
+{{#adjustments_by_category}}
+{{#other}}
+<tr>
+<td dir="ltr" valign="top" style="text-align: right;">
+<h2 style="margin: 0 0 10px 0; font-family: Apercu Pro, Calibri, sans-serif; font-size: 14px; line-height: 18px; color: #000000; font-weight: normal;">
+{{amount}}
+</h2>
+</td>
+</tr>
+{{/other}}
+{{/adjustments_by_category}}
+{{#has_adjusted_promotion_cost}}
+<tr>
+<td dir="ltr" valign="top" style="text-align: right;">
+<h2 style="margin: 0 0 10px 0; font-family: Apercu Pro, Calibri, sans-serif; font-size: 14px; line-height: 18px; color: #000000; font-weight: normal;">
+{{adjusted_promotion_cost_amount}}
+</h2>
+</td>
+</tr>
+{{/has_adjusted_promotion_cost}}
+{{#adjustments_by_category}}
+{{#tax}}
+<tr>
+<td dir="ltr" valign="top" style="text-align: right;">
+<h2 style="margin: 0 0 10px 0; font-family: Apercu Pro, Calibri, sans-serif; font-size: 14px; line-height: 18px; color: #000000; font-weight: normal;">
+{{amount}}
+</h2>
+</td>
+</tr>
+{{/tax}}
+{{#duty}}
+<tr>
+<td dir="ltr" valign="top" style="text-align: right;">
+<h2 style="margin: 0 0 10px 0; font-family: Apercu Pro, Calibri, sans-serif; font-size: 14px; line-height: 18px; color: #000000; font-weight: normal;">
+{{amount}}
+</h2>
+</td>
+</tr>
+{{/duty}}
+{{/adjustments_by_category}}
+<tr>
+<td dir="ltr" valign="top" style="text-align: right;">
+<h2 style="margin: 0 0 10px 0; font-family: Apercu Pro, Calibri, sans-serif; font-size: 14px; line-height: 18px; color: #000000; font-weight: normal;">
+{{adjusted_shipment_cost_amount}}
+</h2>
+</td>
+</tr>
+<tr>
+<td dir="ltr" valign="top" style="text-align: right;">
+<h2 style="margin: 0 0 10px 0; font-family: Apercu Pro, Calibri, sans-serif; font-size: 14px; line-height: 18px; color: #000000; font-weight: bold;">
+{{display_total}}
+</h2>
+</td>
+</tr>
+</table>
+</th>
+</tr>
+</table>
+</td>
+</tr>
+<!--end summary-->
+
+<!--divider-->
+<tr>
+<td align="center" style="padding-left: 5px; padding-bottom: 15px;">
+<table width="99%" border="0" cellspacing="0" cellpadding="0">
+<tr>
+<td aria-hidden="true" height="1" style="font-size: 0px; line-height: 0px; background: #E6E6E6;">
+</td>
+</tr>
+</table>
+</td>
+</tr>
+<!--end divider-->
+
+<!--payment methods-->
+{{#has_store_credit}}
+<tr>
+<td dir="ltr" width="100%" style="padding-right: 15px; background-color: #ffffff;">
+<table role="presentation" border="0" cellpadding="0" cellspacing="0" width="100%">
+<tr>
+<th valign="top" width="5%">
+<table role="presentation" border="0" cellpadding="0" cellspacing="0" width="100%">
+<tr>
+<td dir="ltr" valign="top" style="padding-left: 10px; text-align: left;">
+<img border="0" width="25" height="16" src="https://appboy-images.com/appboy/communication/assets/image_assets/images/5f6cd265274f33403f2f4325/original.png?1600967269">
+</td>
+</tr>
+</table>
+</th>
+<th class="mobilepadding30" valign="top" width="75%" style="padding-left: 15px;">
+<table role="presentation" border="0" cellpadding="0" cellspacing="0" width="100%">
+<tr>
+<td dir="ltr" valign="top" style="text-align: left;">
+<p style="margin: 0 0 0 0; font-family: Apercu Pro, Calibri, sans-serif; font-size: 14px; line-height: 18px; color: #000000; font-weight: normal;">
+Store Credit
+</p>
+</td>
+</tr>
+</table>
+</th>
+<th valign="top" width="20%" style="padding-bottom: 5px;">
+<table role="presentation" border="0" cellpadding="0" cellspacing="0" width="100%">
+<tr>
+<td dir="ltr" valign="top" style="text-align: right;">
+<h2 style="margin: 0 0 10px 0; font-family: Apercu Pro, Calibri, sans-serif; font-size: 14px; line-height: 18px; color: #000000; font-weight: normal;">
+{{store_credit}}
+</h2>
+</td>
+</tr>
+</table>
+</th>
+</tr>
+</table>
+</td>
+</tr>
+{{/has_store_credit}}
+{{#payment_method}}
+<tr>
+<td dir="ltr" width="100%" style="padding: 0 15px 10px 0px; background-color: #ffffff;">
+<table role="presentation" border="0" cellpadding="0" cellspacing="0" width="100%">
+<tr>
+<th valign="top" width="5%">
+<table role="presentation" border="0" cellpadding="0" cellspacing="0" width="100%">
+<tr>
+<td dir="ltr" valign="top" style="padding-left: 10px; text-align: left;">
+<img border="0" width="25" height="16" src="https://appboy-images.com/appboy/communication/assets/image_assets/images/5f8628ae3ef3d63f5c96bc8a/original.png?1602627758">
+</td>
+</tr>
+</table>
+</th>
+<th class="mobilepadding30" valign="top" width="75%" style="padding-left: 15px;">
+<table role="presentation" border="0" cellpadding="0" cellspacing="0" width="100%">
+<tr>
+<td dir="ltr" style="text-align: left;">
+<p style="margin: 0 0 0 0; font-family: Apercu Pro, Calibri, sans-serif; font-size: 14px; line-height: 18px; color: #000000; font-weight: normal;">
+{{payment_method}}{{#cc_last_four}} •••• {{cc_last_four}}{{/cc_last_four}}
+</p>
+</td>
+</tr>
+</table>
+</th>
+<th valign="top" width="20%">
+<table role="presentation" border="0" cellpadding="0" cellspacing="0" width="100%">
+<tr>
+<td dir="ltr" valign="top" style="text-align: right;">
+<h2 style="margin: 0 0 10px 0; font-family: Apercu Pro, Calibri, sans-serif; font-size: 14px; line-height: 18px; color: #000000; font-weight: normal;">
+{{total_after_store_credit}}
+</h2>
+</td>
+</tr>
+</table>
+</th>
+</tr>
+</table>
+</td>
+</tr>
+{{/payment_method}}
+<!--end payment methods-->
+
+{{#requires_shipment}}
+{{^is_bops_order}}
+<!--ship to-->
+<tr>
+<td class="mobilepadding0" align="left" style="background-color: #FAF4F4; padding: 20px;">
+<table border="0" cellpadding="0" cellspacing="0" role="presentation" width="100%">
+<tr>
+<td style="font-family: Apercu Pro, Calibri, sans-serif; font-size: 15px; line-height: 22px; color: #000000; text-align: left;" valign="middle">
+<a href="https://www.glossier.com/products?utm_medium=email&utm_source=mandrill&utm_campaign=shipto&utm_content=order-confirmation" target="_blank" style="text-decoration: none; color: #000;">
+<p class="mobile-marginlr20" style="font-size: 16px; margin-bottom: 0px; margin-top: 0px; font-weight: bold;">
+Ship to:
+</p>
+<p class="mobile-marginlr20" style="font-size: 16px; margin-bottom: 0px; margin-top: 0px;">
+{{ship_address}}
+</p>
+</a>
+</td>
+</tr>
+</table>
+</td>
+</tr>
+<tr>
+<td aria-hidden="true" height="10" style="font-size: 0px; line-height: 0px;">
+&nbsp;
+</td>
+</tr>
+<!--end ship to-->
+
+<!--shipping method-->
+<tr>
+<td class="mobilepadding0" align="left" style="background-color: #FAF7F2; padding: 20px;">
+<table border="0" cellpadding="0" cellspacing="0" role="presentation" width="100%">
+<tr>
+<td style="font-family: Apercu Pro, Calibri, sans-serif; font-size: 15px; line-height: 22px; color: #000000; text-align: left;" valign="middle">
+<a href="https://www.glossier.com/products?utm_medium=email&utm_source=mandrill&utm_campaign=shippingmethod&utm_content=order-confirmation" target="_blank" style="text-decoration: none; color: #000;">
+<p class="mobile-marginlr20" style="font-size: 16px; margin-bottom: 0px; margin-top: 0px; font-weight: bold;">
+Shipping method:
+</p>
+<p class="mobile-marginlr20" style="font-size: 16px; margin-bottom: 0px; margin-top: 0px;">
+{{shipping_method}}
+</p>
+</a>
+</td>
+</tr>
+</table>
+</td>
+</tr>
+<tr>
+<td aria-hidden="true" height="10" style="font-size: 0px; line-height: 0px;">
+&nbsp;
+</td>
+</tr>
+<!--end shipping method-->
+{{/is_bops_order}}
+{{#is_bops_order}}
+<tr>
+<td class="mobilepadding0" align="left" style="background-color: #FAF4F4; padding: 20px;">
+<table border="0" cellpadding="0" cellspacing="0" role="presentation" width="100%">
+<tr>
+<td style="font-family: Apercu Pro, Calibri, sans-serif; font-size: 15px; line-height: 22px; color: #000000; text-align: left;" valign="middle">
+<a href="https://www.glossier.com/locations?utm_medium=email&utm_source=mandrill&utm_campaign=pickup{{#is_bops_order}}_{{^is_la_bops}}flagship{{/is_la_bops}}{{#is_la_bops}}la{{/is_la_bops}}{{/is_bops_order}}&utm_content=order-confirmation" style="text-decoration: none; color: #000;">
+<p class="mobile-marginlr20" style="font-size: 16px; margin-bottom: 0px; margin-top: 0px; font-weight: bold;">
+{{^is_la_bops}}
+Flagship pickup:
+{{/is_la_bops}}
+{{#is_la_bops}}
+Glossier LA pickup:
+{{/is_la_bops}}
+</p>
+<p class="mobile-marginlr20" style="font-size: 16px; margin-bottom: 0px; margin-top: 0px;">
+{{ship_address}}
+</p>
+</a>
+</td>
+</tr>
+</table>
+</td>
+</tr>
+<tr>
+<td aria-hidden="true" height="10" style="font-size: 0px; line-height: 0px;">
+&nbsp;
+</td>
+</tr>
+<tr>
+<td class="mobilepadding0" align="left" style="background-color: #FAF7F2; padding: 20px;">
+<table border="0" cellpadding="0" cellspacing="0" role="presentation" width="100%">
+<tr>
+<td style="font-family: Apercu Pro, Calibri, sans-serif; font-size: 15px; line-height: 22px; color: #000000; text-align: left;" valign="middle">
+<a href="https://www.glossier.com/locations?utm_medium=email&utm_source=mandrill&utm_campaign=orderreadynotif{{#is_bops_order}}_{{^is_la_bops}}flagship{{/is_la_bops}}{{#is_la_bops}}la{{/is_la_bops}}{{/is_bops_order}}&utm_content=order-confirmation" style="text-decoration: none; color: #000;">
+<p class="mobile-marginlr20" style="font-size: 16px; margin-bottom: 0px; margin-top: 0px; font-weight: bold;">
+We'll let you know when your order is ready:
+</p>
+<p class="mobile-marginlr20" style="font-size: 16px; margin-bottom: 0px; margin-top: 0px;">
+{{^is_la_bops}}
+You'll receive an email when your order is ready (within 3 hours of placing the order, or the following day if the Flagship is closed). Pick up your order with the greeter at 123 Lafayette St. Present your email, receive your Glossier.
+{{/is_la_bops}}
+{{#is_la_bops}}
+You'll receive an email when your order is ready (within 3 hours of placing the order, or the following day if the store is closed). In order to pick up, head to the store, present your email to an editor in a pink jumpsuit, receive your Glossier.
+{{/is_la_bops}}
+</p>
+</a>
+</td>
+</tr>
+</table>
+</td>
+</tr>
+<tr>
+<td aria-hidden="true" height="10" style="font-size: 0px; line-height: 0px;">
+&nbsp;
+</td>
+</tr>
+{{/is_bops_order}}
+{{/requires_shipment}}
+
+<!--cancellation-->
+{{#self_cancellation}}
+{{#enabled}}
+<tr>
+<td class="mobilepadding0" align="left" style="background-color: #FAF4F4; padding: 20px;">
+<table border="0" cellpadding="0" cellspacing="0" role="presentation" width="100%">
+<tr>
+<td style="font-family: Apercu Pro, Calibri, sans-serif; font-size: 15px; line-height: 22px; color: #000000; text-align: left;" valign="middle">
+<a href="{{url}}?utm_medium=email&utm_source=mandrill&utm_campaign=cancelorder{{#is_bops_order}}_{{^is_la_bops}}flagship{{/is_la_bops}}{{#is_la_bops}}la{{/is_la_bops}}{{/is_bops_order}}&utm_content=order-confirmation" target="_blank" style="text-decoration: none; color: #000;">
+<p class="mobile-marginlr20" style="font-size: 16px; margin-bottom: 0px; margin-top: 0px; font-weight: bold;">
+Changed your mind?
+</p>
+<p class="mobile-marginlr20" style="font-size: 16px; margin-bottom: 0px; margin-top: 0px;">
+You can <span style="text-decoration: underline;">cancel your order</span> within one hour then place a new one - all without leaving your browser, or your couch!
+</p>
+</a>
+</td>
+</tr>
+</table>
+</td>
+</tr>
+<tr>
+<td aria-hidden="true" height="10" style="font-size: 0px; line-height: 0px;">
+&nbsp;
+</td>
+</tr>
+{{/enabled}}
+{{/self_cancellation}}
+<!--end cancellation-->
+
+<!--recommended products-->
+{{#show_recommended_products}}
+<tr>
+<td align="center" style="background-color: #FAFAFA;">
+<table border="0" cellpadding="0" cellspacing="0" role="presentation" width="100%">
+<tr>
+<td class="stack-column-center" style="padding-bottom: 5px; font-family: Apercu Pro, Calibri, sans-serif; font-size: 16px; line-height: 24px; color: #000000; text-align: left;" valign="middle">
+<h2 class="mobilemargin0" style="font-size: 18px; line-height: 20px; margin-left: 20px; margin-right: 40px; margin-bottom: 10px; margin-top: 20px;">
+Community Favorites
+</h2>
+</td>
+</tr>
+</table>
+</td>
+</tr>
+<tr>
+<td style="background-color: #FAFAFA; padding-left: 10px; padding-right: 10px;">
+<table role="presentation" cellspacing="0" cellpadding="0" border="0" width="100%">
+<tr>
+<th valign="top" width="33.33%" class="stack-column-center">
+<table role="presentation" cellspacing="0" cellpadding="0" border="0" width="100%">
+<tr>
+<td style="text-align: center;">
+<a href="https://www.glossier.com/products/lash-slick?utm_medium=email&utm_source=mandrill&utm_campaign=recommendations{{#is_bops_order}}_{{^is_la_bops}}flagship{{/is_la_bops}}{{#is_la_bops}}la{{/is_la_bops}}{{/is_bops_order}}&utm_content=order-confirmation" target="_blank">
+<img border="0" width="180" src="https://appboy-images.com/appboy/communication/assets/image_assets/images/5f7df96956029013f4248a3c/original.png?1602091369" style="background: #ffffff; font-family: Apercu Pro, Calibri, sans-serif; font-size: 15px; line-height: 15px; color: #000000;">
+</a>
+</td>
+</tr>
+<tr>
+<td style="font-family: Apercu Pro, Calibri, sans-serif; font-size: 16px; line-height: 22px; color: #000000; padding: 10px 10px 10px 10px; text-align: left;" class="center-on-narrow paddingbottomobile0 mobile-padl0">
+<a href="https://www.glossier.com/products/lash-slick?utm_medium=email&utm_source=mandrill&utm_campaign=recommendations{{#is_bops_order}}_{{^is_la_bops}}flagship{{/is_la_bops}}{{#is_la_bops}}la{{/is_la_bops}}{{/is_bops_order}}&utm_content=order-confirmation" target="_blank">
+<h2 class="mobilemargin0" style="margin: 0 0 3px 0; font-family: Apercu Pro, Calibri, sans-serif; font-size: 16px; line-height: 16px; color: #000000; font-weight: bold; line-height: 20px;">
+Lash Slick
+</h2>
+<p class="mobilemargin0" style="margin: 0 0 5px 0; font-size: 14px; line-height: 18px; font-weight: normal; color: #555555;">
+<em>film form mascara</em>
+</p>
+</a>
+</td>
+</tr>
+<tr>
+<td class="paddingtbottommbile26" style="padding: 0px 0px 10px; text-align: center;">
+<a href="https://www.glossier.com/products/lash-slick?utm_medium=email&utm_source=mandrill&utm_campaign=recommendationscta{{#is_bops_order}}_{{^is_la_bops}}flagship{{/is_la_bops}}{{#is_la_bops}}la{{/is_la_bops}}{{/is_bops_order}}&utm_content=order-confirmation" target="_blank">
+<img alt="shop now" border="0" width="180" height="43" src="https://appboy-images.com/appboy/communication/assets/image_assets/images/5f7df9883d519f3668198a09/original.png?1602091400">
+</a>
+</td>
+</tr>
+</table>
+</th>
+<th valign="top" width="33.33%" class="stack-column-center">
+<table role="presentation" cellspacing="0" cellpadding="0" border="0" width="100%">
+<tr>
+<td style="text-align: center;">
+<a href="https://www.glossier.com/products/cloud-paint?utm_medium=email&utm_source=mandrill&utm_campaign=recommendations{{#is_bops_order}}_{{^is_la_bops}}flagship{{/is_la_bops}}{{#is_la_bops}}la{{/is_la_bops}}{{/is_bops_order}}&utm_content=order-confirmation" target="_blank">
+<img border="0" width="180" src="https://appboy-images.com/appboy/communication/assets/image_assets/images/5f7df9693d519f3668198a06/original.png?1602091369" style="background: #ffffff; font-family: Apercu Pro, Calibri, sans-serif; font-size: 15px; line-height: 15px; color: #000000;">
+</a>
+</td>
+</tr>
+<tr>
+<td style="font-family: Apercu Pro, Calibri, sans-serif; font-size: 16px; line-height: 22px; color: #000000; padding: 10px 10px 10px 10px; text-align: left;" class="center-on-narrow paddingbottomobile0 mobile-padl0">
+<a href="https://www.glossier.com/products/cloud-paint?utm_medium=email&utm_source=mandrill&utm_campaign=recommendations{{#is_bops_order}}_{{^is_la_bops}}flagship{{/is_la_bops}}{{#is_la_bops}}la{{/is_la_bops}}{{/is_bops_order}}&utm_content=order-confirmation" target="_blank">
+<h2 style="margin: 0 0 3px 0; font-family: Apercu Pro, Calibri, sans-serif; font-size: 16px; line-height: 16px; color: #000000; font-weight: bold; line-height: 20px;">
+Cloud Paint
+</h2>
+<p style="margin: 0 0 5px 0; font-size: 14px; line-height: 18px; font-weight: normal; color: #555555;">
+<em>seamless cheek color</em>
+</p>
+</a>
+</td>
+</tr>
+<tr>
+<td class="paddingtbottommbile26" style="padding: 0px 0px 10px; text-align: center;">
+<a href="https://www.glossier.com/products/cloud-paint?utm_medium=email&utm_source=mandrill&utm_campaign=recommendationscta{{#is_bops_order}}_{{^is_la_bops}}flagship{{/is_la_bops}}{{#is_la_bops}}la{{/is_la_bops}}{{/is_bops_order}}&utm_content=order-confirmation" target="_blank">
+<img alt="shop now" border="0" width="180" height="43" src="https://appboy-images.com/appboy/communication/assets/image_assets/images/5f7df9883d519f3668198a09/original.png?1602091400">
+</a>
+</td>
+</tr>
+</table>
+</th>
+<th valign="top" width="33.33%" class="stack-column-center">
+<table role="presentation" cellspacing="0" cellpadding="0" border="0" width="100%">
+<tr>
+<td style="text-align: center;">
+<a href="https://www.glossier.com/products/invisible-shield?utm_medium=email&utm_source=mandrill&utm_campaign=recommendations{{#is_bops_order}}_{{^is_la_bops}}flagship{{/is_la_bops}}{{#is_la_bops}}la{{/is_la_bops}}{{/is_bops_order}}&utm_content=order-confirmation" target="_blank">
+<img border="0" width="180" src="https://appboy-images.com/appboy/communication/assets/image_assets/images/5f7df969ef5b9f375a8b2bb9/original.png?1602091369" style="background: #ffffff; font-family: Apercu Pro, Calibri, sans-serif; font-size: 15px; line-height: 15px; color: #000000;">
+</a>
+</td>
+</tr>
+<tr>
+<td style="font-family: Apercu Pro, Calibri, sans-serif; font-size: 16px; line-height: 22px; color: #000000; padding: 10px 10px 10px 10px; text-align: left;" class="center-on-narrow paddingbottomobile0 mobile-padl0">
+<a href="https://www.glossier.com/products/invisible-shield?utm_medium=email&utm_source=mandrill&utm_campaign=recommendations{{#is_bops_order}}_{{^is_la_bops}}flagship{{/is_la_bops}}{{#is_la_bops}}la{{/is_la_bops}}{{/is_bops_order}}&utm_content=order-confirmation" target="_blank">
+<h2 style="margin: 0 0 3px 0; font-family: Apercu Pro, Calibri, sans-serif; font-size: 16px; line-height: 16px; color: #000000; font-weight: bold; line-height: 20px;">
+Invisible Shield
+</h2>
+<p style="margin: 0 0 5px 0; font-size: 14px; line-height: 18px; font-weight: normal; color: #555555;">
+<em>daily sunscreen+</em>
+</p>
+</a>
+</td>
+</tr>
+<tr>
+<td class="paddingtbottommbile26" style="padding: 0px 0px 10px; text-align: center;">
+<a href="https://www.glossier.com/products/invisible-shield?utm_medium=email&utm_source=mandrill&utm_campaign=recommendationscta{{#is_bops_order}}_{{^is_la_bops}}flagship{{/is_la_bops}}{{#is_la_bops}}la{{/is_la_bops}}{{/is_bops_order}}&utm_content=order-confirmation" target="_blank">
+<img alt="shop now" border="0" swidth="180" height="43" src="https://appboy-images.com/appboy/communication/assets/image_assets/images/5f7df9883d519f3668198a09/original.png?1602091400">
+</a>
+</td>
+</tr>
+</table>
+</th>
+</tr>
+</table>
+</td>
+</tr>
+<tr>
+<td class="hideInMbbile" bgcolor="#fafafa" aria-hidden="true" height="12" style="font-size: 0px; line-height: 0px;">
+&nbsp;
+</td>
+</tr>
+<tr>
+<td aria-hidden="true" height="10" style="font-size: 0px; line-height: 0px;">
+&nbsp;
+</td>
+</tr>
+{{/show_recommended_products}}
+<!--end recommended products -->
+
+<!--referral-->
+<tr>
+<td class="mobilepadding0" align="left" style="background-color: #FAF7F2; padding: 20px;">
+<table border="0" cellpadding="0" cellspacing="0" role="presentation" width="100%">
+<tr>
+<td style="font-family: Apercu Pro, Calibri, sans-serif; font-size: 15px; line-height: 22px; color: #000000; text-align: left;" valign="middle">
+<a href="https://www.glossier.com/account/referral?utm_medium=email&utm_source=mandrill&utm_campaign=referral{{#is_bops_order}}_{{^is_la_bops}}flagship{{/is_la_bops}}{{#is_la_bops}}la{{/is_la_bops}}{{/is_bops_order}}&utm_content=order-confirmation" target="_blank" style="font-weight: bold; color: #000000; text-decoration: none;">
+<p class="mobile-marginlr20" style="font-size: 16px; margin-bottom: 0px; margin-top: 0px; font-weight: bold;">
+Want {{referrer_reward_amount}} off your next order? <span style="text-decoration: underline;">Here's how</span>.
+</p>
+</a>
+</td>
+</tr>
+</table>
+</td>
+</tr>
+<!--end referral-->
+</table>
+
+<table align="center" role="presentation" cellspacing="0" cellpadding="0" border="0" width="600" style="margin: auto; background-color: #FFFFFF" class="email-container">
+<!--faq-->
+<tr>
+<td style="padding: 20px; font-family: Apercu Pro, Calibri, sans-serif; font-size: 14px; line-height: 20px; text-align: left; color: #555555;">
+You can always keep track of your order status in the <a href="https://www.glossier.com/account/orders?utm_medium=email&utm_source=mandrill&utm_campaign=accountsection{{#is_bops_order}}_{{^is_la_bops}}flagship{{/is_la_bops}}{{#is_la_bops}}la{{/is_la_bops}}{{/is_bops_order}}&utm_content=order-confirmation" target="_blank" style="color: #555555; text-decoration: underline;">Glossier.com Account Section</a>.
+<br>
+<br>
+If you have any questions, concerns, or want to share your thoughts, email us a <a href="mailto:gteam@glossier.com" style="color: #555555; text-decoration: underline;">gTEAM@glossier.com</a>. If you need to make changes, please contact us within an hour of placing your order with the requested change so we can better assist you.
+<br>
+<br>
+Need to make a return? Just include your order number (#GLO) and the item(s) you would like to return, and we'll take care of the rest!
+</td>
+</tr>
+<tr>
+<td aria-hidden="true" height="15" style="font-size: 0px; line-height: 0px; background-color: #FFFFFF;">
+&nbsp;
+</td>
+</tr>
+<tr>
+<td align="center" style="background-color: #FFFFFF;">
+<a href="https://www.glossier.com/products?utm_medium=email&utm_source=mandrill&utm_campaign=footer{{#is_bops_order}}_{{^is_la_bops}}flagship{{/is_la_bops}}{{#is_la_bops}}la{{/is_la_bops}}{{/is_bops_order}}&utm_content=order-confirmation" target="_blank">
+<img class="g-img" border="0" width="54" height="25" src="https://appboy-images.com/appboy/communication/assets/image_assets/images/5db9c5b7d21f795daa4654c5/original.png?1572455863" style="font-family: sans-serif; font-size: 15px; line-height: 15px; color: #000000; margin: auto; display: block;">
+</a>
+</td>
+</tr>
+<!--end faq-->
+
+<!--footer-->
+<tr>
+<td style="padding: 20px; font-family: Apercu Pro, Calibri, sans-serif; font-size: 10px; line-height: 14px; text-align: center; color: #000001;">
+<br>
+233 Spring Street, Floor 10E
+<br>
+New York, NY 10013
+<br>
+<br>
+New Street Square
+<br>
+London,
+<br>
+EC4A 3TW
+<br>
+<br>
+To learn how we process data and monitor communications
+<br>
+please see our <a href="https://www.glossier.com/privacy-policy?utm_medium=email&utm_source=mandrill&utm_campaign=footer{{#is_bops_order}}_{{^is_la_bops}}flagship{{/is_la_bops}}{{#is_la_bops}}la{{/is_la_bops}}{{/is_bops_order}}&utm_content=order-confirmation" target="blank" style="text-align: center; color: #000000; text-decoration: underline;">Privacy Policy</a> and <a href="https://www.glossier.com/terms-of-use?utm_medium=email&utm_source=mandrill&utm_campaign=footer{{#is_bops_order}}_{{^is_la_bops}}flagship{{/is_la_bops}}{{#is_la_bops}}la{{/is_la_bops}}{{/is_bops_order}}&utm_content=order-confirmation" target="blank" style="text-align: center; color: #000000; text-decoration: underline;">Terms of Use</a>
+<br>
+<br>
+<br>
+</td>
+</tr>
+<!--end footer-->
+</table>
+{{/order_data}}
+
+<!--[if mso | IE]>
+</td>
+</tr>
+</table>
+<![endif]-->
+
+</center>
+</body>

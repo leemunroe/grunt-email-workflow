@@ -1,0 +1,201 @@
+<body data-force-encoding="✓">
+  <table align="center" border="0" cellpadding="0" cellspacing="0" width="600">
+    <tr>
+      <td height="20"></td>
+    </tr>
+    <tr>
+      <td align="center">
+        <a href="https://www.glossier.com/products?utm_medium=email&utm_source=mandrill&utm_campaign=glogo&utm_content=order-cancellation">
+        <img src="https://glossier-com.s3.amazonaws.com/mailers/images/logo.jpg" width="25"/>
+        </a>
+      </td>
+    </tr>
+    <tr>
+      <td height="40"></td>
+    </tr>
+    <tr>
+      <td align="center">
+        <a href="https://www.glossier.com/products?utm_medium=email&utm_source=mandrill&utm_campaign=header&utm_content=order-cancellation" style="font-family:Apercu Pro,-apple-system,sans-serif;text-decoration: none; color: #222;">
+        <h1 style="border-bottom: 4px solid; padding-bottom: 8px; display: inline-block; font-size: 30px;">Order Cancellation</h1>
+        </a>
+      </td>
+    </tr>
+    <tr>
+      <td height="20"></td>
+    </tr>
+    <tr>
+      <td align="center" style="font-family:Apercu Pro,-apple-system,sans-serif;font-size: 16px; line-height: 24px;">
+        Your order has been canceled. Please retain this information for your records.
+      </td>
+    </tr>
+    <tr>
+      <td height="20"></td>
+    </tr>
+    {{#order_data}}
+    <tr>
+      <td align="center" style="font-family:Apercu Pro,-apple-system,sans-serif;font-size: 16px; line-height 24px;">
+        Order Number: <strong>{{number}}</strong>
+      </td>
+    </tr>
+    {{/order_data}}
+    <tr>
+      <td height="20"></td>
+    </tr>
+    <tr>
+      <td style="padding: 20px 0; font-family:Apercu Pro,-apple-system,sans-serif;font-size: 16px; line-height: 24px;">
+        <table border="0" cellpadding="0" cellspacing="0" width="600">
+          <tr>
+            <th style="font-family:Apercu Pro,-apple-system,sans-serif;font-size: 12x; padding-bottom: 10px; border-bottom: 1px #e5e5e5 solid; text-align: left;">
+              Your Order
+            </th>
+            <th style="font-family:Apercu Pro,-apple-system,sans-serif;font-size: 12x; padding-bottom: 10px; border-bottom: 1px #e5e5e5 solid; text-align: left;">
+              Product Name
+            </th>
+            <th style="font-family:Apercu Pro,-apple-system,sans-serif;font-size: 12x; padding-bottom: 10px; border-bottom: 1px #e5e5e5 solid; text-align: left;">
+              Quantity
+            </th>
+            <th style="font-family:Apercu Pro,-apple-system,sans-serif;font-size: 12x; padding-bottom: 10px; border-bottom: 1px #e5e5e5 solid; text-align: right;">
+              Subtotal
+            </th>
+          </tr>
+          {{#shipments}}
+            {{#items_data}}
+              <tr style="border-bottom: 1px #e5e5e5 solid; font-weight: 700;">
+                {{#image}}
+                  <td class="image" height="130" width="150" style="border-bottom: 1px #e5e5e5 solid; padding: 15px 0; text-align: left;">
+                    <img width="75" src="{{image}}" />
+                  </td>
+                {{/image}}
+                {{^image}}
+                  <td class height="130" width="150" style="border-bottom: 1px #e5e5e5 solid;">
+                    <img src="http://glossier.s3.amazonaws.com/mailers/images/logo.jpg" alt="" width="50" height= "75">
+                  </td>
+                {{/image}}
+                  <td class="name" style="border-bottom: 1px #e5e5e5 solid;">
+                    <a href="{{product_url}}?utm_medium=email&utm_source=mandrill&utm_campaign=items&utm_content=order-cancellation" style="color: #00F;" target="_blank">
+                    {{name}}
+                    </a>
+                    <div class="fs-12">
+                      {{shade}}</div>
+                      {{#kit_title}}
+                        <div class="fs-12">
+                          included in {{kit_title}} set
+                        </div>
+                      {{/kit_title}}
+                    </div>
+                  </td>
+                  <td class="quantity fs-14" style="border-bottom: 1px #e5e5e5 solid; text-align: center;">
+                    {{item_quantity}}
+                  </td>
+                  <td class="price fs-14" style="border-bottom: 1px #e5e5e5 solid;" align="right">
+                    {{display_amount}}
+                  </td>
+              </tr>
+            {{/items_data}}
+          {{/shipments}}
+          <tr>
+            <td height="20"></td>
+          </tr>
+
+          {{#order_data}}
+          <tr width="300" style="text-align: right;">
+            <td colspan="3" height="25"> Subtotal </td>
+            <td align="right">
+              {{spree_money}}
+            </td>
+          </tr>
+          {{#adjusted_promotion_cost}}
+          <tr width="300" style="text-align: right;">
+              <td colspan="3" height="25"> Promotion</td>
+              <td align="right">
+                {{adjusted_promotion_cost_amount}}
+              </td>
+            </tr>
+          {{/adjusted_promotion_cost}}
+          <tr width="300" style="text-align: right;">
+            <td colspan="3" height="25"> Shipping</td>
+            <td>
+              {{adjusted_shipment_cost_amount}}
+            </td>
+          </tr>
+          {{/order_data}}
+          {{#adjustment_data}}
+            <tr width="300" style="text-align: right;">
+              <td colspan="3" height="25"> {{label}}</td>
+              <td align="right">
+                {{amount}}
+              </td>
+            </tr>
+          {{/adjustment_data}}
+          {{#order_data}}
+            <tr width="300" style="text-align: right; font-weight: 700;">
+              <td colspan="3" height="25">
+                <strong> Total</strong>
+              </td>
+              <td align="right">
+                <strong> {{display_total}}</strong>
+              </td>
+            </tr>
+            {{#has_store_credit}}
+              <tr>
+                <td colspan="3" height="25">
+                  <strong> Glossier Credit</strong>
+                </td>
+                <td align="right">
+                  <strong> {{store_credit}}</strong>
+                </td>
+              </tr>
+              <tr>
+                <td height="20"></td>
+              </tr>
+              <tr>
+                <td colspan="3" height="25">
+                  <strong> Adjusted Total</strong>
+                </td>
+                <td align="right">
+                  <strong> {{total_after_store_credit}}</strong>
+                </td>
+              </tr>
+            {{/has_store_credit}}
+          {{/order_data}}
+        </table>
+      </td>
+    </tr>
+    <tr>
+      <td height="20"></td>
+    </tr>
+    <tr>
+      <td align="center" style="font-family:Apercu Pro,-apple-system,sans-serif;font-size: 16px; line-height 24px;"> 
+        If you have any questions, concerns, or want to share your thoughts,<br/>
+        email us at <a href="mailto:{{mail_from_email}}">gTEAM@glossier.com</a>.
+     </td>
+      </tr>
+    <tr>
+      <td height="40"></td>
+    </tr>
+    <tr>
+      <td align="center">
+        <a href="https://www.glossier.com/products?utm_medium=email&utm_source=mandrill&utm_campaign=footer&utm_content=order-cancellation">
+        <img src="https://glossier-com.s3.amazonaws.com/mailers/images/icons.png" width="60"/>
+        </a>
+      </td>
+    </tr>
+
+   <tr>
+     <td height="40" style="font-family:Apercu Pro,-apple-system,sans-serif;margin-top: 5px; text-align: center; font-size: 11px;">
+     <br />
+     <b>Glossier</b><br>
+       233 Spring Street, Floor 10, New York, NY 10013<br />
+       5 New Street Square, London, EC4A 3TW<br>
+       <a href="https://www.glossier.com?utm_medium=email&utm_source=mandrill&utm_campaign=footer&utm_content=order-cancellation">www.glossier.com</a> // <a href="mailto:gteam@glossier.com" target="_top">gTEAM@glossier.com</a><br />
+     <br />
+   </tr>
+       <tr>
+      <td style="font-family:Apercu Pro,-apple-system,sans-serif;margin-top: 5px; text-align: center; font-size: 11px;">
+        <a href="https://glossier.com/privacy-policy?utm_medium=email&utm_source=mandrill&utm_campaign=footer&utm_content=order-cancellation">Privacy Policy</a> | 
+        <a href="https://glossier.com/terms-of-use?utm_medium=email&utm_source=mandrill&utm_campaign=footer&utm_content=order-cancellation">Terms of Use</a>
+      </td>
+    </tr>
+ <td height="20"></td>
+  </table>
+ </body>
