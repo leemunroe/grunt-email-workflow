@@ -1,0 +1,250 @@
+<body data-force-encoding="✓">
+  <table align="center" border="0" cellpadding="0" cellspacing="0" width="600">
+    <tr>
+      <td height="40" style="margin-top: 5px; text-align: center; font-size: 13px;">
+        <a href="https://www.glossier.com/account/store-credit?utm_medium=email&utm_source=mandrill&utm_campaign=referral&utm_content={{#is_la_bops}}shipping-pickup-la{{/is_la_bops}}{{^is_la_bops}}shipping-pickup-flagship{{/is_la_bops}}" target="_blank" style="text-decoration: underline;">
+          Want $10 off your next order? Here’s how.
+        </a>
+      </td>
+    </tr>
+    <tr>
+      <td height="40"></td>
+    </tr>
+    <tr>
+      <td align="center">
+        <a href="https://glossier.com/products?utm_medium=email&utm_source=mandrill&utm_campaign=glogo&utm_content={{#is_la_bops}}shipping-pickup-la{{/is_la_bops}}{{^is_la_bops}}shipping-pickup-flagship{{/is_la_bops}}">
+        <img src="https://glossier-com.s3.amazonaws.com/mailers/images/logo.jpg" width="25">
+        </a>
+      </td>
+    </tr>
+    <tr>
+      <td height="40"></td>
+    </tr>
+    <tr>
+      <td align="center">
+        <a href="https://www.glossier.com/products?utm_medium=email&utm_source=mandrill&utm_campaign=header&utm_content={{#is_la_bops}}shipping-pickup-la{{/is_la_bops}}{{^is_la_bops}}shipping-pickup-flagship{{/is_la_bops}}" style="text-decoration: none; color: #222;">
+        <h1 style="border-bottom: 4px solid; padding-bottom: 8px; display: inline-block; font-size: 30px;">
+          Your Order is Ready
+        </h1>
+        </a>
+      </td>
+    </tr>
+    <tr>
+      <td height="20"></td>
+    </tr>
+    <tr>
+      {{#is_la_bops}}
+        <td style="font-size: 16px; line-height: 24px; text-align: center;">
+          Your order is ready—go ahead and clear off some shelf space. In order to receive your Glossier, check in with the greeter at the front door. Store hours are Monday-Saturday from 10am-7pm and Sunday from 11am-7pm.  Be sure to bring this email to pick up your order. If your order is not picked up after 7 days, your order will be canceled and you will receive a full refund. See you soon!
+        </td>
+      {{/is_la_bops}}
+      {{^is_la_bops}}
+        <td style="font-size: 16px; line-height: 24px; text-align: center;">
+          Your order is ready at the pickup window at 123 Lafayette Street—go ahead and clear off some shelf space. Flagship hours are Monday-Saturday from 11am-9pm and Sunday from 11am-8pm. Be sure to bring this email to pick up your order. If your order is not picked up after 7 days, your order will be canceled and you will receive a full refund. See you soon!
+        </td>
+      {{/is_la_bops}}
+    </tr>
+    <tr>
+      <td height="40">
+      </td>
+    </tr>
+    <tr>
+      <td style="font-size: 16px; line-height: 24px;">
+        <table border="0" cellpadding="0" cellspacing="0" width="600">
+          <tr>
+            <th style="font-size: 12px; padding-bottom: 10px; border-bottom: 1px #e5e5e5 solid; text-align: left;">
+              Your Order
+            </th>
+            <th style="font-size: 12px; padding-bottom: 10px; border-bottom: 1px #e5e5e5 solid; text-align: left;">
+              Product Name
+            </th>
+            <th style="font-size: 12px; padding-bottom: 10px; border-bottom: 1px #e5e5e5 solid; text-align: left;">
+              Quantity
+            </th>
+            <th style="font-size: 12px; padding-bottom: 10px; border-bottom: 1px #e5e5e5 solid; text-align: right;">
+              Subtotal
+            </th>
+          </tr>
+          {{#shipments}}
+            {{#items_data}}
+              <tr style="border-bottom: 1px #e5e5e5 solid; font-weight: bold;">
+                {{#image}}
+                  <td class="image" height="130" width="150" style="border-bottom: 1px #e5e5e5 solid; padding: 15px 0; text-align: left;">
+                    <img src="{{image}}" width="75"/>
+                  </td>
+                {{/image}}
+                {{^image}}
+                  <td class height="130" width="150" style="border-bottom: 1px #e5e5e5 solid;">
+                    <img src="http://glossier.s3.amazonaws.com/mailers/images/logo.jpg" alt="logo" width="50" height= "75">
+                  </td>
+                {{/image}}
+                  <td class="name" style="border-bottom: 1px #e5e5e5 solid;">
+                    <a href="{{product_url}}?utm_medium=email&utm_source=mandrill&utm_campaign=items&utm_content={{#is_la_bops}}shipping-pickup-la{{/is_la_bops}}{{^is_la_bops}}shipping-pickup-flagship{{/is_la_bops}}" style="color: #0000FF;" target="_blank">
+                    {{name}}
+                    </a>
+                    <div class="fs-12" style="font-style: italic; font-weight: lighter;">
+                      {{shade}}
+                      <br /><span class="fs-12">{{stock_information}}</span>
+                    </div>
+                  </td>
+                  <td class="quantity fs-14" style="border-bottom: 1px #e5e5e5 solid; text-align: center;">
+                    {{item_quantity}}
+                  </td>
+                  <td class="price fs-14" style="border-bottom: 1px #e5e5e5 solid;" align="right">
+                    {{display_amount}}
+                  </td>
+              </tr>
+            {{/items_data}}
+          {{/shipments}}
+          <tr>
+            <td height="20"></td>
+          </tr>
+
+        {{#order_data}}
+          <tr width="300" style="text-align: right;">
+            <td colspan="3" height="25"> Subtotal </td>
+            <td align="right">
+              {{spree_money}}
+            </td>
+          </tr>
+          {{#has_adjusted_promotion_cost}}
+          <tr width="300" style="text-align: right;">
+              <td colspan="3" height="25"> Promotion</td>
+              <td align="right">
+                {{adjusted_promotion_cost_amount}}
+              </td>
+            </tr>
+          {{/has_adjusted_promotion_cost}}
+          <tr width="300" style="text-align: right;">
+            <td colspan="3" height="25"> Shipping</td>
+            <td>
+              {{adjusted_shipment_cost_amount}}
+            </td>
+          </tr>
+          {{/order_data}}
+          {{#adjustment_data}}
+            <tr width="300" style="text-align: right;">
+              <td colspan="3" height="25"> {{label}}</td>
+              <td align="right">
+                {{amount}}
+              </td>
+            </tr>
+          {{/adjustment_data}}
+          {{#order_data}}
+            <tr width="300" style="text-align: right; font-weight: bold;">
+              <td colspan="3" height="25">
+                <strong> Total</strong>
+              </td>
+              <td align="right">
+                <strong> {{display_total}}</strong>
+              </td>
+            </tr>
+            {{#has_store_credit}}
+              <tr>
+                <td colspan="3" height="25">
+                  <strong> Glossier Credit</strong>
+                </td>
+                <td align="right">
+                  <strong> {{store_credit}}</strong>
+                </td>
+              </tr>
+              <tr>
+                <td height="20"></td>
+              </tr>
+              <tr>
+                <td colspan="3" height="25">
+                  <strong> Adjusted Total</strong>
+                </td>
+                <td align="right">
+                  <strong> {{total_after_store_credit}}</strong>
+                </td>
+              </tr>
+            {{/has_store_credit}}
+          </table>
+        </td>
+      </tr>
+      <tr>
+        <td height="30"></td>
+      </tr>
+      {{#requires_shipment}}
+        <tr>
+          <td height="10">
+          </td>
+        </tr>
+        <tr style="background-color: #faf9f7;">
+          <td class="bottom-blocks" style="font-size: 12px; line-height: 20px; padding: 20px">
+            <div style="font-weight: bold; font-size: 14px;">
+              {{#is_la_bops}}
+                Glossier LA Pickup:
+              {{/is_la_bops}}
+              {{^is_la_bops}}
+                Flagship Pickup:
+              {{/is_la_bops}}
+            </div>
+            {{ship_address}}
+          </td>
+        </tr>
+      {{/requires_shipment}}
+    {{/order_data}}
+    <tr>
+      <td height="40"></td>
+    </tr>
+    <tr>
+      <td height="20"></td>
+    </tr>
+    <tr>
+      <td align="center" style="font-size: 15px; line-height: 24px;">
+        If you have any questions, concerns, or want to share your thoughts, <br/>
+        email us at <a href="mailto:{{mail_from_email}}" style="color: #0000FF; font-weight: bold; text-decoration: none;">gTEAM@glossier.com</a>.
+      </td>
+    </tr>
+    <tr>
+      <td height="20"></td>
+    </tr>
+    <tr>
+      <td align="center" style="font-size: 15px; line-height: 24px;">
+        {{#is_la_bops}}
+          Need to make a return? Come see us in person at Glossier LA or email gTEAM@glossier.com for an online return within 30 days of purchase. You’ll need your order number (#GLO) and the item(s) you’d like to return. We’ll take care of the rest!
+        {{/is_la_bops}}
+        {{^is_la_bops}}
+          Need to make a return? Come see us in person at the Flagship or email gTEAM@glossier.com for an online return within 30 days of purchase. You’ll need your order number (#GLO) and the item(s) you’d like to return. We’ll take care of the rest!
+        {{/is_la_bops}}
+      </td>
+      </tr>
+    <tr>
+      <td height="40"></td>
+    </tr>
+    <tr>
+      <td align="center">
+        <a href="https://www.glossier.com/products?utm_medium=email&utm_source=mandrill&utm_campaign=footer&utm_content={{#is_la_bops}}shipping-pickup-la{{/is_la_bops}}{{^is_la_bops}}shipping-pickup-flagship{{/is_la_bops}}">
+        <img src="https://glossier-com.s3.amazonaws.com/mailers/images/icons.png" width="60"/>
+        </a>
+      </td>
+    </tr>
+
+    <tr>
+      <td height="40" style="margin-top: 5px; text-align: center; font-size: 11px;">
+      <br />
+      {{#is_la_bops}}
+        <b>Glossier LA</b><br>
+        8407 Melrose Place, Los Angeles, CA 90069<br />
+      {{/is_la_bops}}
+      {{^is_la_bops}}
+        <b>Glossier Flagship</b><br>
+        123 Lafayette Street, New York, NY 10013<br />
+       {{/is_la_bops}}
+       <a href="https://www.glossier.com?utm_medium=email&utm_source=mandrill&utm_campaign=footer&utm_content={{#is_la_bops}}shipping-pickup-la{{/is_la_bops}}{{^is_la_bops}}shipping-pickup-flagship{{/is_la_bops}}">www.glossier.com</a> // <a href="mailto:gteam@glossier.com" target="_top">gteam@glossier.com</a><br />
+      <br />
+    </tr>
+ <td height="20"></td>
+  </table>
+ </body>
+</center>
+</td>
+
+    </tr>
+    <tr>
+      <td height="30"></td>
+    </tr>
+  </table>
+ </body>
