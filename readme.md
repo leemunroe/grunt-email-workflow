@@ -40,7 +40,6 @@ Clone this repo, cd to the directory, run `nvm use` _(to set correct node versio
 ```sh
 git clone https://github.com/leemunroe/grunt-email-workflow.git
 cd grunt-email-workflow
-nvm use
 npm install
 ```
 
