@@ -1,0 +1,245 @@
+/* 
+
+THEME-K newsletter template
+
+Tested on:
+- GMail/web
+- FairMail/android
+- GMX/web
+- strato/web
+
+each mobile and desktop
+
+TODO:
+- footer: better dark mode (mind gmx)
+- refactor: css center, remove unnecessary, rename content-lh etc.
+- optional: add subtagline, image attribution
+- find a fix for poster-wrap gmx hack (border? full width colored background?)
+- test: links visited
+- use components?
+*/
+
+/* RESETS */
+table,
+td,
+div,
+img,
+a {
+  box-sizing: border-box;
+}
+
+body {
+    height: 100% !important;
+    margin: 0;
+    padding: 0;
+}
+
+table {
+    border-spacing: 0;
+}
+
+td {
+    margin: 0;
+}
+
+/* HELPERS */
+.container {
+    max-width: 600px;
+    margin: 0 auto 0 auto;
+    padding: $padding;
+}
+
+.max-width {
+    max-width: 600px;
+    margin: 0 auto 0 auto;
+}
+
+// TYPOGRAPHY
+.font-family {
+    font-family: $font-family;
+}
+
+.font-size {
+    font-size: 16px;
+}
+
+.font-family a {
+    color: $link-color;
+}
+
+.font-family a:visited {
+    color: $link-visited;
+}
+
+.text-color {
+    color: $text-color;
+}
+
+.lh-content {
+    line-height: 140%;
+}
+
+.lh-links {
+    line-height: 180%;
+}
+
+.inline-block {
+    /* display: inline-block; */
+}
+
+.p-2 {
+    padding: $padding*2 $padding $padding $padding !important;
+}
+
+.pl {
+    padding-left: $padding !important;
+}
+
+.pr {
+    padding-right: $padding !important;
+}
+
+.pb {
+    padding-bottom: $padding !important;
+}
+
+.bold {
+    font-weight: bold;
+}
+
+.italic {
+    font-style: italic;
+}
+
+.uppercase {
+    text-transform: uppercase;
+}
+
+.text-small {
+    font-size: 80%;
+}
+
+.center {
+    text-align: center;
+}
+
+.img-responsive {
+    width: 100%;
+    height: auto;
+}
+
+// HEADER
+.logo {
+    /*
+    width: 92px;
+    height: 60px;
+    */
+    color: #fffff3 !important;
+}
+
+.tagline, .tagline small, .tagline a, .tagline a:visited {
+    color: #fffff3 !important;
+
+    // default for clients without media queries
+    font-size: 15px;
+    
+    @media (max-width: 480px) {
+        font-size: 12px !important;
+    }
+}
+
+// HEADLINES
+.date, .location {
+    line-height: 140%;
+}
+
+.artist, .support {
+    line-height: 100%;
+}
+
+.artist {
+    font-size: 230%;
+    letter-spacing: -1px;
+}
+
+.support {
+    font-size: 170%;
+    letter-spacing: -1px;
+}
+
+.date, .location {
+    font-size: 100%;
+    font-weight: bold;
+}
+
+.button {
+    border-radius: 0px;
+    display: inline-block;
+    font-size: 16px;
+    font-style: normal;
+    text-decoration: none;
+    line-height: 100%;
+    padding: 16px 28px;
+    min-width: 30px;
+    text-align: center;
+}
+
+.facebook {
+    font-size: 90%;
+}
+
+/* hack for gmx */
+.poster-wrap {
+    margin: 0 auto 0 auto;
+    max-width: 320px;
+
+    @media (max-width: 480px) {
+        border: none !important;
+        max-width: 480px !important;
+    }
+    /*
+    @media (min-width: 481px) {
+        max-width: 320px !important;
+    }
+    */
+}
+
+.poster {
+    // default for clients without media queries
+    /*
+    max-width: 320px;
+
+    @media (max-width: 480px) {
+        border: none !important;
+        max-width: 480px !important;
+    }
+    @media (min-width: 481px) {
+        max-width: 320px !important;
+    }
+    */
+}
+
+// FOOTER
+.signature {
+    padding: $padding*2 $padding $padding*2 $padding;
+}
+
+.signature, .signature small, .signature a, .signature a:visited {
+    color: lighten($text-color, 10%);
+    font-size: 13px;
+}
+
+.unsubscribe {
+    text-align: center;
+    padding: $padding*2 $padding $padding*2 $padding;
+}
+
+.unsubscribe, .unsubscribe small, .unsubscribe a, .unsubscribe a:visited {
+    font-size: 14px !important;
+    color: lighten($text-color, 10%) !important;
+}
+
+.signature a,
+.unsubscribe a {
+    text-decoration: underline;
+}

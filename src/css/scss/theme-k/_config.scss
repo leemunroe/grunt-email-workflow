@@ -1,0 +1,47 @@
+// VARIABLES
+$padding: 7px;
+
+$bg-primary: transparent;
+$bg-secondary: #262627 !important;
+// $bg-secondary: transparent;
+$bg-tertiary: #d5cbb5 !important;
+
+$color-primary: #cd7E2B !important;
+$color-secondary: #3b5998 !important;
+$color-tertiary: #bdbfc1;
+
+$text-color: #111111;
+$link-color: #3b5998;;
+$link-visited: #551abb;
+
+$font-family: "Helvetica", Arial, Verdana, sans-serif;
+
+// COLORS
+.bg-primary {
+    background-color: $bg-primary;
+}
+
+.bg-secondary {
+    background-color: $bg-secondary;
+}
+
+.bg-tertiary {
+    background-color: $bg-tertiary;
+}
+
+.color-primary {
+    color: $color-primary;
+}
+
+.color-secondary {
+    color: $color-secondary;
+}
+
+// BORDER COLORS
+.border-primary {
+    border: 3px solid $color-primary;
+}
+
+.border-secondary {
+    border: 3px solid $color-secondary;
+}

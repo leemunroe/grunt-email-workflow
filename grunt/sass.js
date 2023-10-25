@@ -7,9 +7,16 @@ module.exports = {
       style: 'expanded',
       implementation: sass
     },
-    files: {
-      '<%= paths.src %>/css/main.css': '<%= paths.src %>/css/scss/main.scss'
-    }
+    files: [
+      {
+        expand: true, 
+        flatten: true, // do not create subfolders
+        cwd: '<%= paths.src %>/css/scss/',
+        src: ['*/**/*.scss', '!*/**/_*.scss'],
+        dest: '<%= paths.src %>/css/', 
+        ext: '.css',
+      }
+    ]
   },
 
   // This task compiles Sass for the browser-baed preview UI.

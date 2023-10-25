@@ -1,0 +1,143 @@
+<!DOCTYPE html>
+<html lang="de">
+  <head>
+    {{#if subject}}
+      <title>{{{subject}}}</title>
+    {{/if}}
+    <meta content="text/html; charset=us-ascii" http-equiv="content-type">
+    <link href="../src/css/theme-k.css" media="all" rel="stylesheet" type="text/css">
+  </head>
+  <body class="bg-primary">
+    <table class="bg-primary" width="100%" cellpadding="0" cellspacing="0">
+      <tr>
+        <td valign="top">
+          <table border="0" class="bg-secondary" width="100%">
+            <tr>
+              <td valign="top">
+                <table border="0" class="max-width" width="100%">
+                  <tr>
+                    <td class="font-family p-2" valign="top" width="92">
+                      <span class="logo inline-block">
+                        <img class="logo" border="0" alt="Logo" src="{{content.logo}}">
+                      </span>
+                    </td>
+                    <td class="tagline font-family p-2" align="right" valign="top">
+                      <small>"{{content.tagline}}"</small>
+                    </td>
+                  </tr>
+                </table>
+              </td>
+            </tr>
+          </table>
+          <table border="0" width="100%" class="container">
+            <tr>
+              <td class="font-family text-color font-size lh-content">
+                <br>
+                <center>
+                  <b class="artist color-primary bold">{{content.artist}}</b>
+                  <br>
+                  {{#if content.support}}
+                    <span class="support color-primary bold">{{content.support}}</span>
+                    <br>
+                  {{/if}}
+                  <br>
+                  <!--
+                  <small class="color-quaternary italic">"{{content.tagline}}"</small><br><br>
+                  !-->
+                  <span class="location bold">{{content.location.title}}</span>
+                  <br>
+                  {{{content.location.address}}} <br>
+                  <br>
+                  <span class="date bold">{{content.date}}</span>
+                  <br>
+                  {{{content.time}}} <br>
+                  {{{content.admission}}} <br>
+                  <br>
+                </center>
+                {{#if content.tickets.url}}
+                  <br>
+                  <center>
+                    <a class="button color-primary border-primary uppercase bold" href="{{content.tickets.url}}" target="_blank">
+                      {{content.tickets.title}}
+                    </a>
+                    <br>
+                  </center>
+                  <br>
+                  <br>
+                {{/if}}
+                {{body}}
+                <br>
+                <br>
+              </td>
+            </tr>
+          </table>
+          {{#if content.links.title}}
+            <table border="0" width="100%" class="container">
+              <tr>
+                <td class="font-family text-color font-size lh-links">
+                  {{#if content.links.title}}
+                    <b>{{content.links.title}}</b>
+                    <br>
+                  {{/if}}
+                  {{#each content.links.items}} &bull; <a href="{{url}}" url="_blank">{{title}}</a>
+                    <br>
+                  {{/each}}
+                  <br>
+                  <br>
+                </td>
+              </tr>
+            </table>
+          {{/if}}
+      <tr>
+        <td valign="top">
+          {{#if content.poster.url}}
+            <table class="poster-wrap" border="0" width="100%">
+              <tr>
+                <td class="center" valign="top">
+                  <img class="poster img-responsive" width="320" alt="Poster" src="{{content.poster.url}}" border="0">
+                  <br>
+                </td>
+              </tr>
+            </table>
+          {{/if}}
+
+          <table border="0" class="container" width="100%">
+            <tr>
+              <td class="font-family font-size lh-content center">
+                {{#if content.facebook.url}}
+                  <br>
+                  <br>
+                  <span class="facebook color-secondary">{{content.facebook.superscript}}</span>
+                  <br>
+                  <a class="button color-secondary border-secondary uppercase bold" href="{{content.facebook.url}}" target="_blank">
+                    {{content.facebook.title}}
+                  </a>
+                  <br>
+                  <br>
+                  <br>
+                  <br>
+                {{/if}}
+                {{#if footer.signature}}
+                  <table border="0" class="font-family" width="100%">
+                    <tr>
+                      <td class="signature font-family center">
+                        <small>{{{footer.signature}}}</small>
+                      </td>
+                    </tr>
+                  </table>
+                {{/if}}
+              </td>
+            </tr>
+          </table>
+        </td>
+      </tr>
+    </table>
+    <table width="100%" cellpadding="0" cellspacing="0">
+      <tr>
+        <td class="unsubscribe bg-tertiary font-family lh-content center">
+          <small>{{{footer.unsubscribe}}}</small>
+        </td>
+      </tr>
+    </table>
+  </body>
+</html>
