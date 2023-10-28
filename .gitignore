@@ -7,4 +7,4 @@ secrets.json
 dist/*
 !dist/.gitkeep
 preview/css
-!src/css/*.css
+src/css/*.css

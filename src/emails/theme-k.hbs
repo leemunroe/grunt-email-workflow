@@ -1,50 +1,53 @@
 ---
 # SETTINGS
 layout: theme-k.hbs
-# some email clients (FairEmail/Android) use the meta title as the first text preview line, then continue
-# some email clients (Gmail/Web) use the meta title as the first text preview line, then cut
-# when in doubt - omit for consistency
+# (FairEmail/Android) use the meta title as preview line, then continues with body content
+# (Gmail/Web) use the meta title as preview line, then cuts off
+# omitted for consistency (recommended)
 # subject: 'Kultur & Konzerte in Köln:'
+
 # CONTENT
 content:
-    # logo: 'https://aas3-eu-west-1.amazonaws.com/files.crsend.com/301000/301560/images/logo_klub-praesentiert.png'
     logo: 'https://s3-eu-west-1.amazonaws.com/files.crsend.com/301000/301560/images/logo_klub-praesentiert_inverted.png'
     tagline: 'Noise Rock & Electronica aus Strasbourg.'
-    date: Mittwoch, 15. November 2023
-    artist: Lonlax
-    support: Cléo 2
+    headline: Lonlax
+    subline: Cléo 2
+    # summary: 'Kunst & Kultur in Köln.'
     location: 
         title: 674FM Konzertraum
         address: >
             am Chlodwigplatz (ehemals Lichtung), Ubierring 13, 50678 Köln
-    time: Einlass 19 Uhr, Beginn 20 Uhr
-    admission: >
-        AK 13 EUR / 10 EUR ermäßigt
+    admission:        
+        date: Mittwoch, 15. November 2023
+        time: Einlass 19 Uhr, Beginn 20 Uhr
+        fee: >
+            AK 13 EUR / 10 EUR ermäßigt
     tickets:
-        # comment-out url to disable tickets
-        # url: http://vvk.klubder40.de
+        # comment-out url to disable section
+        url: http://vvk.klubder40.de
         title: Tickets reservieren
     facebook:
-        # comment-out url to disable facebook
+        # comment-out url to disable section
         url: https://www.facebook.com/events/651981326916477
         superscript: triff uns auf
         title: Facebook
+    poster:
+        # comment-out url to disable section
+        url: https://s3-eu-west-1.amazonaws.com/files.crsend.com/301000/301560/images/lonlax01_480x334.jpg
     links:
-        # comment-out title to disable links
+        # comment-out title to disable section
         # title: 'Reinhören:'
         items:
             - title: Lonlax (soundcloud)
               url: https://soundcloud.com/kartoffelfidji/sets/private-dont-share-3/s-6YrH7vfKbRv
             - title: Cléo 2 (soundcloud) 
               url: https://soundcloud.com/tioklu/sets/cleo2/s-tg1tb0Skevc
-    poster:
-        # comment-out url to disable poster
-        url: https://s3-eu-west-1.amazonaws.com/files.crsend.com/301000/301560/images/lonlax01_480x334.jpg
-
 # FOOTER
 footer:
-    signature: 'Veranstalter: Klub der 40 e.V. | <a href="https://klubder40.de/impressum" target="_blank">Impressum</a>'
-    # do not change
+    # imprint
+    imprint: >
+            Veranstalter: Klub der 40 e.V. | <a href="https://klubder40.de/impressum" target="_blank">Impressum</a>
+    # mandatory unsubscribe link
     unsubscribe: >
             Wer keine Kulturhinweise mehr erhalten möchte, klickt auf <a href="https://301560.seu2.cleverreach.com/rmftlp.php?cid=[ctid]&amp;mid=[mailing_id]&amp;h=[ctid]-[user_id_secure]" target="_blank">Newsletter abmelden</a>.
 ---

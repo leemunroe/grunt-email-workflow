@@ -12,7 +12,7 @@ each mobile and desktop
 
 TODO:
 - footer: better dark mode (mind gmx)
-- refactor: css center, remove unnecessary, rename content-lh etc.
+- refactor: remove unnecessary, rename content-lh etc.
 - optional: add subtagline, image attribution
 - find a fix for poster-wrap gmx hack (border? full width colored background?)
 - test: links visited
@@ -134,11 +134,11 @@ td {
     width: 92px;
     height: 60px;
     */
-    color: #fffff3 !important;
+    color: #fffff2 !important;
 }
 
 .tagline, .tagline small, .tagline a, .tagline a:visited {
-    color: #fffff3 !important;
+    color: #fffff2 !important;
 
     // default for clients without media queries
     font-size: 15px;
@@ -220,26 +220,22 @@ td {
 }
 
 // FOOTER
-.signature {
+.imprint, 
+.unsubscribe {
     padding: $padding*2 $padding $padding*2 $padding;
 }
 
-.signature, .signature small, .signature a, .signature a:visited {
+.imprint a,
+.unsubscribe a {
+    text-decoration: underline;
+}
+
+.imprint, .imprint small, .imprint a, .imprint a:visited {
     color: lighten($text-color, 10%);
     font-size: 13px;
 }
 
-.unsubscribe {
-    text-align: center;
-    padding: $padding*2 $padding $padding*2 $padding;
-}
-
 .unsubscribe, .unsubscribe small, .unsubscribe a, .unsubscribe a:visited {
-    font-size: 14px !important;
     color: lighten($text-color, 10%) !important;
-}
-
-.signature a,
-.unsubscribe a {
-    text-decoration: underline;
+    font-size: 14px !important;
 }
