@@ -1,0 +1,164 @@
+/* RESETS */
+table,
+td,
+div,
+img,
+a {
+  box-sizing: border-box;
+}
+
+body {
+    height: 100% !important;
+    margin: 0;
+    padding: 0;
+}
+
+table {
+    border-spacing: 0;
+}
+
+td {
+    margin: 0;
+}
+
+ul, ol, .list {
+    margin: 0;
+}
+
+hr, .hr {
+    margin: 0;
+    padding: 0;
+    border: 0;
+    background: transparent;
+}
+
+/* HELPERS */
+.container {
+    padding: $padding;
+}
+
+.max-width {
+    max-width: 600px;
+    margin: 0 auto 0 auto;
+}
+
+.img-responsive {
+    width: 100%;
+    height: auto;
+}
+
+// TYPOGRAPHY
+.font-family {
+    font-family: $font-family;
+}
+
+.font-size {
+    font-size: 16px;
+}
+
+// TEXT COLORS
+.color-text {
+    color: $color-text;
+}
+
+.color-link a {
+    color: $color-link;
+}
+
+.color-primary {
+    color: $color-primary;
+}
+
+.color-secondary {
+    color: $color-secondary;
+}
+
+.color-tertiary {
+    color: $color-tertiary;
+}
+
+// BACKGROUND COLORS
+.bg-primary {
+    background-color: $bg-primary;
+}
+
+.bg-secondary {
+    background-color: $bg-secondary;
+}
+
+.bg-tertiary {
+    background-color: $bg-tertiary;
+}
+
+// BORDER COLORS
+.border-primary {
+    border: 3px solid $color-primary;
+}
+
+.border-secondary {
+    border: 3px solid $color-secondary;
+}
+
+.border-link {
+    border: 3px solid $color-link;
+}
+
+// use html <b> tag for clients such as fairmail
+.bold {
+    font-weight: bold;
+}
+
+// use html <i> tag for clients such as fairmail
+.italic {
+    font-style: italic;
+}
+
+// type in uppercase for clients such as fairmail, if desired
+.uppercase {
+    text-transform: uppercase;
+}
+
+.center {
+    text-align: center;
+}
+
+/* SIZES, PADDINGS, MARGINS */
+.line-height-140 {
+    line-height: 140%;
+}
+
+.p-0 {
+    padding: 0;
+}
+
+.py-1 {
+    padding: $padding 0 $padding 0;
+}
+
+.py-2 {
+    padding: $padding*2 $padding $padding*2 $padding;
+}
+
+.py-3 {
+    padding: $padding*3 $padding $padding*3 $padding;
+}
+
+.pt-2 {
+    padding: $padding*2 $padding $padding $padding !important;
+}
+
+.pb-2 {
+    padding: $padding $padding $padding*2 $padding !important;
+}
+
+.pb-3 {
+    padding: $padding $padding $padding*3 $padding !important;
+}
+
+.pb-4 {
+    padding: $padding $padding $padding*3 $padding !important;
+}
+
+.pb-5 {
+    padding: $padding $padding $padding*5 $padding !important;
+}

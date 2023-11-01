@@ -4,11 +4,13 @@
     {{#if subject}}
       <title>{{{subject}}}</title>
     {{/if}}
-    <meta content="text/html; charset=us-ascii" http-equiv="content-type">
+    <meta content="text/html; charset=utf-8" http-equiv="content-type">
+    <meta name="color-scheme" content="light dark">
+    <meta name="supported-color-schemes" content="light dark">
     <link href="../src/css/theme-k.css" media="all" rel="stylesheet" type="text/css">
   </head>
   <body class="bg-primary">
-    <table class="bg-primary" width="100%" cellpadding="0" cellspacing="0">
+    <table class="bg-primary" cellpadding="0" cellspacing="0" width="100%">
       <tr>
         <td valign="top">
           <table border="0" class="bg-secondary" width="100%">
@@ -16,12 +18,12 @@
               <td valign="top">
                 <table border="0" class="max-width" width="100%">
                   <tr>
-                    <td class="font-family p-2" valign="top" width="92">
-                      <span class="logo inline-block">
+                    <td class="font-family pt-2" valign="top" width="92">
+                      <span class="logo">
                         <img class="logo" border="0" alt="Logo" src="{{content.logo}}">
                       </span>
                     </td>
-                    <td class="tagline font-family p-2" align="right" valign="top">
+                    <td class="tagline font-family pt-2" align="right" valign="top">
                       <small>"{{content.tagline}}"</small>
                     </td>
                   </tr>
@@ -29,22 +31,22 @@
               </td>
             </tr>
           </table>
-          <table border="0" width="100%" class="container">
+          <table border="0" class="container max-width" width="100%">
             <tr>
-              <td class="font-family text-color font-size lh-content center">
+              <td class="font-family color-text color-link font-size line-height-140 center">
+                <br>
                 <br>
                 {{#if content.headline}}
-                  <b class="artist color-primary bold">{{content.headline}}</b>
+                  <b class="headline color-primary bold">{{content.headline}}</b>
                   <br>
                 {{/if}}
                 {{#if content.subline}}
-                  <span class="support color-primary bold">{{content.subline}}</span>
+                  <b class="subline color-primary bold">{{content.subline}}</b>
                   <br>
                 {{/if}}
                 <br>
-                {{#if content.summary}}
-                  <small class="color-quaternary italic">{{content.summary}}</small>
-                  <br>
+                {{#if content.quote}}
+                  <i class="quote color-quaternary"><small class="quote color-quaternary">{{content.quote}}</small></i>
                   <br>
                   <br>
                 {{/if}}
@@ -71,20 +73,20 @@
             </tr>
           </table>
           {{#if content.tickets.url}}
-            <table border="0" width="100%" class="container">
+            <table border="0" class="container max-width" width="100%">
               <tr>
-                <td class="font-family text-color font-size lh-content center">
+                <td class="tickets font-family font-size line-height-140 center">
                   <a class="button color-primary border-primary uppercase bold" href="{{content.tickets.url}}" target="_blank">
                     {{content.tickets.title}}
                   </a>
                 </td>
               </tr>
             </table>
-            <br>
           {{/if}}
-          <table border="0" width="100%" class="container">
+          <table border="0" class="container max-width" width="100%">
             <tr>
-              <td class="font-family text-color font-size lh-content">
+              <td class="font-family font-size color-text color-link line-height-140">
+                <br>
                 <br>
                 {{body}}
                 <br>
@@ -93,44 +95,56 @@
             </tr>
           </table>
           {{#if content.links.title}}
-            <table border="0" width="100%" class="container">
+            <table border="0" class="container max-width" width="100%">
               <tr>
-                <td class="font-family text-color font-size lh-links">
+                <td class="font-family font-size color-text color-link">
                   {{#if content.links.title}}
                     <b>{{content.links.title}}</b>
                     <br>
-                  {{/if}}
-                  {{#each content.links.items}} &bull; <a href="{{url}}" url="_blank">{{title}}</a>
                     <br>
+                  {{/if}}
+                  <ul class="list">
+                  {{#each content.links.items}}
+                    <li class="list-item">
+                      <a href="{{url}}" url="_blank">{{title}}</a>
+                    </li>
                   {{/each}}
+                  </ul>
                   <br>
                   <br>
                 </td>
               </tr>
-            </table>
+            </table>            
           {{/if}}
         </td>
       </tr>
     </table>
     {{#if content.poster.url}}
-      <table class="poster-wrap" border="0" width="100%">
+      <table class="poster-wrap p-0" border="0" width="100%">
         <tr>
-          <td class="center" valign="top">
-            <img class="poster img-responsive" width="320" alt="Poster" src="{{content.poster.url}}" border="0">
+          <td class="poster font-family center p-0" valign="top">
+            <img class="img-responsive" width="360" alt="Poster" src="{{content.poster.url}}" border="0">
           </td>
         </tr>
+        {{#if content.poster.attribution}}
+          <tr>
+            <td class="poster font-family center py-2" valign="top">
+              <small>{{content.poster.attribution}}</small>
+            </td>  
+          </tr>
+        {{/if}}                
       </table>
     {{/if}}
     {{#if content.facebook.url}}
-      <table border="0" class="container bg-primary" width="100%" >
+      <table border="0" class="container max-width bg-primary" width="100%">
         <tr>
-          <td class="font-family text-color font-size lh-content center">
+          <td class="facebook font-family font-size line-height-140 center pb-5">
             <br>
             <br>
             <br>
-            <span class="facebook color-secondary">{{content.facebook.superscript}}</span>
+            <span class="">{{content.facebook.superscript}}</span>
             <br>
-            <a class="button color-secondary border-secondary uppercase bold" href="{{content.facebook.url}}" target="_blank">
+            <a class="button border-link uppercase bold" href="{{content.facebook.url}}" target="_blank">
               {{content.facebook.title}}
             </a>
             <br>
@@ -141,27 +155,21 @@
         </tr>
       </table>
     {{/if}}
+    </td>
+    </tr>
+    </table>
     {{#if footer.imprint}}
-      <table border="0" class="container bg-primary" width="100%">
+      <table border="0" class="bg-tertiary" cellpadding="0" cellspacing="0" width="100%">
         <tr>
-          <td class="font-family font-size lh-content center">
-            <table border="0" class="font-family" width="100%">
-              <tr>
-                <td class="imprint font-family center">
-                  <small>{{{footer.imprint}}}</small>
-                </td>
-              </tr>
-            </table>
+          <td class="imprint font-family line-height-140 center py-1">
+            <small>{{{footer.imprint}}}</small>
           </td>
         </tr>
       </table>
     {{/if}}
-    </td>
-    </tr>
-    </table>
-    <table width="100%" cellpadding="0" cellspacing="0">
+    <table cellpadding="0" cellspacing="0" width="100%">
       <tr>
-        <td class="unsubscribe bg-tertiary font-family lh-content center">
+        <td class="unsubscribe font-family line-height-140 center py-3">
           <small>{{{footer.unsubscribe}}}</small>
         </td>
       </tr>

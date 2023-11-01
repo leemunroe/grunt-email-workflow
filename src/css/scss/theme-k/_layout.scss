@@ -1,5 +1,4 @@
 /* 
-
 THEME-K newsletter template
 
 Tested on:
@@ -11,122 +10,10 @@ Tested on:
 each mobile and desktop
 
 TODO:
-- footer: better dark mode (mind gmx)
-- refactor: remove unnecessary, rename content-lh etc.
-- optional: add subtagline, image attribution
-- find a fix for poster-wrap gmx hack (border? full width colored background?)
-- test: links visited
+- darkmode: test media queries
+- refactor: remove unnecessary, better facebook button css, rename classes
 - use components?
 */
-
-/* RESETS */
-table,
-td,
-div,
-img,
-a {
-  box-sizing: border-box;
-}
-
-body {
-    height: 100% !important;
-    margin: 0;
-    padding: 0;
-}
-
-table {
-    border-spacing: 0;
-}
-
-td {
-    margin: 0;
-}
-
-/* HELPERS */
-.container {
-    max-width: 600px;
-    margin: 0 auto 0 auto;
-    padding: $padding;
-}
-
-.max-width {
-    max-width: 600px;
-    margin: 0 auto 0 auto;
-}
-
-// TYPOGRAPHY
-.font-family {
-    font-family: $font-family;
-}
-
-.font-size {
-    font-size: 16px;
-}
-
-.font-family a {
-    color: $link-color;
-}
-
-.font-family a:visited {
-    color: $link-visited;
-}
-
-.text-color {
-    color: $text-color;
-}
-
-.lh-content {
-    line-height: 140%;
-}
-
-.lh-links {
-    line-height: 180%;
-}
-
-.inline-block {
-    /* display: inline-block; */
-}
-
-.p-2 {
-    padding: $padding*2 $padding $padding $padding !important;
-}
-
-.pl {
-    padding-left: $padding !important;
-}
-
-.pr {
-    padding-right: $padding !important;
-}
-
-.pb {
-    padding-bottom: $padding !important;
-}
-
-.bold {
-    font-weight: bold;
-}
-
-.italic {
-    font-style: italic;
-}
-
-.uppercase {
-    text-transform: uppercase;
-}
-
-.text-small {
-    font-size: 80%;
-}
-
-.center {
-    text-align: center;
-}
-
-.img-responsive {
-    width: 100%;
-    height: auto;
-}
 
 // HEADER
 .logo {
@@ -134,14 +21,14 @@ td {
     width: 92px;
     height: 60px;
     */
-    color: #fffff2 !important;
+    color: $color-secondary !important;
 }
 
 .tagline, .tagline small, .tagline a, .tagline a:visited {
-    color: #fffff2 !important;
-
     // default for clients without media queries
     font-size: 15px;
+
+    color: $color-secondary !important;
     
     @media (max-width: 480px) {
         font-size: 12px !important;
@@ -153,18 +40,22 @@ td {
     line-height: 140%;
 }
 
-.artist, .support {
+.headline, .subline {
     line-height: 100%;
 }
 
-.artist {
+.headline {
     font-size: 230%;
     letter-spacing: -1px;
 }
 
-.support {
+.subline {
     font-size: 170%;
     letter-spacing: -1px;
+}
+
+.quote {
+    font-size: 13px;
 }
 
 .date, .location {
@@ -184,58 +75,67 @@ td {
     text-align: center;
 }
 
-.facebook {
-    font-size: 90%;
+.list {
+    list-style-position: outside;
+    padding: 0 0 0 $padding*2;
 }
 
-/* hack for gmx */
+.list-item {
+    padding: 0 0 $padding 0;
+}
+
 .poster-wrap {
+    // aim for full-width image on mobile webmailers like gmail
+    // without blowing up on desktop on email clients without media queries
     margin: 0 auto 0 auto;
-    max-width: 320px;
+    max-width: 390px;
 
-    @media (max-width: 480px) {
-        border: none !important;
-        max-width: 480px !important;
+    @media (min-width: 391px) {
+        max-width: 360px !important;
     }
-    /*
-    @media (min-width: 481px) {
-        max-width: 320px !important;
-    }
-    */
 }
 
-.poster {
-    // default for clients without media queries
-    /*
-    max-width: 320px;
+.poster, .poster img, .poster small {
+    color: lighten($color-text, 10%);
+}
 
-    @media (max-width: 480px) {
-        border: none !important;
-        max-width: 480px !important;
+.poster img {
+    border: none;    
+}
+
+.poster small {
+    font-size: 12px;
+}
+
+.facebook {
+    span {
+        font-size: 90%;
+        color: $color-link !important;
     }
-    @media (min-width: 481px) {
-        max-width: 320px !important;
+
+    a, a:visited {
+        color: $color-link !important;
     }
-    */
 }
 
 // FOOTER
-.imprint, 
-.unsubscribe {
-    padding: $padding*2 $padding $padding*2 $padding;
-}
-
 .imprint a,
 .unsubscribe a {
     text-decoration: underline;
 }
 
+/* works in dark mode */
 .imprint, .imprint small, .imprint a, .imprint a:visited {
-    color: lighten($text-color, 10%);
-    font-size: 13px;
+   color: lighten($color-text, 10%);
+   font-size: 13px;
 }
 
 .unsubscribe, .unsubscribe small, .unsubscribe a, .unsubscribe a:visited {
-    color: lighten($text-color, 10%) !important;
-    font-size: 14px !important;
+    color: lighten($color-text, 10%);
+    font-size: 12px;
+}
+
+// a divider line
+hr, .hr {
+    border-bottom: 1px dotted $color-text;
 }

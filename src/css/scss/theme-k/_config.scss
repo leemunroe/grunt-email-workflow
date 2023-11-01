@@ -3,45 +3,13 @@ $padding: 7px;
 
 $bg-primary: transparent;
 $bg-secondary: #262627 !important;
-// $bg-secondary: transparent;
-$bg-tertiary: #d5cbb5 !important;
+$bg-tertiary: #e2e2e3; // dark mode safe color
 
 $color-primary: #cd7E2B !important;
-$color-secondary: #3b5998 !important;
-$color-tertiary: #bdbfc1;
+$color-secondary: #e8e6e4 !important; // contrast to bg-secondary
+$color-tertiary: #3b5998 !important;
 
-$text-color: #111111;
-$link-color: #3b5998;;
-$link-visited: #551abb;
+$color-text: #111111;
+$color-link: #3b5998;
 
 $font-family: "Helvetica", Arial, Verdana, sans-serif;
-
-// COLORS
-.bg-primary {
-    background-color: $bg-primary;
-}
-
-.bg-secondary {
-    background-color: $bg-secondary;
-}
-
-.bg-tertiary {
-    background-color: $bg-tertiary;
-}
-
-.color-primary {
-    color: $color-primary;
-}
-
-.color-secondary {
-    color: $color-secondary;
-}
-
-// BORDER COLORS
-.border-primary {
-    border: 3px solid $color-primary;
-}
-
-.border-secondary {
-    border: 3px solid $color-secondary;
-}
