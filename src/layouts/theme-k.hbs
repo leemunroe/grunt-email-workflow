@@ -18,12 +18,12 @@
               <td valign="top">
                 <table border="0" class="max-width" width="100%">
                   <tr>
-                    <td class="font-family pt-2" valign="top" width="92">
+                    <td class="font-family p-logo" valign="middle" width="92">
                       <span class="logo">
                         <img class="logo" border="0" alt="Logo" src="{{content.logo}}">
                       </span>
                     </td>
-                    <td class="tagline font-family pt-2" align="right" valign="top">
+                    <td class="tagline font-family p-tagline" align="right" valign="middle">
                       <small>"{{content.tagline}}"</small>
                     </td>
                   </tr>
@@ -33,7 +33,7 @@
           </table>
           <table border="0" class="container max-width" width="100%">
             <tr>
-              <td class="font-family color-text color-link font-size line-height-140 center">
+              <td class="font-family color-text color-link font-size line-height center">
                 <br>
                 <br>
                 {{#if content.headline}}
@@ -75,7 +75,7 @@
           {{#if content.tickets.url}}
             <table border="0" class="container max-width" width="100%">
               <tr>
-                <td class="tickets font-family font-size line-height-140 center">
+                <td class="tickets font-family font-size line-height center">
                   <a class="button color-primary border-primary uppercase bold" href="{{content.tickets.url}}" target="_blank">
                     {{content.tickets.title}}
                   </a>
@@ -85,7 +85,7 @@
           {{/if}}
           <table border="0" class="container max-width" width="100%">
             <tr>
-              <td class="font-family font-size color-text color-link line-height-140">
+              <td class="font-family font-size color-text color-link line-height">
                 <br>
                 <br>
                 {{body}}
@@ -138,8 +138,7 @@
     {{#if content.facebook.url}}
       <table border="0" class="container max-width bg-primary" width="100%">
         <tr>
-          <td class="facebook font-family font-size line-height-140 center pb-5">
-            <br>
+          <td class="facebook font-family font-size line-height center pb-7">
             <br>
             <br>
             <span class="">{{content.facebook.superscript}}</span>
@@ -147,7 +146,6 @@
             <a class="button border-link uppercase bold" href="{{content.facebook.url}}" target="_blank">
               {{content.facebook.title}}
             </a>
-            <br>
             <br>
             <br>
             <br>
@@ -161,7 +159,7 @@
     {{#if footer.imprint}}
       <table border="0" class="bg-tertiary" cellpadding="0" cellspacing="0" width="100%">
         <tr>
-          <td class="imprint font-family line-height-140 center py-1">
+          <td class="imprint font-family line-height center py-1">
             <small>{{{footer.imprint}}}</small>
           </td>
         </tr>
@@ -169,7 +167,7 @@
     {{/if}}
     <table cellpadding="0" cellspacing="0" width="100%">
       <tr>
-        <td class="unsubscribe font-family line-height-140 center py-3">
+        <td class="unsubscribe font-family line-height center py-3">
           <small>{{{footer.unsubscribe}}}</small>
         </td>
       </tr>

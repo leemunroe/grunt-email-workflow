@@ -1,141 +1,160 @@
 /* 
 THEME-K newsletter template
-
-Tested on:
-- GMail/web
-- FairMail/android
-- GMX/web
-- strato/web
-
-each mobile and desktop
-
-TODO:
-- darkmode: test media queries
-- refactor: remove unnecessary, better facebook button css, rename classes
-- use components?
 */
 
 // HEADER
 .logo {
-    /*
+	/*
     width: 92px;
     height: 60px;
     */
-    color: $color-secondary !important;
+	color: $color-secondary  !important;
 }
 
-.tagline, .tagline small, .tagline a, .tagline a:visited {
-    // default for clients without media queries
-    font-size: 15px;
+.tagline,
+.tagline small,
+.tagline a,
+.tagline a:visited {
+	// default for clients without media queries
+	font-size: 15px;
 
-    color: $color-secondary !important;
-    
-    @media (max-width: 480px) {
-        font-size: 12px !important;
-    }
+	color: $color-secondary  !important;
+
+	@media (max-width: 400px) {
+		font-size: 13px !important;
+	}
 }
 
 // HEADLINES
-.date, .location {
-    line-height: 140%;
+.date,
+.location {
+	line-height: 140%;
 }
 
-.headline, .subline {
-    line-height: 100%;
+.headline,
+.subline {
+	line-height: 100%;
 }
 
 .headline {
-    font-size: 230%;
-    letter-spacing: -1px;
+	font-size: 230%;
+	letter-spacing: -1px;
 }
 
 .subline {
-    font-size: 170%;
-    letter-spacing: -1px;
+	font-size: 170%;
+	letter-spacing: -1px;
 }
 
 .quote {
-    font-size: 13px;
+	font-size: 14px;
+
+	@media (max-width: 400px) {
+		font-size: 13px !important;
+	}
 }
 
-.date, .location {
-    font-size: 100%;
-    font-weight: bold;
+.date,
+.location {
+	font-size: 100%;
+	font-weight: bold;
 }
 
 .button {
-    border-radius: 0px;
-    display: inline-block;
-    font-size: 16px;
-    font-style: normal;
-    text-decoration: none;
-    line-height: 100%;
-    padding: 16px 28px;
-    min-width: 30px;
-    text-align: center;
+	border-radius: 0px;
+	display: inline-block;
+	font-size: 16px;
+	font-style: normal;
+	text-decoration: none;
+	line-height: 100%;
+	padding: 16px 28px;
+	min-width: 30px;
+	text-align: center;
 }
 
 .list {
-    list-style-position: outside;
-    padding: 0 0 0 $padding*2;
+	list-style-position: outside;
+	padding: 0 0 0 $padding*2;
 }
 
 .list-item {
-    padding: 0 0 $padding 0;
+	padding: 0 0 $padding 0;
 }
 
 .poster-wrap {
-    // aim for full-width image on mobile webmailers like gmail
-    // without blowing up on desktop on email clients without media queries
-    margin: 0 auto 0 auto;
-    max-width: 390px;
+	// mobile: full-width image
+	margin: 0 auto 0 auto;
+	max-width: 400px;
 
-    @media (min-width: 391px) {
-        max-width: 360px !important;
-    }
+	// desktop: smaller image
+	@media (min-width: 401px) {
+		max-width: 380px !important;
+	}
 }
 
-.poster, .poster img, .poster small {
-    color: lighten($color-text, 10%);
+.poster,
+.poster img,
+.poster small {
+	color: lighten($color-text, 10%);
 }
 
 .poster img {
-    border: none;    
+	border: none;
 }
 
 .poster small {
-    font-size: 12px;
+	font-size: 13px;
+
+	@media (max-width: 400px) {
+		font-size: 12px !important;
+	}
 }
 
 .facebook {
-    span {
-        font-size: 90%;
-        color: $color-link !important;
-    }
+	span {
+		font-size: 90%;
+		color: $color-link  !important;
+	}
 
-    a, a:visited {
-        color: $color-link !important;
-    }
+	a,
+	a:visited {
+		color: $color-link  !important;
+	}
 }
 
 // FOOTER
 .imprint a,
 .unsubscribe a {
-    text-decoration: underline;
+	text-decoration: underline;
 }
 
 /* works in dark mode */
-.imprint, .imprint small, .imprint a, .imprint a:visited {
-   color: lighten($color-text, 10%);
-   font-size: 13px;
+.imprint,
+.imprint small,
+.imprint a,
+.imprint a:visited {
+	color: lighten($color-text, 10%);
+	font-size: 14px;
+
+	@media (max-width: 400px) {
+		font-size: 13px !important;
+	}
 }
 
-.unsubscribe, .unsubscribe small, .unsubscribe a, .unsubscribe a:visited {
-    color: lighten($color-text, 10%);
-    font-size: 12px;
+.unsubscribe,
+.unsubscribe small,
+.unsubscribe a,
+.unsubscribe a:visited {
+	color: lighten($color-text, 10%);
+	font-size: 13px;
+
+	@media (max-width: 400px) {
+		font-size: 12px !important;
+	}
 }
 
 // a divider line
-hr, .hr {
-    border-bottom: 1px dotted $color-text;
+hr,
+.hr {
+	border-bottom: 1px dotted $color-text;
 }

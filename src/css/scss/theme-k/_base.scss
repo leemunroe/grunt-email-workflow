@@ -53,7 +53,11 @@ hr, .hr {
 }
 
 .font-size {
-    font-size: 16px;
+    font-size: $font-size;
+}
+
+.line-height {
+    line-height: $line-height;
 }
 
 // TEXT COLORS
@@ -123,8 +127,12 @@ hr, .hr {
 }
 
 /* SIZES, PADDINGS, MARGINS */
-.line-height-140 {
-    line-height: 140%;
+.p-logo {
+    padding: 6px $padding 3px $padding;
+}
+
+.p-tagline {
+    padding: 7px $padding 7px $padding;
 }
 
 .p-0 {
@@ -159,6 +167,6 @@ hr, .hr {
     padding: $padding $padding $padding*3 $padding !important;
 }
 
-.pb-5 {
-    padding: $padding $padding $padding*5 $padding !important;
+.pb-7 {
+    padding: $padding $padding $padding*7 $padding !important;
 }
