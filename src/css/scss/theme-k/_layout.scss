@@ -3,6 +3,14 @@ THEME-K newsletter template
 */
 
 // HEADER
+.p-logo {
+    padding: 6px 30px 3px $padding;
+}
+
+.p-tagline {
+    padding: 7px $padding 7px 0;
+}
+
 .logo {
 	/*
     width: 92px;
