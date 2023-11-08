@@ -94,6 +94,10 @@ hr, .hr {
     background-color: $bg-tertiary;
 }
 
+.bg-quaternary {
+    background-color: $bg-tertiary;
+}
+
 // BORDER COLORS
 .border-primary {
     border: 3px solid $color-primary;
@@ -156,7 +160,15 @@ hr, .hr {
 }
 
 .pb-4 {
-    padding: $padding $padding $padding*3 $padding !important;
+    padding: $padding $padding $padding*4 $padding !important;
+}
+
+.pb-5 {
+    padding: $padding $padding $padding*5 $padding !important;
+}
+
+.pb-6 {
+    padding: $padding $padding $padding*6 $padding !important;
 }
 
 .pb-7 {

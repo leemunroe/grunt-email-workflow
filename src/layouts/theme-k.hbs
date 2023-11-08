@@ -46,7 +46,9 @@
                 {{/if}}
                 <br>
                 {{#if content.quote}}
-                  <i class="quote color-quaternary"><small class="quote color-quaternary">{{content.quote}}</small></i>
+                  <i class="quote color-quaternary">
+                    <small class="quote color-quaternary">{{content.quote}}</small>
+                  </i>
                   <br>
                   <br>
                 {{/if}}
@@ -91,6 +93,7 @@
                 {{body}}
                 <br>
                 <br>
+                <br>
               </td>
             </tr>
           </table>
@@ -104,41 +107,48 @@
                     <br>
                   {{/if}}
                   <ul class="list">
-                  {{#each content.links.items}}
-                    <li class="list-item">
-                      <a href="{{url}}" url="_blank">{{title}}</a>
-                    </li>
-                  {{/each}}
+                    {{#each content.links.items}}
+                      <li class="list-item">
+                        <a href="{{url}}" target="_blank">{{title}}</a>
+                      </li>
+                    {{/each}}
                   </ul>
+                  <br>
                   <br>
                   <br>
                 </td>
               </tr>
-            </table>            
+            </table>
           {{/if}}
         </td>
       </tr>
     </table>
     {{#if content.poster.url}}
-      <table class="poster-wrap p-0" border="0" width="100%">
+      <table class="p-0" border="0" cellpadding="0" cellspacing="0" width="100%">
         <tr>
-          <td class="poster font-family center p-0" valign="top">
-            <img class="img-responsive" width="360" alt="Poster" src="{{content.poster.url}}" border="0">
+          <td class="bg-tertiary">
+            <table class="poster-wrap p-0" border="0" cellpadding="0" cellspacing="0" width="100%">
+              <tr>
+                <td class="poster font-family center p-0" valign="top">
+                  <img class="img-responsive" width="360" alt="Poster" src="{{content.poster.url}}" border="0">
+                </td>
+              </tr>
+            </table>
           </td>
         </tr>
         {{#if content.poster.attribution}}
           <tr>
-            <td class="poster font-family center py-2" valign="top">
+            <td class="poster font-family center py-1" valign="top">
               <small>{{content.poster.attribution}}</small>
-            </td>  
+            </td>
           </tr>
-        {{/if}}                
+        {{/if}}
       </table>
     {{/if}}
     {{#if content.facebook.url}}
-      <table border="0" class="container max-width bg-primary" width="100%">
+      <table class="" width="100%">
         <tr>
-          <td class="facebook font-family font-size line-height center pb-7">
+          <td class="facebook font-family font-size line-height center pb-5">
             <br>
             <br>
             <span class="">{{content.facebook.superscript}}</span>
@@ -153,9 +163,6 @@
         </tr>
       </table>
     {{/if}}
-    </td>
-    </tr>
-    </table>
     {{#if footer.imprint}}
       <table border="0" class="bg-tertiary" cellpadding="0" cellspacing="0" width="100%">
         <tr>
