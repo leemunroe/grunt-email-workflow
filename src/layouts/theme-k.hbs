@@ -20,7 +20,7 @@
                   <tr>
                     <td class="font-family p-logo" valign="middle" width="92">
                       <span class="logo">
-                        <img class="logo" width="80" border="0" alt="Logo" src="{{content.logo}}">
+                        <img width="90" border="0" alt="Logo" src="{{content.logo}}">
                       </span>
                     </td>
                     <td class="tagline font-family p-tagline" align="right" valign="middle">
@@ -46,8 +46,8 @@
                 {{/if}}
                 <br>
                 {{#if content.quote}}
-                  <i class="quote color-quaternary">
-                    <small class="quote color-quaternary">{{content.quote}}</small>
+                  <i class="quote">
+                    <small class="quote">{{content.quote}}</small>
                   </i>
                   <br>
                   <br>
@@ -77,7 +77,7 @@
           {{#if content.tickets.url}}
             <table border="0" class="container max-width" width="100%">
               <tr>
-                <td class="tickets font-family font-size line-height center">
+                <td class="tickets font-family font-size line-height center pb-2">
                   <a class="button color-primary border-primary uppercase bold" href="{{content.tickets.url}}" target="_blank">
                     {{content.tickets.title}}
                   </a>
@@ -87,7 +87,7 @@
           {{/if}}
           <table border="0" class="container max-width" width="100%">
             <tr>
-              <td class="font-family font-size color-text color-link line-height">
+              <td class="font-family font-size color-text color-link line-height pb-2">
                 <br>
                 <br>
                 {{body}}
@@ -138,7 +138,7 @@
         </tr>
         {{#if content.poster.attribution}}
           <tr>
-            <td class="poster font-family center py-1" valign="top">
+            <td class="poster font-family center py-2" valign="top">
               <small>{{content.poster.attribution}}</small>
             </td>
           </tr>
@@ -148,7 +148,7 @@
     {{#if content.facebook.url}}
       <table class="" width="100%">
         <tr>
-          <td class="facebook font-family font-size line-height center pb-5">
+          <td class="facebook font-family font-size line-height center pb-7">
             <br>
             <br>
             <span class="">{{content.facebook.superscript}}</span>

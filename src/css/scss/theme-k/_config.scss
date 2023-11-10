@@ -14,5 +14,7 @@ $color-text: #111111;
 $color-link: #3b5998;
 
 $font-family: "Helvetica", Arial, Verdana, sans-serif;
-$font-size: 16px;
-$line-height: 140%;
+
+$font-size: 18px;
+$line-height: 140%; // mobile
+$line-height-lg: 147% // desktop

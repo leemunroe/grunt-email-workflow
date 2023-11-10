@@ -53,11 +53,21 @@ hr, .hr {
 }
 
 .font-size {
+    // target clients that do not support media queries first
     font-size: $font-size;
+
+    @media (max-width: 400px) {
+        font-size: #{$font-size - 1px} !important;
+	}
 }
 
 .line-height {
+    // target clients that do not support media queries first
     line-height: $line-height;
+
+    @media (min-width: 401px) {
+        line-height: $line-height-lg !important;
+	}
 }
 
 // TEXT COLORS
@@ -149,6 +159,10 @@ hr, .hr {
 
 .pt-2 {
     padding: $padding*2 $padding $padding $padding !important;
+}
+
+.pb-1 {
+    padding: $padding $padding $padding*1 $padding !important;
 }
 
 .pb-2 {

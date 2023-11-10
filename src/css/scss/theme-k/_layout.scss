@@ -1,40 +1,44 @@
 /* 
 THEME-K newsletter template
+
+this template is provided as-is
 */
 
 // HEADER
 .p-logo {
-    padding: 5px 30px 3px $padding;
+    padding: 7px 30px 3px $padding;
 }
 
 .p-tagline {
     padding: 7px $padding 7px 0;
 }
 
-.logo {
+.logo,
+.logo img {
 	color: $color-secondary  !important;
+}
+
+.logo img {
+    @media (max-width: 400px) {
+        width: 72px;
+	}
 }
 
 .tagline,
 .tagline small,
 .tagline a,
 .tagline a:visited {
-	// default for clients without media queries
-	font-size: 15px;
+	// target clients that do not support media queries first
+    font-size: #{$font-size - 1px};
 
 	color: $color-secondary  !important;
 
 	@media (max-width: 400px) {
-		font-size: 13px !important;
+        font-size: #{$font-size - 4px} !important;
 	}
 }
 
 // HEADLINES
-.date,
-.location {
-	line-height: 140%;
-}
-
 .headline,
 .subline {
 	line-height: 100%;
@@ -51,23 +55,22 @@ THEME-K newsletter template
 }
 
 .quote {
-	font-size: 14px;
+	font-size: #{$font-size - 2px};
 
 	@media (max-width: 400px) {
-		font-size: 13px !important;
+		font-size: #{$font-size - 3px} !important;
 	}
 }
 
 .date,
 .location {
-	font-size: 100%;
 	font-weight: bold;
 }
 
 .button {
 	border-radius: 0px;
 	display: inline-block;
-	font-size: 16px;
+	font-size: $font-size;
 	font-style: normal;
 	text-decoration: none;
 	line-height: 100%;
@@ -86,13 +89,14 @@ THEME-K newsletter template
 }
 
 .poster-wrap {
-	// mobile: full-width image
 	margin: 0 auto 0 auto;
+    // target clients that do not support media queries first
+    // mobile: full-width image
 	max-width: 400px;
 
 	// desktop: smaller image
 	@media (min-width: 401px) {
-		max-width: 380px !important;
+		max-width: 390px !important;
 	}
 }
 
@@ -108,16 +112,16 @@ THEME-K newsletter template
 }
 
 .poster small {
-	font-size: 13px;
+	font-size: #{$font-size - 3px};
 
 	@media (max-width: 400px) {
-		font-size: 12px !important;
+		font-size: #{$font-size - 5px} !important;
 	}
 }
 
 .facebook {
 	span {
-		font-size: 90%;
+		font-size: #{$font-size - 2px};
 		color: $color-link  !important;
 	}
 
@@ -139,10 +143,10 @@ THEME-K newsletter template
 .imprint a,
 .imprint a:visited {
 	color: lighten($color-text, 10%);
-	font-size: 14px;
+	font-size: #{$font-size - 2px};
 
 	@media (max-width: 400px) {
-		font-size: 13px !important;
+		font-size: #{$font-size - 4px} !important;
 	}
 }
 
@@ -151,10 +155,10 @@ THEME-K newsletter template
 .unsubscribe a,
 .unsubscribe a:visited {
 	color: lighten($color-text, 10%);
-	font-size: 13px;
+	font-size: #{$font-size - 3px};
 
 	@media (max-width: 400px) {
-		font-size: 12px !important;
+		font-size: #{$font-size - 5px} !important;
 	}
 }
 
