@@ -1,0 +1,169 @@
+/* 
+THEME-K newsletter template
+
+this template is provided as-is
+*/
+
+// HEADER
+.p-logo {
+    padding: 7px 30px 3px $padding;
+}
+
+.p-tagline {
+    padding: 7px $padding 7px 0;
+}
+
+.logo,
+.logo img {
+	color: $color-secondary  !important;
+}
+
+.logo img {
+    @media (max-width: 400px) {
+        width: 72px;
+	}
+}
+
+.tagline,
+.tagline small,
+.tagline a,
+.tagline a:visited {
+	// target clients that do not support media queries first
+    font-size: #{$font-size - 1px};
+
+	color: $color-secondary  !important;
+
+	@media (max-width: 400px) {
+        font-size: #{$font-size - 4px} !important;
+	}
+}
+
+// HEADLINES
+.headline,
+.subline {
+	line-height: 100%;
+}
+
+.headline {
+	font-size: 230%;
+	letter-spacing: -1px;
+}
+
+.subline {
+	font-size: 170%;
+	letter-spacing: -1px;
+}
+
+.quote {
+	font-size: #{$font-size - 2px};
+
+	@media (max-width: 400px) {
+		font-size: #{$font-size - 3px} !important;
+	}
+}
+
+.date,
+.location {
+	font-weight: bold;
+}
+
+.button {
+	border-radius: 0px;
+	display: inline-block;
+	font-size: $font-size;
+	font-style: normal;
+	text-decoration: none;
+	line-height: 100%;
+	padding: 16px 28px;
+	min-width: 30px;
+	text-align: center;
+}
+
+.list {
+	list-style-position: outside;
+	padding: 0 0 0 $padding*2;
+}
+
+.list-item {
+	padding: 0 0 $padding 0;
+}
+
+.poster-wrap {
+	margin: 0 auto 0 auto;
+    // target clients that do not support media queries first
+    // mobile: full-width image
+	max-width: 400px;
+
+	// desktop: smaller image
+	@media (min-width: 401px) {
+		max-width: 390px !important;
+	}
+}
+
+.poster,
+.poster img,
+.poster small {
+	color: lighten($color-text, 10%);
+}
+
+.poster img {
+	border: none;
+    display: block;
+}
+
+.poster small {
+	font-size: #{$font-size - 3px};
+
+	@media (max-width: 400px) {
+		font-size: #{$font-size - 5px} !important;
+	}
+}
+
+.facebook {
+	span {
+		font-size: #{$font-size - 2px};
+		color: $color-link  !important;
+	}
+
+	a,
+	a:visited {
+		color: $color-link  !important;
+	}
+}
+
+// FOOTER
+.imprint a,
+.unsubscribe a {
+	text-decoration: underline;
+}
+
+/* works in dark mode */
+.imprint,
+.imprint small,
+.imprint a,
+.imprint a:visited {
+	color: lighten($color-text, 10%);
+	font-size: #{$font-size - 2px};
+
+	@media (max-width: 400px) {
+		font-size: #{$font-size - 4px} !important;
+	}
+}
+
+.unsubscribe,
+.unsubscribe small,
+.unsubscribe a,
+.unsubscribe a:visited {
+	color: lighten($color-text, 10%);
+	font-size: #{$font-size - 3px};
+
+	@media (max-width: 400px) {
+		font-size: #{$font-size - 5px} !important;
+	}
+}
+
+// a divider line
+hr,
+.hr {
+	border-bottom: 1px dotted $color-text;
+}

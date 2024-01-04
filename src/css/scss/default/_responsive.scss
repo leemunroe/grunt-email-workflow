@@ -1,0 +1,45 @@
+/* -------------------------------------
+    RESPONSIVE AND MOBILE FRIENDLY STYLES
+------------------------------------- */
+
+table[class=body]{
+  @media only screen and (max-width: $width+40) {
+
+    // Type
+    h1,
+    h2,
+    h3,
+    h4 {
+      font-weight: 600 !important;
+    }
+
+    h1 {
+      font-size: 22px !important;
+    }
+
+    h2 {
+      font-size: 18px !important;
+    }
+
+    h3 {
+      font-size: 16px !important;
+    }
+
+    // Spacing
+    .content,
+    .wrapper {
+      padding: 10px !important;
+    }
+
+    .container {
+      padding: 0 !important;
+      width: 100% !important;
+    }
+
+    // Buttons
+    .btn table,
+    .btn a {
+      width: 100% !important;
+    }
+  }
+}

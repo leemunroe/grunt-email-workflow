@@ -1,0 +1,11 @@
+.DS_Store
+node_modules
+.sass-cache
+.secret
+preview/css
+src/css/*.css
+*.css.map
+*.code-workspace
+secrets.json
+dist/*
+!dist/.gitkeep

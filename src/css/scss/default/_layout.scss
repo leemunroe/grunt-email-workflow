@@ -1,0 +1,71 @@
+/* -------------------------------------
+    BODY & CONTAINER
+------------------------------------- */
+
+body{
+  background-color: $grey;
+}
+
+.body {
+  background-color: $grey;
+  width: 100%;
+}
+
+/* Set a max-width, and make it display as block so it will automatically stretch to that width, but will also shrink down on a phone or something */
+.container {
+  display: block;
+  Margin: 0 auto !important; /* makes it centered */
+  max-width: $width;
+  padding: 10px;
+  width: auto !important;
+  width: $width;
+}
+
+/* This should also be a block element, so that it will fill 100% of the .container */
+.content {
+  display: block;
+  margin: 0 auto;
+  max-width: $width;
+  padding: 10px;
+}
+
+
+/* -------------------------------------
+    HEADER, FOOTER, MAIN
+------------------------------------- */
+
+.main {
+  background: #ffffff;
+  border: 1px solid darken($grey, 5);
+  border-radius: $br;
+  width: 100%;
+}
+
+.wrapper {
+  padding: $padding;
+}
+
+// Adds padding to content - use this instead of paragraphs for consistent padding/margin rendering
+.content-block {
+  padding: 0 0 $padding;
+}
+
+.header {
+  margin-bottom: $padding;
+  margin-top: ($padding - 10);
+  width: 100%;
+}
+
+.footer {
+  clear: both;
+  width: 100%;
+
+  * {
+    color: #999999;
+    font-size: 12px;
+  }
+
+  td {
+    padding: 20px 0;
+  }
+}

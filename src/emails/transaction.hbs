@@ -1,0 +1,60 @@
+---
+layout: default.hbs
+subject: Simple Transactional Email
+---
+<span class="preheader">This is preheader text. Some clients will show this text as a preview.</span>
+<table class="main">
+  <tr>
+    <td class="wrapper">
+      <table>
+        <tr>
+          <td>
+            <h1 class="align-center">Simple responsive HTML email template</h1>
+            <p>Hi there,</p>
+            <p>Sometimes you just want to send a simple HTML email with a basic design.</p>
+            <p>This is a really simple email template. It's sole purpose is to get you to click the button below.</p>
+            <p>All the information you need is on GitHub.</p>
+
+            <!--
+
+            For buttons you can make use of the handlebars button partial
+            Saves you having to write out the bulletproof button HTML
+            See ./src/partials/components for custom components
+            OR you can type out the HTML if you prefer
+
+            <table class="btn btn-primary">
+              <tr>
+                <td align="center">
+                  <table>
+                    <tr>
+                      <td>
+                        <a href="http://www.leemunroe.com">Call to action</a>
+                      </td>
+                    </tr>
+                  </table>
+                </td>
+              </tr>
+            </table>
+
+            -->
+
+            {{> button type='primary' align='center' url='https://github.com/leemunroe/grunt-email-workflow' title='View the source on GitHub' }}
+            
+            <p>Feel free to use, copy, modify this email template as you wish.</p>
+            <p>Thanks, have a lovely day.</p>
+            <p>{{> follow_lee }}</p>
+          </td>
+        </tr>
+      </table>
+    </td>
+  </tr>
+</table>
+<div class="footer">
+  <table>
+    <tr>
+      <td class="align-center">
+        <p>Don't like these annoying emails? <a href="{{ default.unsubscribe_url }}"><unsubscribe>Unsubscribe</unsubscribe></a>.</p>
+      </td>
+    </tr>
+  </table>
+</div>

@@ -1,0 +1,62 @@
+/* -------------------------------------
+    TYPOGRAPHY
+------------------------------------- */
+
+h1,
+h2,
+h3,
+h4 {
+  color: $font-color !important;
+  font-family: "Helvetica Neue", Helvetica, Arial, "Lucida Grande", sans-serif;
+  font-weight: 400;
+  line-height: 1.4em;
+  margin: 0;
+  margin-bottom: 30px;
+}
+
+h1 {
+  font-size: 38px;
+  text-transform: capitalize;
+  font-weight: 300;
+}
+h2 {
+  font-size: 24px;
+}
+h3 {
+  font-size: 18px;
+}
+h4 {
+  font-size: 14px;
+  font-weight:500;
+}
+
+p,
+ul,
+ol {
+  font-family: "Helvetica Neue", Helvetica, Arial, "Lucida Grande", sans-serif;
+  font-size: 14px;
+  font-weight: normal;
+  margin: 0;
+  margin-bottom: 15px;
+
+  li {
+    list-style-position: inside;
+    margin-left: 5px;
+  }
+}
+
+a {
+  color: $primary-color;
+  text-decoration: underline;
+}
+
+// Break long strings to prevent x-scrolling
+code,
+pre,
+.word-wrap {
+  word-break: break-word;
+  word-wrap: break-word;
+  -webkit-hyphens: auto;
+  -moz-hyphens: auto;
+  hyphens: auto;
+}
