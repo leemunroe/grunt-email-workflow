@@ -5,8 +5,7 @@ node_modules
 preview/css
 src/css/*.css
 *.css.map
+*.code-workspace
 secrets.json
 dist/*
 !dist/.gitkeep
-
-
