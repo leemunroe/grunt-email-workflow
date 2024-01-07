@@ -2,7 +2,10 @@
 module.exports = {
   emails: {
     files: ['<%= paths.src %>/css/scss/*/**','<%= paths.src %>/emails/*','<%= paths.src %>/layouts/*','<%= paths.src %>/partials/**/*','<%= paths.src %>/data/*'],
-    tasks: ['default']
+    tasks: ['build'],
+    options: {
+      livereload: true
+    }
   },
   preview_dist: {
     files: ['./dist/*'],
