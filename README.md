@@ -1,5 +1,5 @@
 # Grunt Email Design Workflow
-based on [github.com/leemunroe](https://github.com/leemunroe/grunt-email-workflow)
+by [github.com/leemunroe](https://github.com/leemunroe/grunt-email-workflow)
 
 ## Changelog 
 
@@ -38,15 +38,18 @@ cd grunt-email-workflow
 npm install
 ```
 
-#### 2. Create secrets.json
+The very first installation may take a while. Please wait patiently until completion.
 
-Create a `secrets.json` file in your project root as **outlined below under "[Sensitive Information](#sensitive-information)"**.
-
-#### 3. Run Grunt
+#### 2. Run Grunt
 
 Run `grunt build` and check out your `/dist` folder to see your compiled and inlined email templates.
-
 Run `grunt serve`, a new live-reload browser tab will open. Happy coding :)
+
+#### 3. Create secrets.json
+
+If you're using [Mailgun](https://www.mailgun.com/) and/or [Amazon S3](https://aws.amazon.com/s3/) create a `secrets.json` file in your project root as outlined below under "[Sensitive Information](#sensitive-information)".
+
+If you don't use or need these services **it's ok to skip this step**.
 
 ### Sensitive information
 
@@ -54,8 +57,6 @@ We encourage you __not__ to store sensitive data in your git repository. If you 
 
 1. Create a file `secrets.json` in your project root.
 2. Paste the following sample code in `secrets.json` and enter the appropriate credentials for the services you want to connect with.
-
-If you don't use or need these services **it's ok to skip this step**.
 
 ```json
 {
