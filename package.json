@@ -4,7 +4,9 @@
   "license": "MIT",
   "main": "Gruntfile.js",
   "scripts": {
-    "build": "grunt",
+    "send": "grunt send",
+    "s3upload": "grunt s3upload",
+    "build": "grunt build",
     "serve": "grunt serve"
   },
   "engines": {
@@ -19,10 +21,13 @@
     "grunt": "^1.6.1",
     "grunt-assemble": "^0.6.3",
     "grunt-autoprefixer": "^3.0.4",
+    "grunt-aws-s3": "^2.0.2",
+    "grunt-cdn": "^0.6.5",
     "grunt-contrib-clean": "^2.0.1",
     "grunt-contrib-watch": "^1.1.0",
     "grunt-express-server": "^0.5.4",
     "grunt-juice": "^0.0.2",
+    "grunt-mailgun": "^2.0.1",
     "grunt-open": "^0.2.4",
     "grunt-parallel": "^0.5.1",
     "grunt-replace": "^2.0.2",

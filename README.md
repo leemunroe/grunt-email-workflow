@@ -3,10 +3,10 @@ based on [github.com/leemunroe](https://github.com/leemunroe/grunt-email-workflo
 
 ## Changelog 
 
-### v0.2.0 - 09/01/2024
+### v0.2.0 - 24/01/2024
 
 * update packages and dependencies for current node versions: nvm not needed
-* disable third-party connections (see [GDPR](https://en.wikipedia.org/wiki/General_Data_Protection_Regulation))
+* remove obsolete tasks and packages
 
 ## Purpose
 
@@ -24,7 +24,6 @@ You may already have these installed on your system. If not, you'll have to inst
 
 * Node.js - [Install Node.js](https://github.com/joyent/node/wiki/Installing-Node.js-via-package-manager)
 * Grunt-cli and Grunt (`npm install grunt-cli -g`)
-* (optional) [Litmus](https://litmus.com) - Tests the email across all clients/browsers/devices
 
 ## Getting started
 
@@ -39,11 +38,45 @@ cd grunt-email-workflow
 npm install
 ```
 
-#### 2. Run Grunt
+#### 2. Create secrets.json
+
+Create a `secrets.json` file in your project root as **outlined below under "[Sensitive Information](#sensitive-information)"**.
+
+#### 3. Run Grunt
 
 Run `grunt build` and check out your `/dist` folder to see your compiled and inlined email templates.
 
 Run `grunt serve`, a new live-reload browser tab will open. Happy coding :)
+
+### Sensitive information
+
+We encourage you __not__ to store sensitive data in your git repository. If you must, please look into [git-encrypt](https://github.com/shadowhand/git-encrypt) or some other method of encrypting your configuration secrets.
+
+1. Create a file `secrets.json` in your project root.
+2. Paste the following sample code in `secrets.json` and enter the appropriate credentials for the services you want to connect with.
+
+If you don't use or need these services **it's ok to skip this step**.
+
+```json
+{
+  "mailgun": {
+    "api_key": "YOUR MG PRIVATE API KEY",
+    "domain": "YOURDOMAIN.COM",
+    "sender": "E.G. POSTMASTER@YOURDOMAIN.COM",
+    "recipient": "WHO YOU WANT TO SEND THE EMAIL TO"
+  },
+  "s3": {
+    "key": "AMAZON S3 KEY",
+    "secret": "AMAZON S3 SECRET",
+    "region": "AMAZON S3 REGION",
+    "bucketname": "AMAZON S3 BUCKET NAME",
+    "bucketdir": "AMAZON S3 BUCKET SUBDIRECTORY (optional)",
+    "bucketuri": "AMAZON S3 PATH (ex: https://s3.amazonaws.com/)"
+  }
+}
+```
+
+After this you should be good to go. Run `grunt build` and your email templates should appear automagically in a `/dist` folder.
 
 ## How it works
 
@@ -87,7 +120,7 @@ In terminal, run `grunt build`. This will:
 
 See the output HTML in the `dist` folder. Open them and preview it the browser.
 
-Alternatively run `grunt serve`. This will check for any changes you make to your .scss and .hbs templates, automatically run the tasks, and serve you a preview in the browser on http://localhost:4000. Saves you having to run grunt every time you make a change.
+Alternatively run `grunt serve`. This will check for any changes you make to your .scss and .hbs templates, automatically run the tasks, and serve you a preview in the browser on [http://localhost:4000](http://localhost:4000). Saves you having to run grunt every time you make a change.
 
 ### Browser-based previews
 
