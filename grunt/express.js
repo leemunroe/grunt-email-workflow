@@ -1,12 +1,16 @@
-// Browser-based preview task
 module.exports = {
   server: {
     options: {
+      cmd: process.argv[0],
+      background: true,
+      delay: 1000,
+      output: '.+',
       port: 4000,
-      hostname: '127.0.0.1',
+      script: './server.js',
+      debug: true,
       bases: ['<%= paths.dist %>', '<%= paths.preview %>', '<%= paths.src %>'],
-      server: './server.js',
-      livereload: true
+      livereload: true,
+      spawn: false,
     }
   }
-}
+};

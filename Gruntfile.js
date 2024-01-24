@@ -1,23 +1,29 @@
-module.exports = function(grunt) {
+(function() {
+  const path = require('path'),
+    folders = {
+      app: 'app',
+      dist: 'dist',
+      tmp: '.tmp'
+    };
 
-  require('load-grunt-config')(grunt, {
+  module.exports = function(grunt) {
+    var path = require('path');
 
-    // Pass data to tasks
-    data: {
-
-      // Re-usable filesystem path variables
-      paths: {
-        src:        'src',
-        src_img:    'src/img',
-        dist:       'dist',
-        dist_img:   'dist/img',
-        preview:    'preview'
-      },
-
-      // secrets.json is ignored in git because it contains sensitive data
-      // See the README for configuration settings
-      secrets: grunt.file.readJSON('secrets.json')
-
-    }
-  });
-};
+    require('load-grunt-config')(grunt, {
+      configPath: [
+        path.join(process.cwd(), 'grunt'),
+      ],
+      init: true,
+      data: {
+        folders: folders,
+        paths: {
+          src:        'src',
+          src_img:    'src/img',
+          dist:       'dist',
+          dist_img:   'dist/img',
+          preview:    'preview'
+        },
+      }
+    });
+  };
+})();
