@@ -2,40 +2,40 @@
     CONFIGURE YOUR VARIABLES
 ------------------------------------- */
 
-$padding: 30px; // For consistent padding
-$grey: #f6f6f6; // Background color
+$padding: 24px; // For consistent padding
+$grey: #f4f5f6; // Background color
 $width: 580px; // Width of the content area
-$br: 3px; // Border radius
-$btn-br: 5px; // Border radius
-$primary-color: #348eda; // Primary color for buttons and links
-$font-color: #111111; // Default font color
+$br: 8px; // Border radius
+$btn-br: 4px; // Border radius
+$primary-color: #0867ec; // Primary color for buttons and links
+$font-color: #161f33; // Default font color
 
 // Typography
 // -------
 
 $body-font-family:          "Helvetica Neue", "Helvetica", Helvetica, Arial, sans-serif !default;
 $body-font-weight:          400 !default;
-$body-font-size:            14px !default;
-$body-font-color:           #555 !default;
+$body-font-size:            16px !default;
+$body-font-color:           $font-color !default;
 $body-line-height:          1.6 !default;
 
 // Notices
 // -------
 
-$notice-color-info:         #3d88ce !default;
-$notice-color-success:      #81ad22 !default;
-$notice-color-warning:      #c6a121 !default;
-$notice-color-danger:       #be2c2c !default;
+$notice-color-info:         #0867ec !default;
+$notice-color-success:      #00aa55 !default;
+$notice-color-warning:      #f39c12 !default;
+$notice-color-danger:       #d51507 !default;
 
-$notice-border-radius:      6px !default;
+$notice-border-radius:      4px !default;
 $notice-font-size:          $body-font-size !default;
 $notice-font-weight:        $body-font-weight !default;
 $notice-line-height:        $body-line-height !default;
 $notice-padding:            8px 12px !default;
-$notice-margin:             10px 0 !default;
+$notice-margin:             8px 0 !default;
 
 // Dividers
 // --------
 
-$divider-margin:			20px 0 !default;
-$divider-color:				#ccc !default;
+$divider-margin:			24px 0 !default;
+$divider-color:				#eaebed !default;

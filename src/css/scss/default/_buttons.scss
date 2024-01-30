@@ -6,7 +6,7 @@
   width: 100%;
 
   > tr > td {
-    padding-bottom: 15px;
+    padding-bottom: 16px;
   }
 
   table {
@@ -19,17 +19,17 @@
     text-align: center;
   }
 
-  a{
+  a {
     background-color: #ffffff;
     border: solid 1px $primary-color;
     border-radius: $btn-br;
     color: $primary-color;
     cursor: pointer;
     display: inline-block;
-    font-size: 14px;
+    font-size: 16px;
     font-weight: bold;
     margin: 0;
-    padding: 12px 25px;
+    padding: 12px 24px;
     text-decoration: none;
     text-transform: capitalize;
   }
@@ -42,7 +42,7 @@
     background-color: $primary-color;
   }
 
-  a{
+  a {
     background-color: $primary-color;
     border-color: $primary-color;
     color: #ffffff;
@@ -56,7 +56,7 @@
     background-color: transparent;
   }
 
-  a{
+  a {
     background-color: transparent;
     border-color: $primary-color;
     color: $primary-color;
