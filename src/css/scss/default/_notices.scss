@@ -5,9 +5,9 @@
 @mixin create-notice($color) {
   td {
     background: lighten($color, 44%);
-    border: 1px solid lighten($color, 30%);
+    border: 1px solid $color;
     border-radius: $notice-border-radius;
-    color: darken($color, 10%);
+    color: darken($color, 20%);
     padding: $notice-padding;
   }
 }
