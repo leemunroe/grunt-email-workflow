@@ -132,6 +132,8 @@ In terminal, run `grunt serve`.
 * Go about your business editing templates and see your template changes live-reload
 * __NOTE:__ The express server stops working when the `watch` task is not running
 
+<img width="1437" alt="image" src="https://github.com/leemunroe/grunt-email-workflow/assets/15963/22c749be-05f6-4dea-8076-af1376dd6a17">
+
 
 ### Sample email templates
 
